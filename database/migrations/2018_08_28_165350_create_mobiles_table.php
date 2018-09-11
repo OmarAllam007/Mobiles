@@ -29,8 +29,8 @@ class CreateMobilesTable extends Migration
             $table->string('chipset')->nullable();
             $table->string('graphical_processor')->nullable();
             $table->string('internal_storage')->nullable();
-            $table->integer('ram')->nullable();
-            $table->integer('external_storage')->nullable();
+            $table->text('ram')->nullable();
+            $table->text('external_storage')->nullable();
             $table->float('screen_size')->nullable();
             $table->float('screen_size_percentage')->nullable();
             $table->string('screen_resolution')->nullable();
@@ -78,6 +78,18 @@ class CreateMobilesTable extends Migration
             $table->text('url_jumia')->nullable();
             $table->text('url_amazon')->nullable();
             $table->tinyInteger('available_in_egypt')->nullable();
+            $table->integer('brand_id')->nullable();
+            $table->tinyInteger('is_online')->nullable();
+            $table->text('keywords')->nullable();
+            $table->string('main_camera_pixels_description')->nullable();
+            $table->string('main_ram_description')->nullable();
+            $table->string('main_battery_description')->nullable();
+            $table->string('main_price_description')->nullable();
+            $table->text('pros')->nullable();
+            $table->text('cons')->nullable();
+            $table->integer('number_of_hits')->nullable();
+            $table->integer('number_of_fans')->nullable();
+            $table->text('advertisements')->nullable();
             $table->timestamps();
         });
     }
