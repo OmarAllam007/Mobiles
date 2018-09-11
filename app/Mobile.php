@@ -74,12 +74,15 @@ class Mobile extends Model
 
     function getNetworkNamesAttribute()
     {
-        $names = [];
-        foreach ($this->communication_network as $key => $network) {
-            $names[$key] = self::$network[$network];
+        if($this->communication_network){
+            $names = [];
+            foreach ($this->communication_network as $key => $network) {
+                $names[$key] = self::$network[$network];
+            }
+
+            return implode(' / ', $names);
         }
 
-        return implode(' / ', $names);
     }
 
     function getShowUrlAttribute()

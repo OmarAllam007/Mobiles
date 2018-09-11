@@ -1,4 +1,3 @@
-
 <table class="table table-bordered table-striped table-hover">
     <thead>
     <tr>
@@ -164,25 +163,31 @@
     <tr>
         <td style="width: 180px">Internal Storage</td>
         <td>
-            @foreach($mobile->internal_storage as $internal)
-                <p>{{$internal}} GB</p>
-            @endforeach
+            @if($mobile->internal_storage)
+                @foreach($mobile->internal_storage as $internal)
+                    <p>{{$internal}} GB</p>
+                @endforeach
+            @endif
         </td>
     </tr>
     <tr>
         <td style="width: 180px">RAM</td>
         <td>
-            @foreach($mobile->ram as $ram)
-                <p>{{$ram}} GB</p>
-            @endforeach
+            @if($mobile->ram)
+                @foreach($mobile->ram as $ram)
+                    <p>{{$ram}} GB</p>
+                @endforeach
+            @endif
         </td>
     </tr>
     <tr>
         <td style="width: 180px">External Storage</td>
         <td>
-            @foreach($mobile->external_storage as $external_storage)
-                <p>{{$external_storage}} GB</p>
-            @endforeach
+            @if($mobile->external_storage)
+                @foreach($mobile->external_storage as $external_storage)
+                    <p>{{$external_storage}} GB</p>
+                @endforeach
+            @endif
         </td>
     </tr>
 
