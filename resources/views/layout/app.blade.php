@@ -46,7 +46,9 @@
 <body>
 @php
     $mobiles = \App\Mobile::all()->each(function ($mobile){
+    if($mobile->brand){
     $mobile['show_url'] = route('mobile.display',[$mobile,strtolower($mobile->brand->name),str_slug($mobile->name)]);
+    }
     })
 @endphp
 <div id="header">

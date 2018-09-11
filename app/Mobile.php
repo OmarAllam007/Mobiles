@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Mobile extends Model
 {
+    use SoftDeletes;
     protected $fillable = [
         'name', 'image_path', 'description', 'released_date', 'operating_system',
         'device_dimension', 'device_weight', 'device_m_o_m', 'device_number_of_sims',
