@@ -144,7 +144,7 @@
         border:1px #f8fafc solid;
 
     }
-    
+
     a:hover{
         border:1px #1b998b solid;
     }
