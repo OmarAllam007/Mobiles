@@ -22,7 +22,8 @@
                     <img :src="mobile.image_path" style="float: left;max-width: 35%">
                     <div style="padding-left:5px;padding-top: 20px;width: 60%;padding-right: 2px;float: left">
                         <a :href="mobile.show_url">{{mobile.name}}</a>
-                        <p style="margin: 0">{{mobile.main_price_description.toLocaleString()}}</p>
+                        <p style="margin: 0">{{mobile.main_price_description
+                            ?mobile.main_price_description.toLocaleString(): ''}}</p>
                     </div>
                 </div>
             </div>
