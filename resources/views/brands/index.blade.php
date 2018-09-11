@@ -34,10 +34,10 @@
                     </div>
                 </div>
             @endforeach
+    </div>
         @else
             <div class="alert alert-info"><i class="fa fa-exclamation-circle"></i>
                 <strong>{{t('No Brands found')}}</strong>
             </div>
         @endif
-    </div>
 @stop
