@@ -18,7 +18,7 @@
             <div class="card " style="padding: 20px;background: linear-gradient(-90deg,#1b998b 10%, white 70%);">
                 <div class="row no-gutters">
                     <div class="col-auto">
-                        <img width="200" class="img-fluid" src="{{asset($mobile->image_path)}}" alt="Card image">
+                        <img width="200" class="img-fluid" src="{{asset('storage'.$mobile->image_path)}}" alt="Card image">
                     </div>
                     <div class="col">
                         <div class="card-block px-2">

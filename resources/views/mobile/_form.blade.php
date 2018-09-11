@@ -108,7 +108,7 @@
                                                 <i class="fa fa-trash"></i>
                                             </button>
                                         </div>
-                                        <img class="card-img-top" src="{{asset($mobile_image->image_path)}}">
+                                        <img class="card-img-top" src="{{asset('storage'.$mobile_image->image_path)}}">
                                     </div>
                                 </div>
                             @endforeach

@@ -19,7 +19,7 @@
 @if(isset($brand))
     <div style="width: 18rem;">
         <div class="form-group {{$errors->has('image_path')? 'has-error' : ''}}">
-            <img  class="card-img-top" src="{{asset($brand->image_path)}}" alt="Card image cap">
+            <img  class="card-img-top" src="{{asset('storage'.$brand->image_path)}}" alt="Card image cap">
         </div>
     </div>
 @endif
