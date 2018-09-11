@@ -1,0 +1,71 @@
+<template>
+    <div class="float-right col-5" style="margin-right: 50px">
+        <input type="search" class="form-control" id="search-input" v-model="search" @focus="searching=true"
+               @blur="getUnFocused"
+               placeholder="Search">
+        <div class="search-box" id="search-box" :class="{'none':!searching,'block':searching}">
+            <span>Devices</span>
+            <ul class="list-unstyled list-group">
+                <li class="list-group-item mobile-search-class" v-for="mobile in filtered_mobiles.slice(0,3)">
+                    <a role="button" :href="mobile.show_url" style="width: 100%;height: 100%;display: inline-block">
+                        <img :src="mobile.image_path">
+                        {{mobile.name}}
+                        <p style="margin: 0">Release Date : {{mobile.released_date}}</p>
+                        <p style="margin: 0">Price : {{mobile.price}}</p>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "search-mobile",
+        props: ['mobiles'],
+        data() {
+            return {
+                searching: false,
+                search: ''
+            }
+        },
+        created() {
+
+
+        },
+        methods: {
+            getUnFocused() {
+                window.setTimeout(() => {
+                    this.searching = false;
+                }, 10)
+            }
+        },
+        computed: {
+            filtered_mobiles() {
+                if (this.search) {
+                    return this.mobiles.filter((mobile) => {
+                        return mobile.name.toLowerCase().includes(this.search.toLowerCase())
+                    })
+                } else {
+                    return this.mobiles
+                }
+            }
+        }
+    }
+</script>
+
+<style scoped>
+    a {
+        text-decoration: none;
+        color: #2d3047;
+    }
+
+    .none {
+        display: none !important;
+    }
+
+    .block {
+        display: block !important;
+    }
+</style>
