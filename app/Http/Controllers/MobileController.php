@@ -34,13 +34,11 @@ class MobileController extends Controller
         $request['available_in_egypt'] = $request->available_in_egypt ? 1 : 0;
 
         if ($request->hasFile('image')) {
-            foreach ($request->image as $image) {
-                $attachment = Mobile::uploadImage($image);
-            }
+            $attachment = Mobile::uploadImage($request->image);
+            $data['path'] = $attachment->path ?? '';
         }
 
         $data = $request->all();
-        $data['path'] = $attachment->path;
 
         $mobile = Mobile::create($data);
 
@@ -101,8 +99,8 @@ class MobileController extends Controller
 
     function getMobileWithPrice()
     {
-        $brands = Brand::with('mobiles')->get()->each(function ($brand){
-            return $brand->mobiles->each(function ($mobile){
+        $brands = Brand::with('mobiles')->get()->each(function ($brand) {
+            return $brand->mobiles->each(function ($mobile) {
                 $mobile['show_url'] = $mobile->show_url;
             });
         });
