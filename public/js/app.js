@@ -50647,6 +50647,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "search-mobile",
@@ -50753,7 +50755,15 @@ var render = function() {
                       attrs: { role: "button", href: mobile.show_url }
                     },
                     [
-                      _c("img", { attrs: { src: mobile.image_path } }),
+                      _c("img", {
+                        staticClass: "img-fluid img-rounded img-responsive",
+                        staticStyle: {
+                          width: "50px",
+                          height: "70px",
+                          margin: "3px"
+                        },
+                        attrs: { src: mobile.image_path }
+                      }),
                       _vm._v(
                         "\n                    " +
                           _vm._s(mobile.name) +

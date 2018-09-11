@@ -8,7 +8,9 @@
             <ul class="list-unstyled list-group">
                 <li class="list-group-item mobile-search-class" v-for="mobile in filtered_mobiles.slice(0,3)">
                     <a role="button" :href="mobile.show_url" style="width: 100%;height: 100%;display: inline-block">
-                        <img :src="mobile.image_path">
+                        <img :src="mobile.image_path" class="img-fluid img-rounded img-responsive"
+                             style="width: 50px;height: 70px;margin: 3px"
+                        >
                         {{mobile.name}}
                         <p style="margin: 0">Release Date : {{mobile.released_date}}</p>
                         <p style="margin: 0">Price : {{mobile.price}}</p>

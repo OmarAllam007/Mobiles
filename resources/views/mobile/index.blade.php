@@ -16,9 +16,9 @@
         <div class="row" style="margin-top: 10px">
             @foreach($mobiles as $mobile)
                 <div class="col-3">
-                    <div class="card">
-                        <img class="card-img-top" src="{{asset('storage'.$mobile->image_path)}}"
-                             style="height: 20rem;object-fit: cover;">
+                    <div class="card text-center" style="align-items: center">
+                        <img class="card-img-top img-fluid img-rounded img-responsive" src="{{asset('storage'.$mobile->image_path)}}"
+                             style="width: 200px;height: 300px;margin: 10px;overflow:scroll">
                         <div class="card-body">
                             <h5 class="card-title">{{$mobile->name}}</h5>
                             <form action="{{route('mobile.destroy', $mobile)}}" method="post">
