@@ -12,12 +12,13 @@
 @stop
 
 @section('body')
-    <div class="row" >
-        @if ($brands->count())
+    @if ($brands->count())
+        <div class="row" style="margin-top: 10px">
             @foreach($brands as $brand)
                 <div class="col-3" style="margin-top: 10px">
                     <div class="card">
-                        <img class="card-img-top" src="{{asset('storage'.$brand->image_path)}}" style="height: 20rem;object-fit: cover;">
+                        <img class="card-img-top" src="{{asset('storage'.$brand->image_path)}}"
+                             style="height: 20rem;object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">{{$brand->name}}</h5>
                             <form action="{{route('brand.destroy', $brand)}}" method="post">
@@ -34,10 +35,10 @@
                     </div>
                 </div>
             @endforeach
-    </div>
-        @else
-            <div class="alert alert-info"><i class="fa fa-exclamation-circle"></i>
-                <strong>{{t('No Brands found')}}</strong>
-            </div>
-        @endif
+        </div>
+    @else
+        <div class="alert alert-info" style="margin-top: 10px"><i class="fa fa-exclamation-circle"></i>
+            <strong>{{t('No Brands found')}}</strong>
+        </div>
+    @endif
 @stop
