@@ -85,7 +85,8 @@ class MobileController extends Controller
 
     function destroy(Mobile $mobile)
     {
-
+        $mobile->delete();
+        return redirect()->route('mobile.index');
     }
 
     function show(Mobile $mobile, $mobile_brand, $mobile_name)
