@@ -13,22 +13,27 @@
             <div class="col-2"></div>
         </div>
 
-        <div class="row" v-for="(brand,key) in filtered_brands" style="padding-top: 20px">
+        <div class="row" v-for="(brand,key) in filtered_brands" style="padding-top: 45px">
             <div class="col-2"></div>
             <div v-if="brand.mobiles.length" class="col-8">
                 <h4>{{brand.name}}</h4>
-                <div class="div" v-for="mobile in brand.mobiles"
-                     style="display: inline-block;width: 32%;height: 120px;">
-                    <img :src="mobile.image_path" style="float: left;max-width: 35%">
-                    <div style="padding-left:5px;padding-top: 20px;width: 60%;padding-right: 2px;float: left">
-                        <a :href="mobile.show_url">{{mobile.name}}</a>
-                        <p style="margin: 0">{{mobile.main_price_description
-                            ?mobile.main_price_description.toLocaleString(): ''}}</p>
-                    </div>
-                </div>
+                <ul class="list-unstyled">
+                    <li class="li-item" v-for="mobile in brand.mobiles">
+                        <a :href="mobile.show_url">
+                            <img :src="mobile.image_path" style="width: 100px;height: 147px">
+                            <aside>
+                                <strong> {{mobile.name}}</strong>
+                                <p style="padding-top: 10px">   {{mobile.main_price_description
+                                    ?mobile.main_price_description.toLocaleString(): ''}} </p>
+                            </aside>
+
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="col-2"></div>
         </div>
+        <div class="col"></div>
+
         <div class="row" v-if="!filtered_brands.length" style="padding-top: 20px">
             <div class="col-2"></div>
             <div class="col-8">
@@ -98,5 +103,59 @@
 </script>
 
 <style scoped>
+    .li-item {
+        float: left;
+        height: 215px;
+        position: relative;
+        text-align: center;
+        width: 143px;
+        margin: 0 0 10px;
+        padding-top: 0;
+    }
+
+    .li-item a {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .li-item a img {
+        display: block;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin: 0 auto;
+
+    }
+
+    .li-item a aside {
+        clear: both;
+        display: block;
+        font: 700 14px Arimo, Arial, sans-serif;
+        margin: 0 auto;
+        padding: 15px 5px;
+        background: hsla(0, 0%, 96%, .4);
+        text-decoration: none;
+        color: #777;
+        position: absolute;
+        width: 100%;
+    }
+
+    a{
+        border:1px #f8fafc solid;
+
+    }
+    
+    a:hover{
+        border:1px #1b998b solid;
+    }
+    a:hover  aside{
+        background-color: #1b998b !important;
+    }
+    a:hover  aside strong{
+        color:white !important;
+    }
+    a:hover aside p{
+        color: #feffc9 !important;
+    }
 
 </style>

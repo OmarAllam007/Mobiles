@@ -14297,8 +14297,7 @@ module.exports = Cancel;
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(15);
-module.exports = __webpack_require__(61);
+module.exports = __webpack_require__(15);
 
 
 /***/ }),
@@ -47809,7 +47808,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.image[data-v-73948fcf] {\n    opacity: 1;\n    display: block;\n    width: 100%;\n    height: auto;\n    -webkit-transition: .5s ease;\n    transition: .5s ease;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n}\n.middle[data-v-73948fcf] {\n    -webkit-transition: .5s ease;\n    transition: .5s ease;\n    opacity: 0;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    -webkit-transform: translate(-50%, -50%);\n            transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n    text-align: center;\n}\n.image[data-v-73948fcf]:hover {\n    opacity: 0.3;\n}\n.image:hover + .middle[data-v-73948fcf] {\n    opacity: 1;\n}\n.middle:hover + .image[data-v-73948fcf] {\n    opacity: 0.3;\n}\n.middle[data-v-73948fcf]:hover {\n    opacity: 1;\n}\n\n\n", ""]);
+exports.push([module.i, "\n.image[data-v-73948fcf] {\n    opacity: 1;\n    display: block;\n    width: 100%;\n    height: auto;\n    transition: .5s ease;\n    backface-visibility: hidden;\n}\n.middle[data-v-73948fcf] {\n    transition: .5s ease;\n    opacity: 0;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n    text-align: center;\n}\n.image[data-v-73948fcf]:hover {\n    opacity: 0.3;\n}\n.image:hover + .middle[data-v-73948fcf] {\n    opacity: 1;\n}\n.middle:hover + .image[data-v-73948fcf] {\n    opacity: 0.3;\n}\n.middle[data-v-73948fcf]:hover {\n    opacity: 1;\n}\n\n\n", ""]);
 
 // exports
 
@@ -50760,7 +50759,8 @@ var render = function() {
                         staticStyle: {
                           width: "50px",
                           height: "70px",
-                          margin: "3px"
+                          margin: "10px",
+                          overflow: "scroll"
                         },
                         attrs: { src: mobile.image_path }
                       }),
@@ -50883,7 +50883,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.li-item[data-v-56721caa] {\n    float: left;\n    height: 215px;\n    position: relative;\n    text-align: center;\n    width: 143px;\n    margin: 0 0 10px;\n    padding-top: 0;\n}\n.li-item a[data-v-56721caa] {\n    display: block;\n    text-align: center;\n    width: 100%;\n}\n.li-item a img[data-v-56721caa] {\n    display: block;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    margin: 0 auto;\n}\n.li-item a aside[data-v-56721caa] {\n    clear: both;\n    display: block;\n    font: 700 14px Arimo, Arial, sans-serif;\n    margin: 0 auto;\n    padding: 15px 5px;\n    background: hsla(0, 0%, 96%, .4);\n    text-decoration: none;\n    color: #777;\n    position: absolute;\n    width: 100%;\n}\na[data-v-56721caa]{\n    border:1px #f8fafc solid;\n}\na[data-v-56721caa]:hover{\n    border:1px #1b998b solid;\n}\na:hover  aside[data-v-56721caa]{\n    background-color: #1b998b !important;\n}\na:hover  aside strong[data-v-56721caa]{\n    color:white !important;\n}\na:hover aside p[data-v-56721caa]{\n    color: #feffc9 !important;\n}\n\n", ""]);
 
 // exports
 
@@ -50894,6 +50894,11 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
 //
 //
 //
@@ -51046,73 +51051,55 @@ var render = function() {
       _vm._l(_vm.filtered_brands, function(brand, key) {
         return _c(
           "div",
-          { staticClass: "row", staticStyle: { "padding-top": "20px" } },
+          { staticClass: "row", staticStyle: { "padding-top": "45px" } },
           [
             _c("div", { staticClass: "col-2" }),
             _vm._v(" "),
             brand.mobiles.length
-              ? _c(
-                  "div",
-                  { staticClass: "col-8" },
-                  [
-                    _c("h4", [_vm._v(_vm._s(brand.name))]),
-                    _vm._v(" "),
+              ? _c("div", { staticClass: "col-8" }, [
+                  _c("h4", [_vm._v(_vm._s(brand.name))]),
+                  _vm._v(" "),
+                  _c(
+                    "ul",
+                    { staticClass: "list-unstyled" },
                     _vm._l(brand.mobiles, function(mobile) {
-                      return _c(
-                        "div",
-                        {
-                          staticClass: "div",
-                          staticStyle: {
-                            display: "inline-block",
-                            width: "32%",
-                            height: "120px"
-                          }
-                        },
-                        [
+                      return _c("li", { staticClass: "li-item" }, [
+                        _c("a", { attrs: { href: mobile.show_url } }, [
                           _c("img", {
-                            staticStyle: { float: "left", "max-width": "35%" },
+                            staticStyle: { width: "100px", height: "147px" },
                             attrs: { src: mobile.image_path }
                           }),
                           _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticStyle: {
-                                "padding-left": "5px",
-                                "padding-top": "20px",
-                                width: "60%",
-                                "padding-right": "2px",
-                                float: "left"
-                              }
-                            },
-                            [
-                              _c("a", { attrs: { href: mobile.show_url } }, [
-                                _vm._v(_vm._s(mobile.name))
-                              ]),
-                              _vm._v(" "),
-                              _c("p", { staticStyle: { margin: "0" } }, [
+                          _c("aside", [
+                            _c("strong", [_vm._v(" " + _vm._s(mobile.name))]),
+                            _vm._v(" "),
+                            _c(
+                              "p",
+                              { staticStyle: { "padding-top": "10px" } },
+                              [
                                 _vm._v(
-                                  _vm._s(
-                                    mobile.main_price_description
-                                      ? mobile.main_price_description.toLocaleString()
-                                      : ""
-                                  )
+                                  "   " +
+                                    _vm._s(
+                                      mobile.main_price_description
+                                        ? mobile.main_price_description.toLocaleString()
+                                        : ""
+                                    ) +
+                                    " "
                                 )
-                              ])
-                            ]
-                          )
-                        ]
-                      )
+                              ]
+                            )
+                          ])
+                        ])
+                      ])
                     })
-                  ],
-                  2
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-2" })
+                  )
+                ])
+              : _vm._e()
           ]
         )
       }),
+      _vm._v(" "),
+      _c("div", { staticClass: "col" }),
       _vm._v(" "),
       !_vm.filtered_brands.length
         ? _c(
@@ -51153,12 +51140,6 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-56721caa", module.exports)
   }
 }
-
-/***/ }),
-/* 61 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
