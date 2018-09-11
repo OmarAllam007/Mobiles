@@ -17,7 +17,7 @@
             @foreach($brands as $brand)
                 <div class="col-3" style="margin-top: 10px">
                     <div class="card">
-                        <img class="card-img-top" src="{{asset('storage'.$brand->image_path)}}" style="object-fit: cover;">
+                        <img class="card-img-top" src="{{asset('storage'.$brand->image_path)}}" style="height: 20rem;object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">{{$brand->name}}</h5>
                             <form action="{{route('brand.destroy', $brand)}}" method="post">
