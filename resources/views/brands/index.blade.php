@@ -16,7 +16,7 @@
         @if ($brands->count())
             @foreach($brands as $brand)
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{asset($brand->image_path)}}">
+                    <img class="card-img-top" src="{{asset('storage'.$brand->image_path)}}">
                     <div class="card-body">
                         <h5 class="card-title">{{$brand->name}}</h5>
                         <form action="{{route('brand.destroy', $brand)}}" method="post">
