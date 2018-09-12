@@ -48515,9 +48515,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         analayzeCompareProcess: function analayzeCompareProcess() {
             var _this = this;
 
-            $.ajax({
-                method: "GET",
-                dataType: 'json',
+            jQuery.ajax({
+                type: "GET",
                 url: '/compare-items',
                 data: {
                     'mobiles': this.selected_mobiles

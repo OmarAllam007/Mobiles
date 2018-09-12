@@ -658,9 +658,8 @@
                 this.selected_mobile_data = [];
             },
             analayzeCompareProcess() {
-                $.ajax({
-                    method: "GET",
-                    dataType:'json',
+                jQuery.ajax({
+                    type: "GET",
                     url: '/compare-items',
                     data:{
                         'mobiles': this.selected_mobiles,
