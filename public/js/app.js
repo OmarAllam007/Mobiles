@@ -48516,10 +48516,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             $.ajax({
-                type: "GET",
+                method: "GET",
+                dataType: 'json',
                 url: '/compare-items',
                 data: {
-                    mobiles: this.selected_mobiles
+                    'mobiles': this.selected_mobiles
                 },
                 success: function success(response) {
                     console.log(response);

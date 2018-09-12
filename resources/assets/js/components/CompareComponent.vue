@@ -659,7 +659,7 @@
             },
             analayzeCompareProcess() {
                 $.ajax({
-                    type: "GET",
+                    method: "GET",
                     dataType:'json',
                     url: '/compare-items',
                     data:{
