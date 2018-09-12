@@ -658,11 +658,16 @@
                 this.selected_mobile_data = [];
             },
             analayzeCompareProcess() {
-                $.get('/compare-items', {
-                    mobiles: this.selected_mobiles,
-                }, (response) => {
-                    console.log(response)
-                    this.selected_mobiles_data = response
+                $.ajax({
+                    type: "GET",
+                    url: '/compare-items',
+                    data:{
+                        mobiles: this.selected_mobiles,
+                    },
+                    success:(response)=>{
+                        console.log(response)
+                        this.selected_mobiles_data = response
+                    }
                 });
                 this.comparing = true;
             }

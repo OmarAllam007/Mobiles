@@ -48515,11 +48515,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         analayzeCompareProcess: function analayzeCompareProcess() {
             var _this = this;
 
-            $.get('/compare-items', {
-                mobiles: this.selected_mobiles
-            }, function (response) {
-                console.log(response);
-                _this.selected_mobiles_data = response;
+            $.ajax({
+                type: "GET",
+                url: '/compare-items',
+                data: {
+                    mobiles: this.selected_mobiles
+                },
+                success: function success(response) {
+                    console.log(response);
+                    _this.selected_mobiles_data = response;
+                }
             });
             this.comparing = true;
         }
