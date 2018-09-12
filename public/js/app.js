@@ -48517,7 +48517,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             jQuery.ajax({
                 type: "GET",
-                url: '/compare-items?mobiles=' + JSON.stringify(this.selected_mobiles),
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json',
+                url: '/compare-items?mobiles=' + this.selected_mobiles,
                 success: function success(response) {
                     console.log(response);
                     _this.selected_mobiles_data = response;

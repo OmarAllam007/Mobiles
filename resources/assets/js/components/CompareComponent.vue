@@ -660,7 +660,9 @@
             analayzeCompareProcess() {
                 jQuery.ajax({
                     type: "GET",
-                    url: '/compare-items?mobiles='+JSON.stringify(this.selected_mobiles),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json',
+                    url: '/compare-items?mobiles='+this.selected_mobiles,
                     success:(response)=>{
                         console.log(response)
                         this.selected_mobiles_data = response
