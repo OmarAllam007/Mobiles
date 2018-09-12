@@ -17,8 +17,7 @@ class CompareController extends Controller
 
     function analyzeCompareProcess()
     {
-        $selected_mobiles = \request('mobiles');
-        return Mobile::whereIn('id', $selected_mobiles)->get()->each(function ($mobile) {
+        return Mobile::whereIn('id', \request('mobiles'))->get()->each(function ($mobile) {
             $mobile['image'] = asset('storage' . $mobile->image_path);
             $mobile['others_open_device'] = $this->getOpenBy($mobile);
             $mobile['communication_network'] = $this->getNetwork($mobile);
