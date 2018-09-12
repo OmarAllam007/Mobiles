@@ -659,7 +659,7 @@
             },
             analayzeCompareProcess() {
                 $.get('/compare-items', {
-                    mobiles: this.selected_mobiles
+                    mobiles: this.selected_mobiles,
                 }, (response) => {
                     console.log(response)
                     this.selected_mobiles_data = response
