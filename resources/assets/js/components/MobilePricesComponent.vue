@@ -65,8 +65,8 @@
                         var mobiles = this.brands[brand].mobiles
                         for (var mobile = 0; mobile < mobiles.length; mobile++) {
                             let mobile_price = parseFloat(this.brands[brand].mobiles[mobile].main_price_description);
-                            if (mobile_price == parseFloat(this.search)
-                                || mobile_price <= (parseFloat(this.search) - 600)) {
+                            if (parseFloat(this.search) == mobile_price
+                                || (parseFloat(this.search) + 600) >= mobile_price) {
                                 if (data.length) {
                                     data.forEach((item) => {
                                         console.log(item.name, this.brands[brand].name)
