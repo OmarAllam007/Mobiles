@@ -50096,9 +50096,11 @@ var render = function() {
                             _vm._v(
                               "\n                            " +
                                 _vm._s(
-                                  selected_mobile_data.communication_network.join(
-                                    " / "
-                                  )
+                                  selected_mobile_data.communication_network
+                                    ? selected_mobile_data.communication_network.join(
+                                        " / "
+                                      )
+                                    : ""
                                 ) +
                                 "\n                        "
                             )

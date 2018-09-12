@@ -456,7 +456,7 @@
                         <tr>
                             <td style="width: 180px">Network</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
-                                {{selected_mobile_data.communication_network.join(' / ')}}
+                                {{selected_mobile_data.communication_network ? selected_mobile_data.communication_network.join(' / ') : ''}}
                             </td>
                         </tr>
 
