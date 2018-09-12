@@ -15,7 +15,7 @@
 
         <div class="column">
             @foreach($mobile->images as $key=>$image)
-                <img class="demo" style="width: 60px;height: 60px" src="{{$image->image_path}}" onclick="currentSlide({{$key+1}})">
+                <img class="demo" style="width: 60px;height: 60px" src="{{asset('storage/'.$image->image_path)}}" onclick="currentSlide({{$key+1}})">
             @endforeach
         </div>
     </div>
