@@ -23,7 +23,7 @@
                             <img :src="mobile.image_path" style="width: 100px;height: 147px">
                             <aside>
                                 <strong> {{mobile.name}}</strong>
-                                <p style="padding-top: 10px">   {{mobile.main_price_description
+                                <p style="padding-top: 10px"> {{mobile.main_price_description
                                     ?mobile.main_price_description.toLocaleString(): ''}} </p>
                             </aside>
 
@@ -64,7 +64,9 @@
                     for (var brand = 0; brand < this.brands.length; brand++) {
                         var mobiles = this.brands[brand].mobiles
                         for (var mobile = 0; mobile < mobiles.length; mobile++) {
-                            if (parseFloat(this.brands[brand].mobiles[mobile].main_price_description) == parseFloat(this.search)) {
+                            let mobile_price = parseFloat(this.brands[brand].mobiles[mobile].main_price_description);
+                            if (mobile_price == parseFloat(this.search)
+                                || mobile_price <= (parseFloat(this.search) - 600)) {
                                 if (data.length) {
                                     data.forEach((item) => {
                                         console.log(item.name, this.brands[brand].name)
@@ -140,21 +142,24 @@
         width: 100%;
     }
 
-    a{
-        border:1px #f8fafc solid;
+    a {
+        border: 1px #f8fafc solid;
 
     }
 
-    a:hover{
-        border:1px #1b998b solid;
+    a:hover {
+        border: 1px #1b998b solid;
     }
-    a:hover  aside{
+
+    a:hover aside {
         background-color: #1b998b !important;
     }
-    a:hover  aside strong{
-        color:white !important;
+
+    a:hover aside strong {
+        color: white !important;
     }
-    a:hover aside p{
+
+    a:hover aside p {
         color: #feffc9 !important;
     }
 

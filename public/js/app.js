@@ -51033,7 +51033,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.li-item[data-v-56721caa] {\n    float: left;\n    height: 215px;\n    position: relative;\n    text-align: center;\n    width: 143px;\n    margin: 0 0 10px;\n    padding-top: 0;\n}\n.li-item a[data-v-56721caa] {\n    display: block;\n    text-align: center;\n    width: 100%;\n}\n.li-item a img[data-v-56721caa] {\n    display: block;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    margin: 0 auto;\n}\n.li-item a aside[data-v-56721caa] {\n    clear: both;\n    display: block;\n    font: 700 14px Arimo, Arial, sans-serif;\n    margin: 0 auto;\n    padding: 15px 5px;\n    background: hsla(0, 0%, 96%, .4);\n    text-decoration: none;\n    color: #777;\n    position: absolute;\n    width: 100%;\n}\na[data-v-56721caa]{\n    border:1px #f8fafc solid;\n}\na[data-v-56721caa]:hover{\n    border:1px #1b998b solid;\n}\na:hover  aside[data-v-56721caa]{\n    background-color: #1b998b !important;\n}\na:hover  aside strong[data-v-56721caa]{\n    color:white !important;\n}\na:hover aside p[data-v-56721caa]{\n    color: #feffc9 !important;\n}\n\n", ""]);
+exports.push([module.i, "\n.li-item[data-v-56721caa] {\n    float: left;\n    height: 215px;\n    position: relative;\n    text-align: center;\n    width: 143px;\n    margin: 0 0 10px;\n    padding-top: 0;\n}\n.li-item a[data-v-56721caa] {\n    display: block;\n    text-align: center;\n    width: 100%;\n}\n.li-item a img[data-v-56721caa] {\n    display: block;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    margin: 0 auto;\n}\n.li-item a aside[data-v-56721caa] {\n    clear: both;\n    display: block;\n    font: 700 14px Arimo, Arial, sans-serif;\n    margin: 0 auto;\n    padding: 15px 5px;\n    background: hsla(0, 0%, 96%, .4);\n    text-decoration: none;\n    color: #777;\n    position: absolute;\n    width: 100%;\n}\na[data-v-56721caa] {\n    border: 1px #f8fafc solid;\n}\na[data-v-56721caa]:hover {\n    border: 1px #1b998b solid;\n}\na:hover aside[data-v-56721caa] {\n    background-color: #1b998b !important;\n}\na:hover aside strong[data-v-56721caa] {\n    color: white !important;\n}\na:hover aside p[data-v-56721caa] {\n    color: #feffc9 !important;\n}\n\n", ""]);
 
 // exports
 
@@ -51113,7 +51113,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 for (var brand = 0; brand < this.brands.length; brand++) {
                     var mobiles = this.brands[brand].mobiles;
                     for (var mobile = 0; mobile < mobiles.length; mobile++) {
-                        if (parseFloat(this.brands[brand].mobiles[mobile].main_price_description) == parseFloat(this.search)) {
+                        var mobile_price = parseFloat(this.brands[brand].mobiles[mobile].main_price_description);
+                        if (mobile_price == parseFloat(this.search) || mobile_price <= parseFloat(this.search) - 600) {
                             if (data.length) {
                                 data.forEach(function (item) {
                                     console.log(item.name, _this.brands[brand].name);
@@ -51228,7 +51229,7 @@ var render = function() {
                               { staticStyle: { "padding-top": "10px" } },
                               [
                                 _vm._v(
-                                  "   " +
+                                  " " +
                                     _vm._s(
                                       mobile.main_price_description
                                         ? mobile.main_price_description.toLocaleString()
