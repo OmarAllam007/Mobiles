@@ -6,20 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    {{--    <script src="{{asset('js/tinymce.min.js')}}"></script>--}}
-    <script>
-        // tinymce.init({
-        //     selector: 'textarea',
-        //     height: 500,
-        //     menubar: false,
-        //     plugins: [
-        //         'advlist autolink lists link image charmap print preview anchor textcolor',
-        //         'searchreplace visualblocks code fullscreen',
-        //         'insertdatetime media table contextmenu paste code help wordcount'
-        //     ],
-        //     toolbar: 'insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
-        // });
-    </script>
     <title>{{env('APP_NAME')}}</title>
 
     <!-- Fonts -->
@@ -128,9 +114,14 @@
 </div>
 
 <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+<script>
+
+
+</script>
 @yield('scripts')
 
 <script type="text/javascript">
+
     $(function () {
         $('[data-toggle="popover"]').popover()
     })
@@ -186,6 +177,11 @@
     // $(document).ready(function () {
     //     $('.select2').select2({tags: true});
     // });
+</script>
+
+<script>
+
+
 </script>
 </body>
 

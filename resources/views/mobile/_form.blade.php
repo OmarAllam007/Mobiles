@@ -83,7 +83,6 @@
                                     <div class="error-message">{{$errors->first('is_online')}}</div>
                                 @endif
                             </div>
-
                             <div class="form-group {{$errors->has('main_ram_description')? 'has-error' : ''}}">
                                 <label for="main_ram_description">{{t('Main Ram Description')}}</label>
                                 <input type="text" class=" form-control-sm form-control" name="main_ram_description" id="main_ram_description"
@@ -92,7 +91,6 @@
                                     <div class="error-message">{{$errors->first('main_ram_description')}}</div>
                                 @endif
                             </div>
-
                             <div class="form-group {{$errors->has('main_battery_description')? 'has-error' : ''}}">
                                 <label for="main_battery_description">{{t('Main Battery Description')}}</label>
                                 <input type="text" class=" form-control-sm form-control" name="main_battery_description" id="main_battery_description"
@@ -101,7 +99,6 @@
                                     <div class="error-message">{{$errors->first('main_battery_description')}}</div>
                                 @endif
                             </div>
-
                             <div class="form-group {{$errors->has('main_price_description')? 'has-error' : ''}}">
                                 <label for="main_price_description">{{t('Main Price Description')}}</label>
                                 <input type="text" class=" form-control-sm form-control" name="main_price_description" id="main_price_description"
@@ -165,8 +162,8 @@
                     parent.location.reload();
                 }
             });
-
         })
+
     </script>
 @endsection
 

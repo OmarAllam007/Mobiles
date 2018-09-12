@@ -5,10 +5,11 @@
 
 <div class="form-group {{$errors->has('brand_id')? 'has-error' : ''}}">
     <label for="brand_id">{{t('Brand')}}</label>
-    <select name="brand_id" class="form-control" id="brand_id">
+    <select name="brand_id" class="form-control" id="brand_id" id="brand_id">
         <option value="0">{{t('Select Brand')}}</option>
         @foreach(\App\Brand::all() as $brand)
-            <option value="{{$brand->id}}" @if(isset($mobile) && $brand->id == $mobile->brand_id) selected @endif>{{$brand->name}}</option>
+            <option value="{{$brand->id ?? old('brand_id')}}"
+                    @if(isset($mobile) && $brand->id == $mobile->brand_id) selected @endif>{{$brand->name}}</option>
         @endforeach
     </select>
     @if ($errors->has('brand_id'))
@@ -18,7 +19,8 @@
 
 <div class="form-group {{$errors->has('name')? 'has-error' : ''}}">
     <label for="name">{{t('Name')}}</label>
-    <input type="text" class=" form-control-sm form-control" name="name" id="name" value="{{$mobile->name ?? ''}}">
+    <input type="text" class="form-control-sm form-control" name="name" id="name"
+           value="{{$mobile->name ?? old('name')}}">
     @if ($errors->has('name'))
         <div class="error-message">{{$errors->first('name')}}</div>
     @endif
@@ -87,3 +89,7 @@
         <div class="error-message">{{$errors->first('device_size_of_sim')}}</div>
     @endif
 </div>
+
+@section('scripts')
+
+@append
