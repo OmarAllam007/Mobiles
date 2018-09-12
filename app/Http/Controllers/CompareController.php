@@ -18,8 +18,8 @@ class CompareController extends Controller
     function analyzeCompareProcess()
     {
         $new_mobiles = [];
-        $mobiles = Mobile::whereIn('id', \request('mobiles'))->get();
         return \request('mobiles');
+        $mobiles = Mobile::whereIn('id', \request('mobiles'))->get();
         foreach ($mobiles as $key => $mobile) {
             $mobiles[$key] = $mobile;
             $mobiles[$key]['image'] = $mobile->image_path ?  asset('storage' . $mobile->image_path): asset('storage/no-phone.png');
