@@ -128,11 +128,11 @@
 </div>
 
 
-<script src="{{asset('js/app.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/app.js')}}"></script>
 @yield('scripts')
 
 
-<script>
+<script type="text/javascript">
     $(function () {
         $('[data-toggle="popover"]').popover()
     })
