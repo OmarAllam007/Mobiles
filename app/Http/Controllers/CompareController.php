@@ -19,13 +19,14 @@ class CompareController extends Controller
     {
         $new_mobiles = [];
         $mobiles = Mobile::whereIn('id', \request('mobiles'))->get();
+        return $mobiles;
         foreach ($mobiles as $key => $mobile) {
-            $new_mobiles[$key] = $mobile;
-            $new_mobiles[$key]['image'] = $mobile->image_path ?  asset('storage' . $mobile->image_path): asset('storage/no-phone.png');
-            $new_mobiles[$key]['others_open_device'] = $this->getOpenBy($mobile);
-            $new_mobiles[$key]['communication_network'] = $this->getNetwork($mobile);
+            $mobiles[$key] = $mobile;
+            $mobiles[$key]['image'] = $mobile->image_path ?  asset('storage' . $mobile->image_path): asset('storage/no-phone.png');
+            $mobiles[$key]['others_open_device'] = $this->getOpenBy($mobile);
+            $mobiles[$key]['communication_network'] = $this->getNetwork($mobile);
         }
-        return $new_mobiles;
+        return $mobiles;
     }
 
     function getOpenBy($mobile)
