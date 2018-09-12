@@ -62,7 +62,7 @@
         <td>
             @foreach($mobile->images as $key=>$image)
                 <img class="hover-shadow" onclick="openModal();currentSlide({{$key+1}})"
-                     src="{{asset($image->image_path)}}">
+                     src="{{asset('storage/'.$image->image_path)}}">
             @endforeach
         </td>
     </tr>
