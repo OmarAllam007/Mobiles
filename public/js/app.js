@@ -47808,7 +47808,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.image[data-v-73948fcf] {\n    opacity: 1;\n    display: block;\n    width: 100%;\n    height: auto;\n    transition: .5s ease;\n    backface-visibility: hidden;\n}\n.middle[data-v-73948fcf] {\n    transition: .5s ease;\n    opacity: 0;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n    text-align: center;\n}\n.image[data-v-73948fcf]:hover {\n    opacity: 0.3;\n}\n.image:hover + .middle[data-v-73948fcf] {\n    opacity: 1;\n}\n.middle:hover + .image[data-v-73948fcf] {\n    opacity: 0.3;\n}\n.middle[data-v-73948fcf]:hover {\n    opacity: 1;\n}\n\n\n", ""]);
+exports.push([module.i, "\n.image[data-v-73948fcf] {\n    opacity: 1;\n    display: block;\n    width: 100%;\n    height: auto;\n    transition: .5s ease;\n    backface-visibility: hidden;\n}\n.middle[data-v-73948fcf] {\n    transition: .5s ease;\n    opacity: 0;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n    text-align: center;\n}\n.image[data-v-73948fcf]:hover {\n    opacity: 0.3;\n}\n.btn-middle:hover + .image[data-v-73948fcf] {\n    opacity: 0.3;\n}\n.image:hover + .middle[data-v-73948fcf] {\n    opacity: 1;\n}\n.middle:hover + .image[data-v-73948fcf] {\n    opacity: 0.3;\n}\n.middle[data-v-73948fcf]:hover {\n    opacity: 1;\n}\n.image[data-v-73948fcf] {\n    display: block;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    margin: 0 auto;\n}\n\n\n", ""]);
 
 // exports
 
@@ -47852,6 +47852,23 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -48516,8 +48533,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         return _this2.selected_mobiles.indexOf(mobile.id) != -1;
                     });
                 } else {
-                    console.log(this.mobiles.length);
-
                     return this.mobiles.filter(function (mobile) {
                         return mobile.name.toLowerCase().includes(_this2.search.toLowerCase()) || _this2.selected_mobiles.indexOf(mobile.id) != -1;
                     });
@@ -48547,7 +48562,9 @@ var render = function() {
     !_vm.comparing
       ? _c("div", [
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col" }, [
+            _c("div", { staticClass: "col-2" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-8" }, [
               _c(
                 "div",
                 { staticClass: "form-group btn-group-justified form-inline" },
@@ -48561,7 +48578,7 @@ var render = function() {
                         expression: "search"
                       }
                     ],
-                    staticClass: "form-control col-10",
+                    staticClass: "form-control col",
                     attrs: { type: "text", placeholder: "Enter Mobile Name" },
                     domProps: { value: _vm.search },
                     on: {
@@ -48601,7 +48618,9 @@ var render = function() {
                     )
                   ])
                 ]
-              )
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-2" })
             ])
           ]),
           _vm._v(" "),
@@ -48611,99 +48630,107 @@ var render = function() {
             ? _c(
                 "div",
                 { staticClass: "row" },
-                _vm._l(_vm.filtered_mobiles, function(mobile, index) {
-                  return _c("div", { staticClass: "col-3" }, [
-                    _c(
-                      "div",
-                      {
-                        staticStyle: {
-                          position: "absolute",
-                          "z-index": "99",
-                          padding: "5px",
-                          transition: "opacity 1s ease-in-out"
-                        }
-                      },
-                      [
-                        _c("i", {
-                          directives: [
-                            {
-                              name: "show",
-                              rawName: "v-show",
-                              value:
-                                _vm.selected_mobiles.indexOf(mobile.id) != -1,
-                              expression:
-                                "selected_mobiles.indexOf(mobile.id) !=-1"
-                            }
-                          ],
-                          staticClass: "fa fa-2x fa-check-circle",
-                          staticStyle: { color: "green" }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "card" }, [
-                      _c("img", {
-                        staticClass: "card-img-top image",
-                        attrs: { src: mobile.image, width: "100" }
-                      }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "middle" }, [
-                        _vm.selected_mobiles.length > 3 ||
-                        _vm.selected_mobiles.indexOf(mobile.id) == -1
-                          ? _c(
-                              "button",
+                [
+                  _c("div", { staticClass: "col-2" }),
+                  _vm._v(" "),
+                  _vm._l(_vm.filtered_mobiles, function(mobile, index) {
+                    return _c("div", { staticClass: "col-2" }, [
+                      _c(
+                        "div",
+                        {
+                          staticStyle: {
+                            position: "absolute",
+                            "z-index": "99",
+                            padding: "5px",
+                            transition: "opacity 1s ease-in-out"
+                          }
+                        },
+                        [
+                          _c("i", {
+                            directives: [
                               {
-                                staticClass:
-                                  "btn btn-outline-success btn-middle",
-                                attrs: {
-                                  disabled:
-                                    _vm.selected_mobiles.length > 3 ||
-                                    _vm.selected_mobiles.indexOf(mobile.id) !=
-                                      -1
-                                },
-                                on: {
-                                  click: function($event) {
-                                    _vm.selectMobile(mobile.id)
-                                  }
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                            Add\n                        "
-                                )
-                              ]
-                            )
-                          : _vm._e(),
+                                name: "show",
+                                rawName: "v-show",
+                                value:
+                                  _vm.selected_mobiles.indexOf(mobile.id) != -1,
+                                expression:
+                                  "selected_mobiles.indexOf(mobile.id) !=-1"
+                              }
+                            ],
+                            staticClass: "fa fa-2x fa-check-circle",
+                            staticStyle: { color: "green" }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "card" }, [
+                        _c("img", {
+                          staticClass: "card-img-top image",
+                          staticStyle: { width: "120px", height: "174px" },
+                          attrs: { src: mobile.image }
+                        }),
                         _vm._v(" "),
-                        _vm.selected_mobiles.length > 3 ||
-                        _vm.selected_mobiles.indexOf(mobile.id) != -1
-                          ? _c(
-                              "button",
-                              {
-                                staticClass: "btn btn-outline-danger",
-                                on: {
-                                  click: function($event) {
-                                    _vm.selectMobile(mobile.id)
+                        _c("div", { staticClass: "middle" }, [
+                          _vm.selected_mobiles.length > 3 ||
+                          _vm.selected_mobiles.indexOf(mobile.id) == -1
+                            ? _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "btn btn-outline-success btn-middle",
+                                  attrs: {
+                                    disabled:
+                                      _vm.selected_mobiles.length > 3 ||
+                                      _vm.selected_mobiles.indexOf(mobile.id) !=
+                                        -1
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.selectMobile(mobile.id)
+                                    }
                                   }
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                            Remove\n                        "
-                                )
-                              ]
-                            )
-                          : _vm._e()
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("h5", { staticClass: "card-title" }, [
-                          _vm._v(_vm._s(mobile.name))
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                            Add\n                        "
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.selected_mobiles.length > 3 ||
+                          _vm.selected_mobiles.indexOf(mobile.id) != -1
+                            ? _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-outline-danger",
+                                  on: {
+                                    click: function($event) {
+                                      _vm.selectMobile(mobile.id)
+                                    }
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                            Remove\n                        "
+                                  )
+                                ]
+                              )
+                            : _vm._e()
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "card-body" }, [
+                          _c("h5", { staticClass: "card-title" }, [
+                            _vm._v(_vm._s(mobile.name))
+                          ])
                         ])
                       ])
                     ])
-                  ])
-                })
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-2" })
+                ],
+                2
               )
             : _vm._e(),
           _vm._v(" "),
@@ -48715,1791 +48742,1903 @@ var render = function() {
     _vm._v(" "),
     _vm.comparing
       ? _c("div", [
-          _c("div", { staticStyle: { "padding-bottom": "10px" } }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-outline-primary",
-                on: { click: _vm.getBack }
-              },
-              [
-                _c("i", { staticClass: "fa fa-arrow-left" }),
-                _vm._v(" Back\n            ")
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "table",
-            { staticClass: "table table-bordered table-striped table-hover" },
-            [
-              _c("thead", [
-                _c("tr", [
-                  _c(
-                    "td",
-                    {
-                      staticStyle: {
-                        "background-color": "#1b998b",
-                        color: "white"
-                      },
-                      attrs: { colspan: _vm.selected_mobiles.length + 1 }
-                    },
-                    [
-                      _c("i", { staticClass: "fa fa-sliders-h" }),
-                      _vm._v(" General Feature\n                ")
-                    ]
-                  )
-                ])
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-2" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-8" }, [
+              _c("div", { staticStyle: { "padding-bottom": "10px" } }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-outline-primary",
+                    on: { click: _vm.getBack }
+                  },
+                  [
+                    _c("i", { staticClass: "fa fa-arrow-left" }),
+                    _vm._v(" Back\n                    ")
+                  ]
+                )
               ]),
               _vm._v(" "),
-              _c("tbody", [
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Image")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", { staticClass: "text-align: center; " }, [
-                        _c("img", {
+              _c(
+                "table",
+                {
+                  staticClass: "table table-bordered table-striped table-hover"
+                },
+                [
+                  _c("thead", [
+                    _c("tr", [
+                      _c(
+                        "td",
+                        {
                           staticStyle: {
-                            "max-width": "166px",
-                            width: "80%",
-                            display: "block"
+                            "background-color": "#1b998b",
+                            color: "white"
                           },
-                          attrs: { src: selected_mobile_data.image }
-                        })
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Name")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          _vm._s(selected_mobile_data.name) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Release Date")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.released_date) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Operating System")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.operating_system) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Size")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.device_dimension) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Weight")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.device_weight) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Material Of Manfacture")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.device_m_o_m) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("No. of SIMs")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.device_number_of_sims) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Size of SIM")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.device_size_of_sim) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "table",
-            { staticClass: "table table-bordered table-striped table-hover" },
-            [
-              _c("thead", [
-                _c("tr", [
-                  _c(
-                    "td",
-                    {
-                      staticStyle: {
-                        "background-color": "#1b998b",
-                        color: "white"
-                      },
-                      attrs: { colspan: _vm.selected_mobiles.length + 1 }
-                    },
-                    [
-                      _c("i", { staticClass: "fa fa-mobile-alt" }),
-                      _vm._v(" Screen\n                ")
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("tbody", [
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Screen Size")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.screen_size) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Screen Size Percentage")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(
-                              selected_mobile_data.screen_size_percentage
-                            ) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Release Date")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.released_date) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Resolution")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.screen_resolution) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Screen Dimensions")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.screen_dimensions) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Density of Pixels")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(
-                              selected_mobile_data.screen_density_of_pixels
-                            ) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v(" Screen Technology")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.screen_technology) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Screen Colors")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.screen_colors) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Touch")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.screen_touch_features) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Screen Protection")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.screen_protection) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Extra Features")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.screen_extra_features) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "table",
-            { staticClass: "table table-bordered table-striped table-hover" },
-            [
-              _c("thead", [
-                _c("tr", [
-                  _c(
-                    "td",
-                    {
-                      staticStyle: {
-                        "background-color": "#1b998b",
-                        color: "white"
-                      },
-                      attrs: { colspan: _vm.selected_mobiles.length + 1 }
-                    },
-                    [
-                      _c("i", { staticClass: "fa fa-hdd" }),
-                      _vm._v(" Storage\n                ")
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("tbody", [
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Internal Storage")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c(
-                        "td",
-                        _vm._l(selected_mobile_data.internal_storage, function(
-                          internal
-                        ) {
-                          return _c("p", [_vm._v(_vm._s(internal) + " GB")])
-                        })
+                          attrs: { colspan: _vm.selected_mobiles.length + 1 }
+                        },
+                        [
+                          _c("i", { staticClass: "fa fa-sliders-h" }),
+                          _vm._v(" General Feature\n                        ")
+                        ]
                       )
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("RAM")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c(
-                        "td",
-                        _vm._l(selected_mobile_data.ram, function(ram) {
-                          return _c("p", [_vm._v(_vm._s(ram) + " GB")])
-                        })
-                      )
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("External Storage")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c(
-                        "td",
-                        _vm._l(selected_mobile_data.external_storage, function(
-                          external_storage
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Image")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
                         ) {
-                          return _c("p", [
-                            _vm._v(_vm._s(external_storage) + " GB")
+                          return _c(
+                            "td",
+                            { staticClass: "text-align: center; " },
+                            [
+                              _c("img", {
+                                staticStyle: {
+                                  width: "180px",
+                                  height: "240px",
+                                  display: "block",
+                                  margin: "0 auto"
+                                },
+                                attrs: { src: selected_mobile_data.image }
+                              })
+                            ]
+                          )
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Name")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.name) +
+                                "\n                        "
+                            )
                           ])
                         })
-                      )
-                    })
-                  ],
-                  2
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "table",
-            { staticClass: "table table-bordered table-striped table-hover" },
-            [
-              _c("thead", [
-                _c("tr", [
-                  _c(
-                    "td",
-                    {
-                      staticStyle: {
-                        "background-color": "#1b998b",
-                        color: "white"
-                      },
-                      attrs: { colspan: _vm.selected_mobiles.length + 1 }
-                    },
-                    [
-                      _c("i", { staticClass: "fa fa-camera-retro" }),
-                      _vm._v(" Camera\n                ")
-                    ]
-                  )
-                ])
-              ]),
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Release Date")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.released_date) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Operating System")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.operating_system) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Size")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.device_dimension) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Weight")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.device_weight) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Material Of Manfacture")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.device_m_o_m) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("No. of SIMs")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.device_number_of_sims
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Size of SIM")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.device_size_of_sim
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ]
+              ),
               _vm._v(" "),
-              _c("tbody", [
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Main Camera")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.camera_main_camera) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Front Camera")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.camera_front_camera) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Front Camera Feature")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(
-                              selected_mobile_data.camera_front_camera_features
-                            ) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Video")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.camera_video) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Flash")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.camera_flash) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Aperture")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.camera_lens_aperture) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Sensor Size")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.camera_sensor_size) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Focal Length")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.camera_focal_length) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Other Features")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.camera_other_features) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "table",
-            { staticClass: "table table-bordered table-striped table-hover" },
-            [
-              _c("thead", [
-                _c("tr", [
-                  _c(
-                    "td",
-                    {
-                      staticStyle: {
-                        "background-color": "#1b998b",
-                        color: "white"
-                      },
-                      attrs: { colspan: _vm.selected_mobiles.length + 1 }
-                    },
-                    [
-                      _c("i", { staticClass: "fa fa-cog" }),
-                      _vm._v(" Hardware\n                ")
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("tbody", [
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Processor")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.processor) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Graphical Processor")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.graphical_processor) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Chipset")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.chipset) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "table",
-            { staticClass: "table table-bordered table-striped table-hover" },
-            [
-              _c("thead", [
-                _c("tr", [
-                  _c(
-                    "td",
-                    {
-                      staticStyle: {
-                        "background-color": "#1b998b",
-                        color: "white"
-                      },
-                      attrs: { colspan: _vm.selected_mobiles.length + 1 }
-                    },
-                    [
-                      _c("i", { staticClass: "fa fa-battery-full" }),
-                      _vm._v(" Battery\n                ")
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("tbody", [
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Type")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.battery_type) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Calls")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.battery_calls_until) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Music")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.battery_music_until) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Video")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.battery_video_until) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Flash")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.camera_flash) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Removable")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        selected_mobile_data.battery_is_removable
-                          ? _c("i", { staticClass: "fa fa-check text-success" })
-                          : _vm._e(),
-                        _vm._v(" "),
-                        !selected_mobile_data.battery_is_removable
-                          ? _c("i", { staticClass: "fa fa-times text-danger" })
-                          : _vm._e()
-                      ])
-                    })
-                  ],
-                  2
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "table",
-            { staticClass: "table table-bordered table-striped table-hover" },
-            [
-              _c("thead", [
-                _c("tr", [
-                  _c(
-                    "td",
-                    {
-                      staticStyle: {
-                        "background-color": "#1b998b",
-                        color: "white"
-                      },
-                      attrs: { colspan: _vm.selected_mobiles.length + 1 }
-                    },
-                    [
-                      _c("i", { staticClass: "fa fa-play" }),
-                      _vm._v(" Media\n                ")
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("tbody", [
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Radio")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        selected_mobile_data.media_radio_exist
-                          ? _c("i", { staticClass: "fa fa-check text-success" })
-                          : _vm._e(),
-                        _vm._v(" "),
-                        !selected_mobile_data.media_radio_exist
-                          ? _c("i", { staticClass: "fa fa-times text-danger" })
-                          : _vm._e()
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Speakers")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.media_speaker) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("3.5mm Slot")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        selected_mobile_data.media_is_35_mm_slot
-                          ? _c("i", { staticClass: "fa fa-check text-success" })
-                          : _vm._e(),
-                        _vm._v(" "),
-                        !selected_mobile_data.media_is_35_mm_slot
-                          ? _c("i", { staticClass: "fa fa-times text-danger" })
-                          : _vm._e()
-                      ])
-                    })
-                  ],
-                  2
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "table",
-            { staticClass: "table table-bordered table-striped table-hover" },
-            [
-              _c("thead", [
-                _c("tr", [
-                  _c(
-                    "td",
-                    {
-                      staticStyle: {
-                        "background-color": "#1b998b",
-                        color: "white"
-                      },
-                      attrs: { colspan: _vm.selected_mobiles.length + 1 }
-                    },
-                    [
-                      _c("i", { staticClass: "fa fa-broadcast-tower" }),
-                      _vm._v(" Communication\n                ")
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("tbody", [
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Network")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(
-                              selected_mobile_data.communication_network.join(
-                                " / "
-                              )
-                            ) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Bluetooth")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(
-                              selected_mobile_data.communication_bluetooth
-                            ) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("WIFI")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.communication_wifi) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("USB")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.communication_usb) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Hotspot")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        selected_mobile_data.communication_hotspot
-                          ? _c("i", { staticClass: "fa fa-check text-success" })
-                          : _vm._e(),
-                        _vm._v(" "),
-                        !selected_mobile_data.communication_hotspot
-                          ? _c("i", { staticClass: "fa fa-times text-danger" })
-                          : _vm._e()
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("NFC")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        selected_mobile_data.communication_nfc
-                          ? _c("i", { staticClass: "fa fa-check text-success" })
-                          : _vm._e(),
-                        _vm._v(" "),
-                        !selected_mobile_data.communication_nfc
-                          ? _c("i", { staticClass: "fa fa-times text-danger" })
-                          : _vm._e()
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("OTG")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        selected_mobile_data.communication_otg
-                          ? _c("i", { staticClass: "fa fa-check text-success" })
-                          : _vm._e(),
-                        _vm._v(" "),
-                        !selected_mobile_data.communication_otg
-                          ? _c("i", { staticClass: "fa fa-times text-danger" })
-                          : _vm._e()
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("IR")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        selected_mobile_data.communication_ir
-                          ? _c("i", { staticClass: "fa fa-check text-success" })
-                          : _vm._e(),
-                        _vm._v(" "),
-                        !selected_mobile_data.communication_ir
-                          ? _c("i", { staticClass: "fa fa-times text-danger" })
-                          : _vm._e()
-                      ])
-                    })
-                  ],
-                  2
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "table",
-            { staticClass: "table table-bordered table-striped table-hover" },
-            [
-              _c("thead", [
-                _c("tr", [
-                  _c(
-                    "td",
-                    {
-                      staticStyle: {
-                        "background-color": "#1b998b",
-                        color: "white"
-                      },
-                      attrs: { colspan: _vm.selected_mobiles.length + 1 }
-                    },
-                    [
-                      _c("i", { staticClass: "fa fa-th-list" }),
-                      _vm._v(" Others\n                ")
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("tbody", [
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("GPS")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.others_gps) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Sensors")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.others_sensors) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Open By")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c(
+              _c(
+                "table",
+                {
+                  staticClass: "table table-bordered table-striped table-hover"
+                },
+                [
+                  _c("thead", [
+                    _c("tr", [
+                      _c(
                         "td",
-                        _vm._l(
-                          selected_mobile_data.others_open_device,
-                          function(open_device) {
-                            return _c("p", [
-                              _vm._v(
-                                "\n                        " +
-                                  _vm._s(open_device) +
-                                  "\n                    "
+                        {
+                          staticStyle: {
+                            "background-color": "#1b998b",
+                            color: "white"
+                          },
+                          attrs: { colspan: _vm.selected_mobiles.length + 1 }
+                        },
+                        [
+                          _c("i", { staticClass: "fa fa-mobile-alt" }),
+                          _vm._v(" Screen\n                        ")
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Screen Size")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.screen_size) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Screen Size Percentage")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.screen_size_percentage
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Release Date")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.released_date) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Resolution")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.screen_resolution) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Screen Dimensions")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.screen_dimensions) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Density of Pixels")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.screen_density_of_pixels
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(" Screen Technology")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.screen_technology) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Screen Colors")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.screen_colors) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Touch")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.screen_touch_features
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Screen Protection")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.screen_protection) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Extra Features")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.screen_extra_features
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-bordered table-striped table-hover"
+                },
+                [
+                  _c("thead", [
+                    _c("tr", [
+                      _c(
+                        "td",
+                        {
+                          staticStyle: {
+                            "background-color": "#1b998b",
+                            color: "white"
+                          },
+                          attrs: { colspan: _vm.selected_mobiles.length + 1 }
+                        },
+                        [
+                          _c("i", { staticClass: "fa fa-hdd" }),
+                          _vm._v(" Storage\n                        ")
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Internal Storage")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c(
+                            "td",
+                            _vm._l(
+                              selected_mobile_data.internal_storage,
+                              function(internal) {
+                                return _c("p", [
+                                  _vm._v(_vm._s(internal) + " GB")
+                                ])
+                              }
+                            )
+                          )
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("RAM")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c(
+                            "td",
+                            _vm._l(selected_mobile_data.ram, function(ram) {
+                              return _c("p", [_vm._v(_vm._s(ram) + " GB")])
+                            })
+                          )
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("External Storage")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c(
+                            "td",
+                            _vm._l(
+                              selected_mobile_data.external_storage,
+                              function(external_storage) {
+                                return _c("p", [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(external_storage) +
+                                      " GB"
+                                  )
+                                ])
+                              }
+                            )
+                          )
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-bordered table-striped table-hover"
+                },
+                [
+                  _c("thead", [
+                    _c("tr", [
+                      _c(
+                        "td",
+                        {
+                          staticStyle: {
+                            "background-color": "#1b998b",
+                            color: "white"
+                          },
+                          attrs: { colspan: _vm.selected_mobiles.length + 1 }
+                        },
+                        [
+                          _c("i", { staticClass: "fa fa-camera-retro" }),
+                          _vm._v(" Camera\n                        ")
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Main Camera")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.camera_main_camera
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Front Camera")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.camera_front_camera
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Front Camera Feature")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.camera_front_camera_features
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Video")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.camera_video) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Flash")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.camera_flash) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Aperture")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.camera_lens_aperture
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Sensor Size")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.camera_sensor_size
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Focal Length")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.camera_focal_length
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Other Features")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.camera_other_features
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-bordered table-striped table-hover"
+                },
+                [
+                  _c("thead", [
+                    _c("tr", [
+                      _c(
+                        "td",
+                        {
+                          staticStyle: {
+                            "background-color": "#1b998b",
+                            color: "white"
+                          },
+                          attrs: { colspan: _vm.selected_mobiles.length + 1 }
+                        },
+                        [
+                          _c("i", { staticClass: "fa fa-cog" }),
+                          _vm._v(" Hardware\n                        ")
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Processor")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.processor) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Graphical Processor")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.graphical_processor
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Chipset")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.chipset) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-bordered table-striped table-hover"
+                },
+                [
+                  _c("thead", [
+                    _c("tr", [
+                      _c(
+                        "td",
+                        {
+                          staticStyle: {
+                            "background-color": "#1b998b",
+                            color: "white"
+                          },
+                          attrs: { colspan: _vm.selected_mobiles.length + 1 }
+                        },
+                        [
+                          _c("i", { staticClass: "fa fa-battery-full" }),
+                          _vm._v(" Battery\n                        ")
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Type")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.battery_type) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Calls")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.battery_calls_until
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Music")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.battery_music_until
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Video")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.battery_video_until
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Flash")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.camera_flash) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Removable")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            selected_mobile_data.battery_is_removable
+                              ? _c("i", {
+                                  staticClass: "fa fa-check text-success"
+                                })
+                              : _vm._e(),
+                            _vm._v(" "),
+                            !selected_mobile_data.battery_is_removable
+                              ? _c("i", {
+                                  staticClass: "fa fa-times text-danger"
+                                })
+                              : _vm._e()
+                          ])
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-bordered table-striped table-hover"
+                },
+                [
+                  _c("thead", [
+                    _c("tr", [
+                      _c(
+                        "td",
+                        {
+                          staticStyle: {
+                            "background-color": "#1b998b",
+                            color: "white"
+                          },
+                          attrs: { colspan: _vm.selected_mobiles.length + 1 }
+                        },
+                        [
+                          _c("i", { staticClass: "fa fa-play" }),
+                          _vm._v(" Media\n                        ")
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Radio")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            selected_mobile_data.media_radio_exist
+                              ? _c("i", {
+                                  staticClass: "fa fa-check text-success"
+                                })
+                              : _vm._e(),
+                            _vm._v(" "),
+                            !selected_mobile_data.media_radio_exist
+                              ? _c("i", {
+                                  staticClass: "fa fa-times text-danger"
+                                })
+                              : _vm._e()
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Speakers")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.media_speaker) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("3.5mm Slot")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            selected_mobile_data.media_is_35_mm_slot
+                              ? _c("i", {
+                                  staticClass: "fa fa-check text-success"
+                                })
+                              : _vm._e(),
+                            _vm._v(" "),
+                            !selected_mobile_data.media_is_35_mm_slot
+                              ? _c("i", {
+                                  staticClass: "fa fa-times text-danger"
+                                })
+                              : _vm._e()
+                          ])
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-bordered table-striped table-hover"
+                },
+                [
+                  _c("thead", [
+                    _c("tr", [
+                      _c(
+                        "td",
+                        {
+                          staticStyle: {
+                            "background-color": "#1b998b",
+                            color: "white"
+                          },
+                          attrs: { colspan: _vm.selected_mobiles.length + 1 }
+                        },
+                        [
+                          _c("i", { staticClass: "fa fa-broadcast-tower" }),
+                          _vm._v(" Communication\n                        ")
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Network")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.communication_network.join(
+                                    " / "
+                                  )
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Bluetooth")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.communication_bluetooth
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("WIFI")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  selected_mobile_data.communication_wifi
+                                ) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("USB")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.communication_usb) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Hotspot")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            selected_mobile_data.communication_hotspot
+                              ? _c("i", {
+                                  staticClass: "fa fa-check text-success"
+                                })
+                              : _vm._e(),
+                            _vm._v(" "),
+                            !selected_mobile_data.communication_hotspot
+                              ? _c("i", {
+                                  staticClass: "fa fa-times text-danger"
+                                })
+                              : _vm._e()
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("NFC")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            selected_mobile_data.communication_nfc
+                              ? _c("i", {
+                                  staticClass: "fa fa-check text-success"
+                                })
+                              : _vm._e(),
+                            _vm._v(" "),
+                            !selected_mobile_data.communication_nfc
+                              ? _c("i", {
+                                  staticClass: "fa fa-times text-danger"
+                                })
+                              : _vm._e()
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("OTG")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            selected_mobile_data.communication_otg
+                              ? _c("i", {
+                                  staticClass: "fa fa-check text-success"
+                                })
+                              : _vm._e(),
+                            _vm._v(" "),
+                            !selected_mobile_data.communication_otg
+                              ? _c("i", {
+                                  staticClass: "fa fa-times text-danger"
+                                })
+                              : _vm._e()
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("IR")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            selected_mobile_data.communication_ir
+                              ? _c("i", {
+                                  staticClass: "fa fa-check text-success"
+                                })
+                              : _vm._e(),
+                            _vm._v(" "),
+                            !selected_mobile_data.communication_ir
+                              ? _c("i", {
+                                  staticClass: "fa fa-times text-danger"
+                                })
+                              : _vm._e()
+                          ])
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-bordered table-striped table-hover"
+                },
+                [
+                  _c("thead", [
+                    _c("tr", [
+                      _c(
+                        "td",
+                        {
+                          staticStyle: {
+                            "background-color": "#1b998b",
+                            color: "white"
+                          },
+                          attrs: { colspan: _vm.selected_mobiles.length + 1 }
+                        },
+                        [
+                          _c("i", { staticClass: "fa fa-th-list" }),
+                          _vm._v(" Others\n                        ")
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("GPS")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.others_gps) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Sensors")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.others_sensors) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Open By")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c(
+                            "td",
+                            _vm._l(
+                              selected_mobile_data.others_open_device,
+                              function(open_device) {
+                                return _c("p", [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(open_device) +
+                                      "\n                            "
+                                  )
+                                ])
+                              }
+                            )
+                          )
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("VR")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            selected_mobile_data.others_vr_support
+                              ? _c("i", {
+                                  staticClass: "fa fa-check text-success"
+                                })
+                              : _vm._e(),
+                            _vm._v(" "),
+                            !selected_mobile_data.others_vr_support
+                              ? _c("i", {
+                                  staticClass: "fa fa-times text-danger"
+                                })
+                              : _vm._e()
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Notifications LED")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            selected_mobile_data.others_notification_led_support
+                              ? _c("i", {
+                                  staticClass: "fa fa-check text-success"
+                                })
+                              : _vm._e(),
+                            _vm._v(" "),
+                            !selected_mobile_data.others_notification_led_support
+                              ? _c("i", {
+                                  staticClass: "fa fa-times text-danger"
+                                })
+                              : _vm._e()
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Additional Microphone")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            selected_mobile_data.others_additional_microphone_exist
+                              ? _c("i", {
+                                  staticClass: "fa fa-check text-success"
+                                })
+                              : _vm._e(),
+                            _vm._v(" "),
+                            !selected_mobile_data.others_additional_microphone_exist
+                              ? _c("i", {
+                                  staticClass: "fa fa-times text-danger"
+                                })
+                              : _vm._e()
+                          ])
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-bordered table-striped table-hover"
+                },
+                [
+                  _c("thead", [
+                    _c("tr", [
+                      _c(
+                        "td",
+                        {
+                          staticStyle: {
+                            "background-color": "#1b998b",
+                            color: "white"
+                          },
+                          attrs: { colspan: _vm.selected_mobiles.length + 1 }
+                        },
+                        [
+                          _c("i", { staticClass: "fa fa-shopping-cart" }),
+                          _vm._v(" Purchase\n                        ")
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Colors")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.colors) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Price")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(selected_mobile_data.price) +
+                                "\n                        "
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tr",
+                      [
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v("Purchase From")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.selected_mobiles_data, function(
+                          selected_mobile_data,
+                          index
+                        ) {
+                          return _c("td", [
+                            _c("p", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "btn btn-outline-success",
+                                  staticStyle: { width: "200px" },
+                                  attrs: {
+                                    role: "button",
+                                    target: "_blank",
+                                    href: selected_mobile_data.url_amazon
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "Open\n                                    On Amazon"
+                                  )
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "btn btn-outline-secondary",
+                                  staticStyle: { width: "200px" },
+                                  attrs: {
+                                    role: "button",
+                                    target: "_blank",
+                                    href: selected_mobile_data.url_souq
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "Open On\n                                    Souq"
+                                  )
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "btn btn-outline-primary",
+                                  staticStyle: { width: "200px" },
+                                  attrs: {
+                                    role: "button",
+                                    target: "_blank",
+                                    href: selected_mobile_data.url_jumia
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "Open On\n                                    JUMIA"
+                                  )
+                                ]
                               )
                             ])
-                          }
-                        )
-                      )
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("VR")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        selected_mobile_data.others_vr_support
-                          ? _c("i", { staticClass: "fa fa-check text-success" })
-                          : _vm._e(),
-                        _vm._v(" "),
-                        !selected_mobile_data.others_vr_support
-                          ? _c("i", { staticClass: "fa fa-times text-danger" })
-                          : _vm._e()
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Notifications LED")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        selected_mobile_data.others_notification_led_support
-                          ? _c("i", { staticClass: "fa fa-check text-success" })
-                          : _vm._e(),
-                        _vm._v(" "),
-                        !selected_mobile_data.others_notification_led_support
-                          ? _c("i", { staticClass: "fa fa-times text-danger" })
-                          : _vm._e()
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Additional Microphone")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        selected_mobile_data.others_additional_microphone_exist
-                          ? _c("i", { staticClass: "fa fa-check text-success" })
-                          : _vm._e(),
-                        _vm._v(" "),
-                        !selected_mobile_data.others_additional_microphone_exist
-                          ? _c("i", { staticClass: "fa fa-times text-danger" })
-                          : _vm._e()
-                      ])
-                    })
-                  ],
-                  2
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "table",
-            { staticClass: "table table-bordered table-striped table-hover" },
-            [
-              _c("thead", [
-                _c("tr", [
-                  _c(
-                    "td",
-                    {
-                      staticStyle: {
-                        "background-color": "#1b998b",
-                        color: "white"
-                      },
-                      attrs: { colspan: _vm.selected_mobiles.length + 1 }
-                    },
-                    [
-                      _c("i", { staticClass: "fa fa-shopping-cart" }),
-                      _vm._v(" Purchase\n                ")
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("tbody", [
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Colors")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.colors) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Price")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(selected_mobile_data.price) +
-                            "\n                "
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "tr",
-                  [
-                    _c("td", { staticStyle: { width: "180px" } }, [
-                      _vm._v("Purchase From")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.selected_mobiles_data, function(
-                      selected_mobile_data,
-                      index
-                    ) {
-                      return _c("td", [
-                        _c("p", [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "btn btn-outline-success",
-                              staticStyle: { width: "200px" },
-                              attrs: {
-                                role: "button",
-                                target: "_blank",
-                                href: selected_mobile_data.url_amazon
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "Open\n                            On Amazon"
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("p", [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "btn btn-outline-secondary",
-                              staticStyle: { width: "200px" },
-                              attrs: {
-                                role: "button",
-                                target: "_blank",
-                                href: selected_mobile_data.url_souq
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "Open On\n                            Souq"
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("p", [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "btn btn-outline-primary",
-                              staticStyle: { width: "200px" },
-                              attrs: {
-                                role: "button",
-                                target: "_blank",
-                                href: selected_mobile_data.url_jumia
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "Open On\n                            JUMIA"
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    })
-                  ],
-                  2
-                )
-              ])
-            ]
-          )
+                          ])
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-2" })
+          ])
         ])
       : _vm._e()
   ])
