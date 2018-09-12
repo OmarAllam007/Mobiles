@@ -10,18 +10,22 @@ class CompareController extends Controller
     function getCompare()
     {
         $mobiles = Mobile::all()->each(function ($mobile) {
-            $mobile['image'] = asset('storage' . $mobile->image_path);
+            $mobile['image'] = $mobile->image_path ?  asset('storage' . $mobile->image_path): asset('storage/no-phone.png');
         });
         return view('compare.compare', compact('mobiles'));
     }
 
     function analyzeCompareProcess()
     {
-        return Mobile::whereIn('id', \request('mobiles'))->get()->each(function ($mobile) {
-            $mobile['image'] = asset('storage' . $mobile->image_path);
-            $mobile['others_open_device'] = $this->getOpenBy($mobile);
-            $mobile['communication_network'] = $this->getNetwork($mobile);
-        });
+        $new_mobiles = [];
+        $mobiles = Mobile::whereIn('id', \request('mobiles'))->get();
+        foreach ($mobiles as $key => $mobile) {
+            $new_mobiles[$key] = $mobile;
+            $new_mobiles[$key]['image'] = $mobile->image_path ?  asset('storage' . $mobile->image_path): asset('storage/no-phone.png');
+            $new_mobiles[$key]['others_open_device'] = $this->getOpenBy($mobile);
+            $new_mobiles[$key]['communication_network'] = $this->getNetwork($mobile);
+        }
+        return $new_mobiles;
     }
 
     function getOpenBy($mobile)
@@ -44,7 +48,6 @@ class CompareController extends Controller
                 $network[$key] = Mobile::$network[$cn];
             }
         }
-
         return $network;
     }
 }
