@@ -19,7 +19,7 @@ class CompareController extends Controller
     {
         $new_mobiles = [];
         $mobiles = Mobile::whereIn('id', \request('mobiles'))->get();
-        return $mobiles;
+        return \request('mobiles');
         foreach ($mobiles as $key => $mobile) {
             $mobiles[$key] = $mobile;
             $mobiles[$key]['image'] = $mobile->image_path ?  asset('storage' . $mobile->image_path): asset('storage/no-phone.png');
