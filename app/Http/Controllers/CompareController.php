@@ -18,7 +18,6 @@ class CompareController extends Controller
     function analyzeCompareProcess(Request $request)
     {
         $new_mobiles = [];
-        return $_GET['mobiles'];
         return [$request->query('mobiles'),$request->get('mobiles'),\request('mobiles')];
         return $request->get('mobiles');
         $mobiles = Mobile::whereIn('id', $request->get('mobiles'))->get();
