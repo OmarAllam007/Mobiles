@@ -658,13 +658,17 @@
                 this.selected_mobile_data = [];
             },
             analayzeCompareProcess() {
+                var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
                 jQuery.ajax({
-                    type: "GET",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: 'json',
-                    url: '/compare-items?mobiles='+this.selected_mobiles,
-                    success:(response)=>{
-                        console.log(response)
+                    type: "POST",
+                    url: '/compare-items',
+                    data: {
+                        _token: CSRF_TOKEN,
+                        mobiles: this.selected_mobiles,
+                    },
+                    dataType: 'JSON',
+                    success: (response) => {
+                        console.log(response);
                         this.selected_mobiles_data = response
                     }
                 });

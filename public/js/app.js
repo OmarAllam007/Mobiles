@@ -48515,11 +48515,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         analayzeCompareProcess: function analayzeCompareProcess() {
             var _this = this;
 
+            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
             jQuery.ajax({
-                type: "GET",
-                contentType: "application/json; charset=utf-8",
-                dataType: 'json',
-                url: '/compare-items?mobiles=' + this.selected_mobiles,
+                type: "POST",
+                url: '/compare-items',
+                data: {
+                    _token: CSRF_TOKEN,
+                    mobiles: this.selected_mobiles
+                },
+                dataType: 'JSON',
                 success: function success(response) {
                     console.log(response);
                     _this.selected_mobiles_data = response;
