@@ -660,9 +660,10 @@
             analayzeCompareProcess() {
                 $.ajax({
                     type: "GET",
+                    dataType:'json',
                     url: '/compare-items',
                     data:{
-                        mobiles: this.selected_mobiles,
+                        'mobiles': this.selected_mobiles,
                     },
                     success:(response)=>{
                         console.log(response)
