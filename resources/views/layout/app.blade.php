@@ -44,7 +44,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark"
              style="background-color: #2d3047 ;border-bottom: 4px #1b998b solid">
-            <a class="navbar-brand" href="#">{{env('APP_NAME')}}</a>
+            <a class="navbar-brand" href="{{url('/')}}">{{env('APP_NAME')}}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -55,7 +55,7 @@
                     <li class="nav-item ">
                         <a class="nav-link" href="{{route('mobile.prices')}}">
                             <i class="fa fa-mobile-alt"></i>
-                            {{t('Mobile Prices')}}</a>
+                            {{t('Prices')}}</a>
                     </li>
 
                     <li class="nav-item ">
@@ -77,23 +77,63 @@
                             {{t('Choose For me')}}</a>
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-lock"></i> {{t('Admin Panel')}}
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a href="{{route('brand.index')}}" class="dropdown-item">{{ t('Brands') }}</a>
-                            <a href="{{route('mobile.index')}}"
-                               class="dropdown-item">{{ t('Mobiles') }}</a>
-                            <a
-                                    class="dropdown-item">{{ t('News') }}</a>
-                        </div>
-                    </li>
+                    @if(\Auth::check() && \Auth::user()->isAdmin())
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-lock"></i> {{t('Admin')}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a href="{{route('brand.index')}}" class="dropdown-item">{{ t('Brands') }}</a>
+                                <a href="{{route('mobile.index')}}"
+                                   class="dropdown-item">{{ t('Mobiles') }}</a>
+                                <a
+                                        class="dropdown-item">{{ t('News') }}</a>
+                            </div>
+                        </li>
+                    @endif
+
                 </ul>
 
+
                 <search-mobile :mobiles="{{$mobiles}}"></search-mobile>
+
+                <ul class="navbar-nav ml-auto">
+                    <!-- Authentication Links -->
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" role="button" href="{{ route('login') }}" data-toggle="tooltip"
+                               title="Login">
+                                <i class="fa fa-sign-in-alt"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}" data-toggle="tooltip" title="Sign Up"><i
+                                        class="fa fa-user-plus"></i></a>
+                        </li>
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ t('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                      style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
             </div>
         </nav>
     </header>
@@ -124,6 +164,7 @@
 
     $(function () {
         $('[data-toggle="popover"]').popover()
+        $('[data-toggle="tooltip"]').tooltip();
     })
     $('.popover-dismiss').popover({
         trigger: 'focus'

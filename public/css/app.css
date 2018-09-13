@@ -10917,3 +10917,31 @@ img.hover-shadow {
   height: auto;
 }
 
+.auth-form-control:focus {
+  border-color: #1b998b;
+  -webkit-box-shadow: 0 1px 7px 5px rgba(0, 0, 0, 0.075), 0 0 13px 4px #1a998b;
+          box-shadow: 0 1px 7px 5px rgba(0, 0, 0, 0.075), 0 0 13px 4px #1a998b;
+}
+
+.auth-form {
+  border: 1px solid #1b998b;
+}
+
+.auth-form-header {
+  background-color: #1b998b;
+  color: #fff;
+}
+
+.auth-form-body {
+  background-color: #2d3047;
+  color: #fff;
+}
+
+.auth-form-button {
+  background-color: #1b998b;
+}
+
+.auth-form a {
+  color: #fff;
+}
+

@@ -182,6 +182,7 @@ footer {
 .search-box > ul > li:hover {
   border-left: 3px solid #1b998b;
 }
+
 .row > .column {
   padding: 0 8px;
 }
@@ -309,12 +310,14 @@ img.hover-shadow {
 .hover-shadow:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.searchByPrice{
+
+.searchByPrice {
   width: 60%;
   transition: 0.4s;
   margin: 10px auto 10px auto;
 }
-.searchByPrice:focus{
+
+.searchByPrice:focus {
   transition: 0.4s;
   width: 100%;
   border-color: #cccccc;
@@ -331,25 +334,29 @@ img.hover-shadow {
   background-color: rgba(0, 0, 0, 0.50);
   z-index: 999999
 }
+
 .dialog-ovelay .dialog {
   width: 400px;
   margin: 100px auto 0;
   background-color: #fff;
-  box-shadow: 0 0 20px rgba(0,0,0,.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
   border-radius: 3px;
   overflow: hidden
 }
+
 .dialog-ovelay .dialog header {
   padding: 10px 8px;
   background-color: #f6f7f9;
   border-bottom: 1px solid #e5e5e5
 }
+
 .dialog-ovelay .dialog header h3 {
   font-size: 14px;
   margin: 0;
   color: #555;
   display: inline-block
 }
+
 .dialog-ovelay .dialog header .fa-close {
   float: right;
   color: #c4c5c7;
@@ -358,51 +365,90 @@ img.hover-shadow {
   padding: 0 2px;
   border-radius: 1px
 }
+
 .dialog-ovelay .dialog header .fa-close:hover {
   color: #b9b9b9
 }
+
 .dialog-ovelay .dialog header .fa-close:active {
   box-shadow: 0 0 5px #673AB7;
   color: #a2a2a2
 }
+
 .dialog-ovelay .dialog .dialog-msg {
   padding: 12px 10px
 }
-.dialog-ovelay .dialog .dialog-msg p{
+
+.dialog-ovelay .dialog .dialog-msg p {
   margin: 0;
   font-size: 15px;
   color: #333
 }
+
 .dialog-ovelay .dialog footer {
   border-top: 1px solid #e5e5e5;
   padding: 8px 10px
 }
+
 .dialog-ovelay .dialog footer .controls {
   direction: rtl
 }
+
 .dialog-ovelay .dialog footer .controls .button {
   padding: 5px 15px;
   border-radius: 3px
 }
+
 .button {
   cursor: pointer
 }
+
 .button-default {
   background-color: rgb(248, 248, 248);
   border: 1px solid rgba(204, 204, 204, 0.5);
   color: #5D5D5D;
 }
+
 .button-danger {
   background-color: #f44336;
   border: 1px solid #d32f2f;
   color: #f5f5f5
 }
+
 .link {
   padding: 5px 10px;
   cursor: pointer
 }
-#footer{
+
+#footer {
   position: unset;
   height: auto;
 
+}
+
+.auth-form-control:focus {
+  border-color: #1b998b;
+  box-shadow: 0 1px 7px 5px rgba(0, 0, 0, 0.075), 0 0 13px 4px #1a998b;
+}
+
+.auth-form {
+  border: 1px solid #1b998b;
+}
+
+.auth-form-header {
+  background-color: #1b998b;
+  color: #fff;
+}
+
+.auth-form-body {
+  background-color: #2d3047;
+  color: #fff;
+}
+
+.auth-form-button{
+  background-color: #1b998b
+}
+
+.auth-form a{
+  color: #fff;
 }
