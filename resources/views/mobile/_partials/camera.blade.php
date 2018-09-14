@@ -57,11 +57,11 @@
     @endif
 </div>
 
-<div class="form-group {{$errors->has('camera_video')? 'has-error' : ''}}">
-    <label for="camera_video">{{t('Front Camera')}}</label>
-    <input type="text" class=" form-control-sm form-control" name="camera_video" id="camera_video" value="{{$mobile->camera_video ?? ''}}">
-    @if ($errors->has('camera_video'))
-        <div class="error-message">{{$errors->first('camera_video')}}</div>
+<div class="form-group {{$errors->has('camera_front_camera')? 'has-error' : ''}}">
+    <label for="camera_front_camera">{{t('Front Camera')}}</label>
+    <input type="text" class=" form-control-sm form-control" name="camera_front_camera" id="camera_front_camera" value="{{$mobile->camera_front_camera ?? ''}}">
+    @if ($errors->has('camera_front_camera'))
+        <div class="error-message">{{$errors->first('camera_front_camera')}}</div>
     @endif
 </div>
 

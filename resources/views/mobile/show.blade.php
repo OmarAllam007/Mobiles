@@ -19,8 +19,8 @@
                 <div class="row no-gutters">
                     <div class="col-auto">
                         @if($mobile->image_path)
-                        <img width="200" class="img-fluid" src="{{asset('storage'.$mobile->image_path)}}"
-                             alt="{{$mobile->name ?? ''}}">
+                            <img width="200" class="img-fluid" src="{{asset('storage'.$mobile->image_path)}}"
+                                 alt="{{$mobile->name ?? ''}}">
                         @else
                             <img width="200" class="img-fluid" src=""
                                  alt="{{$mobile->name .' Image ' ?? ''}}">
@@ -83,13 +83,17 @@
                         <li class="text-center" style="display: inline-block;padding-left: 80px;">
                             <i class="fa fa-3x fa-memory"></i>
                             <p style="margin: 0;font-size: 1.7em;font-weight: 800">{{$mobile->main_ram_description ?? 0}}</p>
-                            <span>GB</span>
+                            @if(!in_array($mobile->main_ram_description,[128,256,512]))
+                                <span>GB</span>
+                            @else
+                                <span>MB</span>
+                            @endif
                         </li>
 
                         <li class="text-center" style="display: inline-block;padding-left: 80px;">
                             <i class="fa fa-3x fa-battery-full"></i>
                             <p style="margin: 0;font-size: 1.7em;font-weight: 800">{{$mobile->main_battery_description ?? 0}}</p>
-                            <span>mA</span>
+                            <span>mAh</span>
                         </li>
                         <li class="text-center" style="display: inline-block;padding-left: 80px;">
                             <i class="fa fa-3x fa-hand-holding-usd"></i>
