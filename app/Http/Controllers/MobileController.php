@@ -30,7 +30,7 @@ class MobileController extends Controller
         $this->handleCheckBoxExist($request);
 
         $data = $request->all();
-        
+
         if ($request->hasFile('image')) {
             $attachment = Mobile::uploadImage($request->image);
             $data['image_path'] = $attachment->path ?? '';

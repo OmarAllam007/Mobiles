@@ -74,7 +74,7 @@ class Mobile extends Model
 
     function getNetworkNamesAttribute()
     {
-        if($this->communication_network){
+        if ($this->communication_network) {
             $names = [];
             foreach ($this->communication_network as $key => $network) {
                 $names[$key] = self::$network[$network];
@@ -88,6 +88,18 @@ class Mobile extends Model
     function getShowUrlAttribute()
     {
         return route('mobile.display', [$this, strtolower($this->brand->name), str_slug($this->name)]);
+    }
+
+    function getOpenDeviceAttribute()
+    {
+        if ($this->others_open_device) {
+            $names = [];
+            foreach ($this->others_open_device as $key => $open) {
+                $names[$key] = self::$openBy[$open];
+            }
+
+            return implode(' / ', $names);
+        }
     }
 
 
