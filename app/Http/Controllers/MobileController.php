@@ -29,12 +29,13 @@ class MobileController extends Controller
     {
         $this->handleCheckBoxExist($request);
 
+        $data = $request->all();
+        
         if ($request->hasFile('image')) {
             $attachment = Mobile::uploadImage($request->image);
-            $data['path'] = $attachment->path ?? '';
+            $data['image_path'] = $attachment->path ?? '';
         }
 
-        $data = $request->all();
 
         $mobile = Mobile::create($data);
 

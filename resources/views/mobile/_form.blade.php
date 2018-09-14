@@ -107,6 +107,15 @@
                                     <div class="error-message">{{$errors->first('main_price_description')}}</div>
                                 @endif
                             </div>
+
+                            <div class="form-group {{$errors->has('main_camera_pixels_description')? 'has-error' : ''}}">
+                                <label for="main_camera_pixels_description">{{t('Main Camera Description')}}</label>
+                                <input type="text" class=" form-control-sm form-control" name="main_camera_pixels_description" id="main_camera_pixels_description"
+                                       value="{{$mobile->main_camera_pixels_description ?? ''}}">
+                                @if ($errors->has('main_camera_pixels_description'))
+                                    <div class="error-message">{{$errors->first('main_camera_pixels_description')}}</div>
+                                @endif
+                            </div>
                             @include('mobile._partials.ads')
                         </div>
                     </div>
