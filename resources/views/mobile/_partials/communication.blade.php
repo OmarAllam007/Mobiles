@@ -30,17 +30,21 @@
 <div class="form-group">
     <p>{{t('Network')}}</p>
     <label class="checkbox-inline custom-checkbox">
-        <input type="checkbox" value="1" name="communication_network[]"> 2G
+        <input type="checkbox" value="1" name="communication_network[]" @if(isset($mobile['communication_network']) && in_array(1,$mobile['communication_network'])) checked
+                @endif> 2G
     </label>
     <label class="checkbox-inline custom-checkbox">
-        <input type="checkbox" value="2" name="communication_network[]"> 3G
+        <input type="checkbox" value="2" name="communication_network[]" @if(isset($mobile['communication_network']) && in_array(2,$mobile['communication_network'])) checked
+                @endif> 3G
     </label>
     <label class="checkbox-inline custom-checkbox">
-        <input type="checkbox" value="3" name="communication_network[]"> 4G
+        <input type="checkbox" value="3" name="communication_network[]" @if(isset($mobile['communication_network']) && in_array(3,$mobile['communication_network'])) checked
+                @endif> 4G
     </label>
 
     <label class="checkbox-inline custom-checkbox">
-        <input type="checkbox" value="4" name="communication_network[]"> 5G
+        <input type="checkbox" value="4" name="communication_network[]" @if(isset($mobile['communication_network']) && in_array(4,$mobile['communication_network'])) checked
+                @endif> 5G
     </label>
 </div>
 
