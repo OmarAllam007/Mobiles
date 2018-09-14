@@ -139,7 +139,6 @@
     <label class="checkbox-inline custom-checkbox">
         <input type="checkbox" value="256" name="external_storage[]"
                @if(isset($mobile['external_storage']) && in_array(256,$mobile['external_storage'])) checked
-                @endif
-        > 256
+                @endif> 256
     </label>
 </div>

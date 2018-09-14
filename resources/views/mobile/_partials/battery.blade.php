@@ -40,7 +40,7 @@
 <div class="form-group {{$errors->has('battery_is_removable')? 'has-error' : ''}}">
     <label for="battery_is_removable">{{t('Is Removable')}}
         <input type="checkbox" name="battery_is_removable" id="battery_is_removable"
-               @if($mobile->battery_is_removable) checked @endif>
+               @if(isset($mobile)&&$mobile->battery_is_removable) checked @endif>
     </label>
     @if ($errors->has('battery_is_removable'))
         <div class="error-message">{{$errors->first('battery_is_removable')}}</div>
