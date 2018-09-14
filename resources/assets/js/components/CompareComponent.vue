@@ -23,10 +23,10 @@
                     <div class="col-2"></div>
                 </div>
             </div>
-            <br>
-            <div class="row" v-if="filtered_mobiles.length">
+
+            <div class="row" v-if="filtered_mobiles.length" v-for="row in filtered_mobiles_count">
                 <div class="col-2"></div>
-                <div class="col-2" v-for="(mobile,index) in filtered_mobiles">
+                <div class="col-2" style="padding-bottom:10px;" v-for="(mobile,index) in row">
                     <div style="position: absolute;z-index: 99;padding: 5px;transition:opacity 1s ease-in-out;">
                         <i class="fa fa-2x fa-check-circle" style="color:green;"
                            v-show="selected_mobiles.indexOf(mobile.id) !=-1"></i>
@@ -53,11 +53,13 @@
                 <div class="col-2"></div>
             </div>
             <div class="row" v-if="!filtered_mobiles.length">
-                <div class="col">
+                <div class="col-2"></div>
+                <div class="col-8">
                     <div class="alert alert-info"><i class="fa fa-exclamation-circle"></i>
                         <strong>No Mobiles found !</strong>
                     </div>
                 </div>
+                <div class="col-2"></div>
             </div>
         </div>
         <div v-if="comparing">
@@ -456,7 +458,8 @@
                         <tr>
                             <td style="width: 180px">Network</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
-                                {{selected_mobile_data.communication_network ? selected_mobile_data.communication_network.join(' / ') : ''}}
+                                {{selected_mobile_data.communication_network ?
+                                selected_mobile_data.communication_network.join(' / ') : ''}}
                             </td>
                         </tr>
 
@@ -697,6 +700,19 @@
                         return this.mobiles
                     }
                 }
+            },
+            filtered_mobiles_count() {
+                let finalArray = [];
+                let chunk = 4;
+                return this.filtered_mobiles.reduce((result, item, index) => {
+                    const chunkIndex = Math.floor(index / chunk);
+                    if (!result[chunkIndex]) {
+                        result[chunkIndex] = [];
+                    }
+                    result[chunkIndex].push(item);
+
+                    return result
+                }, [])
             }
         }
     }

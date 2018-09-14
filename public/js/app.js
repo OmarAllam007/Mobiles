@@ -48484,6 +48484,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['mobiles'],
@@ -48556,6 +48559,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     return this.mobiles;
                 }
             }
+        },
+        filtered_mobiles_count: function filtered_mobiles_count() {
+            var finalArray = [];
+            var chunk = 4;
+            return this.filtered_mobiles.reduce(function (result, item, index) {
+                var chunkIndex = Math.floor(index / chunk);
+                if (!result[chunkIndex]) {
+                    result[chunkIndex] = [];
+                }
+                result[chunkIndex].push(item);
+
+                return result;
+            }, []);
         }
     }
 });
@@ -48570,184 +48586,207 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     !_vm.comparing
-      ? _c("div", [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-2" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-8" }, [
-              _c(
-                "div",
-                { staticClass: "form-group btn-group-justified form-inline" },
-                [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.search,
-                        expression: "search"
-                      }
-                    ],
-                    staticClass: "form-control col",
-                    attrs: { type: "text", placeholder: "Enter Mobile Name" },
-                    domProps: { value: _vm.search },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.search = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "btn-group-justified" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-outline-success",
-                        attrs: { disabled: _vm.selected_mobiles.length < 2 },
-                        on: { click: _vm.analayzeCompareProcess }
-                      },
-                      [
-                        _c("i", { staticClass: "fa fa-exchange-alt" }),
-                        _vm._v(
-                          "\n                            Compare\n                        "
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-outline-primary",
-                        attrs: { disabled: _vm.selected_mobiles.length < 2 },
-                        on: { click: _vm.reset }
-                      },
-                      [_c("i", { staticClass: "fa fa-sync-alt" })]
-                    )
-                  ])
-                ]
-              ),
+      ? _c(
+          "div",
+          [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-2" }),
               _vm._v(" "),
-              _c("div", { staticClass: "col-2" })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
-          _vm.filtered_mobiles.length
-            ? _c(
-                "div",
-                { staticClass: "row" },
-                [
-                  _c("div", { staticClass: "col-2" }),
-                  _vm._v(" "),
-                  _vm._l(_vm.filtered_mobiles, function(mobile, index) {
-                    return _c("div", { staticClass: "col-2" }, [
-                      _c(
-                        "div",
+              _c("div", { staticClass: "col-8" }, [
+                _c(
+                  "div",
+                  { staticClass: "form-group btn-group-justified form-inline" },
+                  [
+                    _c("input", {
+                      directives: [
                         {
-                          staticStyle: {
-                            position: "absolute",
-                            "z-index": "99",
-                            padding: "5px",
-                            transition: "opacity 1s ease-in-out"
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.search,
+                          expression: "search"
+                        }
+                      ],
+                      staticClass: "form-control col",
+                      attrs: { type: "text", placeholder: "Enter Mobile Name" },
+                      domProps: { value: _vm.search },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
                           }
+                          _vm.search = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "btn-group-justified" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-outline-success",
+                          attrs: { disabled: _vm.selected_mobiles.length < 2 },
+                          on: { click: _vm.analayzeCompareProcess }
                         },
                         [
-                          _c("i", {
-                            directives: [
-                              {
-                                name: "show",
-                                rawName: "v-show",
-                                value:
-                                  _vm.selected_mobiles.indexOf(mobile.id) != -1,
-                                expression:
-                                  "selected_mobiles.indexOf(mobile.id) !=-1"
-                              }
-                            ],
-                            staticClass: "fa fa-2x fa-check-circle",
-                            staticStyle: { color: "green" }
-                          })
+                          _c("i", { staticClass: "fa fa-exchange-alt" }),
+                          _vm._v(
+                            "\n                            Compare\n                        "
+                          )
                         ]
                       ),
                       _vm._v(" "),
-                      _c("div", { staticClass: "card" }, [
-                        _c("img", {
-                          staticClass: "card-img-top image",
-                          staticStyle: { width: "120px", height: "174px" },
-                          attrs: { src: mobile.image }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "middle" }, [
-                          _vm.selected_mobiles.length > 3 ||
-                          _vm.selected_mobiles.indexOf(mobile.id) == -1
-                            ? _c(
-                                "button",
-                                {
-                                  staticClass:
-                                    "btn btn-outline-success btn-middle",
-                                  attrs: {
-                                    disabled:
-                                      _vm.selected_mobiles.length > 3 ||
-                                      _vm.selected_mobiles.indexOf(mobile.id) !=
-                                        -1
-                                  },
-                                  on: {
-                                    click: function($event) {
-                                      _vm.selectMobile(mobile.id)
-                                    }
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                            Add\n                        "
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.selected_mobiles.length > 3 ||
-                          _vm.selected_mobiles.indexOf(mobile.id) != -1
-                            ? _c(
-                                "button",
-                                {
-                                  staticClass: "btn btn-outline-danger",
-                                  on: {
-                                    click: function($event) {
-                                      _vm.selectMobile(mobile.id)
-                                    }
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                            Remove\n                        "
-                                  )
-                                ]
-                              )
-                            : _vm._e()
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("h5", { staticClass: "card-title" }, [
-                            _vm._v(_vm._s(mobile.name))
-                          ])
-                        ])
-                      ])
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-outline-primary",
+                          attrs: { disabled: _vm.selected_mobiles.length < 2 },
+                          on: { click: _vm.reset }
+                        },
+                        [_c("i", { staticClass: "fa fa-sync-alt" })]
+                      )
                     ])
-                  }),
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-2" })
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.filtered_mobiles_count, function(row) {
+              return _vm.filtered_mobiles.length
+                ? _c(
+                    "div",
+                    { staticClass: "row" },
+                    [
+                      _c("div", { staticClass: "col-2" }),
+                      _vm._v(" "),
+                      _vm._l(row, function(mobile, index) {
+                        return _c(
+                          "div",
+                          {
+                            staticClass: "col-2",
+                            staticStyle: { "padding-bottom": "10px" }
+                          },
+                          [
+                            _c(
+                              "div",
+                              {
+                                staticStyle: {
+                                  position: "absolute",
+                                  "z-index": "99",
+                                  padding: "5px",
+                                  transition: "opacity 1s ease-in-out"
+                                }
+                              },
+                              [
+                                _c("i", {
+                                  directives: [
+                                    {
+                                      name: "show",
+                                      rawName: "v-show",
+                                      value:
+                                        _vm.selected_mobiles.indexOf(
+                                          mobile.id
+                                        ) != -1,
+                                      expression:
+                                        "selected_mobiles.indexOf(mobile.id) !=-1"
+                                    }
+                                  ],
+                                  staticClass: "fa fa-2x fa-check-circle",
+                                  staticStyle: { color: "green" }
+                                })
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "card" }, [
+                              _c("img", {
+                                staticClass: "card-img-top image",
+                                staticStyle: {
+                                  width: "120px",
+                                  height: "174px"
+                                },
+                                attrs: { src: mobile.image }
+                              }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "middle" }, [
+                                _vm.selected_mobiles.length > 3 ||
+                                _vm.selected_mobiles.indexOf(mobile.id) == -1
+                                  ? _c(
+                                      "button",
+                                      {
+                                        staticClass:
+                                          "btn btn-outline-success btn-middle",
+                                        attrs: {
+                                          disabled:
+                                            _vm.selected_mobiles.length > 3 ||
+                                            _vm.selected_mobiles.indexOf(
+                                              mobile.id
+                                            ) != -1
+                                        },
+                                        on: {
+                                          click: function($event) {
+                                            _vm.selectMobile(mobile.id)
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                            Add\n                        "
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm.selected_mobiles.length > 3 ||
+                                _vm.selected_mobiles.indexOf(mobile.id) != -1
+                                  ? _c(
+                                      "button",
+                                      {
+                                        staticClass: "btn btn-outline-danger",
+                                        on: {
+                                          click: function($event) {
+                                            _vm.selectMobile(mobile.id)
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                            Remove\n                        "
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "card-body" }, [
+                                _c("h5", { staticClass: "card-title" }, [
+                                  _vm._v(_vm._s(mobile.name))
+                                ])
+                              ])
+                            ])
+                          ]
+                        )
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-2" })
+                    ],
+                    2
+                  )
+                : _vm._e()
+            }),
+            _vm._v(" "),
+            !_vm.filtered_mobiles.length
+              ? _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-2" }),
+                  _vm._v(" "),
+                  _vm._m(0),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-2" })
-                ],
-                2
-              )
-            : _vm._e(),
-          _vm._v(" "),
-          !_vm.filtered_mobiles.length
-            ? _c("div", { staticClass: "row" }, [_vm._m(0)])
-            : _vm._e()
-        ])
+                ])
+              : _vm._e()
+          ],
+          2
+        )
       : _vm._e(),
     _vm._v(" "),
     _vm.comparing
@@ -50660,7 +50699,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col" }, [
+    return _c("div", { staticClass: "col-8" }, [
       _c("div", { staticClass: "alert alert-info" }, [
         _c("i", { staticClass: "fa fa-exclamation-circle" }),
         _vm._v(" "),
