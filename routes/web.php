@@ -13,7 +13,8 @@
 
 
 Route::get('/', 'MobileController@getMobileWithPrice');
-Route::group(['middleware' => ['admin']], function () {
+
+Route::group(['middleware' => ['auth','admin']], function () {
     Route::resource('brand', 'BrandController');
     Route::resource('mobile', 'MobileController');
     Route::resource('mobile-image', 'MobileImagesController');

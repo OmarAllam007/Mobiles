@@ -4,6 +4,21 @@
 <div class="form-group">
     <p>{{t('Internal Memory')}}</p>
     <label class="checkbox-inline custom-checkbox">
+        <input type="checkbox" value="2"
+               @if(isset($mobile['internal_storage']) && in_array(2,$mobile['internal_storage'])) checked
+               @endif name="internal_storage[]">
+        2
+    </label>
+
+    <label class="checkbox-inline custom-checkbox">
+        <input type="checkbox" value="4"
+               @if(isset($mobile['internal_storage']) && in_array(4,$mobile['internal_storage'])) checked
+               @endif name="internal_storage[]">
+        4
+    </label>
+
+
+    <label class="checkbox-inline custom-checkbox">
         <input type="checkbox" value="8"
                @if(isset($mobile['internal_storage']) && in_array(8,$mobile['internal_storage'])) checked
                @endif name="internal_storage[]">
@@ -41,10 +56,24 @@
                 @endif
         > 256
     </label>
+
+    <label class="checkbox-inline custom-checkbox">
+        <input type="checkbox" value="512" name="internal_storage[]"
+               @if(isset($mobile['internal_storage']) && in_array(512,$mobile['internal_storage'])) checked
+                @endif
+        > 512
+    </label>
 </div>
 
 <div class="form-group">
     <p>{{t('RAM')}}</p>
+    <label class="checkbox-inline custom-checkbox">
+        <input type="checkbox" value="512" name="ram[]"
+               @if(isset($mobile['ram']) && in_array(512,$mobile['ram'])) checked
+                @endif
+        > 512 MB
+    </label>
+
     <label class="checkbox-inline custom-checkbox">
         <input type="checkbox" value="1" name="ram[]"
                @if(isset($mobile['ram']) && in_array(1,$mobile['ram'])) checked
@@ -140,5 +169,11 @@
         <input type="checkbox" value="256" name="external_storage[]"
                @if(isset($mobile['external_storage']) && in_array(256,$mobile['external_storage'])) checked
                 @endif> 256
+    </label>
+
+    <label class="checkbox-inline custom-checkbox">
+        <input type="checkbox" value="512" name="external_storage[]"
+               @if(isset($mobile['external_storage']) && in_array(512,$mobile['external_storage'])) checked
+                @endif> 512
     </label>
 </div>

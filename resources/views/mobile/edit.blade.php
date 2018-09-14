@@ -25,7 +25,7 @@
             window.history.pushState(null, "", window.location.href);
 
             window.onbeforeunload = function (e) {
-                return confirm('asdsd')
+
             }
             window.onpopstate = function () {
                 Confirm('Alert', 'Are you sure you want exit this page ?', 'Yes', 'Cancel', 'Blabla');
