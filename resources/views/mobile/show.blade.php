@@ -89,7 +89,7 @@
                         <li class="text-center" style="display: inline-block;padding-left: 80px;">
                             <i class="fa fa-3x fa-battery-full"></i>
                             <p style="margin: 0;font-size: 1.7em;font-weight: 800">{{$mobile->main_battery_description ?? 0}}</p>
-                            <span>GB</span>
+                            <span>mA</span>
                         </li>
                         <li class="text-center" style="display: inline-block;padding-left: 80px;">
                             <i class="fa fa-3x fa-hand-holding-usd"></i>
