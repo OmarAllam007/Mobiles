@@ -37,18 +37,18 @@
 
 <div class="form-group">
     <label class="checkbox-inline custom-checkbox">
-        <input type="checkbox" name="others_vr_support"> {{t('VR Support')}}
+        <input type="checkbox" name="others_vr_support"  @if($mobile->others_vr_support) checked @endif> {{t('VR Support')}}
     </label>
 </div>
 
 <div class="form-group">
     <label class="checkbox-inline custom-checkbox">
-        <input type="checkbox"  name="others_notification_led_support"> {{t('Notification LED')}}
+        <input type="checkbox"  name="others_notification_led_support" @if($mobile->others_notification_led_support) checked @endif> {{t('Notification LED')}}
     </label>
 </div>
 
 <div class="form-group">
     <label class="checkbox-inline custom-checkbox">
-        <input type="checkbox"  name="others_additional_microphone_exist"> {{t('Additional Microphone')}}
+        <input type="checkbox"  name="others_additional_microphone_exist" @if($mobile->others_additional_microphone_exist) checked @endif> {{t('Additional Microphone')}}
     </label>
 </div>

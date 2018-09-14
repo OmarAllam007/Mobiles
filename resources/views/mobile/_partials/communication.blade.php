@@ -48,7 +48,7 @@
 
 <div class="form-group {{$errors->has('communication_hotspot')? 'has-error' : ''}}">
     <label for="communication_hotspot">{{t('Hotspot')}}
-        <input type="checkbox"  name="communication_hotspot" id="communication_hotspot" value="{{$mobile->communication_hotspot ?? ''}}">
+        <input type="checkbox"  name="communication_hotspot" id="communication_hotspot"  @if($mobile->communication_hotspot) checked @endif>
     </label>
     @if ($errors->has('communication_hotspot'))
         <div class="error-message">{{$errors->first('communication_hotspot')}}</div>
@@ -57,7 +57,7 @@
 
 <div class="form-group {{$errors->has('communication_nfc')? 'has-error' : ''}}">
     <label for="communication_nfc">{{t('NFC')}}
-        <input type="checkbox"  name="communication_nfc" id="communication_nfc" value="{{$mobile->communication_nfc ?? ''}}">
+        <input type="checkbox"  name="communication_nfc" id="communication_nfc"  @if($mobile->communication_nfc) checked @endif>
     </label>
     @if ($errors->has('communication_nfc'))
         <div class="error-message">{{$errors->first('communication_nfc')}}</div>
@@ -68,7 +68,7 @@
 
 <div class="form-group {{$errors->has('communication_otg')? 'has-error' : ''}}">
     <label for="communication_otg">{{t('OTG')}}
-        <input type="checkbox"  name="communication_otg" id="communication_otg" value="{{$mobile->communication_otg ?? ''}}">
+        <input type="checkbox"  name="communication_otg" id="communication_otg"  @if($mobile->communication_otg) checked @endif>
     </label>
     @if ($errors->has('communication_otg'))
         <div class="error-message">{{$errors->first('communication_otg')}}</div>
@@ -77,7 +77,7 @@
 
 <div class="form-group {{$errors->has('communication_ir')? 'has-error' : ''}}">
     <label for="communication_ir">{{t('IR')}}
-        <input type="checkbox"  name="communication_ir" id="communication_ir" value="{{$mobile->communication_ir ?? ''}}">
+        <input type="checkbox"  name="communication_ir" id="communication_ir"  @if($mobile->communication_ir) checked @endif>
     </label>
     @if ($errors->has('communication_ir'))
         <div class="error-message">{{$errors->first('communication_ir')}}</div>

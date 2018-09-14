@@ -11,7 +11,7 @@
 </div>
 
 <div class="form-group {{$errors->has('media_radio_exist')? 'has-error' : ''}}">
-    <input type="checkbox"  name="media_radio_exist" id="media_radio_exist" value="{{$mobile->media_radio_exist ?? ''}}">
+    <input type="checkbox"  name="media_radio_exist" id="media_radio_exist" @if($mobile->media_radio_exist) checked @endif>
     <label for="media_radio_exist">{{t('Radio')}}
     </label>
     @if ($errors->has('media_radio_exist'))
@@ -19,7 +19,7 @@
     @endif
 </div>
 <div class="form-group {{$errors->has('media_is_35_mm_slot')? 'has-error' : ''}}">
-    <input type="checkbox"  name="media_is_35_mm_slot" id="media_is_35_mm_slot" value="{{$mobile->media_is_35_mm_slot ?? ''}}">
+    <input type="checkbox"  name="media_is_35_mm_slot" id="media_is_35_mm_slot" @if($mobile->media_is_35_mm_slot) checked @endif>
     <label for="media_is_35_mm_slot">{{t('3.5mm Slot')}}
     </label>
     @if ($errors->has('media_is_35_mm_slot'))

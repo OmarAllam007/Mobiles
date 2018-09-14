@@ -27,11 +27,7 @@ class MobileController extends Controller
 
     function store(Request $request)
     {
-        $request['others_vr_support'] = $request->others_vr_support ? 1 : 0;
-        $request['others_additional_microphone_exist'] = $request->others_additional_microphone_exist ? 1 : 0;
-        $request['others_additional_microphone_exist'] = $request->others_additional_microphone_exist ? 1 : 0;
-        $request['is_online'] = $request->is_online ? 1 : 0;
-        $request['available_in_egypt'] = $request->available_in_egypt ? 1 : 0;
+        $this->handleCheckBoxExist($request);
 
         if ($request->hasFile('image')) {
             $attachment = Mobile::uploadImage($request->image);
@@ -56,11 +52,8 @@ class MobileController extends Controller
 
     function update(Mobile $mobile, Request $request)
     {
-        $request['others_vr_support'] = $request->others_vr_support ? 1 : 0;
-        $request['others_additional_microphone_exist'] = $request->others_additional_microphone_exist ? 1 : 0;
-        $request['others_additional_microphone_exist'] = $request->others_additional_microphone_exist ? 1 : 0;
-        $request['is_online'] = $request->is_online ? 1 : 0;
-        $request['available_in_egypt'] = $request->available_in_egypt ? 1 : 0;
+        $this->handleCheckBoxExist($request);
+
         $data = $request->all();
 
         if ($request->hasFile('image')) {
@@ -113,5 +106,23 @@ class MobileController extends Controller
 //        })->groupBy('brand_name')->toArray();
 
         return view('mobile-prices.mobile-prices', compact('brands'));
+    }
+
+    function handleCheckBoxExist($request)
+    {
+        $request['others_vr_support'] = $request->others_vr_support ? 1 : 0;
+        $request['others_additional_microphone_exist'] = $request->others_additional_microphone_exist ? 1 : 0;
+        $request['media_radio_exist'] = $request->media_radio_exist ? 1 : 0;
+        $request['media_is_35_mm_slot'] = $request->media_is_35_mm_slot ? 1 : 0;
+        $request['communication_hotspot'] = $request->communication_hotspot ? 1 : 0;
+        $request['communication_nfc'] = $request->communication_nfc ? 1 : 0;
+        $request['communication_otg'] = $request->communication_otg ? 1 : 0;
+        $request['communication_ir'] = $request->communication_ir ? 1 : 0;
+        $request['battery_is_removable'] = $request->battery_is_removable ? 1 : 0;
+        $request['others_notification_led_support'] = $request->others_notification_led_support ? 1 : 0;
+        $request['is_online'] = $request->is_online ? 1 : 0;
+        $request['available_in_egypt'] = $request->available_in_egypt ? 1 : 0;
+
+        return $request;
     }
 }
