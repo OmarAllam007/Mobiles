@@ -15,20 +15,18 @@
     @if ($brands->count())
         <div class="row" style="margin-top: 10px">
             @foreach($brands as $brand)
-                <div class="col-3" style="margin-top: 10px">
+                <div class="col-2" style="margin-top: 10px">
                     <div class="card">
                         <img class="card-img-top" src="{{asset('storage'.$brand->image_path)}}"
-                             style="height: 20rem;object-fit: cover;">
+                             style="height:170px;width: 120px;margin: 0 auto; object-fit: inherit;">
                         <div class="card-body">
                             <h5 class="card-title">{{$brand->name}}</h5>
                             <form action="{{route('brand.destroy', $brand)}}" method="post">
-                                <a href="{{route('brand.edit', $brand)}}" class="btn btn-primary">
+                                <a href="{{route('brand.edit', $brand)}}" class="btn btn-sm btn-primary">
                                     <i class="fa fa-edit"></i>
-                                    {{t('Edit')}}
                                 </a>
                                 {{csrf_field()}} {{method_field('delete')}}
-                                <button class="btn  btn-danger"><i class="fa fa-trash"></i>
-                                    {{t('Delete')}}
+                                <button class="btn btn-sm  btn-danger"><i class="fa fa-trash"></i>
                                 </button>
                             </form>
                         </div>

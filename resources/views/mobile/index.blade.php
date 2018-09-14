@@ -13,28 +13,25 @@
 @section('body')
 
     @if ($mobiles->count())
-        <div class="row" style="margin-top: 10px">
+        <div class="row" style="margin-top: 10px" id="mobiles">
             @foreach($mobiles as $mobile)
-                <div class="col-3">
+                <div class="col-2" style="padding:2px">
                     <div class="card text-center" style="align-items: center">
                         <img class="card-img-top img-fluid img-rounded img-responsive" src="{{asset('storage'.$mobile->image_path)}}"
-                             style="width: 200px;height: 300px;margin: 10px;overflow:scroll">
+                             style="width: 70px;height: 80px;margin:3px auto;overflow:scroll">
                         <div class="card-body">
                             <h5 class="card-title">{{$mobile->name}}</h5>
                             <form action="{{route('mobile.destroy', $mobile)}}" method="post">
-                                <a href="{{route('mobile.edit', $mobile)}}" class="btn btn-primary">
+                                <a href="{{route('mobile.edit', $mobile)}}" class="btn btn-sm btn-primary">
                                     <i class="fa fa-edit"></i>
-                                    {{t('Edit')}}
                                 </a>
                                 {{csrf_field()}} {{method_field('delete')}}
-                                <button class="btn  btn-danger"><i class="fa fa-trash"></i>
-                                    {{t('Delete')}}
+                                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>
                                 </button>
                             </form>
                         </div>
                     </div>
                 </div>
-
             @endforeach
         </div>
     @else
@@ -44,4 +41,20 @@
         </div>
     @endif
 
-@stop
+@endsection
+
+@section('scripts')
+    <script>
+        let mobiles = {!! $mobiles !!}
+        new Vue({
+            el:'#mobiles',
+            data:{
+                  mobiles:[]
+            },
+            created(){
+                this.mobiles = mobiles
+            }
+        })
+
+    </script>
+@endsection
