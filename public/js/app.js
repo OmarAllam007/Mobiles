@@ -51146,8 +51146,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     computed: {
         filtered_brands: function filtered_brands() {
-            var _this = this;
-
+            var from = parseFloat(this.search);
+            var to = from + 600;
             if (this.search) {
                 var data = [];
                 this.brands.forEach(function (bitem, bindex) {
@@ -51157,7 +51157,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         data[bindex]['mobiles'] = [];
 
                         bitem.mobiles.forEach(function (mitem, mindex) {
-                            if (parseFloat(mitem.main_price_description) == parseFloat(_this.search)) {
+                            if (parseFloat(mitem.main_price_description) >= from && parseFloat(mitem.main_price_description) <= to) {
                                 if (!data[bindex]['mobiles'][mindex]) {
                                     data[bindex]['mobiles'].push(mitem);
                                 }
