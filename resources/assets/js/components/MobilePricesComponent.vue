@@ -60,7 +60,7 @@
         computed: {
             filtered_brands() {
                 let from = parseFloat(this.search);
-                let to = from + 600;
+                let to = from + 500;
                 if (this.search) {
                     let data = [];
                     this.brands.forEach((bitem, bindex) => {
@@ -70,7 +70,7 @@
                             data[bindex]['mobiles'] = []
 
                             bitem.mobiles.forEach((mitem, mindex) => {
-                                if (parseFloat(mitem.main_price_description) >= from && parseFloat(mitem.main_price_description) <= to) {
+                                if ((parseFloat(mitem.main_price_description) >= from && parseFloat(mitem.main_price_description) <= to )) {
                                     if (!data[bindex]['mobiles'][mindex]) {
                                         data[bindex]['mobiles'].push(mitem)
                                     }
