@@ -59,39 +59,24 @@
         },
         computed: {
             filtered_brands() {
-                let data = [];
                 if (this.search) {
-                    for (var brand = 0; brand < this.brands.length; brand++) {
-                        var mobiles = this.brands[brand].mobiles
-                        for (var mobile = 0; mobile < mobiles.length; mobile++) {
-                            let mobile_price = parseFloat(this.brands[brand].mobiles[mobile].main_price_description);
-                            if (parseFloat(this.search) == mobile_price
-                                || (parseFloat(this.search) + 600) >= mobile_price) {
-                                if (data.length) {
-                                    data.forEach((item) => {
-                                        console.log(item.name, this.brands[brand].name)
-                                        if (item.name === this.brands[brand].name) {
-                                            item["mobiles"].push(this.brands[brand].mobiles[mobile])
-                                        } else {
-                                            data.push({
-                                                'name': this.brands[brand].name,
-                                                'image_path': this.brands[brand].image_path,
-                                                'main_price_description': this.brands[brand].image_path,
-                                                'mobiles': [this.brands[brand].mobiles[mobile]],
-                                            });
-                                        }
-                                    })
-                                } else {
-                                    data.push({
-                                        'name': this.brands[brand].name,
-                                        'image_path': this.brands[brand].image_path,
-                                        'main_price_description': this.brands[brand].image_path,
-                                        'mobiles': [this.brands[brand].mobiles[mobile]],
-                                    });
+                    let data = [];
+                    this.brands.forEach((bitem, bindex) => {
+                        if (!data[bindex]) {
+                            data[bindex] = [];
+                            data[bindex]['name'] = bitem.name
+                            data[bindex]['mobiles'] = []
+                            
+                            bitem.mobiles.forEach((mitem, mindex) => {
+                                if (parseFloat(mitem.main_price_description) == parseFloat(this.search)) {
+                                    if (!data[bindex]['mobiles'][mindex]) {
+                                        data[bindex]['mobiles'].push(mitem)
+                                    }
                                 }
-                            }
+                            });
                         }
-                    }
+
+                    });
                     return data;
                 } else {
                     return this.brands

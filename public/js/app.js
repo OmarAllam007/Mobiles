@@ -51148,38 +51148,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         filtered_brands: function filtered_brands() {
             var _this = this;
 
-            var data = [];
             if (this.search) {
-                for (var brand = 0; brand < this.brands.length; brand++) {
-                    var mobiles = this.brands[brand].mobiles;
-                    for (var mobile = 0; mobile < mobiles.length; mobile++) {
-                        var mobile_price = parseFloat(this.brands[brand].mobiles[mobile].main_price_description);
-                        if (parseFloat(this.search) == mobile_price || parseFloat(this.search) + 600 >= mobile_price) {
-                            if (data.length) {
-                                data.forEach(function (item) {
-                                    console.log(item.name, _this.brands[brand].name);
-                                    if (item.name === _this.brands[brand].name) {
-                                        item["mobiles"].push(_this.brands[brand].mobiles[mobile]);
-                                    } else {
-                                        data.push({
-                                            'name': _this.brands[brand].name,
-                                            'image_path': _this.brands[brand].image_path,
-                                            'main_price_description': _this.brands[brand].image_path,
-                                            'mobiles': [_this.brands[brand].mobiles[mobile]]
-                                        });
-                                    }
-                                });
-                            } else {
-                                data.push({
-                                    'name': this.brands[brand].name,
-                                    'image_path': this.brands[brand].image_path,
-                                    'main_price_description': this.brands[brand].image_path,
-                                    'mobiles': [this.brands[brand].mobiles[mobile]]
-                                });
+                var data = [];
+                this.brands.forEach(function (bitem, bindex) {
+                    if (!data[bindex]) {
+                        data[bindex] = [];
+                        data[bindex]['name'] = bitem.name;
+                        data[bindex]['mobiles'] = [];
+
+                        bitem.mobiles.forEach(function (mitem, mindex) {
+                            if (parseFloat(mitem.main_price_description) == parseFloat(_this.search)) {
+                                if (!data[bindex]['mobiles'][mindex]) {
+                                    data[bindex]['mobiles'].push(mitem);
+                                }
                             }
-                        }
+                        });
                     }
-                }
+                });
                 return data;
             } else {
                 return this.brands;
