@@ -51147,7 +51147,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     computed: {
         filtered_brands: function filtered_brands() {
             var from = parseFloat(this.search);
-            var to = parseFloat(from + 50);
+            var to = parseFloat(from + 200);
             if (this.search) {
                 var data = [];
                 this.brands.forEach(function (bitem, bindex) {

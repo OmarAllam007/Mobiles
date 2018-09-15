@@ -60,7 +60,7 @@
         computed: {
             filtered_brands() {
                 let from = parseFloat(this.search);
-                let to = parseFloat(from + 50);
+                let to = parseFloat(from + 200);
                 if (this.search) {
                     let data = [];
                     this.brands.forEach((bitem, bindex) => {
