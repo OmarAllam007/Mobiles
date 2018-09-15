@@ -4,7 +4,7 @@
     <div class="modal-content " style="background-color: black">
         @foreach($mobile->images as $key=>$image)
             <div class="mySlides text-center">
-                <img src="{{asset('storage'.$image->image_path)}}" style="width: 350px;height:450px;">
+                <img src="{{asset('storage'.$image->image_path)}}" style="width: 90%;height:450px;">
                 <div class="numbertext">{{$key+1}} / {{$mobile->images->count()}} </div>
             </div>
     @endforeach
