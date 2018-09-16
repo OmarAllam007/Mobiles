@@ -10945,3 +10945,59 @@ img.hover-shadow {
   color: #fff;
 }
 
+.li-item {
+  float: left;
+  height: 215px;
+  position: relative;
+  text-align: center;
+  width: 143px;
+  margin: 0 0 25px;
+  padding-top: 0;
+}
+
+.li-item a {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.li-item a img {
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 0 auto;
+}
+
+.li-item a aside {
+  clear: both;
+  display: block;
+  font: 700 14px Arimo, Arial, sans-serif;
+  margin: 0 auto;
+  padding: 15px 5px;
+  background: rgba(245, 245, 245, 0.4);
+  text-decoration: none;
+  color: #777;
+  position: absolute;
+  width: 100%;
+}
+
+.li-item a {
+  border: 1px #f8fafc solid;
+}
+
+.li-item a:hover {
+  border: 1px #1b998b solid;
+}
+
+.li-item a:hover aside {
+  background-color: #1b998b !important;
+}
+
+.li-item a:hover aside strong {
+  color: white !important;
+}
+
+.li-item a:hover aside p {
+  color: #feffc9 !important;
+}
+

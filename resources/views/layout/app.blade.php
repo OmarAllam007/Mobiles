@@ -71,7 +71,7 @@
                     </li>
 
                     <li class="nav-item ">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{route('choose.me')}}">
                             <i class="fa fa-hand-holding-heart"></i>
 
                             {{t('Choose For me')}}</a>
