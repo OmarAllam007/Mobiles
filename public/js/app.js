@@ -51570,7 +51570,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             return this.mobiles.filter(function (mobile) {
-                if (_this.brand_id) {
+                if (_this.brand_id != 0) {
                     return mobile.brand_id === _this.brand_id;
                 }
                 return true;

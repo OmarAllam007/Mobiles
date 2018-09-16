@@ -60,13 +60,13 @@
             </div>
 
             <!--<div class="col-2">-->
-                <!--<div class="form-group">-->
-                    <!--<h5>&nbsp;</h5>-->
-                    <!--<button class="btn " :class="{'btn-success':!filter_applied,'btn-info':filter_applied}"-->
-                            <!--@click="applyFilter">-->
-                        <!--<i class="fa" :class="{'fa-filter':!filter_applied,'fa-sync-alt':filter_applied}"></i>-->
-                    <!--</button>-->
-                <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--<h5>&nbsp;</h5>-->
+            <!--<button class="btn " :class="{'btn-success':!filter_applied,'btn-info':filter_applied}"-->
+            <!--@click="applyFilter">-->
+            <!--<i class="fa" :class="{'fa-filter':!filter_applied,'fa-sync-alt':filter_applied}"></i>-->
+            <!--</button>-->
+            <!--</div>-->
             <!--</div>-->
         </div>
 
@@ -151,44 +151,44 @@
         computed: {
             filtered_mobiles() {
 
-                    return this.mobiles.filter((mobile) => {
-                        if (this.brand_id) {
-                            return mobile.brand_id === this.brand_id
-                        }
-                        return true
-                    }).filter((mobile) => {
-                        if (this.main_camera_pixels_description) {
-                            return (parseInt(mobile.main_camera_pixels_description) >= parseInt(this.main_camera_pixels_description))
-                        }
-                        return true
-                    }).filter((mobile) => {
-                        if (this.camera_front_camera) {
-                            return (parseInt(mobile.camera_front_camera) >= parseInt(this.camera_front_camera))
-                        }
-                        return true
-                    }).filter((mobile) => {
-                        if (this.ram) {
-                            return (parseInt(mobile.main_ram_description) >= parseInt(this.ram))
-                        }
-                        return true
-                    }).filter((mobile) => {
-                        if (this.main_battery_description) {
-                            return (parseInt(mobile.main_battery_description) >= parseInt(this.main_battery_description))
-                        }
-                        return true
-                    }).filter((mobile) => {
-                        if (this.price_from && !this.price_to) {
-                            console.log(this.price_from)
-                            return (parseFloat(mobile.main_price_description) >= parseFloat(this.price_from))
-                        } else if (!this.price_from && this.price_to) {
-                            return (parseFloat(mobile.main_price_description) <= parseFloat(this.price_to))
-                        } else if (this.price_from && this.price_to) {
-                            return ((parseFloat(mobile.main_price_description) >= parseFloat(this.price_from)) &&
-                                (parseFloat(mobile.main_price_description) <= parseInt(this.price_to)))
-                        }
+                return this.mobiles.filter((mobile) => {
+                    if (this.brand_id != 0) {
+                        return mobile.brand_id === this.brand_id
+                    }
+                    return true
+                }).filter((mobile) => {
+                    if (this.main_camera_pixels_description) {
+                        return (parseInt(mobile.main_camera_pixels_description) >= parseInt(this.main_camera_pixels_description))
+                    }
+                    return true
+                }).filter((mobile) => {
+                    if (this.camera_front_camera) {
+                        return (parseInt(mobile.camera_front_camera) >= parseInt(this.camera_front_camera))
+                    }
+                    return true
+                }).filter((mobile) => {
+                    if (this.ram) {
+                        return (parseInt(mobile.main_ram_description) >= parseInt(this.ram))
+                    }
+                    return true
+                }).filter((mobile) => {
+                    if (this.main_battery_description) {
+                        return (parseInt(mobile.main_battery_description) >= parseInt(this.main_battery_description))
+                    }
+                    return true
+                }).filter((mobile) => {
+                    if (this.price_from && !this.price_to) {
+                        console.log(this.price_from)
+                        return (parseFloat(mobile.main_price_description) >= parseFloat(this.price_from))
+                    } else if (!this.price_from && this.price_to) {
+                        return (parseFloat(mobile.main_price_description) <= parseFloat(this.price_to))
+                    } else if (this.price_from && this.price_to) {
+                        return ((parseFloat(mobile.main_price_description) >= parseFloat(this.price_from)) &&
+                            (parseFloat(mobile.main_price_description) <= parseInt(this.price_to)))
+                    }
 
-                        return true
-                    })
+                    return true
+                })
             }
         }
     }
