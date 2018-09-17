@@ -143,13 +143,15 @@
                 let heart = $('#heart')
                 let mobile = $(element).attr('data-mobile');
 
+
                 jQuery.ajax({
                     type: "GET",
                     url: '/make-favourite',
                     data: {
                         'mobile_id': mobile,
                     },
-                    dataType: 'JSON',
+                    dataType: 'text',
+                    async: true,
                     success: (response) => {
                         likesCount.html(response['count'])
                         if (response['is_favourite'] == 0) {
