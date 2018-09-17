@@ -32,13 +32,11 @@
 
                 $.ajax('/make-favourite', {
                     type: "POST",
-                    dataType: "json",
                     data: {
                         '_token': CSRF_TOKEN,
                         'mobile_id': this.mobile,
                     },
-                    contentType: "application/json",
-                    cache: "no-cache",
+                    dataType: 'JSON',
                     success: function(response) {
                         likesCount.html(response['count'])
                         if (response['is_favourite'] == 0) {
