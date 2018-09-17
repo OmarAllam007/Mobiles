@@ -141,14 +141,17 @@
             if (is_logged) {
                 let likesCount = $('#likesCount')
                 let heart = $('#heart')
-                let mobile_id = $(element).attr('data-mobile');
+                let mobile = $(element).attr('data-mobile');
                 console.log(mobile_id, this)
 
-                $.ajax({
+                jQuery.ajax({
+                    type: "GET",
                     url: '/make-favourite',
-                    type: 'get',
-                    data: {'mobile_id': mobile_id},
-                    success: function (response) {
+                    data: {
+                        mobile_id: mobile,
+                    },
+                    dataType: 'JSON',
+                    success: (response) => {
                         likesCount.html(response['count'])
                         if (response['is_favourite'] == 0) {
                             heart.removeClass('text-dark').addClass('text-danger')
