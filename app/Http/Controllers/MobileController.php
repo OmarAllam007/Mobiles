@@ -139,7 +139,7 @@ class MobileController extends Controller
             $is_favourite = $user->isFavourite($request->get('mobile_id'));
             /** @var Mobile $mobile */
             $mobile = Mobile::find($request->get('mobile_id'));
-            return $mobile;
+            return $mobile->likes;
             $mobile->likes()->toggle($mobile->id);
             return $mobile->likes->count();
         }
