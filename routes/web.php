@@ -13,6 +13,9 @@
 
 
 Route::get('/', 'MobileController@getMobileWithPrice');
+Route::get('/google48e99cddadd55407.html',function (){
+    return view('google48e99cddadd55407.html');
+});
 
 Route::group(['middleware' => ['auth','admin']], function () {
     Route::resource('brand', 'BrandController');
