@@ -150,6 +150,6 @@ class MobileController extends Controller
 
     public function getFavourite(Request $request)
     {
-        return Mobile::find(1)->users->count();
+        return Mobile::find(10)->users->count();
     }
 }
