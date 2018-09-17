@@ -138,7 +138,7 @@ class MobileController extends Controller
             $mobile = Mobile::find($request->get('mobile_id'));
             $mobile->users()->toggle($mobile->id);
 //            return $mobile->users->count();
-            return $mobile->users->count();
+            return $mobile->users()->get()->count();
         }
     }
 
