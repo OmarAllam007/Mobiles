@@ -136,7 +136,9 @@ class MobileController extends Controller
         if (\Auth::check()) {
             $mobile = Mobile::find($request->get('mobile_id'));
             $mobile->users()->toggle($mobile->id);
-            return $mobile->users->count();
+//            return $mobile->users->count();
+            return response('Hello World', 200)
+                ->header('Content-Type', 'text/plain');
         }
     }
 
