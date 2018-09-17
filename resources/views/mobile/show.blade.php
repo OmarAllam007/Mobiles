@@ -67,7 +67,7 @@
                                     <a role="button" href="#"
                                        style="text-align: center;text-decoration: none;display: block;height: 100%;"
                                        onclick="fireLike(this)"
-                                       data-mobile="{{$mobile->id}}" onmouseenter="showNotLogged()" >
+                                       data-mobile="{{$mobile->id}}" onmouseenter="showNotLogged()">
                                         @if(!Auth::check())
                                             <div id="notAuth" onmouseout="hideNotLogged()">
 
@@ -143,16 +143,20 @@
                 let heart = $('#heart')
                 let mobile_id = $(element).attr('data-mobile');
                 console.log(mobile_id, this)
-                $.get('/make-favourite', {
-                    'mobile_id': mobile_id
-                }, (response) => {
-                    likesCount.html(response['count'])
-                    if (response['is_favourite'] == 0) {
-                        heart.removeClass('text-dark').addClass('text-danger')
-                    } else {
-                        heart.removeClass('text-danger').addClass('text-dark')
+
+                $.ajax({
+                    url: '/make-favourite',
+                    type: 'get',
+                    data: {'mobile_id': mobile_id},
+                    success: function (response) {
+                        likesCount.html(response['count'])
+                        if (response['is_favourite'] == 0) {
+                            heart.removeClass('text-dark').addClass('text-danger')
+                        } else {
+                            heart.removeClass('text-danger').addClass('text-dark')
+                        }
                     }
-                })
+                });
             }
         }
 
@@ -168,7 +172,7 @@
                 'text-align': 'center',
                 'margin-top': '-5px',
                 'margin-right': '-5px',
-                'padding':'5px'
+                'padding': '5px'
             }).html('You must Sign Up to be a fan')
         }
 
