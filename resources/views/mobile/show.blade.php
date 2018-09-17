@@ -152,9 +152,7 @@
                         mobile_id: mobile,
                     },
                     success: (response) => {
-                        console.log(response)
                         likesCount.html(response['count'])
-
                         if (response['is_favourite'] == 0) {
                             heart.removeClass('text-dark').addClass('text-danger')
                         } else {
