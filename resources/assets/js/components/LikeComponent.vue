@@ -29,18 +29,18 @@
             addLike() {
                 let likesCount = $('#likesCount')
                 let heart = $('#heart')
-                axios.post('/make-favourite', {
-                    _token: CSRF_TOKEN,
-                    mobile_id: this.mobile,
-                })
-                    .then((response) => {
-                        console.log(response)
-                        this.all_likes = response.data
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                    });
-
+                jQuery.ajax({
+                    type: "POST",
+                    url: '/make-favourite',
+                    data: {
+                        _token: CSRF_TOKEN,
+                        mobile_id: this.mobile,
+                    },
+                    dataType: 'JSON',
+                    success: (response) => {
+                        this.all_likes = response
+                    }
+                });
             },
 
         },

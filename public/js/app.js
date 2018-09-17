@@ -52050,14 +52050,17 @@ var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
             var likesCount = $('#likesCount');
             var heart = $('#heart');
-            axios.post('/make-favourite', {
-                _token: CSRF_TOKEN,
-                mobile_id: this.mobile
-            }).then(function (response) {
-                console.log(response);
-                _this.all_likes = response.data;
-            }).catch(function (error) {
-                console.log(error);
+            jQuery.ajax({
+                type: "POST",
+                url: '/make-favourite',
+                data: {
+                    _token: CSRF_TOKEN,
+                    mobile_id: this.mobile
+                },
+                dataType: 'JSON',
+                success: function success(response) {
+                    _this.all_likes = response;
+                }
             });
         }
     },
