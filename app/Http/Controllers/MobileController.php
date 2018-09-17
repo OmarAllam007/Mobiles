@@ -10,6 +10,7 @@ use App\UserLike;
 use Illuminate\Auth\Access\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class MobileController extends Controller
 {
@@ -134,11 +135,16 @@ class MobileController extends Controller
     public function makeFavourite(Request $request)
     {
 
+
         if (\Auth::check()) {
             $mobile = Mobile::find($request->get('mobile_id'));
             $mobile->users()->toggle($mobile->id);
-//            return $mobile->users->count();
-            return $mobile->users()->get()->count();
+            $count = DB::table('mobile_user')
+                ->where('user_id', '=', Auth::id())
+                ->where('mobile_id','=',$mobile->id)
+                ->count();
+            
+            return json_encode($count);
         }
     }
 
