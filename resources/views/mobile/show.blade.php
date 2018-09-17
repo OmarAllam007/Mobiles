@@ -148,7 +148,7 @@
                     type: "GET",
                     url: '/make-favourite',
                     data: {
-                        mobile_id: mobile,
+                        'mobile_id': mobile,
                     },
                     dataType: 'JSON',
                     success: (response) => {
