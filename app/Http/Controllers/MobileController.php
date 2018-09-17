@@ -140,7 +140,7 @@ class MobileController extends Controller
             /** @var Mobile $mobile */
             $mobile = Mobile::find($request->get('mobile_id'));
             $mobile->likes()->toggle($mobile->id);
-            return \Illuminate\Support\Facades\Response::json((['count' => $mobile->likes->count(), 'is_favourite' => $is_favourite]));
+            return $mobile->likes->count();
         }
     }
 }

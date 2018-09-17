@@ -671,7 +671,6 @@
                     },
                     dataType: 'JSON',
                     success: (response) => {
-                        console.log(response);
                         this.selected_mobiles_data = response
                     }
                 });
