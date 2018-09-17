@@ -30,21 +30,37 @@
                 let likesCount = $('#likesCount')
                 let heart = $('#heart')
 
+                $.ajax('/make-favourite', {
+                    type: "POST",
+                    dataType: "json",
+                    data: {
+                        '_token': CSRF_TOKEN,
+                        'mobile_id': this.mobile,
+                    },
+                    contentType: "application/json",
+                    cache: "no-cache",
+                    success: function(response) {
+                        likesCount.html(response['count'])
+                        if (response['is_favourite'] == 0) {
+                            heart.removeClass('text-dark').addClass('text-danger')
+                        } else {
+                            heart.removeClass('text-danger').addClass('text-dark')
+                        }
+                    },
+                    error: function() {
+                        console.log("Error");
+                    }
+
+                });
                 if (this.auth) {
                     jQuery.ajax({
                         type: "POST",
                         url: '/make-favourite',
                         data: {
-                            _token: CSRF_TOKEN,
-                            mobile_id: this.mobile,
+
                         },
                         success: (response) => {
-                            likesCount.html(response['count'])
-                            if (response['is_favourite'] == 0) {
-                                heart.removeClass('text-dark').addClass('text-danger')
-                            } else {
-                                heart.removeClass('text-danger').addClass('text-dark')
-                            }
+
                         }
                     });
                 }
