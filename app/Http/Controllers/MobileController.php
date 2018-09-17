@@ -133,7 +133,9 @@ class MobileController extends Controller
     {
         if(Auth::check()){
             $mobile = Mobile::find($request->get('mobile_id'));
-            if (count($mobile->users)) {
+            $is_favourite = $mobile->users()->where('user_id', Auth::id())->count();
+
+            if ($is_favourite) {
                 $last_fans_count = $mobile->number_of_fans - 1;
             } else {
                 $last_fans_count = $mobile->number_of_fans + 1;
