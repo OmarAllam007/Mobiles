@@ -103,7 +103,7 @@ class Mobile extends Model
     }
 
     function users(){
-        return $this->belongsToMany(User::class,'user_likes','mobile_id','user_id');
+        return $this->belongsToMany(\App\User::class,'user_likes','mobile_id','user_id');
     }
 
 
