@@ -48522,7 +48522,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-            jQuery.ajax({
+            $.ajax({
                 type: "POST",
                 url: '/compare-items',
                 data: {
@@ -52005,7 +52005,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52050,6 +52050,7 @@ var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
             var likesCount = $('#likesCount');
             var heart = $('#heart');
+
             jQuery.ajax({
                 type: "POST",
                 url: '/make-favourite',

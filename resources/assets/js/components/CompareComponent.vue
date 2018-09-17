@@ -662,7 +662,7 @@
             },
             analayzeCompareProcess() {
                 var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-                jQuery.ajax({
+                $.ajax({
                     type: "POST",
                     url: '/compare-items',
                     data: {

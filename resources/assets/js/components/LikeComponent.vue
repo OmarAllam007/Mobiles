@@ -27,8 +27,9 @@
         },
         methods: {
             addLike() {
-                let likesCount = $('#likesCount')
-                let heart = $('#heart')
+                let likesCount = $('#likesCount');
+                let heart = $('#heart');
+
                 jQuery.ajax({
                     type: "POST",
                     url: '/make-favourite',

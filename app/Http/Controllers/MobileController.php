@@ -133,14 +133,14 @@ class MobileController extends Controller
 
     public function makeFavourite(Request $request)
     {
-
         if (\Auth::check()) {
-            /** @var User $user */
-            $user = User::find(Auth::id());
-            /** @var Mobile $mobile */
             $mobile = Mobile::find($request->get('mobile_id'));
-            return json_encode(UserLike::where('user_id',$user->id)->where('mobile_id',$mobile->id)->count());
-            return count($mobile->users);
+            $mobile->users()->toggle($mobile->id);
+            return $mobile->users->count();
         }
+    }
+
+    public function getFavourite(Request $request){
+        return Mobile::find($request->get('mobile_id'))->users->count();
     }
 }
