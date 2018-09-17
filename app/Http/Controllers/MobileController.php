@@ -130,9 +130,6 @@ class MobileController extends Controller
 
     function makeFavourite(Request $request)
     {
-        header("Access-Control-Allow-Origin: *");
-        header("Content-Type: application/json");
-
         if(Auth::check()){
             $is_favourite = Auth::user()->isFavourite($request->get('mobile_id'));
             $mobile = Mobile::find($request->get('mobile_id'));
@@ -140,7 +137,6 @@ class MobileController extends Controller
 
             return ['count' => $mobile->likes->count(), 'is_favourite' => $is_favourite];
         }
-
 
     }
 }

@@ -137,7 +137,7 @@
     <script>
         var is_logged = {{\Auth::check()}}
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-        
+
         function fireLike(element) {
             if (is_logged) {
                 let likesCount = $('#likesCount')
@@ -153,7 +153,9 @@
                     },
                     dataType: 'JSON',
                     success: (response) => {
+                        console.log(response)
                         likesCount.html(response['count'])
+
                         if (response['is_favourite'] == 0) {
                             heart.removeClass('text-dark').addClass('text-danger')
                         } else {
