@@ -136,20 +136,22 @@
 @section('scripts')
     <script>
         var is_logged = {{\Auth::check()}}
-
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        
         function fireLike(element) {
             if (is_logged) {
                 let likesCount = $('#likesCount')
                 let heart = $('#heart')
                 let mobile = $(element).attr('data-mobile');
 
-
                 jQuery.ajax({
-                    type: "GET",
+                    type: "POST",
                     url: '/make-favourite',
                     data: {
-                        'mobile_id': mobile,
+                        _token: CSRF_TOKEN,
+                        mobile_id: mobile,
                     },
+                    dataType: 'JSON',
                     success: (response) => {
                         likesCount.html(response['count'])
                         if (response['is_favourite'] == 0) {
