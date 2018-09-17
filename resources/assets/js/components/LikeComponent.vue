@@ -37,31 +37,14 @@
                         'mobile_id': this.mobile,
                     },
                     dataType: 'JSON',
-                    success: function(response) {
-                        likesCount.html(response['count'])
-                        if (response['is_favourite'] == 0) {
-                            heart.removeClass('text-dark').addClass('text-danger')
-                        } else {
-                            heart.removeClass('text-danger').addClass('text-dark')
-                        }
-                    },
-                    error: function() {
-                        console.log("Error");
+                }).done((response)=>{
+                    likesCount.html(response['count'])
+                    if (response['is_favourite'] == 0) {
+                        heart.removeClass('text-dark').addClass('text-danger')
+                    } else {
+                        heart.removeClass('text-danger').addClass('text-dark')
                     }
-
                 });
-                if (this.auth) {
-                    jQuery.ajax({
-                        type: "POST",
-                        url: '/make-favourite',
-                        data: {
-
-                        },
-                        success: (response) => {
-
-                        }
-                    });
-                }
             },
 
         },

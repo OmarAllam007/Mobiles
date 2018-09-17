@@ -136,7 +136,6 @@ class MobileController extends Controller
             $mobile = Mobile::find($request->get('mobile_id'));
             $mobile->likes()->toggle($mobile->id);
             return response()->json(['count' => $mobile->likes->count(), 'is_favourite' => $is_favourite]);
-
         }
 
     }
