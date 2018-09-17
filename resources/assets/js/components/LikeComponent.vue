@@ -34,6 +34,7 @@
                     mobile_id: this.mobile,
                 })
                     .then((response) => {
+                        console.log(response)
                         this.all_likes = response.data
                     })
                     .catch(function (error) {
