@@ -6,6 +6,10 @@
 
 
 @section('body')
+    @php
+        $is_favourite = (\Auth::check() && \Auth::user()->isFavourite($mobile->id)) ? 1 : 0;
+
+    @endphp
 
     <div id="show">
         <div class="row">
@@ -64,20 +68,11 @@
                             <div class="card-block px-1">
                                 <h4 class="card-title"></h4>
                                 <p class="card-text">
-                                    <a role="button" href="#"
-                                       style="text-align: center;text-decoration: none;display: block;height: 100%;"
-                                       onclick="fireLike(this)"
-                                       data-mobile="{{$mobile->id}}" onmouseenter="showNotLogged()">
-                                        @if(!Auth::check())
-                                            <div id="notAuth" onmouseout="hideNotLogged()">
-
-                                            </div>
-                                        @endif
-                                        <i class="fa fa-2x fa-heart @if(Auth::check() && \Auth::user()->isFavourite($mobile->id)) text-danger @else text-dark @endif"
-                                           id="heart"></i>
-                                        <span style="color:black;font-size: 1.3em;font-weight: 400"
-                                              id="likesCount">{{$mobile->likes->count() ?? 0}}</span>
-                                    </a>
+                                    <like-component :mobile="{{$mobile->id}}"
+                                                    :auth="{{\Auth::check()}}"
+                                                    :likes="{{$mobile->likes->count()}}"
+                                                    :favourite="{{$is_favourite ? 1 : 0}}"
+                                    ></like-component>
                                 </p>
                             </div>
                         </div>
@@ -135,64 +130,12 @@
 
 @section('scripts')
     <script>
-        var is_logged = {{\Auth::check()}}
+        var is_logged =
+                {{\Auth::check()}}
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
-        function fireLike(element) {
-            if (is_logged) {
-                let likesCount = $('#likesCount')
-                let heart = $('#heart')
-                let mobile = $(element).attr('data-mobile');
 
 
-                jQuery.ajax({
-                    type: "POST",
-                    url: '/make-favourite',
-                    data: {
-                        _token: CSRF_TOKEN,
-                        mobile_id: mobile,
-                    },
-                    success: (response) => {
-                        likesCount.html(response['count'])
-                        if (response['is_favourite'] == 0) {
-                            heart.removeClass('text-dark').addClass('text-danger')
-                        } else {
-                            heart.removeClass('text-danger').addClass('text-dark')
-                        }
-                    }
-                });
-            }
-        }
-
-
-
-        function showNotLogged(event) {
-            $('#notAuth').css({
-                'z-index': '9999',
-                'background-color': 'white',
-                'position': 'absolute',
-                'opacity': '.5',
-                'border-radius': '5px',
-                'margin-left': '-10px',
-                'text-align': 'center',
-                'margin-top': '-5px',
-                'margin-right': '-5px',
-                'padding': '5px'
-            }).html('You must Sign Up to be a fan')
-        }
-
-        function hideNotLogged(event) {
-            $('#notAuth').css({
-                'background-color': '',
-                'position': 'absolute',
-                'opacity': '.5',
-                'border-radius': '5px',
-                'margin-left': '-25px',
-                'text-align': 'center',
-                'margin-top': '-10px',
-                'margin-right': '-10px',
-            }).html('')
-        }
 
 
     </script>
