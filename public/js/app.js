@@ -52005,7 +52005,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52054,15 +52054,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var likesCount = $('#likesCount');
             var heart = $('#heart');
 
-            var token = document.head.querySelector('meta[name="csrf-token"]');
-            window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+            if (this.auth) {
+                var token = document.head.querySelector('meta[name="csrf-token"]');
+                window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 
-            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/make-favourite', {
-                mobile_id: this.mobile
-            }).then(function (response) {
-                _this.all_likes = response.data.number_of_fans;
-                _this.is_favourite = response.data.is_favourite;
-            }).catch(function (e) {});
+                __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/make-favourite', {
+                    mobile_id: this.mobile
+                }).then(function (response) {
+                    _this.all_likes = response.data.number_of_fans;
+                    _this.is_favourite = response.data.is_favourite;
+                }).catch(function (e) {});
+            }
         }
     },
     created: function created() {},

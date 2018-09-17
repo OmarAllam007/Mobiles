@@ -31,18 +31,21 @@
                 let likesCount = $('#likesCount');
                 let heart = $('#heart');
 
-                var token = document.head.querySelector('meta[name="csrf-token"]');
-                window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+                if(this.auth){
+                    var token = document.head.querySelector('meta[name="csrf-token"]');
+                    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 
-                axios.post(`/make-favourite`, {
-                    mobile_id: this.mobile
-                })
-                    .then(response => {
-                        this.all_likes = response.data.number_of_fans
-                        this.is_favourite = response.data.is_favourite
+                    axios.post(`/make-favourite`, {
+                        mobile_id: this.mobile
                     })
-                    .catch(e => {
-                    });
+                        .then(response => {
+                            this.all_likes = response.data.number_of_fans
+                            this.is_favourite = response.data.is_favourite
+                        })
+                        .catch(e => {
+                        });
+                }
+
             }
         },
         created() {
