@@ -151,7 +151,6 @@
                         _token: CSRF_TOKEN,
                         mobile_id: mobile,
                     },
-                    dataType: 'JSON',
                     success: (response) => {
                         console.log(response)
                         likesCount.html(response['count'])
