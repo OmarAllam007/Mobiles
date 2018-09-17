@@ -144,6 +144,7 @@
                 let heart = $('#heart')
                 let mobile = $(element).attr('data-mobile');
 
+
                 jQuery.ajax({
                     type: "POST",
                     url: '/make-favourite',
@@ -162,6 +163,7 @@
                 });
             }
         }
+
 
 
         function showNotLogged() {
