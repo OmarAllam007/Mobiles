@@ -34,7 +34,7 @@ class User extends Authenticatable
 
     function mobiles()
     {
-        return $this->belongsToMany(\App\Mobile::class, 'user_likes');
+        return $this->belongsToMany(\App\Mobile::class);
     }
 
     function favourites($mobile_id)

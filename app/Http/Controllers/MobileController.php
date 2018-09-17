@@ -138,12 +138,12 @@ class MobileController extends Controller
             $mobile = Mobile::find($request->get('mobile_id'));
             $mobile->users()->toggle($mobile->id);
 //            return $mobile->users->count();
-            return response(''.$mobile->users->count(), 200)
-                ->header('Content-Type', 'text/plain');
+            return $mobile->users->count();
         }
     }
 
-    public function getFavourite(Request $request){
+    public function getFavourite(Request $request)
+    {
         return Mobile::find($request->get('mobile_id'))->users->count();
     }
 }
