@@ -38,7 +38,7 @@
                     mobile_id: this.mobile
                 })
                     .then(response => {
-                        this.all_likes = response.data.count
+                        this.all_likes = response.data
                     })
                     .catch(e => {
                     });

@@ -52060,7 +52060,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/make-favourite', {
                 mobile_id: this.mobile
             }).then(function (response) {
-                _this.all_likes = response.data.count;
+                _this.all_likes = response.data;
             }).catch(function (e) {});
         }
     },

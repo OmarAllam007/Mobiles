@@ -70,7 +70,7 @@
                                 <p class="card-text">
                                     <like-component :mobile="{{$mobile->id}}"
                                                     :auth="{{\Auth::check() ? 1 : 0}}"
-                                                    :likes="{{ $mobile->users->count() }}"
+                                                    :likes="{{ $mobile->number_of_fans ?? 0 }}"
                                                     :favourite="{{ $is_favourite }}"
                                     ></like-component>
                                 </p>
