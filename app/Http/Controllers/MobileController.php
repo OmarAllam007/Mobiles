@@ -144,7 +144,7 @@ class MobileController extends Controller
             'number_of_fans' => $last_fans_count
         ]);
 
-        return ['number_of_fans'=>$mobile->number_of_fans];
+        return ['number_of_fans'=>$mobile->number_of_fans,'is_favourite'=>$mobile->users()->where('user_id',Auth::id())->count()];
     }
 
     public function getFavourite(Request $request)
