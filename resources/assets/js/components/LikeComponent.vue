@@ -39,6 +39,7 @@
                 })
                     .then(response => {
                         this.all_likes = response.data.number_of_fans
+                        this.is_favourite = response.data.is_favourite
                     })
                     .catch(e => {
                     });
