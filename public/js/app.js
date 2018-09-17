@@ -52005,7 +52005,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52032,7 +52032,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "like-component",
     props: ['mobile', 'likes', 'auth', 'favourite'],
@@ -52050,17 +52049,20 @@ var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
             var likesCount = $('#likesCount');
             var heart = $('#heart');
-
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
             jQuery.ajax({
-                type: "POST",
-                url: '/make-favourite',
+                url: "/make-favourite",
+                method: 'post',
                 data: {
-                    _token: CSRF_TOKEN,
                     mobile_id: this.mobile
                 },
-                dataType: 'JSON'
-            }).done(function (response) {
-                _this.all_likes = response;
+                success: function success(result) {
+                    _this.all_likes = result;
+                }
             });
         }
     },

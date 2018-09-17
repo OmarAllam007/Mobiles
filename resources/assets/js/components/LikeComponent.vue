@@ -14,7 +14,6 @@
 </template>
 
 <script>
-    let CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     export default {
         name: "like-component",
         props: ['mobile', 'likes', 'auth', 'favourite'],
@@ -29,20 +28,22 @@
             addLike() {
                 let likesCount = $('#likesCount');
                 let heart = $('#heart');
-
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
                 jQuery.ajax({
-                    type: "POST",
-                    url: '/make-favourite',
+                    url: "/make-favourite",
+                    method: 'post',
                     data: {
-                        _token: CSRF_TOKEN,
                         mobile_id: this.mobile,
                     },
-                    dataType: 'JSON',
-                }).done((response) => {
-                    this.all_likes = response
+                    success: (result) => {
+                        this.all_likes = result
+                    }
                 });
-            },
-
+            }
         },
         created() {
 
@@ -55,6 +56,7 @@
         mounted() {
             this.is_favourite = this.favourite
         }
+
     }
 </script>
 
