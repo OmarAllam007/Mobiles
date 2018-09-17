@@ -8,7 +8,7 @@
 @section('body')
     @php
         $is_favourite = 0;
-        if(\Auth::check()) { if(\Auth::user()->favourites($mobile->id) && \Auth::user()->favourites($mobile->id)->count()) $is_favourite = 1; };
+        if(\Auth::check()) { if($mobile->users()->where('user_id', \Auth::id())->count()) $is_favourite = 1; };
     @endphp
 
     <div id="show">
