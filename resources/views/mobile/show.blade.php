@@ -150,8 +150,6 @@
                     data: {
                         'mobile_id': mobile,
                     },
-                    dataType: 'text',
-                    async: true,
                     success: (response) => {
                         likesCount.html(response['count'])
                         if (response['is_favourite'] == 0) {
