@@ -48531,7 +48531,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 },
                 dataType: 'JSON',
                 success: function success(response) {
-                    console.log(response);
                     _this.selected_mobiles_data = response;
                 }
             });
@@ -52006,7 +52005,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52058,12 +52057,7 @@ var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
                 },
                 dataType: 'JSON'
             }).done(function (response) {
-                likesCount.html(response['count']);
-                if (response['is_favourite'] == 0) {
-                    heart.removeClass('text-dark').addClass('text-danger');
-                } else {
-                    heart.removeClass('text-danger').addClass('text-dark');
-                }
+                likesCount.html(response);
             });
         }
     },

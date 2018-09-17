@@ -39,7 +39,7 @@
                     dataType: 'JSON',
                 }).done((response)=>{
                     likesCount.html(response)
-                   
+
                 });
             },
 
