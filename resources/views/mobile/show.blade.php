@@ -7,8 +7,8 @@
 
 @section('body')
     @php
-        $is_favourite = (\Auth::check() && \Auth::user()->isFavourite($mobile->id)) ? 1 : 0;
-
+        $is_favourite = 0;
+        if(\Auth::check()) { if(\Auth::user()->isFavourite($mobile->id)) $is_favourite = 1; };
     @endphp
 
     <div id="show">
@@ -69,9 +69,9 @@
                                 <h4 class="card-title"></h4>
                                 <p class="card-text">
                                     <like-component :mobile="{{$mobile->id}}"
-                                                    :auth="{{\Auth::check()}}"
-                                                    :likes="{{$mobile->likes->count()}}"
-                                                    :favourite="{{$is_favourite ? 1 : 0}}"
+                                                    :auth="{{\Auth::check() ? 1 : 0}}"
+                                                    :likes="{{ $mobile->likes->count() }}"
+                                                    :favourite="{{ $is_favourite }}"
                                     ></like-component>
                                 </p>
                             </div>
@@ -130,10 +130,6 @@
 
 @section('scripts')
     <script>
-
-
-
-
 
 
     </script>

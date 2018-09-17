@@ -52006,7 +52006,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52032,6 +52032,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -52039,7 +52040,8 @@ var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     props: ['mobile', 'likes', 'auth', 'favourite'],
     data: function data() {
         return {
-            is_favourite: false
+            is_favourite: 0,
+            is_hover: 0
         };
     },
 
@@ -52048,22 +52050,24 @@ var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
             var likesCount = $('#likesCount');
             var heart = $('#heart');
 
-            jQuery.ajax({
-                type: "POST",
-                url: '/make-favourite',
-                data: {
-                    _token: CSRF_TOKEN,
-                    mobile_id: this.mobile
-                },
-                success: function success(response) {
-                    likesCount.html(response['count']);
-                    if (response['is_favourite'] == 0) {
-                        heart.removeClass('text-dark').addClass('text-danger');
-                    } else {
-                        heart.removeClass('text-danger').addClass('text-dark');
+            if (this.auth) {
+                jQuery.ajax({
+                    type: "POST",
+                    url: '/make-favourite',
+                    data: {
+                        _token: CSRF_TOKEN,
+                        mobile_id: this.mobile
+                    },
+                    success: function success(response) {
+                        likesCount.html(response['count']);
+                        if (response['is_favourite'] == 0) {
+                            heart.removeClass('text-dark').addClass('text-danger');
+                        } else {
+                            heart.removeClass('text-danger').addClass('text-dark');
+                        }
                     }
-                }
-            });
+                });
+            }
         }
     },
     created: function created() {},
@@ -52081,40 +52085,69 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "a",
+    "div",
     {
-      staticStyle: {
-        "text-align": "center",
-        "text-decoration": "none",
-        display: "block",
-        height: "100%"
-      },
-      attrs: { role: "button", href: "#" },
-      on: { click: _vm.addLike }
+      class: { "not-auth": _vm.is_hover },
+      on: {
+        mouseover: function($event) {
+          _vm.is_hover = 1
+        },
+        mouseout: function($event) {
+          _vm.is_hover = 0
+        }
+      }
     },
     [
-      _c("div", { attrs: { id: "notAuth" } }),
-      _vm._v(" "),
-      _c("i", {
-        staticClass: "fa fa-2x fa-heart",
-        class: {
-          "text-danger": _vm.is_favourite,
-          "text-dark": !_vm.is_favourite
-        },
-        attrs: { id: "heart" }
-      }),
-      _vm._v(" "),
       _c(
-        "span",
+        "a",
         {
           staticStyle: {
-            color: "black",
-            "font-size": "1.3em",
-            "font-weight": "400"
+            "text-align": "center",
+            "text-decoration": "none",
+            display: "block",
+            height: "100%"
           },
-          attrs: { id: "likesCount" }
+          attrs: { role: "button", href: "#" },
+          on: { click: _vm.addLike }
         },
-        [_vm._v(_vm._s(_vm.likes))]
+        [
+          _c("i", {
+            staticClass: "fa fa-2x fa-heart",
+            class: {
+              "text-danger": _vm.is_favourite,
+              "text-dark": !_vm.is_favourite
+            },
+            attrs: { id: "heart" }
+          }),
+          _vm._v(" "),
+          _c(
+            "span",
+            {
+              staticStyle: {
+                color: "black",
+                "font-size": "1.3em",
+                "font-weight": "400"
+              },
+              attrs: { id: "likesCount" }
+            },
+            [_vm._v(_vm._s(_vm.likes))]
+          ),
+          _vm._v(" "),
+          _c(
+            "span",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.is_hover,
+                  expression: "is_hover"
+                }
+              ]
+            },
+            [_vm._v("Please Login First")]
+          )
+        ]
       )
     ]
   )
