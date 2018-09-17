@@ -131,7 +131,7 @@ class MobileController extends Controller
         return $request;
     }
 
-    function makeFavourite(Request $request)
+    public function makeFavourite(Request $request)
     {
 
         if (\Auth::check()) {
@@ -139,7 +139,7 @@ class MobileController extends Controller
             $user = User::find(Auth::id());
             /** @var Mobile $mobile */
             $mobile = Mobile::find($request->get('mobile_id'));
-            return UserLike::where('user_id',$user->id)->where('mobile_id',$mobile->id)->get();
+            return json_encode(UserLike::where('user_id',$user->id)->where('mobile_id',$mobile->id)->count());
             return count($mobile->users);
         }
     }
