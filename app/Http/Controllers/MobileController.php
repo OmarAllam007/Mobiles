@@ -143,7 +143,7 @@ class MobileController extends Controller
                 ->where('user_id', '=', Auth::id())
                 ->where('mobile_id','=',$mobile->id)
                 ->count();
-            
+
             return json_encode($count);
         }
     }

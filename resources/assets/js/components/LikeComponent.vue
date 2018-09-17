@@ -38,9 +38,8 @@
                         mobile_id: this.mobile,
                     },
                     dataType: 'JSON',
-                    success: (response) => {
-                        this.all_likes = response
-                    }
+                }).done((response) => {
+                    this.all_likes = response
                 });
             },
 

@@ -52005,7 +52005,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52058,10 +52058,9 @@ var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
                     _token: CSRF_TOKEN,
                     mobile_id: this.mobile
                 },
-                dataType: 'JSON',
-                success: function success(response) {
-                    _this.all_likes = response;
-                }
+                dataType: 'JSON'
+            }).done(function (response) {
+                _this.all_likes = response;
             });
         }
     },
