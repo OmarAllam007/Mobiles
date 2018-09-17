@@ -273,11 +273,11 @@
     </tr>
     </tbody>
 </table>
-@if(isset($mobile->advertisements[3]) && $mobile->advertisements[3])
-    <div class="card">
-        {{$mobile->advertisements[3] ?? ''}}
-    </div>
-@endif
+{{--@if(isset($mobile->advertisements[3]) && $mobile->advertisements[3])--}}
+    {{--<div class="card">--}}
+        {{--{{$mobile->advertisements[3] ?? ''}}--}}
+    {{--</div>--}}
+{{--@endif--}}
 <!--Purchase-->
 <table class="table table-bordered table-striped table-hover">
     <thead>
