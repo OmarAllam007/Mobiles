@@ -144,7 +144,7 @@ class MobileController extends Controller
             'number_of_fans' => $last_fans_count
         ]);
 
-        return $mobile->number_of_fans;
+        return ['number_of_fans'=>$mobile->number_of_fans];
     }
 
     public function getFavourite(Request $request)
