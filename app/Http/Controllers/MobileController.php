@@ -6,6 +6,8 @@ use App\Brand;
 use App\Mobile;
 use App\MobileImages;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class MobileController extends Controller
 {
@@ -129,8 +131,20 @@ class MobileController extends Controller
 
     public function makeFavourite(Request $request)
     {
-        $mobile = Mobile::where('id',$request->get('mobile_id'))->first();
-        return $mobile;
+        $mobile = Mobile::find($request->get('mobile_id'));
+        if (count($mobile->users)) {
+            $last_fans_count = $mobile->number_of_fans - 1;
+        } else {
+            $last_fans_count = $mobile->number_of_fans + 1;
+        }
+
+        $mobile->users()->toggle(Auth::id());
+
+        $mobile->update([
+            'number_of_fans' => $last_fans_count
+        ]);
+
+        return $mobile->number_of_fans;
     }
 
     public function getFavourite(Request $request)
