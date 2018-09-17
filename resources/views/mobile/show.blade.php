@@ -166,7 +166,7 @@
 
 
 
-        function showNotLogged() {
+        function showNotLogged(event) {
             $('#notAuth').css({
                 'z-index': '9999',
                 'background-color': 'white',
@@ -181,7 +181,7 @@
             }).html('You must Sign Up to be a fan')
         }
 
-        function hideNotLogged() {
+        function hideNotLogged(event) {
             $('#notAuth').css({
                 'background-color': '',
                 'position': 'absolute',
