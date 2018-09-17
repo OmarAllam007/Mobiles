@@ -17,9 +17,7 @@
             <div class="col-8">
                 @if(isset($mobile->advertisements[0]) && $mobile->advertisements[0])
                     <div class="card">
-                        <script type="text/javascript">
-                            {{$mobile->advertisements[0] ?? ''}}
-                        </script>
+                            {!! $mobile->advertisements[0] !!}
                     </div>
                 @endif
 
