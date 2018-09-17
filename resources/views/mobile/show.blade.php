@@ -6,9 +6,13 @@
 
 
 @section('body')
+    <amp-auto-ads type="adsense"
+                  data-ad-client="ca-pub-1518734753701301">
+    </amp-auto-ads>
+
     @php
-        $is_favourite = 0;
-        if(\Auth::check()) { if($mobile->users()->where('user_id', \Auth::id())->count()){$is_favourite = 1;} };
+            $is_favourite = 0;
+            if(\Auth::check()) { if($mobile->users()->where('user_id', \Auth::id())->count()){$is_favourite = 1;} };
     @endphp
 
     <div id="show">
