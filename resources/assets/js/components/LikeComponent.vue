@@ -41,18 +41,11 @@
                         this.all_likes = response.data.count
                     })
                     .catch(e => {
-                        this.errors.push(e)
                     });
             }
         },
         created() {
-            axios.post(`/get-favourite`)
-                .then(response => {
-                    console.log(response)
-                })
-                .catch(e => {
-                    this.errors.push(e)
-                });
+
         },
         computed: {
             total_likes() {

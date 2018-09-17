@@ -21,8 +21,7 @@ Route::group(['middleware' => ['auth','admin']], function () {
 });
 
 Route::group(['middleware'=>['auth']],function (){
-    Route::post('make-favourite','MobileController@makeFavourite');
-    Route::post('get-favourite','MobileController@getFavourite');
+    Route::post('make-favourite','MobileController@makeFavourite')->name('make.favourite');
 });
 Route::get('choose-for-me','ChooseForMeController@chooseForMe')->name('choose.me');
 Route::post('choose-for-me','ChooseForMeController@filterApply')->name('choose.me');
