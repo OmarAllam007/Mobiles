@@ -52085,10 +52085,17 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
+    "a",
     {
-      class: { "not-auth": _vm.is_hover },
+      staticStyle: {
+        "text-align": "center",
+        "text-decoration": "none",
+        display: "block",
+        height: "100%"
+      },
+      attrs: { role: "button", href: "#" },
       on: {
+        click: _vm.addLike,
         mouseover: function($event) {
           _vm.is_hover = 1
         },
@@ -52098,56 +52105,41 @@ var render = function() {
       }
     },
     [
+      _c("i", {
+        staticClass: "fa fa-2x fa-heart",
+        class: {
+          "text-danger": _vm.is_favourite,
+          "text-dark": !_vm.is_favourite
+        },
+        attrs: { id: "heart" }
+      }),
+      _vm._v(" "),
       _c(
-        "a",
+        "span",
         {
           staticStyle: {
-            "text-align": "center",
-            "text-decoration": "none",
-            display: "block",
-            height: "100%"
+            color: "black",
+            "font-size": "1.3em",
+            "font-weight": "400"
           },
-          attrs: { role: "button", href: "#" },
-          on: { click: _vm.addLike }
+          attrs: { id: "likesCount" }
         },
-        [
-          _c("i", {
-            staticClass: "fa fa-2x fa-heart",
-            class: {
-              "text-danger": _vm.is_favourite,
-              "text-dark": !_vm.is_favourite
-            },
-            attrs: { id: "heart" }
-          }),
-          _vm._v(" "),
-          _c(
-            "span",
+        [_vm._v(_vm._s(_vm.likes))]
+      ),
+      _vm._v(" "),
+      _c(
+        "p",
+        {
+          directives: [
             {
-              staticStyle: {
-                color: "black",
-                "font-size": "1.3em",
-                "font-weight": "400"
-              },
-              attrs: { id: "likesCount" }
-            },
-            [_vm._v(_vm._s(_vm.likes))]
-          ),
-          _vm._v(" "),
-          _c(
-            "span",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.is_hover,
-                  expression: "is_hover"
-                }
-              ]
-            },
-            [_vm._v("Please Login First")]
-          )
-        ]
+              name: "show",
+              rawName: "v-show",
+              value: _vm.is_hover && !_vm.auth,
+              expression: "is_hover && !auth"
+            }
+          ]
+        },
+        [_vm._v("Please Login First")]
       )
     ]
   )

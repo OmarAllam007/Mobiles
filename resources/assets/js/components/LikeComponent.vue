@@ -1,16 +1,16 @@
 <template>
-    <div :class="{'not-auth':is_hover}" @mouseover="is_hover= 1" @mouseout="is_hover=0">
     <a role="button" href="#"
        style="text-align: center;text-decoration: none;display: block;height: 100%;"
-       @click="addLike">
+       @click="addLike" @mouseover="is_hover= 1" @mouseout="is_hover=0">
 
         <i class="fa fa-2x fa-heart" :class="{'text-danger':is_favourite,'text-dark':!is_favourite}"
            id="heart"></i>
         <span style="color:black;font-size: 1.3em;font-weight: 400"
               id="likesCount">{{likes}}</span>
-        <span v-show="is_hover">Please Login First</span>
+        <p v-show="is_hover && !auth">Please Login First</p>
+
     </a>
-    </div>
+
 
 </template>
 
