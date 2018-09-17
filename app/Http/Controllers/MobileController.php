@@ -133,12 +133,12 @@ class MobileController extends Controller
 
     public function makeFavourite(Request $request)
     {
-        return 2;
+
         if (\Auth::check()) {
             $mobile = Mobile::find($request->get('mobile_id'));
             $mobile->users()->toggle($mobile->id);
 //            return $mobile->users->count();
-            return response($mobile->users()->count(), 200)
+            return response(''.$mobile->users->count(), 200)
                 ->header('Content-Type', 'text/plain');
         }
     }
