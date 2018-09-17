@@ -132,7 +132,7 @@ class MobileController extends Controller
     {
         if(Auth::check()){
             $is_favourite = Auth::user()->isFavourite($request->get('mobile_id'));
-            dump($request->get('mobile_id'));
+            dump(\request()->all());
             $mobile = Mobile::find($request->get('mobile_id'));
             $mobile->likes()->toggle($mobile->id);
 
