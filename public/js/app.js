@@ -52016,6 +52016,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
 //
@@ -52031,6 +52033,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "like-component",
@@ -52049,20 +52053,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             var likesCount = $('#likesCount');
             var heart = $('#heart');
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            jQuery.ajax({
-                url: "/make-favourite",
-                method: 'post',
-                data: {
-                    mobile_id: this.mobile
-                },
-                success: function success(result) {
-                    _this.all_likes = result;
-                }
+
+            var token = document.head.querySelector('meta[name="csrf-token"]');
+            window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/make-favourite', {
+                mobile_id: this.mobile
+            }).then(function (response) {
+                _this.all_likes = response.data;
+            }).catch(function (e) {
+                _this.errors.push(e);
             });
         }
     },

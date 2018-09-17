@@ -14,6 +14,8 @@
 </template>
 
 <script>
+    import axios from 'axios';
+
     export default {
         name: "like-component",
         props: ['mobile', 'likes', 'auth', 'favourite'],
@@ -28,21 +30,19 @@
             addLike() {
                 let likesCount = $('#likesCount');
                 let heart = $('#heart');
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-                jQuery.ajax({
-                    url: "/make-favourite",
-                    method: 'post',
-                    data: {
-                        mobile_id: this.mobile,
-                    },
-                    success: (result) => {
-                        this.all_likes = result
-                    }
-                });
+
+                var token = document.head.querySelector('meta[name="csrf-token"]');
+                window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+
+                axios.post(`/make-favourite`, {
+                    mobile_id: this.mobile
+                })
+                    .then(response => {
+                        this.all_likes = response.data
+                    })
+                    .catch(e => {
+                        this.errors.push(e)
+                    });
             }
         },
         created() {
