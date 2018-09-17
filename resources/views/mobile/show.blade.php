@@ -17,7 +17,7 @@
             <div class="col-8">
                 @if(isset($mobile->advertisements[0]) && $mobile->advertisements[0])
                     <div class="card">
-                        {{Ardyn\Adsense\Adsense::get('example')}}
+                        {{Adsense::get('example')}}
                     </div>
                 @endif
 
