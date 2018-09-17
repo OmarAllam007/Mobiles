@@ -5,8 +5,7 @@
 
         <i class="fa fa-2x fa-heart" :class="{'text-danger':is_favourite,'text-dark':!is_favourite}"
            id="heart"></i>
-        <span style="color:black;font-size: 1.3em;font-weight: 400"
-              id="likesCount">{{likes}}</span>
+        <span style="color:black;font-size: 1.3em;font-weight: 400">{{total_likes}}</span>
         <p v-show="is_hover && !auth">Please Login First</p>
 
     </a>
@@ -23,29 +22,34 @@
             return {
                 is_favourite: 0,
                 is_hover: 0,
+                all_likes: this.likes,
             }
         },
         methods: {
             addLike() {
                 let likesCount = $('#likesCount')
                 let heart = $('#heart')
+                axios.post('/make-favourite', {
+                    _token: CSRF_TOKEN,
+                    mobile_id: this.mobile,
+                })
+                    .then((response) => {
+                        this.all_likes = response.data
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
 
-                $.ajax('/make-favourite', {
-                    type: "POST",
-                    data: {
-                        '_token': CSRF_TOKEN,
-                        'mobile_id': this.mobile,
-                    },
-                    dataType: 'JSON',
-                }).done((response)=>{
-                    likesCount.html(response)
-
-                });
             },
 
         },
         created() {
 
+        },
+        computed: {
+            total_likes() {
+                return this.all_likes
+            }
         },
         mounted() {
             this.is_favourite = this.favourite

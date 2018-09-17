@@ -52005,7 +52005,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52031,7 +52031,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -52040,28 +52039,34 @@ var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     data: function data() {
         return {
             is_favourite: 0,
-            is_hover: 0
+            is_hover: 0,
+            all_likes: this.likes
         };
     },
 
     methods: {
         addLike: function addLike() {
+            var _this = this;
+
             var likesCount = $('#likesCount');
             var heart = $('#heart');
-
-            $.ajax('/make-favourite', {
-                type: "POST",
-                data: {
-                    '_token': CSRF_TOKEN,
-                    'mobile_id': this.mobile
-                },
-                dataType: 'JSON'
-            }).done(function (response) {
-                likesCount.html(response);
+            axios.post('/make-favourite', {
+                _token: CSRF_TOKEN,
+                mobile_id: this.mobile
+            }).then(function (response) {
+                _this.all_likes = response.data;
+            }).catch(function (error) {
+                console.log(error);
             });
         }
     },
     created: function created() {},
+
+    computed: {
+        total_likes: function total_likes() {
+            return this.all_likes;
+        }
+    },
     mounted: function mounted() {
         this.is_favourite = this.favourite;
     }
@@ -52112,10 +52117,9 @@ var render = function() {
             color: "black",
             "font-size": "1.3em",
             "font-weight": "400"
-          },
-          attrs: { id: "likesCount" }
+          }
         },
-        [_vm._v(_vm._s(_vm.likes))]
+        [_vm._v(_vm._s(_vm.total_likes))]
       ),
       _vm._v(" "),
       _c(
