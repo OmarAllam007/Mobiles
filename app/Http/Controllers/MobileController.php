@@ -6,6 +6,7 @@ use App\Brand;
 use App\Mobile;
 use App\MobileImages;
 use App\User;
+use Illuminate\Auth\Access\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -139,7 +140,7 @@ class MobileController extends Controller
             /** @var Mobile $mobile */
             $mobile = Mobile::find($request->get('mobile_id'));
             $mobile->likes()->toggle($mobile->id);
-            return response()->json(['count' => $mobile->likes->count(), 'is_favourite' => $is_favourite]);
+            return \Illuminate\Support\Facades\Response::json((['count' => $mobile->likes->count(), 'is_favourite' => $is_favourite]));
         }
     }
 }
