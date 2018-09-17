@@ -6,6 +6,7 @@ use App\Brand;
 use App\Mobile;
 use App\MobileImages;
 use App\User;
+use App\UserLike;
 use Illuminate\Auth\Access\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -138,7 +139,7 @@ class MobileController extends Controller
             $user = User::find(Auth::id());
             /** @var Mobile $mobile */
             $mobile = Mobile::find($request->get('mobile_id'));
-            $mobile->users()->toggle($mobile->id);
+            return UserLike::where('user_id',$user->id)->where('mobile_id',$mobile->id)->count();
             return count($mobile->users);
         }
     }
