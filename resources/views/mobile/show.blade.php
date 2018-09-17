@@ -6,12 +6,26 @@
 
 
 @section('body')
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <!-- MobArrow-responsive --> <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1864972736029501" data-ad-slot="7077188983" data-ad-format="auto" data-full-width-responsive="true"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
+    @php
+        $google = '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- mobile -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-1518734753701301"
+         data-ad-slot="9346035778"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>';
+
+        echo $google;
+    @endphp
 
 
     @php
-            $is_favourite = 0;
-            if(\Auth::check()) { if($mobile->users()->where('user_id', \Auth::id())->count()){$is_favourite = 1;} };
+        $is_favourite = 0;
+        if(\Auth::check()) { if($mobile->users()->where('user_id', \Auth::id())->count()){$is_favourite = 1;} };
     @endphp
 
     <div id="show">
