@@ -142,7 +142,6 @@
                 let likesCount = $('#likesCount')
                 let heart = $('#heart')
                 let mobile = $(element).attr('data-mobile');
-                console.log(mobile_id, this)
 
                 jQuery.ajax({
                     type: "GET",
