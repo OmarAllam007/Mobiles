@@ -132,10 +132,9 @@ class MobileController extends Controller
     {
         header("Access-Control-Allow-Origin: *");
         header("Content-Type: application/json");
-        
+
         if(Auth::check()){
             $is_favourite = Auth::user()->isFavourite($request->get('mobile_id'));
-            dump(\request()->all(),$request->all());
             $mobile = Mobile::find($request->get('mobile_id'));
             $mobile->likes()->toggle($mobile->id);
 
