@@ -141,15 +141,15 @@ class MobileController extends Controller
             $mobile->users()->toggle($mobile->id);
             $count = DB::table('mobile_user')
                 ->where('user_id', '=', Auth::id())
-                ->where('mobile_id','=',$mobile->id)
+                ->where('mobile_id', '=', $mobile->id)
                 ->count();
 
-            return ['count'=>$count];
+            return ['count' => $count];
         }
     }
 
     public function getFavourite(Request $request)
     {
-        return Mobile::find($request->get('mobile_id'))->users->count();
+        return Mobile::find(1)->users->count();
     }
 }
