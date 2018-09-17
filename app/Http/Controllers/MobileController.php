@@ -6,6 +6,7 @@ use App\Brand;
 use App\Mobile;
 use App\MobileImages;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MobileController extends Controller
 {
@@ -125,5 +126,19 @@ class MobileController extends Controller
         $request['available_in_egypt'] = $request->available_in_egypt ? 1 : 0;
 
         return $request;
+    }
+
+    function makeFavourite(Request $request)
+    {
+        if(Auth::check()){
+            $is_favourite = Auth::user()->isFavourite($request->get('mobile_id'));
+
+            $mobile = Mobile::find($request->get('mobile_id'));
+            $mobile->likes()->toggle($mobile->id);
+
+            return ['count' => $mobile->likes->count(), 'is_favourite' => $is_favourite];
+        }
+
+
     }
 }

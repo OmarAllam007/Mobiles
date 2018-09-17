@@ -31,4 +31,13 @@ class User extends Authenticatable
     {
         return $this->is_admin;
     }
+
+    function likes()
+    {
+        return $this->belongsToMany(Mobile::class, 'user_likes', 'user_id', 'mobile_id');
+    }
+
+    function isFavourite($mobile_id){
+        return $this->likes()->where('mobiles.id',$mobile_id)->count();
+    }
 }

@@ -19,6 +19,10 @@ Route::group(['middleware' => ['auth','admin']], function () {
     Route::resource('mobile', 'MobileController');
     Route::resource('mobile-image', 'MobileImagesController');
 });
+
+Route::group(['middleware'=>['auth']],function (){
+    Route::get('make-favourite','MobileController@makeFavourite');
+});
 Route::get('choose-for-me','ChooseForMeController@chooseForMe')->name('choose.me');
 Route::post('choose-for-me','ChooseForMeController@filterApply')->name('choose.me');
 Route::get('/compare', 'CompareController@getCompare')->name('compare.index');

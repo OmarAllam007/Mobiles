@@ -102,5 +102,9 @@ class Mobile extends Model
         }
     }
 
+    function likes(){
+        return $this->belongsToMany(User::class,'user_likes','mobile_id','user_id');
+    }
+
 
 }
