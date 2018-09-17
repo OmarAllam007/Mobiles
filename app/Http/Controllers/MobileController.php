@@ -134,7 +134,6 @@ class MobileController extends Controller
         if (Auth::check()) {
             $is_favourite = Auth::user()->isFavourite($request->get('mobile_id'));
             $mobile = Mobile::find($request->get('mobile_id'));
-            dump($is_favourite,$mobile->id);
             $mobile->likes()->toggle($mobile->id);
             return response()->json(['count' => $mobile->likes->count(), 'is_favourite' => $is_favourite]);
 
