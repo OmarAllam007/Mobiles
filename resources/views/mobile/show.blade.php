@@ -8,7 +8,7 @@
 @section('body')
     @php
         $is_favourite = 0;
-        if(\Auth::check()) { if(\Auth::user()->isFavourite($mobile->id)) $is_favourite = 1; };
+        if(\Auth::check()) { if(\Auth::user()->favourites($mobile->id) && \Auth::user()->favourites($mobile->id)->count()) $is_favourite = 1; };
     @endphp
 
     <div id="show">
@@ -70,7 +70,7 @@
                                 <p class="card-text">
                                     <like-component :mobile="{{$mobile->id}}"
                                                     :auth="{{\Auth::check() ? 1 : 0}}"
-                                                    :likes="{{ $mobile->likes->count() }}"
+                                                    :likes="{{ $mobile->users->count() }}"
                                                     :favourite="{{ $is_favourite }}"
                                     ></like-component>
                                 </p>

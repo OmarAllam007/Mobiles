@@ -136,12 +136,10 @@ class MobileController extends Controller
         if (Auth::check()) {
             /** @var User $user */
             $user = User::find(Auth::id());
-            $is_favourite = $user->isFavourite($request->get('mobile_id'));
             /** @var Mobile $mobile */
             $mobile = Mobile::find($request->get('mobile_id'));
-            return $mobile->likes;
-            $mobile->likes()->toggle($mobile->id);
-            return $mobile->likes->count();
+            $mobile->users()->toggle($mobile->id);
+            return $mobile->users->count();
         }
     }
 }
