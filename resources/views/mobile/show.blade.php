@@ -130,9 +130,7 @@
 
 @section('scripts')
     <script>
-        var is_logged =
-                {{\Auth::check()}}
-        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+
 
 
 

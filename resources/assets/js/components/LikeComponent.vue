@@ -14,6 +14,7 @@
 </template>
 
 <script>
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     export default {
         name: "like-component",
         props: ['mobile', 'likes', 'auth', 'favourite'],
