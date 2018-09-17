@@ -144,7 +144,7 @@ class MobileController extends Controller
                 ->where('mobile_id','=',$mobile->id)
                 ->count();
 
-            return json_encode($count);
+            return ['count'=>$count];
         }
     }
 
