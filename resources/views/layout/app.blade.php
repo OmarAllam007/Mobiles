@@ -141,6 +141,25 @@
 {{--<script src="https://cdn.rtlcss.com/bootstrap/v4.0.0/js/bootstrap.min.js" integrity="sha384-54+cucJ4QbVb99v8dcttx/0JRx4FHMmhOWi4W+xrXpKcsKQodCBwAvu3xxkZAwsH" crossorigin="anonymous"></script>--}}
 <br>
 <div>
+
+    @php
+        $adsence ="
+    <div class=\"right-inner\">
+
+     <script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>
+        <!-- Homepage Leaderboard -->
+        <ins class=\"adsbygoogle\"
+             style=\"display:inline-block;width:728px;height:90px\"
+             data-ad-client=\"ca-pub-1234567890123456\"
+             data-ad-slot=\"1234567890\"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        
+    </div>";
+
+    echo $adsence;
+    @endphp
     <div align="center">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- Homepage Leaderboard -->
