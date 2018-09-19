@@ -52399,8 +52399,6 @@ var render = function() {
                     _c("b", [
                       _vm._v(
                         "\n                      " +
-                          _vm._s(key) +
-                          " / " +
                           _vm._s(comment.username) +
                           "\n                "
                       )
