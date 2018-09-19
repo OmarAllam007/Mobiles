@@ -123,6 +123,9 @@
             <div class="col-8">
                 @include('mobile._show._first_half')
                 @include('mobile._show._second_half')
+                <div class="comments-form">
+                    @include('mobile._show._comments')
+                </div>
             </div>
             <div class="col-1"></div>
         </div>
