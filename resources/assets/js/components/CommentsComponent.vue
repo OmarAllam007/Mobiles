@@ -5,7 +5,7 @@
             <div class="card-header comment-card-header">
                 <p class="text-center">
                     <span class="float-left"><b>
-                          {{key}} / {{comment.username}}
+                          {{comment.username}}
                     </b></span>
                     <span>{{comment.city}} - {{comment.country}}</span>
                     <span class="float-right">{{comment.created}}</span>
