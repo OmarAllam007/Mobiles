@@ -20,6 +20,7 @@ class MobileComment extends Model
             'created' => $this->created_at->diffForHumans(),
             'country'=>$this->country,
             'comment'=>$this->comment,
+            'city'=>$this->city,
         ];
     }
 }
