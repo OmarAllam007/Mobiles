@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="text-center" v-if="is_loading"><i class="fa fa-2x fa-spin fa-spinner"></i> Loading</div>
-        <div class="text-center" v-if="!is_loading && comments.length > 4">
+        <div class="text-center" v-if="!is_loading && actual_comments.length > 4">
             <button class="btn btn-success" @click="loadMore"><i class="fa fa-chevron-circle-down"></i>
             </button>
             <button class="btn btn-success" @click="loadUp"><i class="fa fa-chevron-circle-up"></i>
@@ -58,6 +58,7 @@
                 all_comments: [],
                 is_loading: false,
                 last_index: 4,
+                actual_comments: [],
             }
         },
         methods: {
@@ -108,6 +109,7 @@
                 this.all_comments = this.comments
                 this.is_loading = false
             }, 1000)
+            this.actual_comments = this.comments
         },
         computed: {
             last_comments() {
