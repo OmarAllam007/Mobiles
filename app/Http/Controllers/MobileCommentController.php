@@ -12,7 +12,6 @@ class MobileCommentController extends Controller
     {
         $ip = $_SERVER['REMOTE_ADDR'];
         $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}"));
-        dump($details);
         $mobile = MobileComment::create([
             'name' => $request->name ?? '',
             'user_id' => Auth::id(),
