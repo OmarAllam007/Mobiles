@@ -1,14 +1,14 @@
-<div class="form-group">
-    <input class="form-control" name="name" placeholder="{{t('Name')}}">
-</div>
-<div class="form-group">
-    <textarea name="comment" id="comment" cols="30" rows="10" class="form-control"
-              placeholder="{{t('Enter your comment')}}"></textarea>
-</div>
-<button class="btn btn-success">{{t('Post')}}</button>
-
 @php
-    $ip = $_SERVER['REMOTE_ADDR'];
-    $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}"));
-     dump($details);
+    $comments = $mobile->comments()->orderBy('created_at','DESC')->get()->each(function ($comment){
+            $comment['username'] = Auth::check()  ? Auth::user()->name : $comment->name;
+            $comment['created'] = $comment->created_at->diffForHumans();
+    });
+
 @endphp
+
+<comments :comments="{{$comments}}" :mobile_id="{{$mobile->id}}"
+          @if(Auth::check()) :auth="{{\Auth::id()}}" @else :auth="0" @endif ></comments>
+@php
+
+@endphp
+

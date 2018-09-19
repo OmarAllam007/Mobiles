@@ -10471,6 +10471,15 @@ a.text-dark:focus {
   }
 }
 
+@font-face {
+  font-family: "Main Font";
+  src: url(/fonts/Raleway-Medium.ttf) format("truetype");
+}
+
+body {
+  font-family: "Main Font", Verdana, Tahoma;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -11012,5 +11021,61 @@ img.hover-shadow {
   margin-top: -5px;
   margin-right: -5px;
   padding: 5px;
+}
+
+.comments-form {
+  margin-bottom: 10px;
+}
+
+.user-image-parent {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.user-image-div {
+  background-color: #1a998b;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.user-image-div > p {
+  line-height: 50px;
+  text-align: center;
+  font-size: 25px;
+  margin: 1px;
+}
+
+.user-text-div {
+  margin-left: 10px;
+  width: 100%;
+}
+
+.comment-text {
+  background-color: rgba(30, 170, 155, 0.47);
+}
+
+.comment-card {
+  margin-bottom: 15px;
+}
+
+.comment-card-header {
+  padding: 10px 5px;
+  background-color: #373b57;
+  color: #fff;
+}
+
+.comment-card-title {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.comment-inner-div {
+  margin-left: 10px;
 }
 

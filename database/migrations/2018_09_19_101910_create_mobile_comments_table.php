@@ -17,6 +17,7 @@ class CreateMobileCommentsTable extends Migration
             $table->increments('id');
             $table->string('name')->nullable();
             $table->integer('user_id')->nullable();
+            $table->integer('mobile_id');
             $table->string('comment');
             $table->tinyInteger('is_approved')->nullable();
             $table->integer('approved_by')->nullable();

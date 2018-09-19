@@ -5,6 +5,15 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@font-face {
+  font-family: "Main Font";
+  src: url(/fonts/Raleway-Medium.ttf) format("truetype");
+}
+
+body {
+  font-family: "Main Font", Verdana, Tahoma;
+}
+
 $second_color: #1b998b;
 $main_color: #2d3047;
 
@@ -523,6 +532,47 @@ img.hover-shadow {
   padding: 5px
 }
 
-.comments-form{
+.comments-form {
   margin-bottom: 10px
+}
+
+.user-image-parent{
+  display: inline-flex;
+  width: 100%;
+  margin-bottom: 25px;
+}
+.user-image-div {
+  background-color: #1a998b;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 5px;
+}
+.user-image-div > p {
+  line-height: 50px;
+  text-align: center;
+  font-size: 25px;
+  margin: 1px;
+}
+.user-text-div{
+  margin-left: 10px;width: 100%
+}
+
+.comment-text{
+  background-color: rgba(30,170,155,0.47)
+}
+.comment-card{
+  margin-bottom: 15px
+}
+
+.comment-card-header{
+  padding: 10px 5px;
+  background-color: rgb(55, 59, 87);
+  color: #fff;
+}
+.comment-card-title{
+  display: inline-flex;
+}
+.comment-inner-div{
+  margin-left: 10px
 }

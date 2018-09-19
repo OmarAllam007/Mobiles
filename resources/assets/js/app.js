@@ -21,6 +21,7 @@ Vue.component('search-mobile', require('./components/SearchMobileComponent.vue')
 Vue.component('mobile-prices', require('./components/MobilePricesComponent.vue'));
 Vue.component('choose-for-me', require('./components/ChooseForMeComponent.vue'));
 Vue.component('like-component', require('./components/LikeComponent.vue'));
+Vue.component('comments', require('./components/CommentsComponent.vue'));
 
 const app = new Vue({
     el: '#app',
