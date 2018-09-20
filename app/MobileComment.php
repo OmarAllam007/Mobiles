@@ -16,7 +16,7 @@ class MobileComment extends Model
     function morphToJson()
     {
         return [
-            'username' => \Auth::check() ? \Auth::user()->name : $this->name,
+            'username' =>  $this->name,
             'created' => $this->created_at->diffForHumans(),
             'country'=>$this->country,
             'comment'=>$this->comment,
