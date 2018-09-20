@@ -11079,3 +11079,23 @@ img.hover-shadow {
   margin-left: 10px;
 }
 
+@media screen and (max-width: 600px) {
+  .card-layout {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+  }
+}
+

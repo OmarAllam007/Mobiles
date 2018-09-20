@@ -15,6 +15,19 @@
     @endphp
 
     <div id="show">
+        <div class="text-center">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- UserAdsMobile -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1518734753701301"
+                 data-ad-slot="9249563350"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
         <div class="row">
             <div class="col-2"></div>
             <div class="col-8">
@@ -24,7 +37,7 @@
                     </div>
                 @endif
 
-                <div class="card " style="padding: 20px;background: linear-gradient(-90deg,#1b998b 10%, white 70%);">
+                <div class="card card-layout" style="padding: 20px;background: linear-gradient(-90deg,#1b998b 10%, white 70%);">
                     <div class="row no-gutters">
                         <div class="col-auto">
                             @if($mobile->image_path)
@@ -131,7 +144,19 @@
         </div>
     </div>
 
-
+    <div class="text-center">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- UserAdsMobile -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-1518734753701301"
+             data-ad-slot="9249563350"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
 @endsection
 
 @section('scripts')

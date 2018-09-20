@@ -2,7 +2,7 @@
 <table class="table table-bordered table-striped table-hover">
     <thead>
     <tr>
-        <td style="background-color: #1b998b;color:white" colspan="2">
+        <td   colspan="2" style="background-color: #1b998b;color:white">
             <i class="fa fa-cog"></i> Hardware
         </td>
     </tr>
@@ -305,19 +305,16 @@
         <td style="width: 180px" >Purchase From</td>
         <td>
             <p>
-                <a style="width: 200px;" role="button" target="_blank"
-                   href="{{$mobile->url_amazon}}" class="btn btn-outline-success">Open
-                    On Amazon</a>
+                <a style="min-width:100px" role="button" target="_blank"
+                   href="{{$mobile->url_amazon}}" class="btn btn-outline-success">Amazon</a>
             </p>
             <p>
-                <a style="width: 200px;" role="button" target="_blank"
-                   href="{{$mobile->url_souq}}" class="btn btn-outline-secondary">Open On
-                    Souq</a>
+                <a style="min-width:100px" role="button" target="_blank"
+                   href="{{$mobile->url_souq}}" class="btn btn-outline-secondary">Souq</a>
             </p>
             <p>
-                <a style="width: 200px;" role="button" target="_blank"
-                   href="" class="btn btn-outline-primary">Open On
-                    JUMIA</a>
+                <a style="min-width:100px" role="button" target="_blank"
+                   href="" class="btn btn-outline-primary">JUMIA</a>
             </p>
         </td>
     </tr>

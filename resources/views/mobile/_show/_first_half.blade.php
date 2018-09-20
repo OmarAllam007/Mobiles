@@ -1,4 +1,4 @@
-<table class="table table-bordered table-striped table-hover">
+<table class="table table-bordered table-striped table-hover ">
     <thead>
     <tr>
         <td style="background-color: #1b998b;color:white" colspan="2">
