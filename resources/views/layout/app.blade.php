@@ -29,6 +29,14 @@
     </style>
     <meta name="google-site-verification" content="RDXegnp82JQCC1Sm-vIGwaDKry4bm10oiNpIjp8g1HA"/>
     <!-- Styles -->
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-1864972736029501",
+            enable_page_level_ads: true
+        });
+    </script>
 </head>
 <body>
 @php
