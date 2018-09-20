@@ -13,10 +13,13 @@ class MobileComment extends Model
 
     protected $dates = ['created_at'];
 
+    function user(){
+        return $this->belongsTo(User::class);
+    }
     function morphToJson()
     {
         return [
-            'username' =>  $this->name,
+            'username' => $this->user_id ? $this->user->name : $this->name,
             'created' => $this->created_at->diffForHumans(),
             'country'=>$this->country,
             'comment'=>$this->comment,

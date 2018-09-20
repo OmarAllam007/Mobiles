@@ -52448,19 +52448,26 @@ var render = function() {
         : _vm._e(),
       _vm._v(" "),
       !_vm.is_loading && _vm.actual_comments.length > 4
-        ? _c("div", { staticClass: "text-center" }, [
-            _c(
-              "button",
-              { staticClass: "btn btn-success", on: { click: _vm.loadMore } },
-              [_c("i", { staticClass: "fa fa-chevron-circle-down" })]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              { staticClass: "btn btn-success", on: { click: _vm.loadUp } },
-              [_c("i", { staticClass: "fa fa-chevron-circle-up" })]
-            )
-          ])
+        ? _c(
+            "div",
+            {
+              staticClass: "text-center",
+              staticStyle: { "margin-bottom": "10px" }
+            },
+            [
+              _c(
+                "button",
+                { staticClass: "btn btn-success", on: { click: _vm.loadMore } },
+                [_c("i", { staticClass: "fa fa-chevron-circle-down" })]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "btn btn-success", on: { click: _vm.loadUp } },
+                [_c("i", { staticClass: "fa fa-chevron-circle-up" })]
+              )
+            ]
+          )
         : _vm._e(),
       _vm._v(" "),
       !_vm.is_loading

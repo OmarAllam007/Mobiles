@@ -28,13 +28,13 @@
             </div>
         </div>
         <div class="text-center" v-if="is_loading"><i class="fa fa-2x fa-spin fa-spinner"></i> Loading</div>
-        <div class="text-center" v-if="!is_loading && actual_comments.length > 4">
+        <div class="text-center" v-if="!is_loading && actual_comments.length > 4" style="margin-bottom: 10px">
             <button class="btn btn-success" @click="loadMore"><i class="fa fa-chevron-circle-down"></i>
             </button>
             <button class="btn btn-success" @click="loadUp"><i class="fa fa-chevron-circle-up"></i>
             </button>
         </div>
-        <div v-if="!is_loading">
+        <div v-if="!is_loading" >
             <div class="form-group">
                 <input class="form-control" name="name" placeholder="Name" v-if="!auth" v-model="name">
             </div>

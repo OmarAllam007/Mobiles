@@ -1,6 +1,6 @@
 @php
     $comments = $mobile->comments()->orderBy('created_at','DESC')->get()->each(function ($comment){
-            $comment['username'] = Auth::check()  ? Auth::user()->name : $comment->name;
+            $comment['username'] = $comment->user_id  ? $comment->user->name : $comment->name;
             $comment['created'] = $comment->created_at->diffForHumans();
     });
 
