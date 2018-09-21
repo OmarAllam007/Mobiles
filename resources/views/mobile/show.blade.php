@@ -26,7 +26,7 @@
 
     <div id="show">
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <section class="section-side">
                     <h5>
                         {{t('Top 10 By Fans')}}
@@ -43,13 +43,9 @@
 
                     </ul>
                 </section>
+                <br>
             </div>
-            <div class="col-md-8 ">
-                @if(isset($mobile->advertisements[0]) && $mobile->advertisements[0])
-                    <div class="card">
-                        {{Adsense::get('example')}}
-                    </div>
-                @endif
+            <div class="col-md-6">
                 <div class="card card-layout"
                      style="padding: 20px;background: linear-gradient(-90deg,#1b998b 10%, white 70%);">
                     <div class="row no-gutters">
@@ -141,8 +137,9 @@
                         </ul>
                     </div>
                 </div>
+                <br>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <section class="section-side">
                     <h5>
                         {{t('Top 10 By Interest')}}
@@ -161,7 +158,9 @@
 
                     </ul>
                 </section>
+                <br>
             </div>
+
         </div>
 
         {{----}}
@@ -175,14 +174,14 @@
 
 
         <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
                 <div class="comments-form">
                     @include('mobile._show._comments')
 
                 </div>
             </div>
-            <div class="col-2"></div>
+            <div class="col-md-3"></div>
         </div>
     </div>
 

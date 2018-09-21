@@ -11079,17 +11079,6 @@ img.hover-shadow {
   margin-left: 10px;
 }
 
-@media screen and (max-width: 600px) {
-  .card-layout {
-    visibility: hidden;
-    clear: both;
-    float: left;
-    margin: 10px auto 5px 20px;
-    width: 28%;
-    display: none;
-  }
-}
-
 .site-bg {
   background-color: #1b998b;
   color: #fff;

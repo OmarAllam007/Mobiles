@@ -1,6 +1,6 @@
 <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
         <table class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
@@ -73,19 +73,19 @@
         </table>
         @include('mobile._show._image_modal')
     </div>
-    <div class="col-md-2"></div>
+    <div class="col-md-3"></div>
 </div>
 
 
 <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-3">
         <div class="big-banner ">
             <p class="text-center">
                 Advertisement Place
             </p>
         </div>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-6">
         <table class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
@@ -162,7 +162,7 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-3">
         <div class="big-banner ">
             <p class="text-center">
                 Advertisement Place
@@ -172,8 +172,8 @@
 </div>
 
 <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
         <table class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
@@ -217,12 +217,12 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-2"></div>
+    <div class="col-md-3"></div>
 </div>
 
 <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
         <table class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
@@ -291,5 +291,5 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-2"></div>
+    <div class="col-md-3"></div>
 </div>
