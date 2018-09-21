@@ -127,13 +127,11 @@
                     {{t('LATEST DEVICES')}}
                 </h5>
                 <div class="d-flex flex-wrap  flex-row bd-highlight mb-3" style="margin-top: 20px">
+                    @foreach(\App\Mobile::latestmobiles()->get() as $newMob)
+                        <a class="brand-url" href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
+                            <img style="width: 100px;height: 100px" src="{{asset('storage'.$newMob->image_path)}}">
 
-                    @foreach(\App\Mobile::latestmobiles()->get() as $mobile)
-                        <a class="brand-url" href="#">
-                            <img style="width: 100px;height: 100px" src="{{asset('storage'.$mobile->image_path)}}">
-
-                            <p>{{$mobile->name}}</p>
-
+                            <p>{{$newMob->name}}</p>
                         </a>
                     @endforeach
                 </div>
