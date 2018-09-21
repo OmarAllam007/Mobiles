@@ -147,24 +147,6 @@
 
 
     <main class="container-fluid" style="margin-bottom: 100px">
-        <div class=" row">
-            <div class="col-2"></div>
-            <div class="col-md-8">
-                <div class="main-class" style="margin: auto;padding: 20px 0;"></div>
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- UserAdsMobile -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1518734753701301"
-                     data-ad-slot="9249563350"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-            <div class="col-2"></div>
-        </div>
         <div class="title-bar">
             <div class="row">
                 @yield('header')
