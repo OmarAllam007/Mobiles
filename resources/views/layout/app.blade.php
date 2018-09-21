@@ -27,16 +27,11 @@
 
 
     </style>
-    <meta name="google-site-verification" content="RDXegnp82JQCC1Sm-vIGwaDKry4bm10oiNpIjp8g1HA"/>
+    {{--<meta name="google-site-verification" content="RDXegnp82JQCC1Sm-vIGwaDKry4bm10oiNpIjp8g1HA"/>--}}
     <!-- Styles -->
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-1864972736029501",
-            enable_page_level_ads: true
-        });
-    </script>
+
+
 </head>
 <body>
 @php
@@ -150,48 +145,23 @@
 <br>
 <div>
 
-    @php
-        $adsence ="
-    <div class=\"right-inner\">
 
-     <script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>
-        <!-- Homepage Leaderboard -->
-        <ins class=\"adsbygoogle\"
-             style=\"display:inline-block;width:728px;height:90px\"
-             data-ad-client=\"ca-pub-1234567890123456\"
-             data-ad-slot=\"1234567890\"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-
-        <script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>
-<!-- UserAdsMobile -->
-<ins class=\"adsbygoogle\"
-     style=\"display:block\"
-     data-ad-client=\"ca-pub-1518734753701301\"
-     data-ad-slot=\"9249563350\"
-     data-ad-format=\"auto\"
-     data-full-width-responsive=\"true\"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-    </div>";
-
-    echo $adsence;
-    @endphp
-    <div align="center">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Homepage Leaderboard -->
-        <ins class="adsbygoogle"
-             style="display:inline-block;width:728px;height:90px"
-             data-ad-client="ca-pub-1234567890123456"
-             data-ad-slot="1234567890"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-    <main class="container-fluid">
+    <main class="container-fluid" >
+        <div class="main-class" style="margin: auto;padding: 20px 0;">
+            <div class="main-ad">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- UserAdsMobile -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-1518734753701301"
+                     data-ad-slot="9249563350"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
         <div class="title-bar">
             <div class="row">
                 @yield('header')
