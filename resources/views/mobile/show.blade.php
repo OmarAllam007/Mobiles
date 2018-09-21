@@ -37,7 +37,7 @@
                                 <a href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
                                     {{$newMob->name}}
                                 </a>
-                                <span class="badge  badge-pill">{{$mobile->number_of_fans ?? 0}} </span>
+                                <span class="badge  badge-pill">{{$newMob->number_of_fans ?? 0}} </span>
                             </li>
                         @endforeach
 
