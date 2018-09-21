@@ -6,6 +6,18 @@
 
 
 @section('body')
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="big-banner ">
+                <p class="text-center">
+                    Advertisement Place
+                </p>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <br>
 
     @php
         $is_favourite = 0;
@@ -14,22 +26,39 @@
 
     <div id="show">
         <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8 col-md-8 col-sm-4">
+            <div class="col-md-2">
+                <section class="section-side">
+                    <h5>
+                        {{t('Top 10 By Fans')}}
+                    </h5>
+                    <ul class="list-group">
+                        @foreach(\App\Mobile::topfans()->get() as $newMob)
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
+                                    {{$newMob->name}}
+                                </a>
+                                <span class="badge  badge-pill">{{$mobile->number_of_fans ?? 0}} </span>
+                            </li>
+                        @endforeach
+
+                    </ul>
+                </section>
+            </div>
+            <div class="col-md-8 ">
                 @if(isset($mobile->advertisements[0]) && $mobile->advertisements[0])
                     <div class="card">
                         {{Adsense::get('example')}}
                     </div>
                 @endif
-
-                <div class="card card-layout" style="padding: 20px;background: linear-gradient(-90deg,#1b998b 10%, white 70%);">
+                <div class="card card-layout"
+                     style="padding: 20px;background: linear-gradient(-90deg,#1b998b 10%, white 70%);">
                     <div class="row no-gutters">
                         <div class="col-auto">
                             @if($mobile->image_path)
                                 <img width="200" class="img-fluid" src="{{asset('storage'.$mobile->image_path)}}"
                                      alt="{{$mobile->name ?? ''}}">
                             @else
-                                <img width="200" class="img-fluid" src=""
+                                <img width="200" class="img-fluid" src="{{asset('storage'.$mobile->image_path)}}"
                                      alt="{{$mobile->name .' Image ' ?? ''}}">
                             @endif
                         </div>
@@ -113,21 +142,50 @@
                     </div>
                 </div>
             </div>
-            <div class="col-1"></div>
+            <div class="col-md-2">
+                <section class="section-side">
+                    <h5>
+                        {{t('Top 10 By Interest')}}
+                    </h5>
+                    <ul class="list-group">
+                        @foreach(\App\Mobile::tophits()->get() as $like)
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="{{route('mobile.display',[$like, strtolower($like->brand->name), str_slug($like->name)])}}">
+                                    {{$like->name}}
+                                </a>
+                                <span class="badge  badge-pill">
+                {{$like->number_of_hits ?? 0}}
+                </span>
+                            </li>
+                        @endforeach
+
+                    </ul>
+                </section>
+            </div>
         </div>
+
+        {{----}}
+        {{----}}
+        {{----}}
+        @include('mobile._show._first_half')
+
+        @include('mobile._show._second_half')
+
+
+
 
         <div class="row">
             <div class="col-2"></div>
             <div class="col-8">
-                @include('mobile._show._first_half')
-                @include('mobile._show._second_half')
                 <div class="comments-form">
                     @include('mobile._show._comments')
+
                 </div>
             </div>
-            <div class="col-1"></div>
+            <div class="col-2"></div>
         </div>
     </div>
+
 
 @endsection
 

@@ -118,4 +118,12 @@ class Mobile extends Model
         return [$this, strtolower($this->brand->name), str_slug($this->name)];
     }
 
+    function scopeTopFans($query){
+        return $query->orderBy('number_of_fans','DESC')->take(10);
+    }
+
+    function scopeTopHits($query){
+        return $query->orderBy('number_of_hits','DESC')->take(10);
+    }
+
 }

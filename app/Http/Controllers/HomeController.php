@@ -24,9 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $topMobilesLove = Mobile::orderBy('number_of_fans','DESC')->take(10)->get();
-        $topMobilesHits = Mobile::orderBy('number_of_hits','DESC')->take(10)->get();
 
-        return view('index',compact('topMobilesLove','topMobilesHits'));
+        return view('index');
     }
 }

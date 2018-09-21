@@ -87,10 +87,12 @@ class MobileController extends Controller
 
     function show(Mobile $mobile, $mobile_brand, $mobile_name)
     {
+
         $hits = $mobile->number_of_hits ?? 0;
         $mobile->update([
             'number_of_hits' => $hits + 1,
         ]);
+
         return view('mobile.show', compact('mobile'));
     }
 
