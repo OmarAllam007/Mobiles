@@ -18,15 +18,15 @@
         <div class="col-md-4 col-sm-12">
             <div class="section-side">
                 <h5>
-                    {{t('Top 10 By Fans')}}
+                    {{t('Top 10 By Hits')}}
                 </h5>
                 <ul class="list-group">
-                    @foreach(\App\Mobile::topfans()->get() as $newMob)
+                    @foreach(\App\Mobile::tophits()->get() as $newMob)
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <a href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
                                 {{$newMob->name}}
                             </a>
-                            <span class="badge  badge-pill">{{$mobile->number_of_fans ?? 0}} </span>
+                            <span class="badge  badge-pill">{{$newMob->number_of_hits ?? 0}} </span>
                         </li>
                     @endforeach
 
@@ -44,7 +44,7 @@
                             <a href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
                                 {{$newMob->name}}
                             </a>
-                            <span class="badge  badge-pill">{{$mobile->number_of_fans ?? 0}} </span>
+                            <span class="badge  badge-pill">{{$newMob->number_of_fans ?? 0}} </span>
                         </li>
                     @endforeach
 
@@ -54,15 +54,14 @@
         <div class="col-md-4 col-sm-12">
             <div class="section-side ">
                 <h5>
-                    {{t('Top 10 By Fans')}}
+                    {{t('Top 10 Latest Mobiles')}}
                 </h5>
                 <ul class="list-group">
-                    @foreach(\App\Mobile::topfans()->get() as $newMob)
+                    @foreach(\App\Mobile::latestmobiles()->get() as $newMob)
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <a href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
                                 {{$newMob->name}}
                             </a>
-                            <span class="badge  badge-pill">{{$mobile->number_of_fans ?? 0}} </span>
                         </li>
                     @endforeach
 

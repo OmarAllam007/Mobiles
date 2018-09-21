@@ -127,7 +127,7 @@ class Mobile extends Model
     }
 
     function scopeLatestMobiles($query){
-        return $query->orderBy('created_at','DESC')->take(9);
+        return $query->orderBy('created_at','DESC')->take(10);
     }
 
     function scopeByPrice($query){
