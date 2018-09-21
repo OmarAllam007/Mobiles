@@ -11173,7 +11173,7 @@ footer {
 
 a.brand-url {
   width: 125px;
-  height: 131.5px;
+  height: auto;
   margin: 0;
   display: inline-block;
   text-align: center;
