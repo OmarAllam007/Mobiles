@@ -1,7 +1,20 @@
 <template>
     <div>
+        <div class="row ad-row">
+            <div class="col-md-3"></div>
+            <div class="col-md-7">
+                <div class="big-banner">
+                    <p class="text-center">
+                        Advertisement Place
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
         <div class="row justify-content-center">
-            <div class="col-2">
+
+            <div class="col-md-2 col-sm-12 ">
                 <div class="form-group text-center">
                     <label for="brand">Brand</label>
                     <select name="brand" id="brand" class="form-control" v-model="brand_id">
@@ -14,50 +27,52 @@
                 </div>
             </div>
 
-            <div class="col-2">
+            <div class="col-md-2 col-sm-12">
                 <div class="form-group text-center">
                     <label for="brand">Rear Camera (Pixels)</label>
                     <input type="number" class="form-control" v-model="main_camera_pixels_description">
                 </div>
             </div>
 
-            <div class="col-2">
+            <div class="col-md-2 col-sm-12 ">
                 <div class="form-group text-center">
                     <label for="brand">Front Camera (Pixels)</label>
                     <input type="number" class="form-control" v-model="camera_front_camera">
                 </div>
             </div>
 
-            <div class="col-2">
+            <div class="col-md-2 col-sm-12 ">
                 <div class="form-group text-center">
                     <label for="brand">RAM (at least)</label>
                     <input type="number" class="form-control" v-model="ram">
                 </div>
             </div>
 
-            <div class="col-2">
+            <div class="col-md-2 col-sm-12 ">
                 <div class="form-group text-center">
                     <label for="brand">Battery (mAh)</label>
                     <input type="number" class="form-control" v-model="main_battery_description">
                 </div>
             </div>
 
+
         </div>
 
         <div class="row justify-content-center">
-            <div class="col-2">
+            <div class="col-md-2 col-sm-12">
                 <div class="form-group text-center">
                     <label for="brand">Price From ($)</label>
                     <input type="number" class="form-control" v-model="price_from">
                 </div>
             </div>
 
-            <div class="col-2">
+            <div class="col-md-2 col-sm-12 ">
                 <div class="form-group text-center">
                     <label for="brand">Price To ($)</label>
                     <input type="number" class="form-control" v-model="price_to">
                 </div>
             </div>
+
 
             <!--<div class="col-2">-->
             <!--<div class="form-group">-->
@@ -73,9 +88,32 @@
         <div class="row"></div>
 
         <div class="row justify-content-center" v-if="filtered_mobiles.length">
-            <div class="col-10">
+            <div class="col-md-3">
+                <div class="section-side">
+                    <h5>
+                        Top 10 By Fans
+                    </h5>
+                    <ul class="list-group">
+                        <li v-for="top in top_love"
+                            class="list-group-item d-flex justify-content-between align-items-center">
+                            <a :href="top.show_url">
+                                {{top.name}}
+                            </a>
+                            <span class="badge  badge-pill">{{top.number_of_fans ? top.number_of_fans : 0 }} </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="big-banner">
+                    <p class="text-center">
+                        Advertisement Place
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
                 <ul class="list-unstyled">
-                    <li class="li-item" v-for="mobile in filtered_mobiles">
+
+                    <li class="li-item" v-for="(mobile,index) in filtered_mobiles">
                         <a :href="mobile.show_url">
                             <img :src="mobile.image_path" style="width: 100px;height: 147px">
                             <aside>
@@ -87,6 +125,27 @@
                         </a>
                     </li>
                 </ul>
+            </div>
+            <div class="col-md-3">
+                <div class="section-side">
+                    <h5>
+                        Top 10 By Price
+                    </h5>
+                    <ul class="list-group">
+                        <li v-for="top in top_prices"
+                            class="list-group-item d-flex justify-content-between align-items-center">
+                            <a :href="top.show_url">
+                                {{top.name}}
+                            </a>
+                            <span class="badge  badge-pill">{{top.main_price_description ? top.main_price_description : 0 }} </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="big-banner">
+                    <p class="text-center">
+                        Advertisement Place
+                    </p>
+                </div>
             </div>
         </div>
         <div class="row" v-if="!filtered_mobiles.length">
@@ -105,7 +164,7 @@
 <script>
     export default {
         name: "choose-for-me",
-        props: ['brands', 'mobiles'],
+        props: ['brands', 'mobiles', 'top_prices', 'top_love'],
         data() {
             return {
                 brand_id: 0,
@@ -117,32 +176,12 @@
                 price_to: '',
                 filter_applied: false,
                 after_filter: [],
+                mobile_counter: 0,
             }
         },
         methods: {
             applyFilter() {
                 this.filter_applied = !this.filter_applied;
-                // var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-                // jQuery.ajax({
-                //     type: "POST",
-                //     url: '/choose-for-me',
-                //     data: {
-                //         _token: CSRF_TOKEN,
-                //         'brand_id': this.brand_id,
-                //         'main_camera_pixels_description': this.main_camera_pixels_description,
-                //         'camera_front_camera': this.camera_front_camera,
-                //         'ram': this.ram,
-                //         'main_battery_description': this.main_battery_description,
-                //         'price_from': this.price_from,
-                //         'price_to': this.price_to
-                //     },
-                //     dataType: 'JSON',
-                //     success: (response) => {
-                //         this.after_filter = response;
-                //     }
-                // });
-
-
             },
             resetFilter() {
                 this.filter_applied = !this.filter_applied;
@@ -189,6 +228,11 @@
 
                     return true
                 })
+            }
+        },
+        directives: {
+            hola(el) {
+                console.log('asdadsd')
             }
         }
     }

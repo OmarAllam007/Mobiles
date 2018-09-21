@@ -51405,7 +51405,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -51520,10 +51520,69 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "choose-for-me",
-    props: ['brands', 'mobiles'],
+    props: ['brands', 'mobiles', 'top_prices', 'top_love'],
     data: function data() {
         return {
             brand_id: 0,
@@ -51534,33 +51593,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             price_from: '',
             price_to: '',
             filter_applied: false,
-            after_filter: []
+            after_filter: [],
+            mobile_counter: 0
         };
     },
 
     methods: {
         applyFilter: function applyFilter() {
             this.filter_applied = !this.filter_applied;
-            // var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-            // jQuery.ajax({
-            //     type: "POST",
-            //     url: '/choose-for-me',
-            //     data: {
-            //         _token: CSRF_TOKEN,
-            //         'brand_id': this.brand_id,
-            //         'main_camera_pixels_description': this.main_camera_pixels_description,
-            //         'camera_front_camera': this.camera_front_camera,
-            //         'ram': this.ram,
-            //         'main_battery_description': this.main_battery_description,
-            //         'price_from': this.price_from,
-            //         'price_to': this.price_to
-            //     },
-            //     dataType: 'JSON',
-            //     success: (response) => {
-            //         this.after_filter = response;
-            //     }
-            // });
-
         },
         resetFilter: function resetFilter() {
             this.filter_applied = !this.filter_applied;
@@ -51608,6 +51648,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 return true;
             });
         }
+    },
+    directives: {
+        hola: function hola(el) {
+            console.log('asdadsd');
+        }
     }
 });
 
@@ -51620,8 +51665,10 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-2" }, [
+      _c("div", { staticClass: "col-md-2 col-sm-12 " }, [
         _c("div", { staticClass: "form-group text-center" }, [
           _c("label", { attrs: { for: "brand" } }, [_vm._v("Brand")]),
           _vm._v(" "),
@@ -51672,7 +51719,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-2" }, [
+      _c("div", { staticClass: "col-md-2 col-sm-12" }, [
         _c("div", { staticClass: "form-group text-center" }, [
           _c("label", { attrs: { for: "brand" } }, [
             _vm._v("Rear Camera (Pixels)")
@@ -51702,7 +51749,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-2" }, [
+      _c("div", { staticClass: "col-md-2 col-sm-12 " }, [
         _c("div", { staticClass: "form-group text-center" }, [
           _c("label", { attrs: { for: "brand" } }, [
             _vm._v("Front Camera (Pixels)")
@@ -51732,7 +51779,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-2" }, [
+      _c("div", { staticClass: "col-md-2 col-sm-12 " }, [
         _c("div", { staticClass: "form-group text-center" }, [
           _c("label", { attrs: { for: "brand" } }, [_vm._v("RAM (at least)")]),
           _vm._v(" "),
@@ -51760,7 +51807,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-2" }, [
+      _c("div", { staticClass: "col-md-2 col-sm-12 " }, [
         _c("div", { staticClass: "form-group text-center" }, [
           _c("label", { attrs: { for: "brand" } }, [_vm._v("Battery (mAh)")]),
           _vm._v(" "),
@@ -51790,7 +51837,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-2" }, [
+      _c("div", { staticClass: "col-md-2 col-sm-12" }, [
         _c("div", { staticClass: "form-group text-center" }, [
           _c("label", { attrs: { for: "brand" } }, [_vm._v("Price From ($)")]),
           _vm._v(" "),
@@ -51818,7 +51865,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-2" }, [
+      _c("div", { staticClass: "col-md-2 col-sm-12 " }, [
         _c("div", { staticClass: "form-group text-center" }, [
           _c("label", { attrs: { for: "brand" } }, [_vm._v("Price To ($)")]),
           _vm._v(" "),
@@ -51851,11 +51898,51 @@ var render = function() {
     _vm._v(" "),
     _vm.filtered_mobiles.length
       ? _c("div", { staticClass: "row justify-content-center" }, [
-          _c("div", { staticClass: "col-10" }, [
+          _c("div", { staticClass: "col-md-3" }, [
+            _c("div", { staticClass: "section-side" }, [
+              _c("h5", [
+                _vm._v("\n                    Top 10 By Fans\n                ")
+              ]),
+              _vm._v(" "),
+              _c(
+                "ul",
+                { staticClass: "list-group" },
+                _vm._l(_vm.top_love, function(top) {
+                  return _c(
+                    "li",
+                    {
+                      staticClass:
+                        "list-group-item d-flex justify-content-between align-items-center"
+                    },
+                    [
+                      _c("a", { attrs: { href: top.show_url } }, [
+                        _vm._v(
+                          "\n                            " +
+                            _vm._s(top.name) +
+                            "\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "badge  badge-pill" }, [
+                        _vm._v(
+                          _vm._s(top.number_of_fans ? top.number_of_fans : 0) +
+                            " "
+                        )
+                      ])
+                    ]
+                  )
+                })
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(1)
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6" }, [
             _c(
               "ul",
               { staticClass: "list-unstyled" },
-              _vm._l(_vm.filtered_mobiles, function(mobile) {
+              _vm._l(_vm.filtered_mobiles, function(mobile, index) {
                 return _c("li", { staticClass: "li-item" }, [
                   _c("a", { attrs: { href: mobile.show_url } }, [
                     _c("img", {
@@ -51882,6 +51969,51 @@ var render = function() {
                 ])
               })
             )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3" }, [
+            _c("div", { staticClass: "section-side" }, [
+              _c("h5", [
+                _vm._v(
+                  "\n                    Top 10 By Price\n                "
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "ul",
+                { staticClass: "list-group" },
+                _vm._l(_vm.top_prices, function(top) {
+                  return _c(
+                    "li",
+                    {
+                      staticClass:
+                        "list-group-item d-flex justify-content-between align-items-center"
+                    },
+                    [
+                      _c("a", { attrs: { href: top.show_url } }, [
+                        _vm._v(
+                          "\n                            " +
+                            _vm._s(top.name) +
+                            "\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "badge  badge-pill" }, [
+                        _vm._v(
+                          _vm._s(
+                            top.main_price_description
+                              ? top.main_price_description
+                              : 0
+                          ) + " "
+                        )
+                      ])
+                    ]
+                  )
+                })
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(2)
           ])
         ])
       : _vm._e(),
@@ -51890,7 +52022,7 @@ var render = function() {
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-2" }),
           _vm._v(" "),
-          _vm._m(0),
+          _vm._m(3),
           _vm._v(" "),
           _c("div", { staticClass: "col-2" })
         ])
@@ -51898,6 +52030,46 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row ad-row" }, [
+      _c("div", { staticClass: "col-md-3" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-7" }, [
+        _c("div", { staticClass: "big-banner" }, [
+          _c("p", { staticClass: "text-center" }, [
+            _vm._v(
+              "\n                    Advertisement Place\n                "
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-2" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "big-banner" }, [
+      _c("p", { staticClass: "text-center" }, [
+        _vm._v("\n                    Advertisement Place\n                ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "big-banner" }, [
+      _c("p", { staticClass: "text-center" }, [
+        _vm._v("\n                    Advertisement Place\n                ")
+      ])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

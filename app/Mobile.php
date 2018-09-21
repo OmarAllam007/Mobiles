@@ -115,7 +115,7 @@ class Mobile extends Model
 
     function mobileURLAttribute()
     {
-        return [$this, strtolower($this->brand->name), str_slug($this->name)];
+        return route('mobile.display',[$this,strtolower($this->brand->name),str_slug($this->name)]);
     }
 
     function scopeTopFans($query){
@@ -128,6 +128,10 @@ class Mobile extends Model
 
     function scopeLatestMobiles($query){
         return $query->orderBy('created_at','DESC')->take(9);
+    }
+
+    function scopeByPrice($query){
+        return $query->orderBy('main_price_description','DESC')->take(10);
     }
 
 }
