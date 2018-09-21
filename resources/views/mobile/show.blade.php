@@ -1,19 +1,7 @@
 @extends('layout.app')
 
 @section('header')
-    <div class="text-center">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- UserAdsMobile -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-1518734753701301"
-             data-ad-slot="9249563350"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
+
 @stop
 
 
@@ -29,7 +17,7 @@
     <div id="show">
         <div class="row">
             <div class="col-2"></div>
-            <div class="col-8">
+            <div class="col-8 col-md-8 col-sm-4">
                 @if(isset($mobile->advertisements[0]) && $mobile->advertisements[0])
                     <div class="card">
                         {{Adsense::get('example')}}
