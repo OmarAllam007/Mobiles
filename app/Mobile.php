@@ -126,4 +126,8 @@ class Mobile extends Model
         return $query->orderBy('number_of_hits','DESC')->take(10);
     }
 
+    function scopeLatestMobiles($query){
+        return $query->orderBy('created_at','DESC')->take(9);
+    }
+
 }

@@ -640,7 +640,7 @@ li.list-group-item:hover > a {
 .big-banner {
   border: 1px solid;
   padding: 30px;
-  margin: 0;
+  margin: 10px 0 10px 0;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -662,22 +662,63 @@ footer {
   width: 100%;
 
 }
-.site-link{
+
+.site-link {
   text-decoration: none !important;
   color: #1a998b;
 }
-.site-link:hover{
+
+.site-link:hover {
   text-decoration: none !important;
   color: #fff;
 }
 
-
-.footer{
-  position:fixed;
-  bottom:0;
-  width:100%;
-  height:60px;   /* Height of the footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Height of the footer */
   background-color: #2d3047;
   border-top: 10px solid #1a998b;
 
+}
+
+.bigad {
+  margin-bottom: 5px;
+}
+
+.container-brands {
+
+}
+
+a.brand-url {
+  width: 125px;
+  height: 131.5px;
+  margin: 0;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none !important;
+  transition: background-color .7s;
+  -webkit-transition: background-color .7s;
+  background-color: white;
+}
+
+a.brand-url p {
+  margin: 0;
+  font-size: 1.2em;
+  line-height: 2em;
+  padding: 5px;
+  color: #2d3047;
+}
+
+.brand-url:hover {
+  background-color: rgba(26, 153, 139, 0.58);
+  border-radius: 10px 10px 0 0;
+}
+
+
+.brand-image {
+  height: 100px;
+  margin: auto;
+  width: 70%;
 }
