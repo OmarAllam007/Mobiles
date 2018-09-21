@@ -66,12 +66,12 @@
                             <i class="fa fa-exchange-alt"></i> {{t('Compare')}}</a>
                     </li>
 
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#">
-                            <i class="fa fa-newspaper"></i>
-                            {{t('News')}}
-                        </a>
-                    </li>
+                    {{--<li class="nav-item ">--}}
+                        {{--<a class="nav-link" href="#">--}}
+                            {{--<i class="fa fa-newspaper"></i>--}}
+                            {{--{{t('News')}}--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
 
                     <li class="nav-item ">
                         <a class="nav-link" href="{{route('choose.me')}}">
