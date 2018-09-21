@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mobile;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $topMobilesLove = Mobile::orderBy('number_of_fans','DESC')->take(10)->get();
+        $topMobilesHits = Mobile::orderBy('number_of_hits','DESC')->take(10)->get();
+
+        return view('index',compact('topMobilesLove','topMobilesHits'));
     }
 }

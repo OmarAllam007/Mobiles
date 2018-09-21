@@ -45,7 +45,7 @@
 <div id="header">
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark"
+        <nav class="navbar  navbar-expand-lg navbar-dark"
              style="background-color: #2d3047 ;border-bottom: 4px #1b998b solid">
             <a class="navbar-brand" href="{{url('/')}}">{{env('APP_NAME')}}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -146,9 +146,11 @@
 <div>
 
 
-    <main class="container-fluid" >
-        <div class="main-class" style="margin: auto;padding: 20px 0;">
-            <div class="main-ad">
+    <main class="container-fluid" style="margin-bottom: 100px">
+        <div class=" row">
+            <div class="col-2"></div>
+            <div class="col-md-8">
+                <div class="main-class" style="margin: auto;padding: 20px 0;"></div>
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- UserAdsMobile -->
                 <ins class="adsbygoogle"
@@ -161,6 +163,7 @@
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
+            <div class="col-2"></div>
         </div>
         <div class="title-bar">
             <div class="row">
@@ -171,8 +174,12 @@
         <div id="app">
             @yield('body')
         </div>
-
     </main>
+
+    <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark"
+         style="background-color: #2d3047 ;border-top: 4px #1b998b solid;">
+     <p style="color: white">Copyright <a href="{{url('/')}}" class="site-link">@MobArrow</a> 2018-2019</p>
+    </nav>
 </div>
 
 <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
@@ -247,5 +254,6 @@
 
 </script>
 </body>
+
 
 </html>

@@ -113,4 +113,9 @@ class Mobile extends Model
     }
 
 
+    function mobileURLAttribute()
+    {
+        return [$this, strtolower($this->brand->name), str_slug($this->name)];
+    }
+
 }
