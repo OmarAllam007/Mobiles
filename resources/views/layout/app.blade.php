@@ -41,7 +41,7 @@
     }
     })
 @endphp
-<div id="header">
+<div>
     <header>
         <nav class="navbar  navbar-expand-lg navbar-dark"
              style="background-color: #2d3047 ;border-bottom: 4px #1b998b solid">
@@ -63,13 +63,6 @@
                         <a class="nav-link" href="{{route('compare.index')}}">
                             <i class="fa fa-exchange-alt"></i> {{t('Compare')}}</a>
                     </li>
-
-                    {{--<li class="nav-item ">--}}
-                    {{--<a class="nav-link" href="#">--}}
-                    {{--<i class="fa fa-newspaper"></i>--}}
-                    {{--{{t('News')}}--}}
-                    {{--</a>--}}
-                    {{--</li>--}}
 
                     <li class="nav-item ">
                         <a class="nav-link" href="{{route('choose.me')}}">
@@ -97,8 +90,9 @@
 
                 </ul>
 
-
-                <search-mobile :mobiles="{{$mobiles}}"></search-mobile>
+                <div id="header">
+                    <search-mobile :mobiles="{{$mobiles}}"></search-mobile>
+                </div>
 
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
@@ -154,19 +148,16 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8 col-sm-8">
-                <div class="big-banner ">
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- MobArrow-responsive -->
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-1864972736029501"
-                         data-ad-slot="7077188983"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
+                <Adsense
+                        data-ad-client="ca-pub-1864972736029501"
+                        data-ad-slot="7077188983"
+                        data-ad-format="auto"
+                        data-full-width-responsive="true"
+                        class="adsbygoogle"
+                        style="display:block"
+                >
+                </Adsense>
+
             </div>
             <div class="col-md-2"></div>
         </div>

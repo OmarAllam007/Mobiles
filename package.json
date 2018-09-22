@@ -20,6 +20,8 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
-        "jquery-backdetect": "^1.0.3"
+        "jquery-backdetect": "^1.0.3",
+        "vue-google-adsense": "^1.2.0",
+        "vue-script2": "^2.0.3"
     }
 }

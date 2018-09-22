@@ -1,7 +1,6 @@
 @extends('layout.app')
 
 @section('body')
-
     <div class="row">
         <div class="col-md-4 col-sm-12">
             <div class="section-side">
