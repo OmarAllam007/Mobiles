@@ -29,6 +29,14 @@
                     </ul>
                 </section>
                 <br>
+                <Adsense
+                        data-ad-client="ca-pub-1864972736029501"
+                        data-ad-slot="7077188983"
+                        data-ad-format="auto"
+                        data-full-width-responsive="true"
+                        class="adsbygoogle"
+                        style="display:block">
+                </Adsense>
             </div>
             <div class="col-md-6">
                 <div class="card card-layout"
@@ -144,6 +152,14 @@
                     </ul>
                 </section>
                 <br>
+                <Adsense
+                        data-ad-client="ca-pub-1864972736029501"
+                        data-ad-slot="7077188983"
+                        data-ad-format="auto"
+                        data-full-width-responsive="true"
+                        class="adsbygoogle"
+                        style="display:block">
+                </Adsense>
             </div>
         </div>
 
@@ -154,16 +170,7 @@
       <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-6">
-              <div class="big-banner">
-                  <Adsense
-                          data-ad-client="ca-pub-1864972736029501"
-                          data-ad-slot="7077188983"
-                          data-ad-format="auto"
-                          data-full-width-responsive="true"
-                          class="adsbygoogle"
-                          style="display:block">
-                  </Adsense>
-              </div>
+             
           </div>
           <div class="col-md-3"></div>
       </div>
