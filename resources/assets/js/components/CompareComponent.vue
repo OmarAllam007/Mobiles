@@ -607,8 +607,8 @@
                         <tr>
                             <td >VR</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
-                                <i class="fa fa-check text-success" v-if="selected_mobile_data.others_vr_support"></i>
-                                <i class="fa fa-times text-danger" v-if="!selected_mobile_data.others_vr_support"></i>
+                                <i class="fa fa-check text-success" v-show="selected_mobile_data.others_vr_support"></i>
+                                <i class="fa fa-times text-danger" v-show="!selected_mobile_data.others_vr_support"></i>
                             </td>
                         </tr>
 
@@ -616,24 +616,24 @@
                             <td >Notifications LED</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 <i class="fa fa-check text-success"
-                                   v-if="selected_mobile_data.others_notification_led_support"></i>
+                                   v-show="selected_mobile_data.others_notification_led_support"></i>
                                 <i class="fa fa-times text-danger"
-                                   v-if="!selected_mobile_data.others_notification_led_support"></i>
+                                   v-show="!selected_mobile_data.others_notification_led_support"></i>
                             </td>
                         </tr>
                         <tr>
                             <td >Additional Microphone</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 <i class="fa fa-check text-success"
-                                   v-if="selected_mobile_data.others_additional_microphone_exist"></i>
+                                   v-show="selected_mobile_data.others_additional_microphone_exist"></i>
                                 <i class="fa fa-times text-danger"
-                                   v-if="!selected_mobile_data.others_additional_microphone_exist"></i>
+                                   v-show="!selected_mobile_data.others_additional_microphone_exist"></i>
                             </td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-3"></div>
+                <div class="col-md-2"></div>
             </div>
 
             <div class="row">

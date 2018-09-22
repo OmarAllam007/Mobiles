@@ -50479,17 +50479,31 @@ var render = function() {
                           index
                         ) {
                           return _c("td", [
-                            selected_mobile_data.others_vr_support
-                              ? _c("i", {
-                                  staticClass: "fa fa-check text-success"
-                                })
-                              : _vm._e(),
+                            _c("i", {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: selected_mobile_data.others_vr_support,
+                                  expression:
+                                    "selected_mobile_data.others_vr_support"
+                                }
+                              ],
+                              staticClass: "fa fa-check text-success"
+                            }),
                             _vm._v(" "),
-                            !selected_mobile_data.others_vr_support
-                              ? _c("i", {
-                                  staticClass: "fa fa-times text-danger"
-                                })
-                              : _vm._e()
+                            _c("i", {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: !selected_mobile_data.others_vr_support,
+                                  expression:
+                                    "!selected_mobile_data.others_vr_support"
+                                }
+                              ],
+                              staticClass: "fa fa-times text-danger"
+                            })
                           ])
                         })
                       ],
@@ -50506,17 +50520,32 @@ var render = function() {
                           index
                         ) {
                           return _c("td", [
-                            selected_mobile_data.others_notification_led_support
-                              ? _c("i", {
-                                  staticClass: "fa fa-check text-success"
-                                })
-                              : _vm._e(),
+                            _c("i", {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value:
+                                    selected_mobile_data.others_notification_led_support,
+                                  expression:
+                                    "selected_mobile_data.others_notification_led_support"
+                                }
+                              ],
+                              staticClass: "fa fa-check text-success"
+                            }),
                             _vm._v(" "),
-                            !selected_mobile_data.others_notification_led_support
-                              ? _c("i", {
-                                  staticClass: "fa fa-times text-danger"
-                                })
-                              : _vm._e()
+                            _c("i", {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: !selected_mobile_data.others_notification_led_support,
+                                  expression:
+                                    "!selected_mobile_data.others_notification_led_support"
+                                }
+                              ],
+                              staticClass: "fa fa-times text-danger"
+                            })
                           ])
                         })
                       ],
@@ -50533,17 +50562,32 @@ var render = function() {
                           index
                         ) {
                           return _c("td", [
-                            selected_mobile_data.others_additional_microphone_exist
-                              ? _c("i", {
-                                  staticClass: "fa fa-check text-success"
-                                })
-                              : _vm._e(),
+                            _c("i", {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value:
+                                    selected_mobile_data.others_additional_microphone_exist,
+                                  expression:
+                                    "selected_mobile_data.others_additional_microphone_exist"
+                                }
+                              ],
+                              staticClass: "fa fa-check text-success"
+                            }),
                             _vm._v(" "),
-                            !selected_mobile_data.others_additional_microphone_exist
-                              ? _c("i", {
-                                  staticClass: "fa fa-times text-danger"
-                                })
-                              : _vm._e()
+                            _c("i", {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: !selected_mobile_data.others_additional_microphone_exist,
+                                  expression:
+                                    "!selected_mobile_data.others_additional_microphone_exist"
+                                }
+                              ],
+                              staticClass: "fa fa-times text-danger"
+                            })
                           ])
                         })
                       ],
@@ -50554,7 +50598,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-3" })
+            _c("div", { staticClass: "col-md-2" })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
