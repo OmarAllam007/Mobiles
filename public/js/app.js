@@ -48908,9 +48908,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Image")
-                        ]),
+                        _c("td", [_vm._v("Image")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -48939,9 +48937,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Name")
-                        ]),
+                        _c("td", [_vm._v("Name")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -48962,9 +48958,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Release Date")
-                        ]),
+                        _c("td", [_vm._v("Release Date")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -48985,9 +48979,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Operating System")
-                        ]),
+                        _c("td", [_vm._v("Operating System")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49008,9 +49000,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Size")
-                        ]),
+                        _c("td", [_vm._v("Size")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49031,9 +49021,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Weight")
-                        ]),
+                        _c("td", [_vm._v("Weight")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49054,9 +49042,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Material Of Manfacture")
-                        ]),
+                        _c("td", [_vm._v("Material Of Manfacture")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49077,9 +49063,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("No. of SIMs")
-                        ]),
+                        _c("td", [_vm._v("No. of SIMs")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49102,9 +49086,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Size of SIM")
-                        ]),
+                        _c("td", [_vm._v("Size of SIM")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49164,9 +49146,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Screen Size")
-                        ]),
+                        _c("td", [_vm._v("Screen Size")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49187,9 +49167,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Screen Size Percentage")
-                        ]),
+                        _c("td", [_vm._v("Screen Size Percentage")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49212,9 +49190,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Release Date")
-                        ]),
+                        _c("td", [_vm._v("Release Date")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49235,9 +49211,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Resolution")
-                        ]),
+                        _c("td", [_vm._v("Resolution")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49258,9 +49232,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Screen Dimensions")
-                        ]),
+                        _c("td", [_vm._v("Screen Dimensions")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49281,9 +49253,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Density of Pixels")
-                        ]),
+                        _c("td", [_vm._v("Density of Pixels")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49306,9 +49276,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v(" Screen Technology")
-                        ]),
+                        _c("td", [_vm._v(" Screen Technology")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49329,9 +49297,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Screen Colors")
-                        ]),
+                        _c("td", [_vm._v("Screen Colors")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49352,9 +49318,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Touch")
-                        ]),
+                        _c("td", [_vm._v("Touch")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49377,9 +49341,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Screen Protection")
-                        ]),
+                        _c("td", [_vm._v("Screen Protection")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49400,9 +49362,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Extra Features")
-                        ]),
+                        _c("td", [_vm._v("Extra Features")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49462,9 +49422,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Internal Storage")
-                        ]),
+                        _c("td", [_vm._v("Internal Storage")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49489,9 +49447,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("RAM")
-                        ]),
+                        _c("td", [_vm._v("RAM")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49511,9 +49467,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("External Storage")
-                        ]),
+                        _c("td", [_vm._v("External Storage")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49579,9 +49533,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Main Camera")
-                        ]),
+                        _c("td", [_vm._v("Main Camera")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49604,9 +49556,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Front Camera")
-                        ]),
+                        _c("td", [_vm._v("Front Camera")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49629,9 +49579,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Front Camera Feature")
-                        ]),
+                        _c("td", [_vm._v("Front Camera Feature")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49654,9 +49602,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Video")
-                        ]),
+                        _c("td", [_vm._v("Video")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49677,9 +49623,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Flash")
-                        ]),
+                        _c("td", [_vm._v("Flash")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49700,9 +49644,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Aperture")
-                        ]),
+                        _c("td", [_vm._v("Aperture")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49725,9 +49667,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Sensor Size")
-                        ]),
+                        _c("td", [_vm._v("Sensor Size")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49750,9 +49690,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Focal Length")
-                        ]),
+                        _c("td", [_vm._v("Focal Length")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49775,9 +49713,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Other Features")
-                        ]),
+                        _c("td", [_vm._v("Other Features")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49837,9 +49773,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Processor")
-                        ]),
+                        _c("td", [_vm._v("Processor")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49860,9 +49794,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Graphical Processor")
-                        ]),
+                        _c("td", [_vm._v("Graphical Processor")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49885,9 +49817,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Chipset")
-                        ]),
+                        _c("td", [_vm._v("Chipset")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49945,9 +49875,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Type")
-                        ]),
+                        _c("td", [_vm._v("Type")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49968,9 +49896,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Calls")
-                        ]),
+                        _c("td", [_vm._v("Calls")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49993,9 +49919,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Music")
-                        ]),
+                        _c("td", [_vm._v("Music")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50018,9 +49942,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Video")
-                        ]),
+                        _c("td", [_vm._v("Video")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50043,9 +49965,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Flash")
-                        ]),
+                        _c("td", [_vm._v("Flash")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50066,9 +49986,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Removable")
-                        ]),
+                        _c("td", [_vm._v("Removable")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50132,9 +50050,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Radio")
-                        ]),
+                        _c("td", [_vm._v("Radio")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50161,9 +50077,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Speakers")
-                        ]),
+                        _c("td", [_vm._v("Speakers")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50184,9 +50098,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("3.5mm Slot")
-                        ]),
+                        _c("td", [_vm._v("3.5mm Slot")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50250,9 +50162,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Network")
-                        ]),
+                        _c("td", [_vm._v("Network")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50279,9 +50189,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Bluetooth")
-                        ]),
+                        _c("td", [_vm._v("Bluetooth")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50304,9 +50212,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("WIFI")
-                        ]),
+                        _c("td", [_vm._v("WIFI")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50329,9 +50235,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("USB")
-                        ]),
+                        _c("td", [_vm._v("USB")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50352,9 +50256,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Hotspot")
-                        ]),
+                        _c("td", [_vm._v("Hotspot")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50381,9 +50283,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("NFC")
-                        ]),
+                        _c("td", [_vm._v("NFC")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50410,9 +50310,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("OTG")
-                        ]),
+                        _c("td", [_vm._v("OTG")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50439,9 +50337,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("IR")
-                        ]),
+                        _c("td", [_vm._v("IR")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50505,9 +50401,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("GPS")
-                        ]),
+                        _c("td", [_vm._v("GPS")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50528,9 +50422,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Sensors")
-                        ]),
+                        _c("td", [_vm._v("Sensors")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50551,9 +50443,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Open By")
-                        ]),
+                        _c("td", [_vm._v("Open By")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50582,9 +50472,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("VR")
-                        ]),
+                        _c("td", [_vm._v("VR")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50611,9 +50499,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Notifications LED")
-                        ]),
+                        _c("td", [_vm._v("Notifications LED")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50640,9 +50526,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Additional Microphone")
-                        ]),
+                        _c("td", [_vm._v("Additional Microphone")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50706,9 +50590,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Colors")
-                        ]),
+                        _c("td", [_vm._v("Colors")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50729,9 +50611,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Price")
-                        ]),
+                        _c("td", [_vm._v("Price")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50752,9 +50632,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "190px" } }, [
-                          _vm._v("Purchase From")
-                        ]),
+                        _c("td", [_vm._v("Purchase From")]),
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
