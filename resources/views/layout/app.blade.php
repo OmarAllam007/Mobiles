@@ -135,8 +135,7 @@
 </div>
 {{--<script src="https://cdn.rtlcss.com/bootstrap/v4.0.0/js/bootstrap.min.js" integrity="sha384-54+cucJ4QbVb99v8dcttx/0JRx4FHMmhOWi4W+xrXpKcsKQodCBwAvu3xxkZAwsH" crossorigin="anonymous"></script>--}}
 
-<div>
-
+<div id="app">
     <main class="container-fluid" style="margin-bottom: 100px">
         <div class="title-bar">
             <div class="row">
@@ -163,11 +162,10 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div id="app">
-                    @yield('body')
-                </div>
+                @yield('body')
             </div>
         </div>
+        
 
     </main>
 
