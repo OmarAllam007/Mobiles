@@ -79,7 +79,7 @@
 
 <div class="row">
     <div class="col-md-3">
-        <div class="big-banner ">
+        <div class="big-banner">
             <Adsense
                     data-ad-client="ca-pub-1864972736029501"
                     data-ad-slot="7077188983"
@@ -168,7 +168,7 @@
         </table>
     </div>
     <div class="col-md-3">
-        <div class="big-banner ">
+        <div class="big-banner">
             <Adsense
                     data-ad-client="ca-pub-1864972736029501"
                     data-ad-slot="7077188983"

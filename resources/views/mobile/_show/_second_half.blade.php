@@ -306,7 +306,79 @@
     <div class="col-md-3"></div>
 </div>
 
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <td style="background-color: #1b998b;color:white" colspan="2">
+                    <i class="fa fa-camera-retro"></i> Camera
+                </td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="width: 180px">Main Camera</td>
+                <td>
+                    {{$mobile->camera_main_camera}}
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 180px">Front Camera</td>
+                <td>
+                    {{$mobile->camera_front_camera}}
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 180px">Front Camera Feature</td>
+                <td>
+                    {{$mobile->camera_front_camera_features}}
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 180px">Video</td>
+                <td>
+                    {{$mobile->camera_video}}
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 180px">Flash</td>
+                <td>
+                    {{$mobile->camera_flash}}
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 180px">Aperture</td>
+                <td>
+                    {{$mobile->camera_lens_aperture}}
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 180px">Sensor Size</td>
+                <td>
+                    {{$mobile->camera_sensor_size}}
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 180px">Focal Length</td>
+                <td>
+                    {{$mobile->camera_focal_length}}
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 180px">Other Features</td>
+                <td>
+                    {{$mobile->camera_other_features}}
+                </td>
+            </tr>
 
+
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-3"></div>
+</div>
 <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
@@ -357,11 +429,7 @@
 </div>
 
 
-<div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6"></div>
-    <div class="col-md-3"></div>
-</div>
+
 
 
 

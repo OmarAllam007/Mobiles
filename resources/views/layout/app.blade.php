@@ -41,7 +41,7 @@
     }
     })
 @endphp
-<div>
+<div id="header">
     <header>
         <nav class="navbar  navbar-expand-lg navbar-dark"
              style="background-color: #2d3047 ;border-bottom: 4px #1b998b solid">
@@ -90,9 +90,9 @@
 
                 </ul>
 
-                <div id="header">
+
                     <search-mobile :mobiles="{{$mobiles}}"></search-mobile>
-                </div>
+
 
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
