@@ -27,9 +27,8 @@
 
 
     </style>
-    {{--<meta name="google-site-verification" content="RDXegnp82JQCC1Sm-vIGwaDKry4bm10oiNpIjp8g1HA"/>--}}
-    <!-- Styles -->
-
+{{--<meta name="google-site-verification" content="RDXegnp82JQCC1Sm-vIGwaDKry4bm10oiNpIjp8g1HA"/>--}}
+<!-- Styles -->
 
 
 </head>
@@ -66,10 +65,10 @@
                     </li>
 
                     {{--<li class="nav-item ">--}}
-                        {{--<a class="nav-link" href="#">--}}
-                            {{--<i class="fa fa-newspaper"></i>--}}
-                            {{--{{t('News')}}--}}
-                        {{--</a>--}}
+                    {{--<a class="nav-link" href="#">--}}
+                    {{--<i class="fa fa-newspaper"></i>--}}
+                    {{--{{t('News')}}--}}
+                    {{--</a>--}}
                     {{--</li>--}}
 
                     <li class="nav-item ">
@@ -151,6 +150,7 @@
             </div>
         </div>
         <div class="clearfix"></div>
+
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8 col-sm-8">
@@ -170,14 +170,19 @@
             </div>
             <div class="col-md-2"></div>
         </div>
-        <div id="app">
-            @yield('body')
+        <div class="row">
+            <div class="col-md-12">
+                <div id="app">
+                    @yield('body')
+                </div>
+            </div>
         </div>
+
     </main>
 
     <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark"
          style="background-color: #2d3047 ;border-top: 4px #1b998b solid;">
-     <p style="color: white">Copyright <a href="{{url('/')}}" class="site-link">@MobArrow</a> 2018-2019</p>
+        <p style="color: white">Copyright <a href="{{url('/')}}" class="site-link">@MobArrow</a> 2018-2019</p>
     </nav>
 </div>
 

@@ -2,18 +2,6 @@
 
 @section('body')
 
-    <div class="row ad-row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <div class="big-banner">
-                <p class="text-center">
-                    Advertisement Place
-                </p>
-            </div>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
-
     <div class="row">
         <div class="col-md-4 col-sm-12">
             <div class="section-side">
@@ -75,9 +63,17 @@
         </div>
         <div class="col-md-8">
             <div class="big-banner ">
-                <p class="text-center">
-                    Advertisement Place
-                </p>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- MobArrow-responsive -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-1864972736029501"
+                     data-ad-slot="7077188983"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </div>
         <div class="col-2">
@@ -110,10 +106,18 @@
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-            <div class="big-banner">
-                <p class="text-center">
-                    Advertisement Place
-                </p>
+            <div class="big-banner ">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- MobArrow-responsive -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-1864972736029501"
+                     data-ad-slot="7077188983"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </div>
         <div class="col-md-2"></div>
