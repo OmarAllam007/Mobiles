@@ -1,7 +1,5 @@
 @extends('layout.app')
 
-
-
 @section('body')
 
     <br>
@@ -147,14 +145,21 @@
                 </section>
                 <br>
             </div>
-
         </div>
 
         {{----}}
         {{----}}
         {{----}}
         @include('mobile._show._first_half')
-
+        <Adsense
+                data-ad-client="ca-pub-1864972736029501"
+                data-ad-slot="7077188983"
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+                class="adsbygoogle"
+                style="display:block"
+        >
+        </Adsense>
         @include('mobile._show._second_half')
 
 
