@@ -51452,54 +51452,61 @@ var render = function() {
       ]),
       _vm._v(" "),
       _vm._l(_vm.filtered_brands, function(brand, key) {
-        return _c(
-          "div",
-          { staticClass: "row", staticStyle: { "padding-top": "10px" } },
-          [
-            _c("div", { staticClass: "col-2" }),
-            _vm._v(" "),
-            brand.mobiles.length
-              ? _c("div", { staticClass: "col-8" }, [
-                  _c("h4", [_vm._v(_vm._s(brand.name))]),
-                  _vm._v(" "),
-                  _c(
-                    "ul",
-                    { staticClass: "list-unstyled" },
-                    _vm._l(brand.mobiles, function(mobile) {
-                      return _c("li", { staticClass: "li-item" }, [
-                        _c("a", { attrs: { href: mobile.show_url } }, [
-                          _c("img", {
-                            staticStyle: { width: "100px", height: "147px" },
-                            attrs: { src: mobile.image_path }
-                          }),
-                          _vm._v(" "),
-                          _c("aside", [
-                            _c("strong", [_vm._v(" " + _vm._s(mobile.name))]),
-                            _vm._v(" "),
-                            _c(
-                              "p",
-                              { staticStyle: { "padding-top": "10px" } },
-                              [
-                                _vm._v(
-                                  " " +
-                                    _vm._s(
-                                      mobile.main_price_description
-                                        ? mobile.main_price_description.toLocaleString()
-                                        : ""
-                                    ) +
-                                    " "
+        return brand.mobiles.length
+          ? _c(
+              "div",
+              { staticClass: "row", staticStyle: { "padding-top": "10px" } },
+              [
+                _c("div", { staticClass: "col-2" }),
+                _vm._v(" "),
+                brand.mobiles.length
+                  ? _c("div", { staticClass: "col-8" }, [
+                      _c("h4", [_vm._v(_vm._s(brand.name))]),
+                      _vm._v(" "),
+                      _c(
+                        "ul",
+                        { staticClass: "list-unstyled" },
+                        _vm._l(brand.mobiles, function(mobile) {
+                          return _c("li", { staticClass: "li-item" }, [
+                            _c("a", { attrs: { href: mobile.show_url } }, [
+                              _c("img", {
+                                staticStyle: {
+                                  width: "100px",
+                                  height: "147px"
+                                },
+                                attrs: { src: mobile.image_path }
+                              }),
+                              _vm._v(" "),
+                              _c("aside", [
+                                _c("strong", [
+                                  _vm._v(" " + _vm._s(mobile.name))
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "p",
+                                  { staticStyle: { "padding-top": "10px" } },
+                                  [
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(
+                                          mobile.main_price_description
+                                            ? mobile.main_price_description.toLocaleString()
+                                            : ""
+                                        ) +
+                                        " "
+                                    )
+                                  ]
                                 )
-                              ]
-                            )
+                              ])
+                            ])
                           ])
-                        ])
-                      ])
-                    })
-                  )
-                ])
-              : _vm._e()
-          ]
-        )
+                        })
+                      )
+                    ])
+                  : _vm._e()
+              ]
+            )
+          : _vm._e()
       }),
       _vm._v(" "),
       _c("div", { staticClass: "col" }),
