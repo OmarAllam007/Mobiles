@@ -153,7 +153,7 @@
         <div class="clearfix"></div>
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-8">
+            <div class="col-md-8 col-sm-8">
                 <div class="big-banner ">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- MobArrow-responsive -->
