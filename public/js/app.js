@@ -48490,6 +48490,64 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['mobiles'],
@@ -48592,9 +48650,9 @@ var render = function() {
           "div",
           [
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-2" }),
+              _c("div", { staticClass: "col-md-2" }),
               _vm._v(" "),
-              _c("div", { staticClass: "col-8" }, [
+              _c("div", { staticClass: "col-md-8" }, [
                 _c(
                   "div",
                   { staticClass: "form-group btn-group-justified form-inline" },
@@ -48651,7 +48709,9 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-2" })
-              ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-2" })
             ]),
             _vm._v(" "),
             _vm._l(_vm.filtered_mobiles_count, function(row) {
@@ -48660,13 +48720,13 @@ var render = function() {
                     "div",
                     { staticClass: "row" },
                     [
-                      _c("div", { staticClass: "col-2" }),
+                      _c("div", { staticClass: "col-md-2" }),
                       _vm._v(" "),
                       _vm._l(row, function(mobile, index) {
                         return _c(
                           "div",
                           {
-                            staticClass: "col-2",
+                            staticClass: "col-md-2 col-sm-3",
                             staticStyle: { "padding-bottom": "10px" }
                           },
                           [
@@ -48770,7 +48830,7 @@ var render = function() {
                         )
                       }),
                       _vm._v(" "),
-                      _c("div", { staticClass: "col-2" })
+                      _c("div", { staticClass: "col-md-2" })
                     ],
                     2
                   )
@@ -48779,11 +48839,11 @@ var render = function() {
             _vm._v(" "),
             !_vm.filtered_mobiles.length
               ? _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-2" }),
+                  _c("div", { staticClass: "col-md-2" }),
                   _vm._v(" "),
                   _vm._m(0),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-2" })
+                  _c("div", { staticClass: "col-md-2" })
                 ])
               : _vm._e()
           ],
@@ -48794,9 +48854,9 @@ var render = function() {
     _vm.comparing
       ? _c("div", [
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-2" }),
+            _c("div", { staticClass: "col-md-3" }),
             _vm._v(" "),
-            _c("div", { staticClass: "col-8" }, [
+            _c("div", { staticClass: "col-md-6" }, [
               _c("div", { staticStyle: { "padding-bottom": "10px" } }, [
                 _c(
                   "button",
@@ -48809,8 +48869,16 @@ var render = function() {
                     _vm._v(" Back\n                    ")
                   ]
                 )
-              ]),
-              _vm._v(" "),
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3" })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-3" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-6" }, [
               _c(
                 "table",
                 {
@@ -48830,7 +48898,7 @@ var render = function() {
                         },
                         [
                           _c("i", { staticClass: "fa fa-sliders-h" }),
-                          _vm._v(" General Feature\n                        ")
+                          _vm._v(" General Features\n                        ")
                         ]
                       )
                     ])
@@ -48840,7 +48908,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Image")
                         ]),
                         _vm._v(" "),
@@ -48854,8 +48922,8 @@ var render = function() {
                             [
                               _c("img", {
                                 staticStyle: {
-                                  width: "180px",
-                                  height: "240px",
+                                  width: "120px",
+                                  height: "200px",
                                   display: "block",
                                   margin: "0 auto"
                                 },
@@ -48871,7 +48939,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Name")
                         ]),
                         _vm._v(" "),
@@ -48894,7 +48962,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Release Date")
                         ]),
                         _vm._v(" "),
@@ -48917,7 +48985,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Operating System")
                         ]),
                         _vm._v(" "),
@@ -48940,7 +49008,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Size")
                         ]),
                         _vm._v(" "),
@@ -48963,7 +49031,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Weight")
                         ]),
                         _vm._v(" "),
@@ -48986,7 +49054,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Material Of Manfacture")
                         ]),
                         _vm._v(" "),
@@ -49009,7 +49077,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("No. of SIMs")
                         ]),
                         _vm._v(" "),
@@ -49034,7 +49102,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Size of SIM")
                         ]),
                         _vm._v(" "),
@@ -49057,8 +49125,16 @@ var render = function() {
                     )
                   ])
                 ]
-              ),
-              _vm._v(" "),
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3" })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-3" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-6" }, [
               _c(
                 "table",
                 {
@@ -49088,7 +49164,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Screen Size")
                         ]),
                         _vm._v(" "),
@@ -49111,7 +49187,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Screen Size Percentage")
                         ]),
                         _vm._v(" "),
@@ -49136,7 +49212,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Release Date")
                         ]),
                         _vm._v(" "),
@@ -49159,7 +49235,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Resolution")
                         ]),
                         _vm._v(" "),
@@ -49182,7 +49258,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Screen Dimensions")
                         ]),
                         _vm._v(" "),
@@ -49205,7 +49281,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Density of Pixels")
                         ]),
                         _vm._v(" "),
@@ -49230,7 +49306,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v(" Screen Technology")
                         ]),
                         _vm._v(" "),
@@ -49253,7 +49329,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Screen Colors")
                         ]),
                         _vm._v(" "),
@@ -49276,7 +49352,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Touch")
                         ]),
                         _vm._v(" "),
@@ -49301,7 +49377,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Screen Protection")
                         ]),
                         _vm._v(" "),
@@ -49324,7 +49400,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Extra Features")
                         ]),
                         _vm._v(" "),
@@ -49347,8 +49423,16 @@ var render = function() {
                     )
                   ])
                 ]
-              ),
-              _vm._v(" "),
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3" })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-3" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-6" }, [
               _c(
                 "table",
                 {
@@ -49378,7 +49462,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Internal Storage")
                         ]),
                         _vm._v(" "),
@@ -49405,7 +49489,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("RAM")
                         ]),
                         _vm._v(" "),
@@ -49427,7 +49511,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("External Storage")
                         ]),
                         _vm._v(" "),
@@ -49456,8 +49540,16 @@ var render = function() {
                     )
                   ])
                 ]
-              ),
-              _vm._v(" "),
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3" })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-3" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-6" }, [
               _c(
                 "table",
                 {
@@ -49487,7 +49579,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Main Camera")
                         ]),
                         _vm._v(" "),
@@ -49512,7 +49604,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Front Camera")
                         ]),
                         _vm._v(" "),
@@ -49537,7 +49629,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Front Camera Feature")
                         ]),
                         _vm._v(" "),
@@ -49562,7 +49654,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Video")
                         ]),
                         _vm._v(" "),
@@ -49585,7 +49677,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Flash")
                         ]),
                         _vm._v(" "),
@@ -49608,7 +49700,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Aperture")
                         ]),
                         _vm._v(" "),
@@ -49633,7 +49725,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Sensor Size")
                         ]),
                         _vm._v(" "),
@@ -49658,7 +49750,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Focal Length")
                         ]),
                         _vm._v(" "),
@@ -49683,7 +49775,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Other Features")
                         ]),
                         _vm._v(" "),
@@ -49706,8 +49798,16 @@ var render = function() {
                     )
                   ])
                 ]
-              ),
-              _vm._v(" "),
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3" })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-3" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-6" }, [
               _c(
                 "table",
                 {
@@ -49737,7 +49837,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Processor")
                         ]),
                         _vm._v(" "),
@@ -49760,7 +49860,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Graphical Processor")
                         ]),
                         _vm._v(" "),
@@ -49785,7 +49885,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Chipset")
                         ]),
                         _vm._v(" "),
@@ -49806,8 +49906,16 @@ var render = function() {
                     )
                   ])
                 ]
-              ),
-              _vm._v(" "),
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3" })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-3" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-6" }, [
               _c(
                 "table",
                 {
@@ -49837,7 +49945,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Type")
                         ]),
                         _vm._v(" "),
@@ -49860,7 +49968,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Calls")
                         ]),
                         _vm._v(" "),
@@ -49885,7 +49993,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Music")
                         ]),
                         _vm._v(" "),
@@ -49910,7 +50018,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Video")
                         ]),
                         _vm._v(" "),
@@ -49935,7 +50043,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Flash")
                         ]),
                         _vm._v(" "),
@@ -49958,7 +50066,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Removable")
                         ]),
                         _vm._v(" "),
@@ -49985,8 +50093,16 @@ var render = function() {
                     )
                   ])
                 ]
-              ),
-              _vm._v(" "),
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3" })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-3" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-6" }, [
               _c(
                 "table",
                 {
@@ -50016,7 +50132,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Radio")
                         ]),
                         _vm._v(" "),
@@ -50045,7 +50161,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Speakers")
                         ]),
                         _vm._v(" "),
@@ -50068,7 +50184,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("3.5mm Slot")
                         ]),
                         _vm._v(" "),
@@ -50095,8 +50211,16 @@ var render = function() {
                     )
                   ])
                 ]
-              ),
-              _vm._v(" "),
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3" })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-3" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-6" }, [
               _c(
                 "table",
                 {
@@ -50126,7 +50250,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Network")
                         ]),
                         _vm._v(" "),
@@ -50155,7 +50279,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Bluetooth")
                         ]),
                         _vm._v(" "),
@@ -50180,7 +50304,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("WIFI")
                         ]),
                         _vm._v(" "),
@@ -50205,7 +50329,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("USB")
                         ]),
                         _vm._v(" "),
@@ -50228,7 +50352,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Hotspot")
                         ]),
                         _vm._v(" "),
@@ -50257,7 +50381,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("NFC")
                         ]),
                         _vm._v(" "),
@@ -50286,7 +50410,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("OTG")
                         ]),
                         _vm._v(" "),
@@ -50315,7 +50439,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("IR")
                         ]),
                         _vm._v(" "),
@@ -50342,8 +50466,16 @@ var render = function() {
                     )
                   ])
                 ]
-              ),
-              _vm._v(" "),
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3" })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-3" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-6" }, [
               _c(
                 "table",
                 {
@@ -50373,7 +50505,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("GPS")
                         ]),
                         _vm._v(" "),
@@ -50396,7 +50528,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Sensors")
                         ]),
                         _vm._v(" "),
@@ -50419,7 +50551,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Open By")
                         ]),
                         _vm._v(" "),
@@ -50450,7 +50582,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("VR")
                         ]),
                         _vm._v(" "),
@@ -50479,7 +50611,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Notifications LED")
                         ]),
                         _vm._v(" "),
@@ -50508,7 +50640,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Additional Microphone")
                         ]),
                         _vm._v(" "),
@@ -50535,8 +50667,16 @@ var render = function() {
                     )
                   ])
                 ]
-              ),
-              _vm._v(" "),
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3" })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-3" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-6" }, [
               _c(
                 "table",
                 {
@@ -50566,7 +50706,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Colors")
                         ]),
                         _vm._v(" "),
@@ -50589,7 +50729,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Price")
                         ]),
                         _vm._v(" "),
@@ -50612,7 +50752,7 @@ var render = function() {
                     _c(
                       "tr",
                       [
-                        _c("td", { staticStyle: { width: "180px" } }, [
+                        _c("td", { staticStyle: { width: "190px" } }, [
                           _vm._v("Purchase From")
                         ]),
                         _vm._v(" "),
@@ -50621,63 +50761,51 @@ var render = function() {
                           index
                         ) {
                           return _c("td", [
-                            _c("p", [
+                            _c("p", { staticClass: "text-center" }, [
                               _c(
                                 "a",
                                 {
                                   staticClass: "btn btn-outline-success",
-                                  staticStyle: { width: "200px" },
+                                  staticStyle: { "min-width": "100px" },
                                   attrs: {
                                     role: "button",
                                     target: "_blank",
                                     href: selected_mobile_data.url_amazon
                                   }
                                 },
-                                [
-                                  _vm._v(
-                                    "Open\n                                    On Amazon"
-                                  )
-                                ]
+                                [_vm._v("Amazon")]
                               )
                             ]),
                             _vm._v(" "),
-                            _c("p", [
+                            _c("p", { staticClass: "text-center" }, [
                               _c(
                                 "a",
                                 {
                                   staticClass: "btn btn-outline-secondary",
-                                  staticStyle: { width: "200px" },
+                                  staticStyle: { "min-width": "100px" },
                                   attrs: {
                                     role: "button",
                                     target: "_blank",
                                     href: selected_mobile_data.url_souq
                                   }
                                 },
-                                [
-                                  _vm._v(
-                                    "Open On\n                                    Souq"
-                                  )
-                                ]
+                                [_vm._v("Souq")]
                               )
                             ]),
                             _vm._v(" "),
-                            _c("p", [
+                            _c("p", { staticClass: "text-center" }, [
                               _c(
                                 "a",
                                 {
                                   staticClass: "btn btn-outline-primary",
-                                  staticStyle: { width: "200px" },
+                                  staticStyle: { "min-width": "100px" },
                                   attrs: {
                                     role: "button",
                                     target: "_blank",
                                     href: selected_mobile_data.url_jumia
                                   }
                                 },
-                                [
-                                  _vm._v(
-                                    "Open On\n                                    JUMIA"
-                                  )
-                                ]
+                                [_vm._v("JUMIA")]
                               )
                             ])
                           ])
@@ -50690,7 +50818,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-2" })
+            _c("div", { staticClass: "col-md-3" })
           ])
         ])
       : _vm._e()
@@ -50701,7 +50829,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-8" }, [
+    return _c("div", { staticClass: "col-md-8" }, [
       _c("div", { staticClass: "alert alert-info" }, [
         _c("i", { staticClass: "fa fa-exclamation-circle" }),
         _vm._v(" "),
@@ -51405,7 +51533,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -51416,17 +51544,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -51665,8 +51782,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-2 col-sm-12 " }, [
         _c("div", { staticClass: "form-group text-center" }, [
@@ -51935,7 +52050,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._m(1)
+            _vm._m(0)
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-md-6" }, [
@@ -52013,7 +52128,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._m(2)
+            _vm._m(1)
           ])
         ])
       : _vm._e(),
@@ -52022,7 +52137,7 @@ var render = function() {
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-2" }),
           _vm._v(" "),
-          _vm._m(3),
+          _vm._m(2),
           _vm._v(" "),
           _c("div", { staticClass: "col-2" })
         ])
@@ -52030,26 +52145,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row ad-row" }, [
-      _c("div", { staticClass: "col-md-3" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-7" }, [
-        _c("div", { staticClass: "big-banner" }, [
-          _c("p", { staticClass: "text-center" }, [
-            _vm._v(
-              "\n                    Advertisement Place\n                "
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-2" })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

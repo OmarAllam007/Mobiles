@@ -2,8 +2,8 @@
     <div>
         <div v-if="!comparing">
             <div class="row">
-                <div class="col-2"></div>
-                <div class="col-8">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
                     <div class="form-group btn-group-justified form-inline">
                         <input type="text" v-model="search" class="form-control col"
                                placeholder="Enter Mobile Name"/>
@@ -22,11 +22,12 @@
                     </div>
                     <div class="col-2"></div>
                 </div>
+                <div class="col-md-2"></div>
             </div>
 
             <div class="row" v-if="filtered_mobiles.length" v-for="row in filtered_mobiles_count">
-                <div class="col-2"></div>
-                <div class="col-2" style="padding-bottom:10px;" v-for="(mobile,index) in row">
+                <div class="col-md-2"></div>
+                <div class="col-md-2 col-sm-3" style="padding-bottom:10px;" v-for="(mobile,index) in row">
                     <div style="position: absolute;z-index: 99;padding: 5px;transition:opacity 1s ease-in-out;">
                         <i class="fa fa-2x fa-check-circle" style="color:green;"
                            v-show="selected_mobiles.indexOf(mobile.id) !=-1"></i>
@@ -50,102 +51,113 @@
 
                     </div>
                 </div>
-                <div class="col-2"></div>
+                <div class="col-md-2"></div>
             </div>
             <div class="row" v-if="!filtered_mobiles.length">
-                <div class="col-2"></div>
-                <div class="col-8">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
                     <div class="alert alert-info"><i class="fa fa-exclamation-circle"></i>
                         <strong>No Mobiles found !</strong>
                     </div>
                 </div>
-                <div class="col-2"></div>
+                <div class="col-md-2"></div>
             </div>
         </div>
         <div v-if="comparing">
             <!--General-->
 
             <div class="row">
-                <div class="col-2"></div>
+                <div class="col-md-3"></div>
 
-                <div class="col-8">
+                <div class="col-md-6">
                     <div style="padding-bottom: 10px">
                         <button @click="getBack" class="btn btn-outline-primary">
                             <i class="fa fa-arrow-left"></i> Back
                         </button>
                     </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
 
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
                         <tr>
                             <td :colspan="selected_mobiles.length+1" style="background-color: #1b998b;color:white">
-                                <i class="fa fa-sliders-h"></i> General Feature
+                                <i class="fa fa-sliders-h"></i> General Features
                             </td>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td style="width: 180px">Image</td>
+                            <td style="width: 190px;">Image</td>
                             <td class="text-align: center; "
                                 v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 <img :src="selected_mobile_data.image"
-                                     style="width:180px;height:240px ;display: block;margin:0 auto;">
+                                     style="width:120px;height:200px;display: block;margin:0 auto;">
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Name</td>
+                            <td style="width: 190px;">Name</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.name}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Release Date</td>
+                            <td style="width: 190px;">Release Date</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.released_date}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Operating System</td>
+                            <td style="width: 190px;">Operating System</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.operating_system}}
                             </td>
                         </tr>
 
                         <tr>
-                            <td style="width: 180px">Size</td>
+                            <td style="width: 190px;">Size</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.device_dimension}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Weight</td>
+                            <td style="width: 190px;">Weight</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.device_weight}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Material Of Manfacture</td>
+                            <td style="width: 190px;">Material Of Manfacture</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.device_m_o_m}}
                             </td>
                         </tr>
 
                         <tr>
-                            <td style="width: 180px">No. of SIMs</td>
+                            <td style="width: 190px;">No. of SIMs</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.device_number_of_sims}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Size of SIM</td>
+                            <td style="width: 190px;">Size of SIM</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.device_size_of_sim}}
                             </td>
                         </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
 
-                    <!--Screen-->
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
                         <tr>
@@ -156,77 +168,83 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td style="width: 180px">Screen Size</td>
+                            <td style="width: 190px;">Screen Size</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.screen_size}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Screen Size Percentage</td>
+                            <td style="width: 190px;">Screen Size Percentage</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.screen_size_percentage}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Release Date</td>
+                            <td style="width: 190px;">Release Date</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.released_date}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Resolution</td>
+                            <td style="width: 190px;">Resolution</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.screen_resolution}}
                             </td>
                         </tr>
 
                         <tr>
-                            <td style="width: 180px">Screen Dimensions</td>
+                            <td style="width: 190px;">Screen Dimensions</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.screen_dimensions}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Density of Pixels</td>
+                            <td style="width: 190px;">Density of Pixels</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.screen_density_of_pixels}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px"> Screen Technology</td>
+                            <td style="width: 190px;"> Screen Technology</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.screen_technology}}
                             </td>
                         </tr>
 
                         <tr>
-                            <td style="width: 180px">Screen Colors</td>
+                            <td style="width: 190px;">Screen Colors</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.screen_colors}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Touch</td>
+                            <td style="width: 190px;">Touch</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.screen_touch_features}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Screen Protection</td>
+                            <td style="width: 190px;">Screen Protection</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.screen_protection}}
                             </td>
                         </tr>
 
                         <tr>
-                            <td style="width: 180px">Extra Features</td>
+                            <td style="width: 190px;">Extra Features</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.screen_extra_features}}
                             </td>
                         </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
 
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
                     <!--Storage-->
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
@@ -238,19 +256,19 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td style="width: 180px">Internal Storage</td>
+                            <td style="width: 190px;">Internal Storage</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 <p v-for="internal in selected_mobile_data.internal_storage">{{internal}} GB</p>
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">RAM</td>
+                            <td style="width: 190px;">RAM</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 <p v-for="ram in selected_mobile_data.ram">{{ram}} GB</p>
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">External Storage</td>
+                            <td style="width: 190px;">External Storage</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 <p v-for="external_storage in selected_mobile_data.external_storage">
                                     {{external_storage}} GB</p>
@@ -259,7 +277,13 @@
 
                         </tbody>
                     </table>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
 
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
                     <!--Camera-->
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
@@ -271,55 +295,55 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td style="width: 180px">Main Camera</td>
+                            <td style="width: 190px;">Main Camera</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.camera_main_camera}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Front Camera</td>
+                            <td style="width: 190px;">Front Camera</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.camera_front_camera}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Front Camera Feature</td>
+                            <td style="width: 190px;">Front Camera Feature</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.camera_front_camera_features}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Video</td>
+                            <td style="width: 190px;">Video</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.camera_video}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Flash</td>
+                            <td style="width: 190px;">Flash</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.camera_flash}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Aperture</td>
+                            <td style="width: 190px;">Aperture</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.camera_lens_aperture}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Sensor Size</td>
+                            <td style="width: 190px;">Sensor Size</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.camera_sensor_size}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Focal Length</td>
+                            <td style="width: 190px;">Focal Length</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.camera_focal_length}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Other Features</td>
+                            <td style="width: 190px;">Other Features</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.camera_other_features}}
                             </td>
@@ -327,8 +351,13 @@
 
                         </tbody>
                     </table>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
 
-
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
                     <!--Hardware-->
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
@@ -340,26 +369,32 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td style="width: 180px">Processor</td>
+                            <td style="width: 190px;">Processor</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.processor}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Graphical Processor</td>
+                            <td style="width: 190px;">Graphical Processor</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.graphical_processor}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Chipset</td>
+                            <td style="width: 190px;">Chipset</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.chipset}}
                             </td>
                         </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
 
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
                     <!--Battery-->
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
@@ -371,37 +406,37 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td style="width: 180px">Type</td>
+                            <td style="width: 190px;">Type</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.battery_type}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Calls</td>
+                            <td style="width: 190px;">Calls</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.battery_calls_until}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Music</td>
+                            <td style="width: 190px;">Music</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.battery_music_until}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Video</td>
+                            <td style="width: 190px;">Video</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.battery_video_until}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Flash</td>
+                            <td style="width: 190px;">Flash</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.camera_flash}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Removable</td>
+                            <td style="width: 190px;">Removable</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 <i class="fa fa-check text-success"
                                    v-if="selected_mobile_data.battery_is_removable"></i>
@@ -411,7 +446,13 @@
                         </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
 
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
                     <!--Media-->
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
@@ -423,7 +464,7 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td style="width: 180px">Radio</td>
+                            <td style="width: 190px;">Radio</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 <i class="fa fa-check text-success" v-if="selected_mobile_data.media_radio_exist"></i>
                                 <i class="fa fa-times text-danger" v-if="!selected_mobile_data.media_radio_exist"></i>
@@ -431,13 +472,13 @@
 
                         </tr>
                         <tr>
-                            <td style="width: 180px">Speakers</td>
+                            <td style="width: 190px;">Speakers</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.media_speaker}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">3.5mm Slot</td>
+                            <td style="width: 190px;">3.5mm Slot</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 <i class="fa fa-check text-success" v-if="selected_mobile_data.media_is_35_mm_slot"></i>
                                 <i class="fa fa-times text-danger" v-if="!selected_mobile_data.media_is_35_mm_slot"></i>
@@ -445,7 +486,13 @@
                         </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
 
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
                         <tr>
@@ -456,7 +503,7 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td style="width: 180px">Network</td>
+                            <td style="width: 190px;">Network</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.communication_network ?
                                 selected_mobile_data.communication_network.join(' / ') : ''}}
@@ -464,28 +511,28 @@
                         </tr>
 
                         <tr>
-                            <td style="width: 180px">Bluetooth</td>
+                            <td style="width: 190px;">Bluetooth</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.communication_bluetooth}}
                             </td>
                         </tr>
 
                         <tr>
-                            <td style="width: 180px">WIFI</td>
+                            <td style="width: 190px;">WIFI</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.communication_wifi}}
                             </td>
                         </tr>
 
                         <tr>
-                            <td style="width: 180px">USB</td>
+                            <td style="width: 190px;">USB</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.communication_usb}}
                             </td>
                         </tr>
 
                         <tr>
-                            <td style="width: 180px">Hotspot</td>
+                            <td style="width: 190px;">Hotspot</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 <i class="fa fa-check text-success"
                                    v-if="selected_mobile_data.communication_hotspot"></i>
@@ -495,7 +542,7 @@
                         </tr>
 
                         <tr>
-                            <td style="width: 180px">NFC</td>
+                            <td style="width: 190px;">NFC</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 <i class="fa fa-check text-success" v-if="selected_mobile_data.communication_nfc"></i>
                                 <i class="fa fa-times text-danger" v-if="!selected_mobile_data.communication_nfc"></i>
@@ -503,7 +550,7 @@
                         </tr>
 
                         <tr>
-                            <td style="width: 180px">OTG</td>
+                            <td style="width: 190px;">OTG</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 <i class="fa fa-check text-success" v-if="selected_mobile_data.communication_otg"></i>
                                 <i class="fa fa-times text-danger" v-if="!selected_mobile_data.communication_otg"></i>
@@ -511,7 +558,7 @@
                         </tr>
 
                         <tr>
-                            <td style="width: 180px">IR</td>
+                            <td style="width: 190px;">IR</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 <i class="fa fa-check text-success" v-if="selected_mobile_data.communication_ir"></i>
                                 <i class="fa fa-times text-danger" v-if="!selected_mobile_data.communication_ir"></i>
@@ -519,7 +566,13 @@
                         </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
 
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
                     <!--Others-->
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
@@ -531,19 +584,19 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td style="width: 180px">GPS</td>
+                            <td style="width: 190px;">GPS</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.others_gps}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Sensors</td>
+                            <td style="width: 190px;">Sensors</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.others_sensors}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Open By</td>
+                            <td style="width: 190px;">Open By</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 <p v-for="open_device in selected_mobile_data.others_open_device">
                                     {{open_device}}
@@ -552,7 +605,7 @@
                         </tr>
 
                         <tr>
-                            <td style="width: 180px">VR</td>
+                            <td style="width: 190px;">VR</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 <i class="fa fa-check text-success" v-if="selected_mobile_data.others_vr_support"></i>
                                 <i class="fa fa-times text-danger" v-if="!selected_mobile_data.others_vr_support"></i>
@@ -560,7 +613,7 @@
                         </tr>
 
                         <tr>
-                            <td style="width: 180px">Notifications LED</td>
+                            <td style="width: 190px;">Notifications LED</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 <i class="fa fa-check text-success"
                                    v-if="selected_mobile_data.others_notification_led_support"></i>
@@ -569,7 +622,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Additional Microphone</td>
+                            <td style="width: 190px;">Additional Microphone</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 <i class="fa fa-check text-success"
                                    v-if="selected_mobile_data.others_additional_microphone_exist"></i>
@@ -579,7 +632,13 @@
                         </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
 
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
                     <!--Purchase-->
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
@@ -591,43 +650,42 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td style="width: 180px">Colors</td>
+                            <td style="width: 190px;">Colors</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.colors}}
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 180px">Price</td>
+                            <td style="width: 190px;">Price</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 {{selected_mobile_data.price}}
                             </td>
                         </tr>
 
                         <tr>
-                            <td style="width: 180px">Purchase From</td>
+                            <td style="width: 190px;">Purchase From</td>
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
-                                <p>
-                                    <a style="width: 200px;" role="button" target="_blank"
-                                       :href="selected_mobile_data.url_amazon" class="btn btn-outline-success">Open
-                                        On Amazon</a>
+                                <p class="text-center">
+                                    <a style="min-width:100px" role="button" target="_blank"
+                                       :href="selected_mobile_data.url_amazon" class="btn btn-outline-success">Amazon</a>
                                 </p>
-                                <p>
-                                    <a style="width: 200px;" role="button" target="_blank"
-                                       :href="selected_mobile_data.url_souq" class="btn btn-outline-secondary">Open On
-                                        Souq</a>
+                                <p class="text-center">
+                                    <a style="min-width:100px" role="button" target="_blank"
+                                       :href="selected_mobile_data.url_souq" class="btn btn-outline-secondary">Souq</a>
                                 </p>
-                                <p>
-                                    <a style="width: 200px;" role="button" target="_blank"
-                                       :href="selected_mobile_data.url_jumia" class="btn btn-outline-primary">Open On
-                                        JUMIA</a>
+                                <p class="text-center">
+                                    <a style="min-width:100px" role="button" target="_blank"
+                                       :href="selected_mobile_data.url_jumia" class="btn btn-outline-primary">JUMIA</a>
                                 </p>
                             </td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="col-2"></div>
+                <div class="col-md-3"></div>
             </div>
+
+
         </div>
     </div>
 

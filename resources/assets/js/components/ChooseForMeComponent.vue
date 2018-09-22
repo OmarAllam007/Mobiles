@@ -1,17 +1,6 @@
 <template>
     <div>
-        <div class="row ad-row">
-            <div class="col-md-3"></div>
-            <div class="col-md-7">
-                <div class="big-banner">
-                    <p class="text-center">
-                        Advertisement Place
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-2"></div>
-        </div>
-
+        
         <div class="row justify-content-center">
 
             <div class="col-md-2 col-sm-12 ">
