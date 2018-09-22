@@ -9,8 +9,6 @@
         <p v-show="is_hover && !auth">Please Login First</p>
 
     </a>
-
-
 </template>
 
 <script>

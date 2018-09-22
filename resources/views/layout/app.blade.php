@@ -43,7 +43,6 @@
     })
 @endphp
 <div id="header">
-
     <header>
         <nav class="navbar  navbar-expand-lg navbar-dark"
              style="background-color: #2d3047 ;border-bottom: 4px #1b998b solid">
@@ -142,9 +141,8 @@
     </header>
 </div>
 {{--<script src="https://cdn.rtlcss.com/bootstrap/v4.0.0/js/bootstrap.min.js" integrity="sha384-54+cucJ4QbVb99v8dcttx/0JRx4FHMmhOWi4W+xrXpKcsKQodCBwAvu3xxkZAwsH" crossorigin="anonymous"></script>--}}
-<br>
-<div>
 
+<div>
 
     <main class="container-fluid" style="margin-bottom: 100px">
         <div class="title-bar">
@@ -153,6 +151,25 @@
             </div>
         </div>
         <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="big-banner ">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- MobArrow-responsive -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-1864972736029501"
+                         data-ad-slot="7077188983"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
         <div id="app">
             @yield('body')
         </div>
