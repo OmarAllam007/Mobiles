@@ -146,7 +146,7 @@
 
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-8 col-sm-8" style="margin: 10px">
+            <div class="col-md-8 col-sm-8" style="margin: 10px 0">
                 <Adsense
                         data-ad-client="ca-pub-1864972736029501"
                         data-ad-slot="7077188983"
