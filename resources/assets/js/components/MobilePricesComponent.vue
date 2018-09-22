@@ -13,7 +13,7 @@
             <div class="col-2"></div>
         </div>
 
-        <div class="row" v-for="(brand,key) in filtered_brands" style="padding-top: 45px">
+        <div class="row" v-for="(brand,key) in filtered_brands" style="padding-top: 10px">
             <div class="col-2"></div>
             <div v-if="brand.mobiles.length" class="col-8">
                 <h4>{{brand.name}}</h4>

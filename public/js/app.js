@@ -51454,7 +51454,7 @@ var render = function() {
       _vm._l(_vm.filtered_brands, function(brand, key) {
         return _c(
           "div",
-          { staticClass: "row", staticStyle: { "padding-top": "45px" } },
+          { staticClass: "row", staticStyle: { "padding-top": "10px" } },
           [
             _c("div", { staticClass: "col-2" }),
             _vm._v(" "),
