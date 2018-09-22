@@ -48854,9 +48854,9 @@ var render = function() {
     _vm.comparing
       ? _c("div", [
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-3" }),
+            _c("div", { staticClass: "col-md-2" }),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "col-md-8" }, [
               _c("div", { staticStyle: { "padding-bottom": "10px" } }, [
                 _c(
                   "button",
@@ -48872,13 +48872,13 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-3" })
+            _c("div", { staticClass: "col-md-2" })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-3" }),
+            _c("div", { staticClass: "col-md-2" }),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "col-md-8" }, [
               _c(
                 "table",
                 {
@@ -49110,13 +49110,13 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-3" })
+            _c("div", { staticClass: "col-md-2" })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-3" }),
+            _c("div", { staticClass: "col-md-2" }),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "col-md-8" }, [
               _c(
                 "table",
                 {
@@ -49386,13 +49386,13 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-3" })
+            _c("div", { staticClass: "col-md-2" })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-3" }),
+            _c("div", { staticClass: "col-md-2" }),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "col-md-8" }, [
               _c(
                 "table",
                 {
@@ -49497,13 +49497,13 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-3" })
+            _c("div", { staticClass: "col-md-2" })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-3" }),
+            _c("div", { staticClass: "col-md-2" }),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "col-md-8" }, [
               _c(
                 "table",
                 {
@@ -49737,13 +49737,13 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-3" })
+            _c("div", { staticClass: "col-md-2" })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-3" }),
+            _c("div", { staticClass: "col-md-2" }),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "col-md-8" }, [
               _c(
                 "table",
                 {
@@ -49839,13 +49839,13 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-3" })
+            _c("div", { staticClass: "col-md-2" })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-3" }),
+            _c("div", { staticClass: "col-md-2" }),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "col-md-8" }, [
               _c(
                 "table",
                 {
@@ -50014,13 +50014,13 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-3" })
+            _c("div", { staticClass: "col-md-2" })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-3" }),
+            _c("div", { staticClass: "col-md-2" }),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "col-md-8" }, [
               _c(
                 "table",
                 {
@@ -50126,13 +50126,13 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-3" })
+            _c("div", { staticClass: "col-md-2" })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-3" }),
+            _c("div", { staticClass: "col-md-2" }),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "col-md-8" }, [
               _c(
                 "table",
                 {
@@ -50365,13 +50365,13 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-3" })
+            _c("div", { staticClass: "col-md-2" })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-3" }),
+            _c("div", { staticClass: "col-md-2" }),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "col-md-8" }, [
               _c(
                 "table",
                 {
@@ -50602,9 +50602,9 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-3" }),
+            _c("div", { staticClass: "col-md-2" }),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "col-md-8" }, [
               _c(
                 "table",
                 {
@@ -50740,7 +50740,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-3" })
+            _c("div", { staticClass: "col-md-2" })
           ])
         ])
       : _vm._e()
