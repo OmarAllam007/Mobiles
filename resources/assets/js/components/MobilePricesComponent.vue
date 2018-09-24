@@ -7,7 +7,7 @@
                 <div class="form-group">
                     <input type="text" v-model="search" class="form-control searchByPrice"
                            style="border:none;border-bottom: 1px solid #1b998b;background: transparent"
-                           placeholder="Search with price">
+                           :placeholder="t['Search with price']">
                 </div>
             </div>
             <div class="col-2"></div>
@@ -38,7 +38,7 @@
             <div class="col-2"></div>
             <div class="col-8">
                 <div class="alert alert-info"><i class="fa fa-exclamation-circle"></i>
-                    <strong>No Mobiles found !</strong>
+                    <strong>{{t['No Mobiles found']}} !</strong>
                 </div>
             </div>
             <div class="col-2"></div>
@@ -50,7 +50,7 @@
 <script>
     export default {
         name: "mobile-prices",
-        props: ['brands'],
+        props: ['brands','t'],
         data() {
             return {
                 search: '',

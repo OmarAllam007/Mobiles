@@ -2,9 +2,9 @@
     <div class="float-right col-5" style="margin-right: 50px">
         <input type="search" class="form-control" id="search-input" v-model="search" @focus="searching=true"
                @blur="getUnFocused"
-               placeholder="Search">
+               :placeholder="t['Search']">
         <div class="search-box" id="search-box" :class="{'none':!searching,'block':searching}">
-            <span>Devices</span>
+            <span>{{t['Devices']}}</span>
             <ul class="list-unstyled list-group">
                 <li class="list-group-item mobile-search-class" v-for="mobile in filtered_mobiles.slice(0,3)">
                     <a role="button" :href="mobile.show_url" style="width: 100%;height: 100%;display: inline-block">
@@ -12,8 +12,8 @@
                              style="width: 50px;height: 70px;margin: 10px;overflow:scroll"
                         >
                         {{mobile.name}}
-                        <p style="margin: 0">Release Date : {{mobile.released_date}}</p>
-                        <p style="margin: 0">Price : {{mobile.price}}</p>
+                        <p style="margin: 0">{{t['Release Date']}} : {{mobile.released_date}}</p>
+                        <p style="margin: 0">{{t['Price']}} : {{mobile.price}}</p>
                     </a>
                 </li>
             </ul>
@@ -25,7 +25,7 @@
 <script>
     export default {
         name: "search-mobile",
-        props: ['mobiles'],
+        props: ['mobiles', 't'],
         data() {
             return {
                 searching: false,

@@ -27,6 +27,7 @@ Route::group(['middleware'=>['auth']],function (){
     Route::post('make-favourite','MobileController@makeFavourite')->name('make.favourite');
 });
 Route::get('choose-for-me','ChooseForMeController@chooseForMe')->name('choose.me');
+Route::get('change-language/{language}','TranslationController@changeLanguage')->name('language.change');
 Route::post('choose-for-me','ChooseForMeController@filterApply')->name('choose.me');
 Route::get('/compare', 'CompareController@getCompare')->name('compare.index');
 Route::post('compare-items', 'CompareController@analyzeCompareProcess')->name('compare.analyze');
