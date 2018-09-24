@@ -132,7 +132,7 @@ class Mobile extends Model
     }
 
     function scopeByPrice($query){
-        return $query->orderBy('main_price_description')->take(10);
+        return $query->orderBy('main_price_description','DESC')->take(10);
     }
 
 }
