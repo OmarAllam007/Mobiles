@@ -1,6 +1,5 @@
 <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
+    <div class="col-md-12">
         <!--Hardware-->
         <table class="table table-bordered table-striped table-hover">
             <thead>
@@ -33,12 +32,10 @@
         </table>
 
     </div>
-    <div class="col-md-3"></div>
 </div>
 
 <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
+    <div class="col-md-12">
         <!--Battery-->
         <table class="table table-bordered table-striped table-hover">
             <thead>
@@ -93,13 +90,11 @@
         </table>
 
     </div>
-    <div class="col-md-3"></div>
 </div>
 
 
 <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
+    <div class="col-md-12">
         <!--Media-->
         <table class="table table-bordered table-striped table-hover">
             <thead>
@@ -141,12 +136,10 @@
         </table>
 
     </div>
-    <div class="col-md-3"></div>
 </div>
 
 <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
+    <div class="col-md-12">
 
         <table class="table table-bordered table-striped table-hover">
             <thead>
@@ -232,12 +225,10 @@
         </table>
 
     </div>
-    <div class="col-md-3"></div>
 </div>
 
 <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
+    <div class="col-md-12">
         <!--Others-->
         <table class="table table-bordered table-striped table-hover">
             <thead>
@@ -303,12 +294,10 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-3"></div>
 </div>
 
 <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
+    <div class="col-md-12">
         <table class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
@@ -377,11 +366,9 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-3"></div>
 </div>
 <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
+    <div class="col-md-12">
         <!--Purchase-->
         <table class="table table-bordered table-striped table-hover">
             <thead>
@@ -425,7 +412,6 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-3"></div>
 </div>
 
 

@@ -1,7 +1,5 @@
 <div class="row">
-    <div class="col-md-3">
-    </div>
-    <div class="col-md-6">
+    <div class="col-md-12">
         <table class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
@@ -74,26 +72,11 @@
         </table>
         @include('mobile._show._image_modal')
     </div>
-    <div class="col-md-3">
-        <div class="big-banner">
-            <Adsense
-                    data-ad-client="ca-pub-1864972736029501"
-                    data-ad-slot="7077188983"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"
-                    class="adsbygoogle"
-                    style="display:block">
-            </Adsense>
-        </div>
-    </div>
 </div>
 
 
 <div class="row">
-    <div class="col-md-3">
-
-    </div>
-    <div class="col-md-6">
+    <div class="col-md-12">
         <table class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
@@ -170,14 +153,10 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-3">
-
-    </div>
 </div>
 
 <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
+    <div class="col-md-12">
         <table class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
@@ -221,12 +200,10 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-3"></div>
 </div>
 
 <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
+    <div class="col-md-12">
         <table class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
@@ -295,5 +272,20 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-3"></div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <br>
+        <Adsense
+                data-ad-client="ca-pub-1864972736029501"
+                data-ad-slot="7077188983"
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+                class="adsbygoogle"
+                style="display:block"
+        >
+        </Adsense>
+        <br>
+    </div>
 </div>
