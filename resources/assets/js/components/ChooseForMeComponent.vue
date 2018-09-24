@@ -2,8 +2,7 @@
     <div>
 
         <div class="row justify-content-center">
-
-            <div class="col-md-2 col-sm-12 ">
+            <div class="col-md-3 col-sm-12">
                 <div class="form-group text-center">
                     <label for="brand">Brand</label>
                     <select name="brand" id="brand" class="form-control" v-model="brand_id">
@@ -16,51 +15,52 @@
                 </div>
             </div>
 
-            <div class="col-md-2 col-sm-12">
+            <div class="col-md-3 col-sm-12">
                 <div class="form-group text-center">
-                    <label for="brand">Rear Camera (Pixels)</label>
+                    <label for="brand">Rear Camera</label>
                     <input type="number" class="form-control" v-model="main_camera_pixels_description">
                 </div>
             </div>
 
-            <div class="col-md-2 col-sm-12 ">
+            <div class="col-md-3 col-sm-12 ">
                 <div class="form-group text-center">
-                    <label for="brand">Front Camera (Pixels)</label>
+                    <label for="brand">Front Camera</label>
                     <input type="number" class="form-control" v-model="camera_front_camera">
                 </div>
             </div>
 
-            <div class="col-md-2 col-sm-12 ">
+            <div class="col-md-3 col-sm-12 ">
                 <div class="form-group text-center">
                     <label for="brand">RAM (at least)</label>
                     <input type="number" class="form-control" v-model="ram">
                 </div>
             </div>
 
-            <div class="col-md-2 col-sm-12 ">
+            <div class="col-md-3 col-sm-12 ">
                 <div class="form-group text-center">
                     <label for="brand">Battery (mAh)</label>
                     <input type="number" class="form-control" v-model="main_battery_description">
                 </div>
             </div>
 
-
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-md-2 col-sm-12">
+            <div class="col-md-3 col-sm-12">
                 <div class="form-group text-center">
                     <label for="brand">Price From ($)</label>
                     <input type="number" class="form-control" v-model="price_from">
                 </div>
             </div>
 
-            <div class="col-md-2 col-sm-12 ">
+            <div class="col-md-3 col-sm-12 ">
                 <div class="form-group text-center">
                     <label for="brand">Price To ($)</label>
                     <input type="number" class="form-control" v-model="price_to">
                 </div>
             </div>
+
+        </div>
+
+        <div class="row justify-content-center">
+
 
 
             <!--<div class="col-2">-->
@@ -77,31 +77,30 @@
         <div class="row"></div>
 
         <div class="row justify-content-center" v-if="filtered_mobiles.length">
-            <div class="col-md-3">
-                <div class="section-side">
-                    <h5>
-                        Top 10 By Fans
-                    </h5>
-                    <ul class="list-group">
-                        <li v-for="top in top_love"
-                            class="list-group-item d-flex justify-content-between align-items-center">
-                            <a :href="top.show_url">
-                                {{top.name}}
-                            </a>
-                            <span class="badge  badge-pill">{{top.number_of_fans ? top.number_of_fans : 0 }} </span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="big-banner">
-                    <p class="text-center">
-                        Advertisement Place
-                    </p>
-                </div>
-            </div>
+            <!--<div class="col-md-6">-->
+                <!--<div class="section-side">-->
+                    <!--<h5>-->
+                        <!--Top 10 By Fans-->
+                    <!--</h5>-->
+                    <!--<ul class="list-group">-->
+                        <!--<li v-for="top in top_love"-->
+                            <!--class="list-group-item d-flex justify-content-between align-items-center">-->
+                            <!--<a :href="top.show_url">-->
+                                <!--{{top.name}}-->
+                            <!--</a>-->
+                            <!--<span class="badge  badge-pill">{{top.number_of_fans ? top.number_of_fans : 0 }} </span>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+                <!--<div class="big-banner">-->
+                    <!--<p class="text-center">-->
+                        <!--Advertisement Place-->
+                    <!--</p>-->
+                <!--</div>-->
+            <!--</div>-->
 
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <ul class="list-unstyled">
-
                     <li class="li-item" v-for="(mobile,index) in filtered_mobiles">
                         <a :href="mobile.show_url">
                             <img :src="mobile.image_path" style="width: 100px;height: 147px">
@@ -115,27 +114,27 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-3">
-                <div class="section-side">
-                    <h5>
-                        Top 10 By Price
-                    </h5>
-                    <ul class="list-group">
-                        <li v-for="top in top_prices"
-                            class="list-group-item d-flex justify-content-between align-items-center">
-                            <a :href="top.show_url">
-                                {{top.name}}
-                            </a>
-                            <span class="badge  badge-pill">{{top.main_price_description ? top.main_price_description : 0 }} </span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="big-banner">
-                    <p class="text-center">
-                        Advertisement Place
-                    </p>
-                </div>
-            </div>
+            <!--<div class="col-md-6">-->
+                <!--<div class="section-side">-->
+                    <!--<h5>-->
+                        <!--Top 10 By Price-->
+                    <!--</h5>-->
+                    <!--<ul class="list-group">-->
+                        <!--<li v-for="top in top_prices"-->
+                            <!--class="list-group-item d-flex justify-content-between align-items-center">-->
+                            <!--<a :href="top.show_url">-->
+                                <!--{{top.name}}-->
+                            <!--</a>-->
+                            <!--<span class="badge  badge-pill">{{top.main_price_description ? top.main_price_description : 0 }} </span>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+                <!--<div class="big-banner">-->
+                    <!--<p class="text-center">-->
+                        <!--Advertisement Place-->
+                    <!--</p>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
         <div class="row" v-if="!filtered_mobiles.length">
             <div class="col-2"></div>

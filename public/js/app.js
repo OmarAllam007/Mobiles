@@ -48699,34 +48699,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['mobiles', 't'],
@@ -48829,9 +48801,7 @@ var render = function() {
           "div",
           [
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-2" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-8" }, [
+              _c("div", { staticClass: "col-md-12" }, [
                 _c(
                   "div",
                   { staticClass: "form-group btn-group-justified form-inline" },
@@ -48890,9 +48860,7 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-2" })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-2" })
+              ])
             ]),
             _vm._v(" "),
             _vm._l(_vm.filtered_mobiles_count, function(row) {
@@ -48900,133 +48868,120 @@ var render = function() {
                 ? _c(
                     "div",
                     { staticClass: "row" },
-                    [
-                      _c("div", { staticClass: "col-md-2" }),
-                      _vm._v(" "),
-                      _vm._l(row, function(mobile, index) {
-                        return _c(
-                          "div",
-                          {
-                            staticClass: "col-md-2 col-sm-3",
-                            staticStyle: { "padding-bottom": "10px" }
-                          },
-                          [
-                            _c(
-                              "div",
-                              {
-                                staticStyle: {
-                                  position: "absolute",
-                                  "z-index": "99",
-                                  padding: "5px",
-                                  transition: "opacity 1s ease-in-out"
-                                }
-                              },
-                              [
-                                _c("i", {
-                                  directives: [
-                                    {
-                                      name: "show",
-                                      rawName: "v-show",
-                                      value:
-                                        _vm.selected_mobiles.indexOf(
-                                          mobile.id
-                                        ) != -1,
-                                      expression:
-                                        "selected_mobiles.indexOf(mobile.id) !=-1"
-                                    }
-                                  ],
-                                  staticClass: "fa fa-2x fa-check-circle",
-                                  staticStyle: { color: "green" }
-                                })
-                              ]
-                            ),
+                    _vm._l(row, function(mobile, index) {
+                      return _c(
+                        "div",
+                        {
+                          staticClass: "col-md-3 col-sm-3",
+                          staticStyle: { "padding-bottom": "10px" }
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticStyle: {
+                                position: "absolute",
+                                "z-index": "99",
+                                padding: "5px",
+                                transition: "opacity 1s ease-in-out"
+                              }
+                            },
+                            [
+                              _c("i", {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value:
+                                      _vm.selected_mobiles.indexOf(mobile.id) !=
+                                      -1,
+                                    expression:
+                                      "selected_mobiles.indexOf(mobile.id) !=-1"
+                                  }
+                                ],
+                                staticClass: "fa fa-2x fa-check-circle",
+                                staticStyle: { color: "green" }
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "card" }, [
+                            _c("img", {
+                              staticClass: "card-img-top image",
+                              staticStyle: { width: "120px", height: "174px" },
+                              attrs: { src: mobile.image }
+                            }),
                             _vm._v(" "),
-                            _c("div", { staticClass: "card" }, [
-                              _c("img", {
-                                staticClass: "card-img-top image",
-                                staticStyle: {
-                                  width: "120px",
-                                  height: "174px"
-                                },
-                                attrs: { src: mobile.image }
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "middle" }, [
-                                _vm.selected_mobiles.length > 3 ||
-                                _vm.selected_mobiles.indexOf(mobile.id) == -1
-                                  ? _c(
-                                      "button",
-                                      {
-                                        staticClass:
-                                          "btn btn-outline-success btn-middle",
-                                        attrs: {
-                                          disabled:
-                                            _vm.selected_mobiles.length > 3 ||
-                                            _vm.selected_mobiles.indexOf(
-                                              mobile.id
-                                            ) != -1
-                                        },
-                                        on: {
-                                          click: function($event) {
-                                            _vm.selectMobile(mobile.id)
-                                          }
-                                        }
+                            _c("div", { staticClass: "middle" }, [
+                              _vm.selected_mobiles.length > 3 ||
+                              _vm.selected_mobiles.indexOf(mobile.id) == -1
+                                ? _c(
+                                    "button",
+                                    {
+                                      staticClass:
+                                        "btn btn-outline-success btn-middle",
+                                      attrs: {
+                                        disabled:
+                                          _vm.selected_mobiles.length > 3 ||
+                                          _vm.selected_mobiles.indexOf(
+                                            mobile.id
+                                          ) != -1
                                       },
-                                      [
-                                        _vm._v(
-                                          "\n                            " +
-                                            _vm._s(_vm.t["Add"]) +
-                                            "\n                        "
-                                        )
-                                      ]
-                                    )
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _vm.selected_mobiles.length > 3 ||
-                                _vm.selected_mobiles.indexOf(mobile.id) != -1
-                                  ? _c(
-                                      "button",
-                                      {
-                                        staticClass: "btn btn-outline-danger",
-                                        on: {
-                                          click: function($event) {
-                                            _vm.selectMobile(mobile.id)
-                                          }
+                                      on: {
+                                        click: function($event) {
+                                          _vm.selectMobile(mobile.id)
                                         }
-                                      },
-                                      [
-                                        _vm._v(
-                                          "\n                            " +
-                                            _vm._s(_vm.t["Remove"]) +
-                                            "\n                        "
-                                        )
-                                      ]
-                                    )
-                                  : _vm._e()
-                              ]),
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                            " +
+                                          _vm._s(_vm.t["Add"]) +
+                                          "\n                        "
+                                      )
+                                    ]
+                                  )
+                                : _vm._e(),
                               _vm._v(" "),
-                              _c("div", { staticClass: "card-body" }, [
-                                _c("h5", { staticClass: "card-title" }, [
-                                  _vm._v(_vm._s(mobile.name))
-                                ])
+                              _vm.selected_mobiles.length > 3 ||
+                              _vm.selected_mobiles.indexOf(mobile.id) != -1
+                                ? _c(
+                                    "button",
+                                    {
+                                      staticClass: "btn btn-outline-danger",
+                                      on: {
+                                        click: function($event) {
+                                          _vm.selectMobile(mobile.id)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                            " +
+                                          _vm._s(_vm.t["Remove"]) +
+                                          "\n                        "
+                                      )
+                                    ]
+                                  )
+                                : _vm._e()
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "card-body" }, [
+                              _c("h5", { staticClass: "card-title" }, [
+                                _vm._v(_vm._s(mobile.name))
                               ])
                             ])
-                          ]
-                        )
-                      }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-2" })
-                    ],
-                    2
+                          ])
+                        ]
+                      )
+                    })
                   )
                 : _vm._e()
             }),
             _vm._v(" "),
             !_vm.filtered_mobiles.length
               ? _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-2" }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-8" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
                     _c("div", { staticClass: "alert alert-info" }, [
                       _c("i", { staticClass: "fa fa-exclamation-circle" }),
                       _vm._v(" "),
@@ -49047,9 +49002,7 @@ var render = function() {
     _vm.comparing
       ? _c("div", [
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-2" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "col-md-12" }, [
               _c("div", { staticStyle: { "padding-bottom": "10px" } }, [
                 _c(
                   "button",
@@ -49065,15 +49018,11 @@ var render = function() {
                   ]
                 )
               ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-2" })
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-2" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "col-md-12" }, [
               _c(
                 "table",
                 {
@@ -49325,15 +49274,11 @@ var render = function() {
                   ])
                 ]
               )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-2" })
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-2" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "col-md-12" }, [
               _c(
                 "table",
                 {
@@ -49627,15 +49572,11 @@ var render = function() {
                   ])
                 ]
               )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-2" })
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-2" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "col-md-12" }, [
               _c(
                 "table",
                 {
@@ -49748,15 +49689,11 @@ var render = function() {
                   ])
                 ]
               )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-2" })
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-2" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "col-md-12" }, [
               _c(
                 "table",
                 {
@@ -50010,15 +49947,11 @@ var render = function() {
                   ])
                 ]
               )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-2" })
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-2" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "col-md-12" }, [
               _c(
                 "table",
                 {
@@ -50122,15 +50055,11 @@ var render = function() {
                   ])
                 ]
               )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-2" })
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-2" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "col-md-12" }, [
               _c(
                 "table",
                 {
@@ -50313,15 +50242,11 @@ var render = function() {
                   ])
                 ]
               )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-2" })
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-2" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "col-md-12" }, [
               _c(
                 "table",
                 {
@@ -50435,15 +50360,11 @@ var render = function() {
                   ])
                 ]
               )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-2" })
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-2" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "col-md-12" }, [
               _c(
                 "table",
                 {
@@ -50694,15 +50615,11 @@ var render = function() {
                   ])
                 ]
               )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-2" })
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-2" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "col-md-12" }, [
               _c(
                 "table",
                 {
@@ -50943,15 +50860,11 @@ var render = function() {
                   ])
                 ]
               )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-2" })
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-2" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "col-md-12" }, [
               _c(
                 "table",
                 {
@@ -51095,9 +51008,7 @@ var render = function() {
                   ])
                 ]
               )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-2" })
+            ])
           ])
         ])
       : _vm._e()
@@ -51796,7 +51707,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -51807,7 +51718,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
 //
 //
 //
@@ -52046,7 +51956,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-2 col-sm-12 " }, [
+      _c("div", { staticClass: "col-md-3 col-sm-12" }, [
         _c("div", { staticClass: "form-group text-center" }, [
           _c("label", { attrs: { for: "brand" } }, [_vm._v("Brand")]),
           _vm._v(" "),
@@ -52097,11 +52007,9 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-md-2 col-sm-12" }, [
+      _c("div", { staticClass: "col-md-3 col-sm-12" }, [
         _c("div", { staticClass: "form-group text-center" }, [
-          _c("label", { attrs: { for: "brand" } }, [
-            _vm._v("Rear Camera (Pixels)")
-          ]),
+          _c("label", { attrs: { for: "brand" } }, [_vm._v("Rear Camera")]),
           _vm._v(" "),
           _c("input", {
             directives: [
@@ -52127,11 +52035,9 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-md-2 col-sm-12 " }, [
+      _c("div", { staticClass: "col-md-3 col-sm-12 " }, [
         _c("div", { staticClass: "form-group text-center" }, [
-          _c("label", { attrs: { for: "brand" } }, [
-            _vm._v("Front Camera (Pixels)")
-          ]),
+          _c("label", { attrs: { for: "brand" } }, [_vm._v("Front Camera")]),
           _vm._v(" "),
           _c("input", {
             directives: [
@@ -52157,7 +52063,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-md-2 col-sm-12 " }, [
+      _c("div", { staticClass: "col-md-3 col-sm-12 " }, [
         _c("div", { staticClass: "form-group text-center" }, [
           _c("label", { attrs: { for: "brand" } }, [_vm._v("RAM (at least)")]),
           _vm._v(" "),
@@ -52185,7 +52091,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-md-2 col-sm-12 " }, [
+      _c("div", { staticClass: "col-md-3 col-sm-12 " }, [
         _c("div", { staticClass: "form-group text-center" }, [
           _c("label", { attrs: { for: "brand" } }, [_vm._v("Battery (mAh)")]),
           _vm._v(" "),
@@ -52211,11 +52117,9 @@ var render = function() {
             }
           })
         ])
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-2 col-sm-12" }, [
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-3 col-sm-12" }, [
         _c("div", { staticClass: "form-group text-center" }, [
           _c("label", { attrs: { for: "brand" } }, [_vm._v("Price From ($)")]),
           _vm._v(" "),
@@ -52243,7 +52147,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-md-2 col-sm-12 " }, [
+      _c("div", { staticClass: "col-md-3 col-sm-12 " }, [
         _c("div", { staticClass: "form-group text-center" }, [
           _c("label", { attrs: { for: "brand" } }, [_vm._v("Price To ($)")]),
           _vm._v(" "),
@@ -52272,51 +52176,13 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
+    _c("div", { staticClass: "row justify-content-center" }),
+    _vm._v(" "),
     _c("div", { staticClass: "row" }),
     _vm._v(" "),
     _vm.filtered_mobiles.length
       ? _c("div", { staticClass: "row justify-content-center" }, [
-          _c("div", { staticClass: "col-md-3" }, [
-            _c("div", { staticClass: "section-side" }, [
-              _c("h5", [
-                _vm._v("\n                    Top 10 By Fans\n                ")
-              ]),
-              _vm._v(" "),
-              _c(
-                "ul",
-                { staticClass: "list-group" },
-                _vm._l(_vm.top_love, function(top) {
-                  return _c(
-                    "li",
-                    {
-                      staticClass:
-                        "list-group-item d-flex justify-content-between align-items-center"
-                    },
-                    [
-                      _c("a", { attrs: { href: top.show_url } }, [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(top.name) +
-                            "\n                        "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "badge  badge-pill" }, [
-                        _vm._v(
-                          _vm._s(top.number_of_fans ? top.number_of_fans : 0) +
-                            " "
-                        )
-                      ])
-                    ]
-                  )
-                })
-              )
-            ]),
-            _vm._v(" "),
-            _vm._m(0)
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6" }, [
+          _c("div", { staticClass: "col-md-12" }, [
             _c(
               "ul",
               { staticClass: "list-unstyled" },
@@ -52347,51 +52213,6 @@ var render = function() {
                 ])
               })
             )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-3" }, [
-            _c("div", { staticClass: "section-side" }, [
-              _c("h5", [
-                _vm._v(
-                  "\n                    Top 10 By Price\n                "
-                )
-              ]),
-              _vm._v(" "),
-              _c(
-                "ul",
-                { staticClass: "list-group" },
-                _vm._l(_vm.top_prices, function(top) {
-                  return _c(
-                    "li",
-                    {
-                      staticClass:
-                        "list-group-item d-flex justify-content-between align-items-center"
-                    },
-                    [
-                      _c("a", { attrs: { href: top.show_url } }, [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(top.name) +
-                            "\n                        "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "badge  badge-pill" }, [
-                        _vm._v(
-                          _vm._s(
-                            top.main_price_description
-                              ? top.main_price_description
-                              : 0
-                          ) + " "
-                        )
-                      ])
-                    ]
-                  )
-                })
-              )
-            ]),
-            _vm._v(" "),
-            _vm._m(1)
           ])
         ])
       : _vm._e(),
@@ -52400,7 +52221,7 @@ var render = function() {
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-2" }),
           _vm._v(" "),
-          _vm._m(2),
+          _vm._m(0),
           _vm._v(" "),
           _c("div", { staticClass: "col-2" })
         ])
@@ -52408,26 +52229,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "big-banner" }, [
-      _c("p", { staticClass: "text-center" }, [
-        _vm._v("\n                    Advertisement Place\n                ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "big-banner" }, [
-      _c("p", { staticClass: "text-center" }, [
-        _vm._v("\n                    Advertisement Place\n                ")
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

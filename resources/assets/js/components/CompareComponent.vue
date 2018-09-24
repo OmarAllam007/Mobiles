@@ -2,8 +2,7 @@
     <div>
         <div v-if="!comparing">
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="form-group btn-group-justified form-inline">
                         <input type="text" v-model="search" class="form-control col"
                                placeholder="Enter Mobile Name"/>
@@ -22,12 +21,10 @@
                     </div>
                     <div class="col-2"></div>
                 </div>
-                <div class="col-md-2"></div>
             </div>
 
             <div class="row" v-if="filtered_mobiles.length" v-for="row in filtered_mobiles_count">
-                <div class="col-md-2"></div>
-                <div class="col-md-2 col-sm-3" style="padding-bottom:10px;" v-for="(mobile,index) in row">
+                <div class="col-md-3 col-sm-3" style="padding-bottom:10px;" v-for="(mobile,index) in row">
                     <div style="position: absolute;z-index: 99;padding: 5px;transition:opacity 1s ease-in-out;">
                         <i class="fa fa-2x fa-check-circle" style="color:green;"
                            v-show="selected_mobiles.indexOf(mobile.id) !=-1"></i>
@@ -51,11 +48,9 @@
 
                     </div>
                 </div>
-                <div class="col-md-2"></div>
             </div>
             <div class="row" v-if="!filtered_mobiles.length">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="alert alert-info"><i class="fa fa-exclamation-circle"></i>
                         <strong>{{t['No Mobiles found']}} !</strong>
                     </div>
@@ -67,21 +62,17 @@
             <!--General-->
 
             <div class="row">
-                <div class="col-md-2"></div>
-
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div style="padding-bottom: 10px">
                         <button @click="getBack" class="btn btn-outline-primary">
                             <i class="fa fa-arrow-left"></i> {{t['Back']}}
                         </button>
                     </div>
                 </div>
-                <div class="col-md-2"></div>
             </div>
 
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
                         <tr>
@@ -156,12 +147,10 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-2"></div>
             </div>
 
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
                         <tr>
@@ -244,12 +233,10 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-2"></div>
             </div>
 
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <!--Storage-->
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
@@ -283,12 +270,10 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-2"></div>
             </div>
 
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <!--Camera-->
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
@@ -357,12 +342,10 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-2"></div>
             </div>
 
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <!--Hardware-->
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
@@ -394,12 +377,10 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-2"></div>
             </div>
 
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <!--Battery-->
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
@@ -452,12 +433,10 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-2"></div>
             </div>
 
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <!--Media-->
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
@@ -492,12 +471,10 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-2"></div>
             </div>
 
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
                         <tr>
@@ -572,12 +549,10 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-2"></div>
             </div>
 
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <!--Others-->
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
@@ -638,12 +613,10 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-2"></div>
             </div>
 
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <!--Purchase-->
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
@@ -687,7 +660,6 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-2"></div>
             </div>
 
 

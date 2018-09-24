@@ -19,6 +19,7 @@
             </ul>
         </div>
     </div>
+    <br>
     <Adsense
             data-ad-client="ca-pub-1864972736029501"
             data-ad-slot="7077188983"
@@ -116,6 +117,7 @@
             </ul>
         </div>
     </div>
+    <br>
     <Adsense
             data-ad-client="ca-pub-1864972736029501"
             data-ad-slot="7077188983"
