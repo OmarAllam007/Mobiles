@@ -109,15 +109,9 @@
 
                 </ul>
 
-
-<<<<<<< HEAD
-                    <search-mobile :mobiles="{{$mobiles}}"></search-mobile>
-
-=======
                 <search-mobile :mobiles="{{$mobiles}}"
                                :t="{{json_encode(\App\Translation::getSearchComponent())}}"
                 ></search-mobile>
->>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
 
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
@@ -160,16 +154,11 @@
     </header>
 </div>
 {{--<script src="https://cdn.rtlcss.com/bootstrap/v4.0.0/js/bootstrap.min.js" integrity="sha384-54+cucJ4QbVb99v8dcttx/0JRx4FHMmhOWi4W+xrXpKcsKQodCBwAvu3xxkZAwsH" crossorigin="anonymous"></script>--}}
-<<<<<<< HEAD
 
 <div id="app">
     <main class="container-fluid" style="margin-bottom: 100px">
-=======
 <br>
-<div>
 
-    <main class="container-fluid">
->>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
         <div class="title-bar">
             <div class="row">
                 @yield('header')
