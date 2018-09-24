@@ -2,8 +2,8 @@
 
 @section('right')
     <div class="col-md-12 col-sm-12">
-        <div class="section-side">
-            <h5>
+        <div class="section-side" >
+            <h5 class="text-center">
                 {{t('Top 10 By Hits')}}
             </h5>
             <ul class="list-group">
@@ -34,7 +34,7 @@
     <div class="row">
         <div class="col-md-12 col-sm-12">
             <div class="section-side ">
-                <h5>
+                <h5 class="text-center">
                     {{t('Top 10 Latest Mobiles')}}
                 </h5>
                 <ul class="list-group">
@@ -55,7 +55,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="section-side container-brands" style="background-color: white;border-radius: 5px;">
-                <h5>
+                <h5 class="text-center">
                     {{t('BRANDS')}}
                 </h5>
                 <div class="d-flex flex-wrap  flex-row bd-highlight mb-3">
@@ -79,7 +79,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="section-side container-brands" style="background-color: white;border-radius: 5px;">
-                <h5>
+                <h5 class="text-center">
                     {{t('LATEST DEVICES')}}
                 </h5>
                 <div class="d-flex flex-wrap  flex-row bd-highlight mb-3" style="margin-top: 20px">
@@ -101,7 +101,7 @@
 @section('left')
     <div class="col-md-12 col-sm-12">
         <div class="section-side">
-            <h5>
+            <h5 class="text-center">
                 {{t('Top 10 By Fans')}}
             </h5>
             <ul class="list-group">

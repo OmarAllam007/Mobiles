@@ -1,6 +1,6 @@
 <!doctype html>
 {{--lang="ar" dir="rtl"--}}
-<html >
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,7 +46,7 @@
 @endphp
 <div id="header">
     <header>
-        <nav class="navbar  navbar-expand-lg navbar-dark"
+        <nav class="navbar  navbar-expand-lg navbar-dark" lang="ar" dir="rtl"
              style="background-color: #2d3047 ;border-bottom: 4px #1b998b solid">
             <a class="navbar-brand" href="{{url('/')}}">{{env('APP_NAME')}}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -153,7 +153,6 @@
         </nav>
     </header>
 </div>
-{{--<script src="https://cdn.rtlcss.com/bootstrap/v4.0.0/js/bootstrap.min.js" integrity="sha384-54+cucJ4QbVb99v8dcttx/0JRx4FHMmhOWi4W+xrXpKcsKQodCBwAvu3xxkZAwsH" crossorigin="anonymous"></script>--}}
 
 <div id="app">
     <main class="container-fluid" style="margin-bottom: 100px">
