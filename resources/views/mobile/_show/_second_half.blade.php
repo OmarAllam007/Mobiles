@@ -367,6 +367,23 @@
         </table>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-md-12">
+        <br>
+        <Adsense
+                data-ad-client="ca-pub-1864972736029501"
+                data-ad-slot="7077188983"
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+                class="adsbygoogle"
+                style="display:block"
+        >
+        </Adsense>
+        <br>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-md-12">
         <!--Purchase-->
