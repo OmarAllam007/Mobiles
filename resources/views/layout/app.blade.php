@@ -182,8 +182,14 @@
             <div class="col-md-2"></div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-3">
+                @yield('right')
+            </div>
+            <div class="col-md-6">
                 @yield('body')
+            </div>
+            <div class="col-md-3">
+                @yield('left')
             </div>
         </div>
 
