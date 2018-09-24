@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+{{--lang="ar" dir="rtl"--}}
+<html >
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,11 +13,13 @@
     {{--<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">--}}
 
 
-    {{--<link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css" integrity="sha384-P4uhUIGk/q1gaD/NdgkBIl3a6QywJjlsFJFk7SPRdruoGddvRVSwv5qFnvZ73cpz" crossorigin="anonymous">--}}
     <link rel="stylesheet" href="{{asset('css/app.css?asdadsad')}}">
     <link rel="stylesheet" href="{{asset('css/fontawesome-all.css')}}">
     {{--<link rel="stylesheet" href="{{asset('css/select2.css')}}">--}}
     @yield('styles')
+    {{--<link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css" integrity="sha384-P4uhUIGk/q1gaD/NdgkBIl3a6QywJjlsFJFk7SPRdruoGddvRVSwv5qFnvZ73cpz" crossorigin="anonymous">--}}
+
+    {{--<link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css" integrity="sha384-P4uhUIGk/q1gaD/NdgkBIl3a6QywJjlsFJFk7SPRdruoGddvRVSwv5qFnvZ73cpz" crossorigin="anonymous">--}}
 
     <style>
         .nav-item:hover {
@@ -71,6 +74,22 @@
                             {{t('Choose For me')}}</a>
                     </li>
 
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-globe"></i> {{ t(\App\Translation::$languages[\Session::get('personalized-language-ar') ?? 0])}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @if(\Session::get('personalized-language-ar'))
+                                <a href="{{route('language.change',0)}}" class="dropdown-item">{{ t('English') }}</a>
+                            @else
+                                <a href="{{route('language.change',1)}}" class="dropdown-item">{{ t('Arabic') }}</a>
+                            @endif
+                        </div>
+                    </li>
+
                     @if(\Auth::check() && \Auth::user()->isAdmin())
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -91,20 +110,27 @@
                 </ul>
 
 
+<<<<<<< HEAD
                     <search-mobile :mobiles="{{$mobiles}}"></search-mobile>
 
+=======
+                <search-mobile :mobiles="{{$mobiles}}"
+                               :t="{{json_encode(\App\Translation::getSearchComponent())}}"
+                ></search-mobile>
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
 
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
                             <a class="nav-link" role="button" href="{{ route('login') }}" data-toggle="tooltip"
-                               title="Login">
+                               title="{{t('Login')}}">
                                 <i class="fa fa-sign-in-alt"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}" data-toggle="tooltip" title="Sign Up"><i
+                            <a class="nav-link" href="{{ route('register') }}" data-toggle="tooltip"
+                               title="{{t('Sign Up')}}"><i
                                         class="fa fa-user-plus"></i></a>
                         </li>
                     @else
@@ -134,9 +160,16 @@
     </header>
 </div>
 {{--<script src="https://cdn.rtlcss.com/bootstrap/v4.0.0/js/bootstrap.min.js" integrity="sha384-54+cucJ4QbVb99v8dcttx/0JRx4FHMmhOWi4W+xrXpKcsKQodCBwAvu3xxkZAwsH" crossorigin="anonymous"></script>--}}
+<<<<<<< HEAD
 
 <div id="app">
     <main class="container-fluid" style="margin-bottom: 100px">
+=======
+<br>
+<div>
+
+    <main class="container-fluid">
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
         <div class="title-bar">
             <div class="row">
                 @yield('header')

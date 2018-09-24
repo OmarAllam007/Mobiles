@@ -14304,12 +14304,20 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(16);
+<<<<<<< HEAD
 module.exports = __webpack_require__(78);
+=======
+module.exports = __webpack_require__(71);
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
 
 
 /***/ }),
 /* 16 */
+<<<<<<< HEAD
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+=======
+/***/ (function(module, exports, __webpack_require__) {
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
@@ -31528,7 +31536,11 @@ if (token) {
   }
 }.call(this));
 
+<<<<<<< HEAD
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(19)(module)))
+=======
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(19)(module)))
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
 
 /***/ }),
 /* 19 */
@@ -47617,7 +47629,11 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
+<<<<<<< HEAD
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(10)))
+=======
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(10)))
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
 
 /***/ }),
 /* 42 */
@@ -48725,7 +48741,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['mobiles'],
+    props: ['mobiles', 't'],
     data: function data() {
         return {
             search: '',
@@ -48865,7 +48881,9 @@ var render = function() {
                         [
                           _c("i", { staticClass: "fa fa-exchange-alt" }),
                           _vm._v(
-                            "\n                            Compare\n                        "
+                            "\n                            " +
+                              _vm._s(_vm.t["Compare"]) +
+                              "\n                        "
                           )
                         ]
                       ),
@@ -48968,7 +48986,9 @@ var render = function() {
                                       },
                                       [
                                         _vm._v(
-                                          "\n                            Add\n                        "
+                                          "\n                            " +
+                                            _vm._s(_vm.t["Add"]) +
+                                            "\n                        "
                                         )
                                       ]
                                     )
@@ -48988,7 +49008,9 @@ var render = function() {
                                       },
                                       [
                                         _vm._v(
-                                          "\n                            Remove\n                        "
+                                          "\n                            " +
+                                            _vm._s(_vm.t["Remove"]) +
+                                            "\n                        "
                                         )
                                       ]
                                     )
@@ -49016,7 +49038,15 @@ var render = function() {
               ? _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-2" }),
                   _vm._v(" "),
-                  _vm._m(0),
+                  _c("div", { staticClass: "col-8" }, [
+                    _c("div", { staticClass: "alert alert-info" }, [
+                      _c("i", { staticClass: "fa fa-exclamation-circle" }),
+                      _vm._v(" "),
+                      _c("strong", [
+                        _vm._v(_vm._s(_vm.t["No Mobiles found"]) + " !")
+                      ])
+                    ])
+                  ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-2" })
                 ])
@@ -49041,7 +49071,9 @@ var render = function() {
                   },
                   [
                     _c("i", { staticClass: "fa fa-arrow-left" }),
-                    _vm._v(" Back\n                    ")
+                    _vm._v(
+                      " " + _vm._s(_vm.t["Back"]) + "\n                    "
+                    )
                   ]
                 )
               ])
@@ -49073,7 +49105,15 @@ var render = function() {
                         },
                         [
                           _c("i", { staticClass: "fa fa-sliders-h" }),
+<<<<<<< HEAD
                           _vm._v(" General Features\n                        ")
+=======
+                          _vm._v(
+                            " " +
+                              _vm._s(_vm.t["General Feature"]) +
+                              "\n                        "
+                          )
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         ]
                       )
                     ])
@@ -49083,7 +49123,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Image")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Image"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49112,7 +49158,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Name")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Name"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49133,7 +49185,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Release Date")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Release Date"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49154,7 +49212,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Operating System")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Operating System"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49175,7 +49239,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Size")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Size"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49196,7 +49266,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Weight")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Weight"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49217,7 +49293,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Material Of Manfacture")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Material Of Manufacture"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49238,7 +49320,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("No. of SIMs")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["No. of SIMs"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49261,7 +49349,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Size of SIM")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Size of SIM"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49311,7 +49405,11 @@ var render = function() {
                         },
                         [
                           _c("i", { staticClass: "fa fa-mobile-alt" }),
-                          _vm._v(" Screen\n                        ")
+                          _vm._v(
+                            " " +
+                              _vm._s(_vm.t["Screen"]) +
+                              "\n                        "
+                          )
                         ]
                       )
                     ])
@@ -49321,7 +49419,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Screen Size")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Screen Size"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49342,7 +49446,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Screen Size Percentage")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Screen Size Percentage"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49365,7 +49475,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Release Date")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Release Date"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49386,7 +49502,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Resolution")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Resolution"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49407,7 +49529,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Screen Dimensions")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Screen Dimensions"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49428,7 +49556,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Density of Pixels")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Density of Pixels"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49451,7 +49585,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v(" Screen Technology")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Screen Technology"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49472,7 +49612,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Screen Colors")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Screen Colors"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49493,7 +49639,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Touch")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Touch"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49516,7 +49668,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Screen Protection")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Screen Protection"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49537,7 +49695,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Extra Features")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Extra Features"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49587,7 +49751,11 @@ var render = function() {
                         },
                         [
                           _c("i", { staticClass: "fa fa-hdd" }),
-                          _vm._v(" Storage\n                        ")
+                          _vm._v(
+                            " " +
+                              _vm._s(_vm.t["Storage"]) +
+                              "\n                        "
+                          )
                         ]
                       )
                     ])
@@ -49597,7 +49765,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Internal Storage")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Internal Storage"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49622,7 +49796,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("RAM")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["RAM"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49642,7 +49822,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("External Storage")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["External Storage"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49698,7 +49884,11 @@ var render = function() {
                         },
                         [
                           _c("i", { staticClass: "fa fa-camera-retro" }),
-                          _vm._v(" Camera\n                        ")
+                          _vm._v(
+                            " " +
+                              _vm._s(_vm.t["Camera"]) +
+                              "\n                        "
+                          )
                         ]
                       )
                     ])
@@ -49708,7 +49898,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Main Camera")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Main Camera"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49731,7 +49927,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Front Camera")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Front Camera"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49754,7 +49956,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Front Camera Feature")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Front Camera Feature"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49777,7 +49985,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Video")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Video"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49798,7 +50012,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Flash")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Flash"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49819,7 +50039,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Aperture")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Aperture"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49842,7 +50068,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Sensor Size")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Sensor Size"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49865,7 +50097,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Focal Length")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Focal Length"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49888,7 +50126,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Other Features")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Other Features"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49938,7 +50182,11 @@ var render = function() {
                         },
                         [
                           _c("i", { staticClass: "fa fa-cog" }),
-                          _vm._v(" Hardware\n                        ")
+                          _vm._v(
+                            " " +
+                              _vm._s(_vm.t["Hardware"]) +
+                              "\n                        "
+                          )
                         ]
                       )
                     ])
@@ -49948,7 +50196,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Processor")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Processor"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49969,7 +50223,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Graphical Processor")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Graphical Processor"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -49992,7 +50252,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Chipset")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Chipset"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50040,7 +50306,11 @@ var render = function() {
                         },
                         [
                           _c("i", { staticClass: "fa fa-battery-full" }),
-                          _vm._v(" Battery\n                        ")
+                          _vm._v(
+                            " " +
+                              _vm._s(_vm.t["Battery"]) +
+                              "\n                        "
+                          )
                         ]
                       )
                     ])
@@ -50050,7 +50320,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Type")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Type"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50071,7 +50347,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Calls")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Calls"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50094,7 +50376,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Music")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Music"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50117,7 +50405,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Video")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Video"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50140,7 +50434,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Flash")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Flash"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50161,7 +50461,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Removable")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Removable"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50215,7 +50521,11 @@ var render = function() {
                         },
                         [
                           _c("i", { staticClass: "fa fa-play" }),
-                          _vm._v(" Media\n                        ")
+                          _vm._v(
+                            " " +
+                              _vm._s(_vm.t["Media"]) +
+                              "\n                        "
+                          )
                         ]
                       )
                     ])
@@ -50225,7 +50535,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Radio")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Radio"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50252,7 +50568,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Speakers")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Speakers"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50273,7 +50595,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("3.5mm Slot")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["3.5mm Slot"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50327,7 +50655,11 @@ var render = function() {
                         },
                         [
                           _c("i", { staticClass: "fa fa-broadcast-tower" }),
-                          _vm._v(" Communication\n                        ")
+                          _vm._v(
+                            " " +
+                              _vm._s(_vm.t["Communication"]) +
+                              "\n                        "
+                          )
                         ]
                       )
                     ])
@@ -50337,7 +50669,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Network")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Network"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50364,7 +50702,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Bluetooth")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Bluetooth"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50387,7 +50731,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("WIFI")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["WIFI"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50410,7 +50760,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("USB")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["USB"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50431,7 +50787,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Hotspot")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Hotspot"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50458,7 +50820,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("NFC")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["NFC"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50485,7 +50853,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("OTG")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["OTG"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50512,7 +50886,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("IR")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["IR"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50566,7 +50946,11 @@ var render = function() {
                         },
                         [
                           _c("i", { staticClass: "fa fa-th-list" }),
-                          _vm._v(" Others\n                        ")
+                          _vm._v(
+                            " " +
+                              _vm._s(_vm.t["Others"]) +
+                              "\n                        "
+                          )
                         ]
                       )
                     ])
@@ -50576,7 +50960,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("GPS")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["GPS"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50597,7 +50987,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Sensors")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Sensors"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50618,7 +51014,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Open By")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Open By"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50647,7 +51049,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("VR")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["VR"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50688,7 +51096,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Notifications LED")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Notifications LED"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50730,7 +51144,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Additional Microphone")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Additional Microphone"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50799,7 +51219,11 @@ var render = function() {
                         },
                         [
                           _c("i", { staticClass: "fa fa-shopping-cart" }),
-                          _vm._v(" Purchase\n                        ")
+                          _vm._v(
+                            " " +
+                              _vm._s(_vm.t["Purchase"]) +
+                              "\n                        "
+                          )
                         ]
                       )
                     ])
@@ -50809,7 +51233,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Colors")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Colors"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50830,7 +51260,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Price")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Price"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50851,7 +51287,13 @@ var render = function() {
                     _c(
                       "tr",
                       [
+<<<<<<< HEAD
                         _c("td", [_vm._v("Purchase From")]),
+=======
+                        _c("td", { staticStyle: { width: "180px" } }, [
+                          _vm._v(_vm._s(_vm.t["Purchase From"]))
+                        ]),
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
                         _vm._v(" "),
                         _vm._l(_vm.selected_mobiles_data, function(
                           selected_mobile_data,
@@ -50921,6 +51363,7 @@ var render = function() {
       : _vm._e()
   ])
 }
+<<<<<<< HEAD
 var staticRenderFns = [
   function() {
     var _vm = this
@@ -50935,6 +51378,9 @@ var staticRenderFns = [
     ])
   }
 ]
+=======
+var staticRenderFns = []
+>>>>>>> 4be6bd3fcdb6f265093ce641e256a1d3b92cbde2
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -51068,7 +51514,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "search-mobile",
-    props: ['mobiles'],
+    props: ['mobiles', 't'],
     data: function data() {
         return {
             searching: false,
@@ -51126,7 +51572,11 @@ var render = function() {
           }
         ],
         staticClass: "form-control",
-        attrs: { type: "search", id: "search-input", placeholder: "Search" },
+        attrs: {
+          type: "search",
+          id: "search-input",
+          placeholder: _vm.t["Search"]
+        },
         domProps: { value: _vm.search },
         on: {
           focus: function($event) {
@@ -51150,7 +51600,7 @@ var render = function() {
           attrs: { id: "search-box" }
         },
         [
-          _c("span", [_vm._v("Devices")]),
+          _c("span", [_vm._v(_vm._s(_vm.t["Devices"]))]),
           _vm._v(" "),
           _c(
             "ul",
@@ -51187,11 +51637,17 @@ var render = function() {
                           "\n                    "
                       ),
                       _c("p", { staticStyle: { margin: "0" } }, [
-                        _vm._v("Release Date : " + _vm._s(mobile.released_date))
+                        _vm._v(
+                          _vm._s(_vm.t["Release Date"]) +
+                            " : " +
+                            _vm._s(mobile.released_date)
+                        )
                       ]),
                       _vm._v(" "),
                       _c("p", { staticStyle: { margin: "0" } }, [
-                        _vm._v("Price : " + _vm._s(mobile.price))
+                        _vm._v(
+                          _vm._s(_vm.t["Price"]) + " : " + _vm._s(mobile.price)
+                        )
                       ])
                     ]
                   )
@@ -51363,7 +51819,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "mobile-prices",
-    props: ['brands'],
+    props: ['brands', 't'],
     data: function data() {
         return {
             search: '',
@@ -51434,7 +51890,7 @@ var render = function() {
                 "border-bottom": "1px solid #1b998b",
                 background: "transparent"
               },
-              attrs: { type: "text", placeholder: "Search with price" },
+              attrs: { type: "text", placeholder: _vm.t["Search with price"] },
               domProps: { value: _vm.search },
               on: {
                 input: function($event) {
@@ -51518,7 +51974,15 @@ var render = function() {
             [
               _c("div", { staticClass: "col-2" }),
               _vm._v(" "),
-              _vm._m(0),
+              _c("div", { staticClass: "col-8" }, [
+                _c("div", { staticClass: "alert alert-info" }, [
+                  _c("i", { staticClass: "fa fa-exclamation-circle" }),
+                  _vm._v(" "),
+                  _c("strong", [
+                    _vm._v(_vm._s(_vm.t["No Mobiles found"]) + " !")
+                  ])
+                ])
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-2" })
             ]
@@ -51528,20 +51992,7 @@ var render = function() {
     2
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-8" }, [
-      _c("div", { staticClass: "alert alert-info" }, [
-        _c("i", { staticClass: "fa fa-exclamation-circle" }),
-        _vm._v(" "),
-        _c("strong", [_vm._v("No Mobiles found !")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
