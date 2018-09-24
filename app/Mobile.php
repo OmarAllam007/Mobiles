@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Query\Builder;
+use Illuminate\Support\Facades\DB;
 
 class Mobile extends Model
 {
@@ -132,7 +133,7 @@ class Mobile extends Model
     }
 
     function scopeByPrice($query){
-        return $query->orderBy('main_price_description','DESC')->take(10);
+        return $query->orderBy(DB::raw('CAST(main_price_description AS SIGNED)'),'DESC')->take(10);
     }
 
 }
