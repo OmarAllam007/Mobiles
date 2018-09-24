@@ -51479,7 +51479,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -51490,10 +51490,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
 //
 //
 //
@@ -51593,9 +51589,7 @@ var render = function() {
     "div",
     [
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-2" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "col text-center" }, [
+        _c("div", { staticClass: "col-md-12 text-center" }, [
           _c("div", { staticClass: "form-group" }, [
             _c("input", {
               directives: [
@@ -51635,10 +51629,8 @@ var render = function() {
               "div",
               { staticClass: "row", staticStyle: { "padding-top": "10px" } },
               [
-                _c("div", { staticClass: "col-2" }),
-                _vm._v(" "),
                 brand.mobiles.length
-                  ? _c("div", { staticClass: "col-8" }, [
+                  ? _c("div", { staticClass: "col-md-12" }, [
                       _c("h4", [_vm._v(_vm._s(brand.name))]),
                       _vm._v(" "),
                       _c(
@@ -51687,16 +51679,12 @@ var render = function() {
           : _vm._e()
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "col" }),
-      _vm._v(" "),
       !_vm.filtered_brands.length
         ? _c(
             "div",
             { staticClass: "row", staticStyle: { "padding-top": "20px" } },
             [
-              _c("div", { staticClass: "col-2" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-8" }, [
+              _c("div", { staticClass: "col-md-12" }, [
                 _c("div", { staticClass: "alert alert-info" }, [
                   _c("i", { staticClass: "fa fa-exclamation-circle" }),
                   _vm._v(" "),
@@ -51704,9 +51692,7 @@ var render = function() {
                     _vm._v(_vm._s(_vm.t["No Mobiles found"]) + " !")
                   ])
                 ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-2" })
+              ])
             ]
           )
         : _vm._e()

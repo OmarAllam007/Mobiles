@@ -1,8 +1,7 @@
 <template>
     <div>
         <div class="row">
-            <div class="col-2"></div>
-            <div class="col text-center">
+            <div class="col-md-12 text-center">
                 <div class="form-group">
                     <input type="text" v-model="search" class="form-control searchByPrice"
                            style="border:none;border-bottom: 1px solid #1b998b;background: transparent"
@@ -13,8 +12,7 @@
         </div>
 
         <div class="row" v-for="(brand,key) in filtered_brands" v-if="brand.mobiles.length" style="padding-top: 10px">
-            <div class="col-2"></div>
-            <div v-if="brand.mobiles.length" class="col-8">
+            <div v-if="brand.mobiles.length" class="col-md-12">
                 <h4>{{brand.name}}</h4>
                 <ul class="list-unstyled">
                     <li class="li-item" v-for="mobile in brand.mobiles">
@@ -31,16 +29,14 @@
                 </ul>
             </div>
         </div>
-        <div class="col"></div>
+
 
         <div class="row" v-if="!filtered_brands.length" style="padding-top: 20px">
-            <div class="col-2"></div>
-            <div class="col-8">
+            <div class="col-md-12">
                 <div class="alert alert-info"><i class="fa fa-exclamation-circle"></i>
                     <strong>{{t['No Mobiles found']}} !</strong>
                 </div>
             </div>
-            <div class="col-2"></div>
         </div>
 
     </div>
