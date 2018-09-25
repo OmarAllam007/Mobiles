@@ -5,7 +5,7 @@
                 <div class="col-md-12">
                     <div class="form-group btn-group-justified form-inline">
                         <input type="text" v-model="search" class="form-control col"
-                               placeholder="Enter Mobile Name"/>
+                               :placeholder="t['Enter Mobile Name']"/>
                         <div class="btn-group-justified">
                             <button class="btn btn-outline-success" @click="analayzeCompareProcess"
                                     :disabled="selected_mobiles.length < 2">
@@ -645,15 +645,15 @@
                             <td v-for="(selected_mobile_data, index) in selected_mobiles_data">
                                 <p class="text-center">
                                     <a style="min-width:100px" role="button" target="_blank"
-                                       :href="selected_mobile_data.url_amazon" class="btn btn-outline-success">Amazon</a>
+                                       :href="selected_mobile_data.url_amazon" class="btn btn-outline-success">{{t['Amazon']}}</a>
                                 </p>
                                 <p class="text-center">
                                     <a style="min-width:100px" role="button" target="_blank"
-                                       :href="selected_mobile_data.url_souq" class="btn btn-outline-secondary">Souq</a>
+                                       :href="selected_mobile_data.url_souq" class="btn btn-outline-secondary">{{t['Souq']}}</a>
                                 </p>
                                 <p class="text-center">
                                     <a style="min-width:100px" role="button" target="_blank"
-                                       :href="selected_mobile_data.url_jumia" class="btn btn-outline-primary">JUMIA</a>
+                                       :href="selected_mobile_data.url_jumia" class="btn btn-outline-primary">{{t['JUMIA']}}</a>
                                 </p>
                             </td>
                         </tr>

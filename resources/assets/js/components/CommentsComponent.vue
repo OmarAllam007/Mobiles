@@ -27,7 +27,7 @@
                 </div>
             </div>
         </div>
-        <div class="text-center" v-if="is_loading"><i class="fa fa-2x fa-spin fa-spinner"></i> Loading</div>
+        <div class="text-center" v-if="is_loading"><i class="fa fa-2x fa-spin fa-spinner"></i> {{t['Loading']}}</div>
         <div class="text-center" v-if="!is_loading && actual_comments.length > 4" style="margin-bottom: 10px">
             <button class="btn btn-success" @click="loadMore"><i class="fa fa-chevron-circle-down"></i>
             </button>
@@ -36,13 +36,13 @@
         </div>
         <div v-if="!is_loading" >
             <div class="form-group">
-                <input class="form-control" name="name" placeholder="Name" v-if="!auth" v-model="name">
+                <input class="form-control" name="name" :placeholder="t['Name']" v-if="!auth" v-model="name">
             </div>
             <div class="form-group">
     <textarea name="comment" id="comment" cols="30" rows="3" class="form-control main-font" v-model="comment"
-              placeholder="Enter your comment"></textarea>
+              :placeholder="t['Enter your comment']"></textarea>
             </div>
-            <button class="btn btn-success" @click="submitComment" :disabled="!isValid">Post</button>
+            <button class="btn btn-success" @click="submitComment" :disabled="!isValid">{{t['Post']}}</button>
         </div>
     </div>
 </template>
@@ -50,7 +50,7 @@
 <script>
     export default {
         name: "comments",
-        props: ['comments', 'mobile_id', 'auth'],
+        props: ['comments', 'mobile_id', 'auth','t'],
         data() {
             return {
                 comment: '',

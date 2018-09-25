@@ -11205,3 +11205,9 @@ a.brand-url p {
   margin-bottom: 10px;
 }
 
+#mobileDetails {
+  padding: 20px;
+  background: -webkit-gradient(linear, right top, left top, color-stop(10%, #1b998b), color-stop(70%, white));
+  background: linear-gradient(-90deg, #1b998b 10%, white 70%);
+}
+

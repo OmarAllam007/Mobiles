@@ -41,8 +41,7 @@
     <div id="show">
         <div class="row">
             <div class="col-md-12">
-                <div class="card card-layout"
-                     style="padding: 20px;background: linear-gradient(-90deg,#1b998b 10%, white 70%);">
+                <div class="card card-layout " id="mobileDetails">
                     <div class="row no-gutters">
                         <div class="col-auto">
                             @if($mobile->image_path)
@@ -80,7 +79,7 @@
                                 <p class="card-text">
                                     <i class="fa fa-2x fa-chart-line"></i>
                                     <span style="font-size: 1.3em;font-weight: 400">{{$mobile->number_of_hits ?? 0}}
-                                        HITS</span>
+                                        {{t('HITS')}}</span>
                                 </p>
                             </div>
                         </div>
@@ -93,6 +92,7 @@
                                                     :auth="{{\Auth::check() ? 1 : 0}}"
                                                     :likes="{{ $mobile->number_of_fans ?? 0 }}"
                                                     :favourite="{{ $is_favourite }}"
+                                                    :t="{{json_encode(\App\Translation::getLikeComponent())}}"
                                     ></like-component>
                                 </p>
                             </div>
@@ -105,23 +105,23 @@
                             <li class="text-center" style="display: inline-block;padding-left: 80px;">
                                 <i class="fa fa-3x fa-camera-retro"></i>
                                 <p style="margin: 0;font-size: 1.7em;font-weight: 800">{{$mobile->main_camera_pixels_description ?? 0}}</p>
-                                <span>MP</span>
+                                <span>{{t('MP')}}</span>
                             </li>
 
                             <li class="text-center" style="display: inline-block;padding-left: 80px;">
                                 <i class="fa fa-3x fa-memory"></i>
                                 <p style="margin: 0;font-size: 1.7em;font-weight: 800">{{$mobile->main_ram_description ?? 0}}</p>
                                 @if(!in_array($mobile->main_ram_description,[128,256,512]))
-                                    <span>GB</span>
+                                    <span>{{t('GB')}}</span>
                                 @else
-                                    <span>MB</span>
+                                    <span>{{t('MB')}}</span>
                                 @endif
                             </li>
 
                             <li class="text-center" style="display: inline-block;padding-left: 80px;">
                                 <i class="fa fa-3x fa-battery-full"></i>
                                 <p style="margin: 0;font-size: 1.7em;font-weight: 800">{{$mobile->main_battery_description ?? 0}}</p>
-                                <span>mAh</span>
+                                <span>{{t('mAh')}}</span>
                             </li>
                             <li class="text-center" style="display: inline-block;padding-left: 80px;">
                                 <i class="fa fa-3x fa-hand-holding-usd"></i>

@@ -4,14 +4,14 @@
                @blur="getUnFocused"
                :placeholder="t['Search']">
         <div class="search-box" id="search-box" :class="{'none':!searching,'block':searching}">
-            <span>{{t['Devices']}}</span>
+            <p>{{t['Devices']}}</p>
             <ul class="list-unstyled list-group">
                 <li class="list-group-item mobile-search-class" v-for="mobile in filtered_mobiles.slice(0,3)">
                     <a role="button" :href="mobile.show_url" style="width: 100%;height: 100%;display: inline-block">
                         <img :src="mobile.image_path" class="img-fluid img-rounded img-responsive"
                              style="width: 50px;height: 70px;margin: 10px;overflow:scroll"
                         >
-                        {{mobile.name}}
+                        <p>{{mobile.name}}</p>
                         <p style="margin: 0">{{t['Release Date']}} : {{mobile.released_date}}</p>
                         <p style="margin: 0">{{t['Price']}} : {{mobile.price}}</p>
                     </a>

@@ -53,7 +53,8 @@
     @endphp
 
     <choose-for-me :brands="{{\App\Brand::all()}}" :mobiles="{{$mobiles}}"
-                   :top_prices="{{$top_prices}}" :top_love="{{$top_love}}"></choose-for-me>
+                   :top_prices="{{$top_prices}}" :top_love="{{$top_love}}"
+                   :t="{{json_encode(\App\Translation::getChooseComponent())}}"></choose-for-me>
 @endsection
 @section('right')
     <div class="col-md-12 col-sm-12">

@@ -48816,7 +48816,10 @@ var render = function() {
                         }
                       ],
                       staticClass: "form-control col",
-                      attrs: { type: "text", placeholder: "Enter Mobile Name" },
+                      attrs: {
+                        type: "text",
+                        placeholder: _vm.t["Enter Mobile Name"]
+                      },
                       domProps: { value: _vm.search },
                       on: {
                         input: function($event) {
@@ -50965,7 +50968,7 @@ var render = function() {
                                     href: selected_mobile_data.url_amazon
                                   }
                                 },
-                                [_vm._v("Amazon")]
+                                [_vm._v(_vm._s(_vm.t["Amazon"]))]
                               )
                             ]),
                             _vm._v(" "),
@@ -50981,7 +50984,7 @@ var render = function() {
                                     href: selected_mobile_data.url_souq
                                   }
                                 },
-                                [_vm._v("Souq")]
+                                [_vm._v(_vm._s(_vm.t["Souq"]))]
                               )
                             ]),
                             _vm._v(" "),
@@ -50997,7 +51000,7 @@ var render = function() {
                                     href: selected_mobile_data.url_jumia
                                   }
                                 },
-                                [_vm._v("JUMIA")]
+                                [_vm._v(_vm._s(_vm.t["JUMIA"]))]
                               )
                             ])
                           ])
@@ -51234,7 +51237,7 @@ var render = function() {
           attrs: { id: "search-box" }
         },
         [
-          _c("span", [_vm._v(_vm._s(_vm.t["Devices"]))]),
+          _c("p", [_vm._v(_vm._s(_vm.t["Devices"]))]),
           _vm._v(" "),
           _c(
             "ul",
@@ -51265,11 +51268,9 @@ var render = function() {
                         },
                         attrs: { src: mobile.image_path }
                       }),
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(mobile.name) +
-                          "\n                    "
-                      ),
+                      _vm._v(" "),
+                      _c("p", [_vm._v(_vm._s(mobile.name))]),
+                      _vm._v(" "),
                       _c("p", { staticStyle: { margin: "0" } }, [
                         _vm._v(
                           _vm._s(_vm.t["Release Date"]) +
@@ -51707,7 +51708,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -51867,12 +51868,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "choose-for-me",
-    props: ['brands', 'mobiles', 'top_prices', 'top_love'],
+    props: ['brands', 'mobiles', 'top_prices', 'top_love', 't'],
     data: function data() {
         return {
             brand_id: 0,
@@ -51958,7 +51957,9 @@ var render = function() {
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-3 col-sm-12" }, [
         _c("div", { staticClass: "form-group text-center" }, [
-          _c("label", { attrs: { for: "brand" } }, [_vm._v("Brand")]),
+          _c("label", { attrs: { for: "brand" } }, [
+            _vm._v(_vm._s(_vm.t["Brand"]))
+          ]),
           _vm._v(" "),
           _c(
             "select",
@@ -51990,7 +51991,9 @@ var render = function() {
               }
             },
             [
-              _c("option", { attrs: { value: "0" } }, [_vm._v("Select Brand")]),
+              _c("option", { attrs: { value: "0" } }, [
+                _vm._v(_vm._s(_vm.t["Select Brand"]))
+              ]),
               _vm._v(" "),
               _vm._l(_vm.brands, function(brand, key) {
                 return _c("option", { domProps: { value: brand.id } }, [
@@ -52009,7 +52012,9 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "col-md-3 col-sm-12" }, [
         _c("div", { staticClass: "form-group text-center" }, [
-          _c("label", { attrs: { for: "brand" } }, [_vm._v("Rear Camera")]),
+          _c("label", { attrs: { for: "brand" } }, [
+            _vm._v(_vm._s(_vm.t["Rear Camera"]))
+          ]),
           _vm._v(" "),
           _c("input", {
             directives: [
@@ -52037,7 +52042,9 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "col-md-3 col-sm-12 " }, [
         _c("div", { staticClass: "form-group text-center" }, [
-          _c("label", { attrs: { for: "brand" } }, [_vm._v("Front Camera")]),
+          _c("label", { attrs: { for: "brand" } }, [
+            _vm._v(_vm._s(_vm.t["Front Camera"]))
+          ]),
           _vm._v(" "),
           _c("input", {
             directives: [
@@ -52065,7 +52072,9 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "col-md-3 col-sm-12 " }, [
         _c("div", { staticClass: "form-group text-center" }, [
-          _c("label", { attrs: { for: "brand" } }, [_vm._v("RAM (at least)")]),
+          _c("label", { attrs: { for: "brand" } }, [
+            _vm._v(_vm._s(_vm.t["RAM (at least)"]))
+          ]),
           _vm._v(" "),
           _c("input", {
             directives: [
@@ -52093,7 +52102,9 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "col-md-3 col-sm-12 " }, [
         _c("div", { staticClass: "form-group text-center" }, [
-          _c("label", { attrs: { for: "brand" } }, [_vm._v("Battery (mAh)")]),
+          _c("label", { attrs: { for: "brand" } }, [
+            _vm._v(_vm._s(_vm.t["Battery (mAh)"]))
+          ]),
           _vm._v(" "),
           _c("input", {
             directives: [
@@ -52121,7 +52132,9 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "col-md-3 col-sm-12" }, [
         _c("div", { staticClass: "form-group text-center" }, [
-          _c("label", { attrs: { for: "brand" } }, [_vm._v("Price From ($)")]),
+          _c("label", { attrs: { for: "brand" } }, [
+            _vm._v(_vm._s(_vm.t["Price From ($)"]))
+          ]),
           _vm._v(" "),
           _c("input", {
             directives: [
@@ -52149,7 +52162,9 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "col-md-3 col-sm-12 " }, [
         _c("div", { staticClass: "form-group text-center" }, [
-          _c("label", { attrs: { for: "brand" } }, [_vm._v("Price To ($)")]),
+          _c("label", { attrs: { for: "brand" } }, [
+            _vm._v(_vm._s(_vm.t["Price To ($)"]))
+          ]),
           _vm._v(" "),
           _c("input", {
             directives: [
@@ -52219,29 +52234,22 @@ var render = function() {
     _vm._v(" "),
     !_vm.filtered_mobiles.length
       ? _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-2" }),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-2" })
+          _c("div", { staticClass: "col-12" }, [
+            _c("div", { staticClass: "alert alert-info" }, [
+              _c("i", { staticClass: "fa fa-frown" }),
+              _vm._v(" "),
+              _c("strong", [
+                _vm._v(
+                  _vm._s(_vm.t["There are no results matching your search"])
+                )
+              ])
+            ])
+          ])
         ])
       : _vm._e()
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-8" }, [
-      _c("div", { staticClass: "alert alert-info" }, [
-        _c("i", { staticClass: "fa fa-frown" }),
-        _vm._v(" "),
-        _c("strong", [_vm._v("There are no results matching your search")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -52368,7 +52376,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "like-component",
-    props: ['mobile', 'likes', 'auth', 'favourite'],
+    props: ['mobile', 'likes', 'auth', 'favourite', 't'],
     data: function data() {
         return {
             is_favourite: 0,
@@ -52471,7 +52479,7 @@ var render = function() {
             }
           ]
         },
-        [_vm._v("Please Login First")]
+        [_vm._v(_vm._s(_vm.t["Please Login First"]))]
       )
     ]
   )
@@ -52635,7 +52643,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "comments",
-    props: ['comments', 'mobile_id', 'auth'],
+    props: ['comments', 'mobile_id', 'auth', 't'],
     data: function data() {
         return {
             comment: '',
@@ -52772,7 +52780,7 @@ var render = function() {
       _vm.is_loading
         ? _c("div", { staticClass: "text-center" }, [
             _c("i", { staticClass: "fa fa-2x fa-spin fa-spinner" }),
-            _vm._v(" Loading")
+            _vm._v(" " + _vm._s(_vm.t["Loading"]))
           ])
         : _vm._e(),
       _vm._v(" "),
@@ -52813,7 +52821,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: { name: "name", placeholder: "Name" },
+                    attrs: { name: "name", placeholder: _vm.t["Name"] },
                     domProps: { value: _vm.name },
                     on: {
                       input: function($event) {
@@ -52843,7 +52851,7 @@ var render = function() {
                   id: "comment",
                   cols: "30",
                   rows: "3",
-                  placeholder: "Enter your comment"
+                  placeholder: _vm.t["Enter your comment"]
                 },
                 domProps: { value: _vm.comment },
                 on: {
@@ -52864,7 +52872,7 @@ var render = function() {
                 attrs: { disabled: !_vm.isValid },
                 on: { click: _vm.submitComment }
               },
-              [_vm._v("Post")]
+              [_vm._v(_vm._s(_vm.t["Post"]))]
             )
           ])
         : _vm._e()

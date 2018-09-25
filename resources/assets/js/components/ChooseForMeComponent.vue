@@ -4,9 +4,9 @@
         <div class="row justify-content-center">
             <div class="col-md-3 col-sm-12">
                 <div class="form-group text-center">
-                    <label for="brand">Brand</label>
+                    <label for="brand">{{t['Brand']}}</label>
                     <select name="brand" id="brand" class="form-control" v-model="brand_id">
-                        <option value="0">Select Brand</option>
+                        <option value="0">{{t['Select Brand']}}</option>
                         <option :value="brand.id" v-for="(brand,key) in brands">
                             {{brand.name}}
                         </option>
@@ -17,42 +17,42 @@
 
             <div class="col-md-3 col-sm-12">
                 <div class="form-group text-center">
-                    <label for="brand">Rear Camera</label>
+                    <label for="brand">{{t['Rear Camera']}}</label>
                     <input type="number" class="form-control" v-model="main_camera_pixels_description">
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-12 ">
                 <div class="form-group text-center">
-                    <label for="brand">Front Camera</label>
+                    <label for="brand">{{t['Front Camera']}}</label>
                     <input type="number" class="form-control" v-model="camera_front_camera">
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-12 ">
                 <div class="form-group text-center">
-                    <label for="brand">RAM (at least)</label>
+                    <label for="brand">{{t['RAM (at least)']}}</label>
                     <input type="number" class="form-control" v-model="ram">
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-12 ">
                 <div class="form-group text-center">
-                    <label for="brand">Battery (mAh)</label>
+                    <label for="brand">{{t['Battery (mAh)']}}</label>
                     <input type="number" class="form-control" v-model="main_battery_description">
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-12">
                 <div class="form-group text-center">
-                    <label for="brand">Price From ($)</label>
+                    <label for="brand">{{t['Price From ($)']}}</label>
                     <input type="number" class="form-control" v-model="price_from">
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-12 ">
                 <div class="form-group text-center">
-                    <label for="brand">Price To ($)</label>
+                    <label for="brand">{{t['Price To ($)']}}</label>
                     <input type="number" class="form-control" v-model="price_to">
                 </div>
             </div>
@@ -137,13 +137,11 @@
             <!--</div>-->
         </div>
         <div class="row" v-if="!filtered_mobiles.length">
-            <div class="col-2"></div>
-            <div class="col-8">
+            <div class="col-12">
                 <div class="alert alert-info"><i class="fa fa-frown"></i>
-                    <strong>There are no results matching your search</strong>
+                    <strong>{{t['There are no results matching your search']}}</strong>
                 </div>
             </div>
-            <div class="col-2"></div>
         </div>
     </div>
 
@@ -152,7 +150,7 @@
 <script>
     export default {
         name: "choose-for-me",
-        props: ['brands', 'mobiles', 'top_prices', 'top_love'],
+        props: ['brands', 'mobiles', 'top_prices', 'top_love','t'],
         data() {
             return {
                 brand_id: 0,

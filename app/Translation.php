@@ -28,10 +28,17 @@ class Translation extends Model
         ];
     }
 
+    static function getLikeComponent()
+    {
+        return [
+            'Please Login First' => t('Please Login First'),
+        ];
+    }
+
     static function getCompareComponent()
     {
         return [
-            'Compare'=>t('Compare'),
+            'Compare' => t('Compare'),
             'Add' => t('Add'),
             'Remove' => t('Remove'),
             'Back' => t('Back'),
@@ -57,7 +64,7 @@ class Translation extends Model
             'Extra Features' => t('Extra Features'),
             'Storage' => t('Storage'),
             'Internal Storage' => t('Internal Storage'),
-
+            'Enter Mobile Name' => t('Enter Mobile Name'),
             'RAM' => t('RAM'),
             'External Storage' => t('External Storage'),
             'Camera' => t('Camera'),
@@ -103,6 +110,35 @@ class Translation extends Model
             'Colors' => t('Colors'),
             'Price' => t('Price'),
             'Purchase From' => t('Purchase From'),
+            'Amazon' => t('Amazon'),
+            'Souq' => t('Souq'),
+            'JUMIA' => t('JUMIA'),
+        ];
+    }
+
+    static function getChooseComponent()
+    {
+        return [
+            'Brand' => t('Brand'),
+            'Rear Camera' => t('Rear Camera'),
+            'Front Camera' => t('Front Camera'),
+            'RAM (at least)' => t('RAM (at least)'),
+            'Battery (mAh)' => t('Battery (mAh)'),
+            'Price From ($)' => t('Price From ($)'),
+            'Price To ($)' => t('Price To ($)'),
+            'Top 10 By Price' => t('Top 10 By Price'),
+            'There are no results matching your search' =>
+                t('There are no results matching your search'),
+
+        ];
+    }
+
+    static function getCommentComponent()
+    {
+        return [
+            'Name' => t('Name'),
+            'Enter your comment' => t('Enter your comment'),
+            'Post' => t('Post'),
         ];
     }
 }

@@ -6,7 +6,7 @@
         <i class="fa fa-2x fa-heart" :class="{'text-danger':is_favourite,'text-dark':!is_favourite}"
            id="heart"></i>
         <span style="color:black;font-size: 1.3em;font-weight: 400">{{total_likes}}</span>
-        <p v-show="is_hover && !auth">Please Login First</p>
+        <p v-show="is_hover && !auth">{{t['Please Login First']}}</p>
 
     </a>
 </template>
@@ -16,7 +16,7 @@
 
     export default {
         name: "like-component",
-        props: ['mobile', 'likes', 'auth', 'favourite'],
+        props: ['mobile', 'likes', 'auth', 'favourite','t'],
         data() {
             return {
                 is_favourite: 0,

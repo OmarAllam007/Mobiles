@@ -7,7 +7,10 @@
 @endphp
 
 <comments :comments="{{$comments}}" :mobile_id="{{$mobile->id}}"
-          @if(Auth::check()) :auth="{{\Auth::id()}}" @else :auth="0" @endif ></comments>
+          @if(Auth::check()) :auth="{{\Auth::id()}}" @else :auth="0" @endif
+            :t="{{json_encode(\App\Translation::getCommentComponent())}}"
+
+></comments>
 @php
 
 @endphp

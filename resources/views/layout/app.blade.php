@@ -9,17 +9,11 @@
 
     <title>{{env('APP_NAME')}}</title>
 
-    <!-- Fonts -->
-    {{--<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">--}}
-
 
     <link rel="stylesheet" href="{{asset('css/app.css?asdadsad')}}">
     <link rel="stylesheet" href="{{asset('css/fontawesome-all.css')}}">
     {{--<link rel="stylesheet" href="{{asset('css/select2.css')}}">--}}
     @yield('styles')
-    {{--<link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css" integrity="sha384-P4uhUIGk/q1gaD/NdgkBIl3a6QywJjlsFJFk7SPRdruoGddvRVSwv5qFnvZ73cpz" crossorigin="anonymous">--}}
-
-    {{--<link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css" integrity="sha384-P4uhUIGk/q1gaD/NdgkBIl3a6QywJjlsFJFk7SPRdruoGddvRVSwv5qFnvZ73cpz" crossorigin="anonymous">--}}
 
     <style>
         .nav-item:hover {
@@ -30,6 +24,51 @@
 
 
     </style>
+
+    @if(\Session::get('personalized-language-ar'))
+        <style>
+            input, label, textarea {
+
+                direction: rtl;
+            }
+
+            h5 {
+                text-align: right;
+            }
+
+            li.list-group-item {
+                direction: rtl;
+            }
+
+            /*.navbar {*/
+            /*direction: rtl;*/
+            /*}*/
+
+            .btn {
+                direction: rtl;
+            }
+
+            table {
+                direction: rtl;
+                text-align: right;
+            }
+
+            a, p {
+                direction: rtl;
+            }
+
+            #search-box p {
+                text-align: right;
+            }
+
+            #mobileDetails {
+                direction: rtl;
+                background: linear-gradient(-90deg, white 20%, #1b998b 70%);
+            }
+        </style>
+@endif
+
+
 {{--<meta name="google-site-verification" content="RDXegnp82JQCC1Sm-vIGwaDKry4bm10oiNpIjp8g1HA"/>--}}
 <!-- Styles -->
 
@@ -46,117 +85,234 @@
 @endphp
 <div id="header">
     <header>
-        <nav class="navbar  navbar-expand-lg navbar-dark" lang="ar" dir="rtl"
+        {{--lang="ar" dir="rtl"--}}
+        <nav class="navbar  navbar-expand-lg navbar-dark"
              style="background-color: #2d3047 ;border-bottom: 4px #1b998b solid">
-            <a class="navbar-brand" href="{{url('/')}}">{{env('APP_NAME')}}</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="{{route('mobile.prices')}}">
-                            <i class="fa fa-mobile-alt"></i>
-                            {{t('Prices')}}</a>
-                    </li>
+            @if(!\Session::get('personalized-language-ar'))
+                <a class="navbar-brand" href="{{url('/')}}">{{env('APP_NAME')}}</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{route('mobile.prices')}}">
+                                <i class="fa fa-mobile-alt"></i>
+                                {{t('Prices')}}</a>
+                        </li>
 
-                    <li class="nav-item ">
-                        <a class="nav-link" href="{{route('compare.index')}}">
-                            <i class="fa fa-exchange-alt"></i> {{t('Compare')}}</a>
-                    </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{route('compare.index')}}">
+                                <i class="fa fa-exchange-alt"></i> {{t('Compare')}}</a>
+                        </li>
 
-                    <li class="nav-item ">
-                        <a class="nav-link" href="{{route('choose.me')}}">
-                            <i class="fa fa-hand-holding-heart"></i>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{route('choose.me')}}">
+                                <i class="fa fa-hand-holding-heart"></i>
 
-                            {{t('Choose For me')}}</a>
-                    </li>
+                                {{t('Choose For me')}}</a>
+                        </li>
 
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-globe"></i> {{ t(\App\Translation::$languages[\Session::get('personalized-language-ar') ?? 0])}}
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            @if(\Session::get('personalized-language-ar'))
-                                <a href="{{route('language.change',0)}}" class="dropdown-item">{{ t('English') }}</a>
-                            @else
-                                <a href="{{route('language.change',1)}}" class="dropdown-item">{{ t('Arabic') }}</a>
-                            @endif
-                        </div>
-                    </li>
-
-                    @if(\Auth::check() && \Auth::user()->isAdmin())
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-lock"></i> {{t('Admin')}}
+                                <i class="fa fa-globe"></i> {{ t(\App\Translation::$languages[\Session::get('personalized-language-ar') ?? 0])}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a href="{{route('brand.index')}}" class="dropdown-item">{{ t('Brands') }}</a>
-                                <a href="{{route('mobile.index')}}"
-                                   class="dropdown-item">{{ t('Mobiles') }}</a>
-                                <a
-                                        class="dropdown-item">{{ t('News') }}</a>
+                                @if(\Session::get('personalized-language-ar'))
+                                    <a href="{{route('language.change',0)}}"
+                                       class="dropdown-item">{{ t('English') }}</a>
+                                @else
+                                    <a href="{{route('language.change',1)}}" class="dropdown-item">{{ t('Arabic') }}</a>
+                                @endif
                             </div>
                         </li>
-                    @endif
 
-                </ul>
+                        @if(\Auth::check() && \Auth::user()->isAdmin())
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-lock"></i> {{t('AdPanel')}}
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a href="{{route('brand.index')}}" class="dropdown-item">{{ t('Brands') }}</a>
+                                    <a href="{{route('mobile.index')}}"
+                                       class="dropdown-item">{{ t('Mobiles') }}</a>
+                                    <a
+                                            class="dropdown-item">{{ t('News') }}</a>
+                                </div>
+                            </li>
+                        @endif
 
-                <search-mobile :mobiles="{{$mobiles}}"
-                               :t="{{json_encode(\App\Translation::getSearchComponent())}}"
-                ></search-mobile>
+                    </ul>
 
-                <ul class="navbar-nav ml-auto">
-                    <!-- Authentication Links -->
-                    @guest
-                        <li class="nav-item">
-                            <a class="nav-link" role="button" href="{{ route('login') }}" data-toggle="tooltip"
-                               title="{{t('Login')}}">
-                                <i class="fa fa-sign-in-alt"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}" data-toggle="tooltip"
-                               title="{{t('Sign Up')}}"><i
-                                        class="fa fa-user-plus"></i></a>
-                        </li>
-                    @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
+                    <search-mobile :mobiles="{{$mobiles}}"
+                                   :t="{{json_encode(\App\Translation::getSearchComponent())}}"
+                    ></search-mobile>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ t('Logout') }}
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" role="button" href="{{ route('login') }}" data-toggle="tooltip"
+                                   title="{{t('Login')}}">
+                                    <i class="fa fa-sign-in-alt"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}" data-toggle="tooltip"
+                                   title="{{t('Sign Up')}}"><i
+                                            class="fa fa-user-plus"></i></a>
+                            </li>
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                      style="display: none;">
-                                    @csrf
-                                </form>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ t('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
+                </div>
+            @endif
+
+
+            @if(\Session::get('personalized-language-ar'))
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" role="button" href="{{ route('login') }}" data-toggle="tooltip"
+                                   title="{{t('Login')}}">
+                                    <i class="fa fa-sign-in-alt"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}" data-toggle="tooltip"
+                                   title="{{t('Sign Up')}}"><i
+                                            class="fa fa-user-plus"></i></a>
+                            </li>
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ t('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
+
+                    <search-mobile :mobiles="{{$mobiles}}"
+                                   :t="{{json_encode(\App\Translation::getSearchComponent())}}"
+                    ></search-mobile>
+                    <ul class="navbar-nav mr-auto">
+
+                        @if(\Auth::check() && \Auth::user()->isAdmin())
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-lock"></i> {{t('AdPanel')}}
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a href="{{route('brand.index')}}" class="dropdown-item">{{ t('Brands') }}</a>
+                                    <a href="{{route('mobile.index')}}"
+                                       class="dropdown-item">{{ t('Mobiles') }}</a>
+                                    <a
+                                            class="dropdown-item">{{ t('News') }}</a>
+                                </div>
+                            </li>
+                        @endif
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-globe"></i> {{ t(\App\Translation::$languages[\Session::get('personalized-language-ar') ?? 0])}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @if(\Session::get('personalized-language-ar'))
+                                    <a href="{{route('language.change',0)}}"
+                                       class="dropdown-item">{{ t('English') }}</a>
+                                @else
+                                    <a href="{{route('language.change',1)}}" class="dropdown-item">{{ t('Arabic') }}</a>
+                                @endif
                             </div>
                         </li>
-                    @endguest
-                </ul>
-            </div>
+
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{route('mobile.prices')}}">
+                                <i class="fa fa-mobile-alt"></i>
+                                {{t('Prices')}}</a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{route('compare.index')}}">
+                                <i class="fa fa-exchange-alt"></i> {{t('Compare')}}</a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{route('choose.me')}}">
+                                <i class="fa fa-hand-holding-heart"></i>
+
+                                {{t('Choose For me')}}</a>
+                        </li>
+
+
+
+
+                    </ul>
+
+                </div>
+                <a class="navbar-brand" href="{{url('/')}}">{{env('APP_NAME')}}</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            @endif
         </nav>
     </header>
 </div>
 
 <div id="app">
     <main class="container-fluid" style="margin-bottom: 100px">
-<br>
+        <br>
 
         <div class="title-bar">
             <div class="row">
