@@ -49,7 +49,7 @@
                         {{$like->name}}
                     </a>
                     <span class="badge  badge-pill">
-                {{$like->number_of_hits ?? 0}}
+                {{$like->main_price_description ?? 0}}
                 </span>
                 </li>
             @endforeach
