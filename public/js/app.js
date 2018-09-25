@@ -51148,6 +51148,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "search-mobile",
@@ -51237,7 +51238,15 @@ var render = function() {
           attrs: { id: "search-box" }
         },
         [
-          _c("p", [_vm._v(_vm._s(_vm.t["Devices"]))]),
+          _vm.filtered_mobiles.length
+            ? _c("span", [_vm._v(_vm._s(_vm.t["Devices"]))])
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.filtered_mobiles.length
+            ? _c("p", { staticClass: "text-center" }, [
+                _vm._v(_vm._s(_vm.t["No Mobiles found"]))
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _c(
             "ul",

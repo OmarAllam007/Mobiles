@@ -74,7 +74,7 @@
 
                         </div>
                         <div class="col">
-                            <div class="card-block px-2">
+                            <div class="card-block px-0">
                                 <h4 class="card-title"></h4>
                                 <p class="card-text">
                                     <i class="fa fa-2x fa-chart-line"></i>
@@ -85,7 +85,7 @@
                         </div>
 
                         <div class="col">
-                            <div class="card-block px-1">
+                            <div class="card-block px-0">
                                 <h4 class="card-title"></h4>
                                 <p class="card-text">
                                     <like-component :mobile="{{$mobile->id}}"

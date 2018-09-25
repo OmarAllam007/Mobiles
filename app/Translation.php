@@ -16,7 +16,8 @@ class Translation extends Model
             'Devices' => t('Devices'),
             'Release Date' => t('Release Date'),
             'Price' => t('Price'),
-            'Search' => t('Search')
+            'Search' => t('Search'),
+            'No Mobiles found' => t('No Mobiles found')
         ];
     }
 

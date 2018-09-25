@@ -4,7 +4,8 @@
                @blur="getUnFocused"
                :placeholder="t['Search']">
         <div class="search-box" id="search-box" :class="{'none':!searching,'block':searching}">
-            <p>{{t['Devices']}}</p>
+            <span v-if="filtered_mobiles.length">{{t['Devices']}}</span>
+            <p class="text-center"v-if="!filtered_mobiles.length">{{t['No Mobiles found']}}</p>
             <ul class="list-unstyled list-group">
                 <li class="list-group-item mobile-search-class" v-for="mobile in filtered_mobiles.slice(0,3)">
                     <a role="button" :href="mobile.show_url" style="width: 100%;height: 100%;display: inline-block">
