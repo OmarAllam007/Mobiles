@@ -117,7 +117,6 @@
                         </li>
 
 
-
                         @if(\Auth::check() && \Auth::user()->isAdmin())
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -274,7 +273,6 @@
                         @endif
 
 
-
                         <li class="nav-item ">
                             <a class="nav-link" href="{{route('choose.me')}}">
                                 <i class="fa fa-hand-holding-heart"></i>
@@ -345,7 +343,13 @@
                 @yield('left')
             </div>
         </div>
-
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                @yield('footer')
+            </div>
+            <div class="col-md-3"></div>
+        </div>
 
     </main>
 

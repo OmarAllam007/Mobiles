@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('left')
-    <div class="col-md-12 col-sm-12">
+    <div class="col-md-12 col-sm-12 flex-fill">
         <section class="section-side">
             <h5>
                 {{t('Top 10 By Fans')}}
@@ -20,7 +20,7 @@
         </section>
 
         <br>
-        
+
         <Adsense
                 data-ad-client="ca-pub-1864972736029501"
                 data-ad-slot="7077188983"
@@ -99,14 +99,14 @@
                         </div>
                     </div>
                     <div class="row ">
-                        <ul class="col-md-12 list-unstyled d-flex  bd-highlight flex-wrap" >
-                            <li class="text-center p-md-4 p-xl-4 p-sm-4 flex-fill bd-highlight" >
+                        <ul class="col-md-12 list-unstyled d-flex  bd-highlight flex-wrap">
+                            <li class="text-center p-md-4 p-xl-4 p-sm-4 flex-fill bd-highlight">
                                 <i class="fa fa-3x fa-camera-retro"></i>
                                 <p style="margin: 0;font-size: 1.7em;font-weight: 800">{{$mobile->main_camera_pixels_description ?? 0}}</p>
                                 <span>{{t('MP')}}</span>
                             </li>
 
-                            <li class="text-center  p-md-4 p-xl-4 p-sm-4 p-lg-4 p- flex-fill bd-highlight" >
+                            <li class="text-center  p-md-4 p-xl-4 p-sm-4 p-lg-4 p- flex-fill bd-highlight">
                                 <i class="fa fa-3x fa-memory"></i>
                                 <p style="margin: 0;font-size: 1.7em;font-weight: 800">{{$mobile->main_ram_description ?? 0}}</p>
                                 @if(!in_array($mobile->main_ram_description,[128,256,512]))
@@ -116,7 +116,7 @@
                                 @endif
                             </li>
 
-                            <li class="text-center  p-md-4 p-xl-4 p-sm-4 p-lg-4 flex-fill bd-highlight" >
+                            <li class="text-center  p-md-4 p-xl-4 p-sm-4 p-lg-4 flex-fill bd-highlight">
                                 <i class="fa fa-3x fa-battery-full"></i>
                                 <p style="margin: 0;font-size: 1.7em;font-weight: 800">{{$mobile->main_battery_description ?? 0}}</p>
                                 <span>{{t('mAh')}}</span>
@@ -140,15 +140,6 @@
         @include('mobile._show._first_half')
         @include('mobile._show._second_half')
 
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="comments-form">
-                    @include('mobile._show._comments')
-
-                </div>
-            </div>
-        </div>
     </div>
 
 
@@ -183,6 +174,14 @@
             style="display:block"
     >
     </Adsense>
+@endsection
+
+@section('footer')
+
+        <div class="comments-form">
+            @include('mobile._show._comments')
+
+        </div>
 @endsection
 @section('scripts')
 
