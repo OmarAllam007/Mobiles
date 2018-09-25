@@ -117,21 +117,6 @@
                         </li>
 
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                               data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-globe"></i> {{ t(\App\Translation::$languages[\Session::get('personalized-language-ar') ?? 0])}}
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                @if(\Session::get('personalized-language-ar'))
-                                    <a href="{{route('language.change',0)}}"
-                                       class="dropdown-item">{{ t('English') }}</a>
-                                @else
-                                    <a href="{{route('language.change',1)}}" class="dropdown-item">{{ t('Arabic') }}</a>
-                                @endif
-                            </div>
-                        </li>
 
                         @if(\Auth::check() && \Auth::user()->isAdmin())
                             <li class="nav-item dropdown">
@@ -149,6 +134,21 @@
                                 </div>
                             </li>
                         @endif
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-globe"></i> {{ t(\App\Translation::$languages[\Session::get('personalized-language-ar') ?? 0])}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @if(\Session::get('personalized-language-ar'))
+                                    <a href="{{route('language.change',0)}}"
+                                       class="dropdown-item">{{ t('English') }}</a>
+                                @else
+                                    <a href="{{route('language.change',1)}}" class="dropdown-item">{{ t('Arabic') }}</a>
+                                @endif
+                            </div>
+                        </li>
 
                     </ul>
 
@@ -239,24 +239,6 @@
                                    :t="{{json_encode(\App\Translation::getSearchComponent())}}"
                     ></search-mobile>
                     <ul class="navbar-nav mr-auto">
-
-                        @if(\Auth::check() && \Auth::user()->isAdmin())
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                   data-toggle="dropdown"
-                                   aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-lock"></i> {{t('AdPanel')}}
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a href="{{route('brand.index')}}" class="dropdown-item">{{ t('Brands') }}</a>
-                                    <a href="{{route('mobile.index')}}"
-                                       class="dropdown-item">{{ t('Mobiles') }}</a>
-                                    <a
-                                            class="dropdown-item">{{ t('News') }}</a>
-                                </div>
-                            </li>
-                        @endif
-                        
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown"
@@ -274,16 +256,24 @@
                         </li>
 
 
-                        <li class="nav-item ">
-                            <a class="nav-link" href="{{route('mobile.prices')}}">
-                                <i class="fa fa-mobile-alt"></i>
-                                {{t('Prices')}}</a>
-                        </li>
+                        @if(\Auth::check() && \Auth::user()->isAdmin())
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-lock"></i> {{t('AdPanel')}}
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a href="{{route('brand.index')}}" class="dropdown-item">{{ t('Brands') }}</a>
+                                    <a href="{{route('mobile.index')}}"
+                                       class="dropdown-item">{{ t('Mobiles') }}</a>
+                                    <a
+                                            class="dropdown-item">{{ t('News') }}</a>
+                                </div>
+                            </li>
+                        @endif
 
-                        <li class="nav-item ">
-                            <a class="nav-link" href="{{route('compare.index')}}">
-                                <i class="fa fa-exchange-alt"></i> {{t('Compare')}}</a>
-                        </li>
+
 
                         <li class="nav-item ">
                             <a class="nav-link" href="{{route('choose.me')}}">
@@ -292,8 +282,16 @@
                                 {{t('Choose For me')}}</a>
                         </li>
 
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{route('compare.index')}}">
+                                <i class="fa fa-exchange-alt"></i> {{t('Compare')}}</a>
+                        </li>
 
-
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{route('mobile.prices')}}">
+                                <i class="fa fa-mobile-alt"></i>
+                                {{t('Prices')}}</a>
+                        </li>
 
                     </ul>
 
