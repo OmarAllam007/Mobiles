@@ -9,7 +9,7 @@
             <ul class="list-group">
                 @foreach(\App\Mobile::tophits()->get() as $newMob)
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <a href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
+                        <a title="Mobile Display Page" href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
                             {{$newMob->name}}
                         </a>
                         <span class="badge  badge-pill">{{$newMob->number_of_hits ?? 0}} </span>
@@ -33,14 +33,14 @@
 @section('body')
     <div class="row">
         <div class="col-md-12 col-sm-12">
-            <div class="section-side ">
-                <h5 class="text-center">
+            <div class="section-side">
+                <h1 class="text-center">
                     {{t('Top 10 Latest Mobiles')}}
-                </h5>
+                </h1>
                 <ul class="list-group">
                     @foreach(\App\Mobile::latestmobiles()->get() as $newMob)
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <a href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
+                            <a title="Mobile Display Page" href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
                                 {{$newMob->name}}
                             </a>
                         </li>
@@ -61,7 +61,7 @@
                 <div class="d-flex flex-wrap  flex-row bd-highlight mb-3">
                     @foreach(\App\Brand::all() as $brand)
                         <div class="p-2 bd-highlight">
-                            <a class="brand-url" href="#">
+                            <a title="Mobile Brand Page" class="brand-url" href="#">
                                 <img class="brand-image" src="{{asset('storage'.$brand->image_path)}}">
                                 <p>{{$brand->name}}</p>
                             </a>
@@ -84,7 +84,7 @@
                 </h5>
                 <div class="d-flex flex-wrap  flex-row bd-highlight mb-3" style="margin-top: 20px">
                     @foreach(\App\Mobile::latestmobiles()->get() as $newMob)
-                        <a class="brand-url"
+                        <a class="brand-url" title="Mobile Display Page"
                            href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
                             <img style="width: 100px;height: 100px" src="{{asset('storage'.$newMob->image_path)}}">
 
@@ -107,7 +107,7 @@
             <ul class="list-group">
                 @foreach(\App\Mobile::topfans()->get() as $newMob)
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <a href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
+                        <a title="Mobile Display Page" href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
                             {{$newMob->name}}
                         </a>
                         <span class="badge  badge-pill">{{$newMob->number_of_fans ?? 0}} </span>

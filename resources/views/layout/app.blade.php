@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{env('APP_NAME')}}</title>
+    <title>{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more...  </title>
 
 
     <link rel="stylesheet" href="{{asset('css/app.css?asdadsad')}}">
@@ -130,7 +130,7 @@
              style="background-color: #2d3047 ;border-bottom: 4px #1b998b solid">
 
             @if(!\Session::get('personalized-language-ar'))
-                <a class="navbar-brand" href="{{url('/')}}">{{env('APP_NAME')}}</a>
+                <a class="navbar-brand" href="{{url('/')}}" title="Home Page">{{env('APP_NAME')}}</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -139,18 +139,18 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item ">
-                            <a class="nav-link" href="{{route('mobile.prices')}}">
+                            <a class="nav-link" href="{{route('mobile.prices')}}" title="Prices Page">
                                 <i class="fa fa-mobile-alt"></i>
                                 {{t('Prices')}}</a>
                         </li>
 
                         <li class="nav-item ">
-                            <a class="nav-link" href="{{route('compare.index')}}">
+                            <a class="nav-link" href="{{route('compare.index')}}" title="Compare Page">
                                 <i class="fa fa-exchange-alt"></i> {{t('Compare')}}</a>
                         </li>
 
                         <li class="nav-item ">
-                            <a class="nav-link" href="{{route('choose.me')}}">
+                            <a class="nav-link" href="{{route('choose.me')}}" title="Choose for you Page">
                                 <i class="fa fa-hand-holding-heart"></i>
 
                                 {{t('Choose For me')}}</a>
@@ -161,22 +161,22 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                    data-toggle="dropdown"
-                                   aria-haspopup="true" aria-expanded="false">
+                                   aria-haspopup="true" aria-expanded="false" title="Admin Panel Page">
                                     <i class="fa fa-lock"></i> {{t('AdPanel')}}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a href="{{route('brand.index')}}" class="dropdown-item">{{ t('Brands') }}</a>
+                                    <a href="{{route('brand.index')}}" class="dropdown-item" title="Brands Page">{{ t('Brands') }}</a>
                                     <a href="{{route('mobile.index')}}"
-                                       class="dropdown-item">{{ t('Mobiles') }}</a>
+                                       class="dropdown-item" title="Mobiles Index Page">{{ t('Mobiles') }}</a>
                                     <a
-                                            class="dropdown-item">{{ t('News') }}</a>
+                                            class="dropdown-item" title="News Page">{{ t('News') }}</a>
                                 </div>
                             </li>
                         @endif
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false">
+                               aria-haspopup="true" aria-expanded="false" title="Translation Page">
                                 <i class="fa fa-globe"></i> {{ t(\App\Translation::$languages[\Session::get('personalized-language-ar') ?? 0])}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -282,7 +282,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-globe"></i> {{ t(\App\Translation::$languages[\Session::get('personalized-language-ar') ?? 0])}}
+                                <i class="fa fa-globe" title="Language Change"></i> {{ t(\App\Translation::$languages[\Session::get('personalized-language-ar') ?? 0])}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @if(\Session::get('personalized-language-ar'))
@@ -299,34 +299,36 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                    data-toggle="dropdown"
-                                   aria-haspopup="true" aria-expanded="false">
+                                   aria-haspopup="true" aria-expanded="false" title="Admin Panel">
                                     <i class="fa fa-lock"></i> {{t('AdPanel')}}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a href="{{route('brand.index')}}" class="dropdown-item">{{ t('Brands') }}</a>
                                     <a href="{{route('mobile.index')}}"
-                                       class="dropdown-item">{{ t('Mobiles') }}</a>
+                                       class="dropdown-item" title="Mobiles Page">{{ t('Mobiles') }}</a>
                                     <a
-                                            class="dropdown-item">{{ t('News') }}</a>
+                                            class="dropdown-item" title="News Page">{{ t('News') }}</a>
                                 </div>
                             </li>
                         @endif
 
 
                         <li class="nav-item ">
-                            <a class="nav-link" href="{{route('choose.me')}}">
+                            <a class="nav-link" href="{{route('choose.me')}}"
+                               title="Choose for you Page"
+                            >
                                 <i class="fa fa-hand-holding-heart"></i>
 
                                 {{t('Choose For me')}}</a>
                         </li>
 
                         <li class="nav-item ">
-                            <a class="nav-link" href="{{route('compare.index')}}">
+                            <a class="nav-link" href="{{route('compare.index')}}" title="Compare Page">
                                 <i class="fa fa-exchange-alt"></i> {{t('Compare')}}</a>
                         </li>
 
                         <li class="nav-item ">
-                            <a class="nav-link" href="{{route('mobile.prices')}}">
+                            <a class="nav-link" href="{{route('mobile.prices')}}" title="Prices Page">
                                 <i class="fa fa-mobile-alt"></i>
                                 {{t('Prices')}}</a>
                         </li>
@@ -334,7 +336,7 @@
                     </ul>
 
                 </div>
-                <a class="navbar-brand" href="{{url('/')}}">{{env('APP_NAME')}}</a>
+                <a class="navbar-brand" href="{{url('/')}}" title="Home  Page">{{env('APP_NAME')}}</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
