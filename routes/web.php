@@ -33,6 +33,6 @@ Route::get('mobiles/{mobile}/{mobile_brand}/{mobile_name}', 'MobileController@sh
 Route::get('mobiles/prices', 'MobileController@getMobileWithPrice')->name('mobile.prices');
 
 
-Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+//Route::get('/', 'HomeController@index')->name('home');
+Auth::routes();
