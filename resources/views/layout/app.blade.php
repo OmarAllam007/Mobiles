@@ -24,6 +24,43 @@
 
 
     </style>
+    <meta content='شفرة تحقق جوجل' name='google-site-verification'/>
+    <meta content='article' property='og:type'/>
+    <meta content='عنوان قصير لموقعك' name='title'/>
+    <meta content='وصف لموقعك' name='description'/>
+    <meta content='الكلمات المفتاحية' name='keywords'/>
+    <meta content='أسمك' name='Author'/>
+    <meta content='بريدك الالكترونى' name='Email'/>
+    <meta content='global' name='distribution'/>
+    <meta content='5 days' name='revisit'/>
+    <meta content='5 days' name='revisit-after'/>
+    <meta content='document' name='resource-type'/>
+    <meta content='all' name='audience'/>
+    <meta content='general' name='rating'/>
+    <meta content='all' name='robots'/>
+    <meta content='index, follow' name='robots'/>
+    <meta content='اللغة المسستخدمه ar او en' name='language'/>
+    <meta content='بلدك' name='country'/>
+    <meta content='blogger' name='generator'/>
+
+    <meta content='(c) 2013' name='copyright'/>
+    <meta expr:content='data:blog.title' property='og:site_name'/>
+    <meta expr:content='data:blog.pageName' property='og:title'/>
+    <b:if cond='data:blog.pageType == &quot;item&quot;'>
+        <meta expr:content='data:blog.pageName + data:blog.title' name='Description'/>
+    </b:if>
+    <b:if cond='data:blog.pageType == &quot;index&quot;'>
+        <title>
+            <data:blog.pageTitle/>
+        </title>
+        <b:else/>
+        <title>
+            <data:blog.pageName/>
+            -
+            <data:blog.title/>
+        </title>
+    </b:if>
+
 
     @if(\Session::get('personalized-language-ar'))
         <style>
