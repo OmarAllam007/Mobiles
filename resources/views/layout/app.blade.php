@@ -24,6 +24,9 @@
 
 
     </style>
+
+    <meta name="description" content="موب ارو - عرض مواصفات وأسعار الموبايلات بالسعر العالمي ومقارنات ومراجعات لها">
+    <meta name="keywords" content="mobarrow ,سهم الجوالات , اسعار الموبايلات في مصر,السعر العالمي للجوالات , موبيلات, جوالات , سعر, تليفونات, سامسونج, سوق الموبايلات, نوكيا, موبايل">
     <meta content='شفرة تحقق جوجل' name='google-site-verification'/>
     <meta content='article' property='og:type'/>
     <meta content='عنوان قصير لموقعك' name='title'/>
