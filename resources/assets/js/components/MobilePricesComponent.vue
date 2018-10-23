@@ -17,7 +17,7 @@
                 <ul class="list-unstyled">
                     <li class="li-item hvr-glow li-item-card" v-for="mobile in brand.mobiles">
                         <a :href="mobile.show_url">
-                            <img :src="mobile.image_path" style="width: 100px;height: 147px">
+                            <img :src="mobile.image" style="width: 100px;height: 147px">
                             <aside>
                                 <strong> {{mobile.name}}</strong>
                                 <h5 >

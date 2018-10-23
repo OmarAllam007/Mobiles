@@ -51408,7 +51408,7 @@ var render = function() {
                                     width: "100px",
                                     height: "147px"
                                   },
-                                  attrs: { src: mobile.image_path }
+                                  attrs: { src: mobile.image }
                                 }),
                                 _vm._v(" "),
                                 _c("aside", [

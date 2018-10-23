@@ -101,7 +101,8 @@ class MobileController extends Controller
         $brands = Brand::with('mobiles')->get()->each(function ($brand) {
             return $brand->mobiles->each(function ($mobile) {
                 $mobile['show_url'] = $mobile->show_url;
-                $mobile['image_path'] = asset('storage' . $mobile->image_path);
+                $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
+
             });
         });
 //        $mobiles = \App\Mobile::all()->each(function ($mobile) {
