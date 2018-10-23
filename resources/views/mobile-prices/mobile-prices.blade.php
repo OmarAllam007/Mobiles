@@ -8,7 +8,7 @@
             <ul class="list-group">
                 @foreach(\App\Mobile::topfans()->get() as $newMob)
                     <li class="list-group-item d-flex justify-content-between sweep-to-right align-items-center">
-                        <img src="{{$newMob->image_path}}" style="width: 50px;height: 50px">
+                        <img src="{{$newMob->image_path ? asset('storage' . $newMob->image_path) : asset('storage/no-phone.png')}}" style="width: 50px;height: 50px">
 
                         <a href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
                             {{$newMob->name}}
@@ -47,7 +47,7 @@
         <ul class="list-group">
             @foreach(\App\Mobile::byprice()->get() as $like)
                 <li class="list-group-item d-flex justify-content-between sweep-to-right align-items-center">
-                    <img src="{{$newMob->image_path}}" style="width: 50px;height: 50px">
+                    <img src="{{$like->image_path ? asset('storage' . $like->image_path) : asset('storage/no-phone.png')}}" style="width: 50px;height: 50px">
 
                     <a href="{{route('mobile.display',[$like, strtolower($like->brand->name), str_slug($like->name)])}}">
                         {{$like->name}}
