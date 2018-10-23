@@ -12,27 +12,29 @@
 */
 
 
-Route::get('/', 'MobileController@getMobileWithPrice');
+//Route::get('/', 'MobileController@getMobileWithPrice');
 
-Route::group(['middleware' => ['auth','admin']], function () {
+Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::resource('brand', 'BrandController');
     Route::resource('mobile', 'MobileController');
+    Route::resource('review', 'ReviewController');
     Route::resource('mobile-image', 'MobileImagesController');
+    Route::post('upload-review-images','ReviewController@uploadImages');
+    Route::get('load-review-images/{review_id}','ReviewController@loadReviewImages');
 });
 
-Route::group(['middleware'=>['auth']],function (){
-    Route::post('make-favourite','MobileController@makeFavourite')->name('make.favourite');
+Route::group(['middleware' => ['auth']], function () {
+    Route::post('make-favourite', 'MobileController@makeFavourite')->name('make.favourite');
 });
-Route::get('choose-for-me','ChooseForMeController@chooseForMe')->name('choose.me');
-Route::get('change-language/{language}','TranslationController@changeLanguage')->name('language.change');
-Route::post('choose-for-me','ChooseForMeController@filterApply')->name('choose.me');
+Route::get('choose-for-me', 'ChooseForMeController@chooseForMe')->name('choose.me');
+Route::get('change-language/{language}', 'TranslationController@changeLanguage')->name('language.change');
+Route::post('choose-for-me', 'ChooseForMeController@filterApply')->name('choose.me');
 Route::get('/compare', 'CompareController@getCompare')->name('compare.index');
 Route::post('compare-items', 'CompareController@analyzeCompareProcess')->name('compare.analyze');
-Route::post('post-comment','MobileCommentController@postComment');
+Route::post('post-comment', 'MobileCommentController@postComment');
 Route::get('mobiles/{mobile}/{mobile_brand}/{mobile_name}', 'MobileController@show')->name('mobile.display');
 Route::get('mobiles/prices', 'MobileController@getMobileWithPrice')->name('mobile.prices');
 
 
-
-//Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();

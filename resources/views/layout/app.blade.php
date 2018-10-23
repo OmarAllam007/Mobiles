@@ -2,12 +2,14 @@
 {{--lang="ar" dir="rtl"--}}
 <html>
 <head>
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more...  </title>
+    <title>{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... </title>
 
 
     <link rel="stylesheet" href="{{asset('css/app.css?asdadsad')}}">
@@ -16,17 +18,13 @@
     @yield('styles')
 
     <style>
-        .nav-item:hover {
-            border-radius: 10px;
-            background-color: #1b998b;
-            transition: .5s;
-        }
 
 
     </style>
 
     <meta name="description" content="موب ارو - عرض مواصفات وأسعار الموبايلات بالسعر العالمي ومقارنات ومراجعات لها">
-    <meta name="keywords" content="mobarrow ,سهم الجوالات , اسعار الموبايلات في مصر,السعر العالمي للجوالات , موبيلات, جوالات , سعر, تليفونات, سامسونج, سوق الموبايلات, نوكيا, موبايل">
+    <meta name="keywords"
+          content="mobarrow ,سهم الجوالات , اسعار الموبايلات في مصر,السعر العالمي للجوالات , موبيلات, جوالات , سعر, تليفونات, سامسونج, سوق الموبايلات, نوكيا, موبايل">
     <meta content='شفرة تحقق جوجل' name='google-site-verification'/>
     <meta content='article' property='og:type'/>
     <meta content='عنوان قصير لموقعك' name='title'/>
@@ -126,8 +124,7 @@
 <div id="header">
     <header>
         {{--lang="ar" dir="rtl"--}}
-        <nav class="navbar  navbar-expand-lg navbar-dark"
-             style="background-color: #2d3047 ;border-bottom: 4px #1b998b solid">
+        <nav class="navbar nav-top  navbar-expand-lg navbar-dark navbar-top-blue" >
 
             @if(!\Session::get('personalized-language-ar'))
                 <a class="navbar-brand" href="{{url('/')}}" title="Home Page">{{env('APP_NAME')}}</a>
@@ -165,11 +162,12 @@
                                     <i class="fa fa-lock"></i> {{t('AdPanel')}}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a href="{{route('brand.index')}}" class="dropdown-item" title="Brands Page">{{ t('Brands') }}</a>
+                                    <a href="{{route('brand.index')}}" class="dropdown-item"
+                                       title="Brands Page">{{ t('Brands') }}</a>
                                     <a href="{{route('mobile.index')}}"
                                        class="dropdown-item" title="Mobiles Index Page">{{ t('Mobiles') }}</a>
-                                    <a
-                                            class="dropdown-item" title="News Page">{{ t('News') }}</a>
+                                    <a href="{{route('review.index')}}"
+                                       class="dropdown-item" title="Reviews Page">{{ t('Reviews') }}</a>
                                 </div>
                             </li>
                         @endif
@@ -278,11 +276,12 @@
                                    :t="{{json_encode(\App\Translation::getSearchComponent())}}"
                     ></search-mobile>
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-globe" title="Language Change"></i> {{ t(\App\Translation::$languages[\Session::get('personalized-language-ar') ?? 0])}}
+                                <i class="fa fa-globe"
+                                   title="Language Change"></i> {{ t(\App\Translation::$languages[\Session::get('personalized-language-ar') ?? 0])}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @if(\Session::get('personalized-language-ar'))
@@ -306,8 +305,8 @@
                                     <a href="{{route('brand.index')}}" class="dropdown-item">{{ t('Brands') }}</a>
                                     <a href="{{route('mobile.index')}}"
                                        class="dropdown-item" title="Mobiles Page">{{ t('Mobiles') }}</a>
-                                    <a
-                                            class="dropdown-item" title="News Page">{{ t('News') }}</a>
+                                    <a href="{{route('review.index')}}"
+                                       class="dropdown-item" title="Reviews Page">{{ t('Reviews') }}</a>
                                 </div>
                             </li>
                         @endif
@@ -395,8 +394,8 @@
 
     </main>
 
-    <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark"
-         style="background-color: #2d3047 ;border-top: 4px #1b998b solid;">
+    <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark navbar-bottom-blue"
+        >
         <p style="color: white">Copyright <a href="{{url('/')}}" class="site-link">@MobArrow</a> 2018-2019</p>
     </nav>
 </div>
@@ -473,6 +472,5 @@
 
 </script>
 </body>
-
 
 </html>

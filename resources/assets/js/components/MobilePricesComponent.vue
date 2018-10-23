@@ -15,13 +15,15 @@
             <div v-if="brand.mobiles.length" class="col-md-12">
                 <h4>{{brand.name}}</h4>
                 <ul class="list-unstyled">
-                    <li class="li-item" v-for="mobile in brand.mobiles">
+                    <li class="li-item hvr-glow li-item-card" v-for="mobile in brand.mobiles">
                         <a :href="mobile.show_url">
                             <img :src="mobile.image_path" style="width: 100px;height: 147px">
                             <aside>
                                 <strong> {{mobile.name}}</strong>
-                                <p style="padding-top: 10px"> {{mobile.main_price_description
-                                    ?mobile.main_price_description.toLocaleString(): ''}} </p>
+                                <h5 >
+                                   <span class="badge badge-danger" style="background-color:#0077aa !important"> {{mobile.main_price_description
+                                    ?mobile.main_price_description.toLocaleString(): ''}} </span>
+                                </h5>
                             </aside>
 
                         </a>
@@ -45,7 +47,7 @@
 <script>
     export default {
         name: "mobile-prices",
-        props: ['brands','t'],
+        props: ['brands', 't'],
         data() {
             return {
                 search: '',
