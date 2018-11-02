@@ -101,7 +101,7 @@
 
             <div class="col-md-12">
                 <ul class="list-unstyled">
-                    <li class="li-item" v-for="(mobile,index) in filtered_mobiles">
+                    <li class="li-item hvr-glow li-item-card" v-for="(mobile,index) in filtered_mobiles">
                         <a :href="mobile.show_url">
                             <img :src="mobile.image_path" style="width: 100px;height: 147px">
                             <aside>

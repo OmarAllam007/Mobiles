@@ -32,7 +32,8 @@
     </Adsense>
 @endsection
 @section('body')
-
+    <h1 class="text-center">Search your criteria to get your ambition</h1>
+    <br>
     @php
         $mobiles = \App\Mobile::all()->each(function ($mobile){
 
@@ -65,7 +66,7 @@
             </h5>
             <ul class="list-group">
                 @foreach(\App\Mobile::byprice()->get() as $newMob)
-                    <li class="list-group-item d-flex justify-content-between align-items-center sweep-to-right">
+                    <li class="list-group-item d-flex  justify-content-between align-items-center sweep-to-right">
                         <img src="{{$newMob->image_path}}" style="width: 50px;height: 50px">
 
                         <a href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">

@@ -15,7 +15,7 @@ body {
 }
 
 $main_color: #2d3047;
-$second_color: rgba(27, 153, 139, 0.63);
+$second_color: rgba(27, 153, 139, 0.8);
 
 .navbar-laravel {
   background-color: #fff;
@@ -788,7 +788,7 @@ a.brand-url p {
 }
 
 .hvr-glow {
-  display: inline-block;
+  display: flex;
   vertical-align: middle;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -805,3 +805,16 @@ a.brand-url p {
 .hvr-glow:hover, .hvr-glow:focus, .hvr-glow:active {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
+
+.compare-add-button {
+  border: $second_color solid 2px;
+  color: $second_color;
+  font-weight: bolder;
+}
+.compare-add-button:hover {
+  border: $second_color solid 2px;
+  background-color: $second_color;
+  color: white;
+  font-weight: bolder;
+}
+

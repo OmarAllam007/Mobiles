@@ -14304,7 +14304,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(16);
-module.exports = __webpack_require__(88);
+module.exports = __webpack_require__(78);
 
 
 /***/ }),
@@ -14349,7 +14349,7 @@ Vue.component('mobile-prices', __webpack_require__(58));
 Vue.component('choose-for-me', __webpack_require__(63));
 Vue.component('like-component', __webpack_require__(68));
 Vue.component('comments', __webpack_require__(73));
-Vue.component('gallery-component', __webpack_require__(78));
+// Vue.component('gallery-component', require('./components/GalleryComponent.vue'));
 // Vue.component('ad-component', require('./components/AdComponent.vue'));
 
 
@@ -47992,7 +47992,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.image[data-v-73948fcf] {\n    opacity: 1;\n    display: block;\n    width: 100%;\n    height: auto;\n    -webkit-transition: .5s ease;\n    transition: .5s ease;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n}\n.middle[data-v-73948fcf] {\n    -webkit-transition: .5s ease;\n    transition: .5s ease;\n    opacity: 0;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    -webkit-transform: translate(-50%, -50%);\n            transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n    text-align: center;\n}\n.image[data-v-73948fcf]:hover {\n    opacity: 0.3;\n}\n.btn-middle:hover + .image[data-v-73948fcf] {\n    opacity: 0.3;\n}\n.image:hover + .middle[data-v-73948fcf] {\n    opacity: 1;\n}\n.middle:hover + .image[data-v-73948fcf] {\n    opacity: 0.3;\n}\n.middle[data-v-73948fcf]:hover {\n    opacity: 1;\n}\n.image[data-v-73948fcf] {\n    display: block;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    margin: 0 auto;\n}\n\n\n", ""]);
+exports.push([module.i, "\n.image[data-v-73948fcf] {\n    opacity: 1;\n    display: block;\n    width: 100%;\n    height: auto;\n    -webkit-transition: .5s ease;\n    transition: .5s ease;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n}\n.middle[data-v-73948fcf] {\n    -webkit-transition: .5s ease;\n    transition: .5s ease;\n    opacity: 0;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    -webkit-transform: translate(-50%, -50%);\n            transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n    text-align: center;\n}\n.card:hover .image[data-v-73948fcf]{\n    opacity: 0.3;\n}\n.btn-middle:hover + .image[data-v-73948fcf] {\n    opacity: 0.3;\n}\n.image:hover + .middle[data-v-73948fcf] {\n    opacity: 1;\n}\n.middle:hover + .image[data-v-73948fcf] {\n    opacity: 0.3;\n}\n.middle[data-v-73948fcf]:hover {\n    opacity: 1;\n}\n.image[data-v-73948fcf] {\n    display: block;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    margin: 0 auto;\n}\n\n\n", ""]);
 
 // exports
 
@@ -48913,73 +48913,80 @@ var render = function() {
                             ]
                           ),
                           _vm._v(" "),
-                          _c("div", { staticClass: "card" }, [
-                            _c("img", {
-                              staticClass: "card-img-top image",
-                              staticStyle: { width: "120px", height: "174px" },
-                              attrs: { src: mobile.image }
-                            }),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "middle" }, [
-                              _vm.selected_mobiles.length > 3 ||
-                              _vm.selected_mobiles.indexOf(mobile.id) == -1
-                                ? _c(
-                                    "button",
-                                    {
-                                      staticClass:
-                                        "btn btn-outline-success btn-middle",
-                                      attrs: {
-                                        disabled:
-                                          _vm.selected_mobiles.length > 3 ||
-                                          _vm.selected_mobiles.indexOf(
-                                            mobile.id
-                                          ) != -1
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.selectMobile(mobile.id)
-                                        }
-                                      }
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                            " +
-                                          _vm._s(_vm.t["Add"]) +
-                                          "\n                        "
-                                      )
-                                    ]
-                                  )
-                                : _vm._e(),
+                          _c(
+                            "div",
+                            { staticClass: "card hvr-glow li-item-card" },
+                            [
+                              _c("img", {
+                                staticClass: "card-img-top image",
+                                staticStyle: {
+                                  width: "120px",
+                                  height: "174px"
+                                },
+                                attrs: { src: mobile.image }
+                              }),
                               _vm._v(" "),
-                              _vm.selected_mobiles.length > 3 ||
-                              _vm.selected_mobiles.indexOf(mobile.id) != -1
-                                ? _c(
-                                    "button",
-                                    {
-                                      staticClass: "btn btn-outline-danger",
-                                      on: {
-                                        click: function($event) {
-                                          _vm.selectMobile(mobile.id)
+                              _c("div", { staticClass: "middle" }, [
+                                _vm.selected_mobiles.length > 3 ||
+                                _vm.selected_mobiles.indexOf(mobile.id) == -1
+                                  ? _c(
+                                      "button",
+                                      {
+                                        staticClass:
+                                          "btn compare-add-button btn-middle",
+                                        attrs: {
+                                          disabled:
+                                            _vm.selected_mobiles.length > 3 ||
+                                            _vm.selected_mobiles.indexOf(
+                                              mobile.id
+                                            ) != -1
+                                        },
+                                        on: {
+                                          click: function($event) {
+                                            _vm.selectMobile(mobile.id)
+                                          }
                                         }
-                                      }
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                            " +
-                                          _vm._s(_vm.t["Remove"]) +
-                                          "\n                        "
-                                      )
-                                    ]
-                                  )
-                                : _vm._e()
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "card-body" }, [
-                              _c("h5", { staticClass: "card-title" }, [
-                                _vm._v(_vm._s(mobile.name))
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                            " +
+                                            _vm._s(_vm.t["Add"]) +
+                                            "\n                        "
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm.selected_mobiles.length > 3 ||
+                                _vm.selected_mobiles.indexOf(mobile.id) != -1
+                                  ? _c(
+                                      "button",
+                                      {
+                                        staticClass: "btn btn-outline-danger",
+                                        on: {
+                                          click: function($event) {
+                                            _vm.selectMobile(mobile.id)
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                            " +
+                                            _vm._s(_vm.t["Remove"]) +
+                                            "\n                        "
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "card-body" }, [
+                                _c("h5", { staticClass: "card-title" }, [
+                                  _vm._v(_vm._s(mobile.name))
+                                ])
                               ])
-                            ])
-                          ])
+                            ]
+                          )
                         ]
                       )
                     })
@@ -51118,7 +51125,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-730936e8] {\n    text-decoration: none;\n    color: #2d3047;\n}\n.none[data-v-730936e8] {\n    display: none !important;\n}\n.block[data-v-730936e8] {\n    display: block !important;\n}\n", ""]);
+exports.push([module.i, "\na[data-v-730936e8] {\n    text-decoration: none;\n    color: #2d3047;\n}\n.none[data-v-730936e8] {\n    display: none !important;\n    opacity: 0;\n}\n.block[data-v-730936e8] {\n    display: block !important;\n}\n", ""]);
 
 // exports
 
@@ -51172,7 +51179,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             window.setTimeout(function () {
                 _this.searching = false;
-            }, 10);
+            }, 200);
         }
     },
     computed: {
@@ -52230,30 +52237,34 @@ var render = function() {
               "ul",
               { staticClass: "list-unstyled" },
               _vm._l(_vm.filtered_mobiles, function(mobile, index) {
-                return _c("li", { staticClass: "li-item" }, [
-                  _c("a", { attrs: { href: mobile.show_url } }, [
-                    _c("img", {
-                      staticStyle: { width: "100px", height: "147px" },
-                      attrs: { src: mobile.image_path }
-                    }),
-                    _vm._v(" "),
-                    _c("aside", [
-                      _c("strong", [_vm._v(" " + _vm._s(mobile.name))]),
+                return _c(
+                  "li",
+                  { staticClass: "li-item hvr-glow li-item-card" },
+                  [
+                    _c("a", { attrs: { href: mobile.show_url } }, [
+                      _c("img", {
+                        staticStyle: { width: "100px", height: "147px" },
+                        attrs: { src: mobile.image_path }
+                      }),
                       _vm._v(" "),
-                      _c("p", { staticStyle: { "padding-top": "10px" } }, [
-                        _vm._v(
-                          " " +
-                            _vm._s(
-                              mobile.main_price_description
-                                ? mobile.main_price_description.toLocaleString()
-                                : ""
-                            ) +
-                            " "
-                        )
+                      _c("aside", [
+                        _c("strong", [_vm._v(" " + _vm._s(mobile.name))]),
+                        _vm._v(" "),
+                        _c("p", { staticStyle: { "padding-top": "10px" } }, [
+                          _vm._v(
+                            " " +
+                              _vm._s(
+                                mobile.main_price_description
+                                  ? mobile.main_price_description.toLocaleString()
+                                  : ""
+                              ) +
+                              " "
+                          )
+                        ])
                       ])
                     ])
-                  ])
-                ])
+                  ]
+                )
               })
             )
           ])
@@ -52920,259 +52931,6 @@ if (false) {
 
 /***/ }),
 /* 78 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(79)
-}
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(81)
-/* template */
-var __vue_template__ = __webpack_require__(82)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-11a722fc"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/GalleryComponent.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-11a722fc", Component.options)
-  } else {
-    hotAPI.reload("data-v-11a722fc", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 79 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(80);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(3)("f138a7a2", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-11a722fc\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GalleryComponent.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-11a722fc\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GalleryComponent.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 80 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 81 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    name: "gallery-component",
-    props: ['review_id'],
-    data: function data() {
-        return {
-            files: '',
-            images: []
-        };
-    },
-
-    methods: {
-        uploadFiles: function uploadFiles(e) {
-            e.preventDefault();
-            var formData = new FormData();
-            this.files = this.$refs.images.files;
-
-            for (var x = 0; x < this.files.length; x++) {
-                formData.append('files[]', this.files[x]);
-            }
-            formData.append('review_id', this.review_id);
-            axios.post('/upload-review-images', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            }).then(function (response) {
-                console.log(response);
-            }).catch(function (e) {});
-        },
-        loadImages: function loadImages() {
-            var _this = this;
-
-            axios.get('/load-review-images/' + this.review_id).then(function (response) {
-                _this.images = response.data;
-            });
-        }
-    },
-    created: function created() {
-        this.loadImages();
-    }
-});
-
-/***/ }),
-/* 82 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "form-group col-md-12" }, [
-        _c(
-          "label",
-          { staticClass: "control-label", attrs: { for: "images" } },
-          [_vm._v("Upload Images")]
-        ),
-        _vm._v(" "),
-        _c("input", {
-          ref: "images",
-          staticClass: "form-control-file",
-          attrs: { type: "file", id: "images", multiple: "" },
-          on: { change: _vm.uploadFiles }
-        })
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-md-12" },
-        _vm._l(_vm.images, function(image) {
-          return _c(
-            "div",
-            { staticClass: "card", staticStyle: { width: "15rem" } },
-            [
-              _c("img", {
-                staticClass: "card-img-top",
-                attrs: { src: image.image, alt: "Card image cap" }
-              }),
-              _vm._v(" "),
-              _vm._m(0, true),
-              _vm._v(" "),
-              _vm._m(1, true)
-            ]
-          )
-        })
-      )
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-body" }, [
-      _c("h5", { staticClass: "card-title" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-body" }, [
-      _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
-        _vm._v("Copy link")
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-11a722fc", module.exports)
-  }
-}
-
-/***/ }),
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

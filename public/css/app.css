@@ -10931,7 +10931,7 @@ img.hover-shadow {
 }
 
 .auth-form-control:focus {
-  border-color: rgba(27, 153, 139, 0.63);
+  border-color: rgba(27, 153, 139, 0.8);
   -webkit-box-shadow: 0 1px 7px 5px rgba(0, 0, 0, 0.075), 0 0 13px 4px #2d3047;
           box-shadow: 0 1px 7px 5px rgba(0, 0, 0, 0.075), 0 0 13px 4px #2d3047;
 }
@@ -10946,7 +10946,7 @@ img.hover-shadow {
 }
 
 .auth-form-body {
-  background-color: rgba(27, 153, 139, 0.63);
+  background-color: rgba(27, 153, 139, 0.8);
   color: #fff;
 }
 
@@ -11121,7 +11121,7 @@ li.list-group-item:hover > a {
   left: 0;
   right: 0;
   bottom: 0;
-  border-bottom: rgba(27, 153, 139, 0.63) 1px solid;
+  border-bottom: rgba(27, 153, 139, 0.8) 1px solid;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 0 50%;
@@ -11242,21 +11242,21 @@ a.brand-url p {
 
 .navbar-top-blue {
   background-color: #2d3047;
-  border-bottom: 4px rgba(27, 153, 139, 0.63) solid;
+  border-bottom: 4px rgba(27, 153, 139, 0.8) solid;
   color: #000;
   border-radius: 0 0 30px 30px;
 }
 
 .navbar-bottom-blue {
   background-color: #2d3047;
-  border-top: 4px rgba(27, 153, 139, 0.63) solid;
+  border-top: 4px rgba(27, 153, 139, 0.8) solid;
   color: #000;
   border-radius: 30px 30px 0 0;
 }
 
 .nav-item:hover {
   border-radius: 10px;
-  background-color: rgba(27, 153, 139, 0.63);
+  background-color: rgba(27, 153, 139, 0.8);
   -webkit-transition: .5s;
   transition: .5s;
 }
@@ -11270,7 +11270,9 @@ a.brand-url p {
 }
 
 .hvr-glow {
-  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   vertical-align: middle;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -11293,5 +11295,18 @@ a.brand-url p {
 .hvr-glow:active {
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
           box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.compare-add-button {
+  border: rgba(27, 153, 139, 0.8) solid 2px;
+  color: rgba(27, 153, 139, 0.8);
+  font-weight: bolder;
+}
+
+.compare-add-button:hover {
+  border: rgba(27, 153, 139, 0.8) solid 2px;
+  background-color: rgba(27, 153, 139, 0.8);
+  color: white;
+  font-weight: bolder;
 }
 

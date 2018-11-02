@@ -34,10 +34,29 @@
     </div>
 @endsection
 @section('body')
-    <h1 class="text-center">Get the mobile suitable for your pocket</h1>
-    <mobile-prices :brands="{{$brands}}"
-                   :t="{{json_encode(\App\Translation::getPricesComponent())}}">
-    </mobile-prices>
+    <section class="section-side">
+        <img  style="display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;" src="{{asset('storage'.$brand->image_path)}}">
+        <h5>
+            {{$brand->name}}
+        </h5>
+        <ul class="list-group">
+            @foreach($brand->mobiles as $mobile)
+                <li class="list-group-item d-flex justify-content-between sweep-to-right align-items-center">
+                    <img src="{{$mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png')}}" style="width: 50px;height: 50px">
+                    <a href="{{route('mobile.display',[$mobile, strtolower($mobile->brand->name), str_slug($mobile->name)])}}">
+                        {{$mobile->name}}
+                    </a>
+                    <span class="badge  badge-pill">
+                {{$mobile->main_price_description ?? 0}}
+                </span>
+                </li>
+            @endforeach
+
+        </ul>
+    </section>
 @endsection
 
 @section('right')

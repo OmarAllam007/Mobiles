@@ -8,7 +8,9 @@
             </h5>
             <ul class="list-group">
                 @foreach(\App\Mobile::tophits()->get() as $newMob)
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li class="list-group-item d-flex justify-content-between sweep-to-right align-items-center">
+                        <img src="{{$newMob->image_path ? asset('storage' . $newMob->image_path) : asset('storage/no-phone.png')}}" style="width: 50px;height: 50px">
+
                         <a title="Mobile Display Page" href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
                             {{$newMob->name}}
                         </a>
@@ -39,8 +41,11 @@
                 </h1>
                 <ul class="list-group">
                     @foreach(\App\Mobile::latestmobiles()->get() as $newMob)
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
+
+                        <li class="list-group-item d-flex justify-content-between sweep-to-right align-items-center">
+
                             <a title="Mobile Display Page" href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
+                                <img src="{{$newMob->image_path ? asset('storage' . $newMob->image_path) : asset('storage/no-phone.png')}}" style="width: 50px;height: 50px">
                                 {{$newMob->name}}
                             </a>
                         </li>
@@ -61,7 +66,7 @@
                 <div class="d-flex flex-wrap  flex-row bd-highlight mb-3">
                     @foreach(\App\Brand::all() as $brand)
                         <div class="p-2 bd-highlight">
-                            <a title="Mobile Brand Page" class="brand-url" href="#">
+                            <a title="Mobile Brand Page" class="brand-url" href="{{route('brand.mobiles',$brand)}}">
                                 <img class="brand-image" src="{{asset('storage'.$brand->image_path)}}">
                                 <p>{{$brand->name}}</p>
                             </a>
@@ -106,7 +111,9 @@
             </h5>
             <ul class="list-group">
                 @foreach(\App\Mobile::topfans()->get() as $newMob)
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li class="list-group-item d-flex sweep-to-right justify-content-between align-items-center">
+                        <img src="{{$newMob->image_path ? asset('storage' . $newMob->image_path) : asset('storage/no-phone.png')}}" style="width: 50px;height: 50px">
+
                         <a title="Mobile Display Page" href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
                             {{$newMob->name}}
                         </a>

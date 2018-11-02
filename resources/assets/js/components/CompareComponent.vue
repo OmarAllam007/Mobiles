@@ -29,10 +29,10 @@
                         <i class="fa fa-2x fa-check-circle" style="color:green;"
                            v-show="selected_mobiles.indexOf(mobile.id) !=-1"></i>
                     </div>
-                    <div class="card">
+                    <div class="card hvr-glow li-item-card">
                         <img class="card-img-top image" :src="mobile.image" style="width: 120px;height: 174px;">
                         <div class="middle">
-                            <button class="btn btn-outline-success btn-middle" @click="selectMobile(mobile.id)"
+                            <button class="btn compare-add-button btn-middle" @click="selectMobile(mobile.id)"
                                     :disabled="selected_mobiles.length > 3 || selected_mobiles.indexOf(mobile.id) !=-1"
                                     v-if="selected_mobiles.length > 3 || selected_mobiles.indexOf(mobile.id) == -1">
                                 {{t['Add']}}
@@ -772,7 +772,7 @@
         text-align: center;
     }
 
-    .image:hover {
+    .card:hover .image{
         opacity: 0.3;
     }
 

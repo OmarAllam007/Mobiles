@@ -134,7 +134,7 @@ class MobileController extends Controller
 
     public function makeFavourite(Request $request)
     {
-        if(Auth::check()){
+        if (Auth::check()) {
             $mobile = Mobile::find($request->get('mobile_id'));
             $is_favourite = $mobile->users()->where('user_id', Auth::id())->count();
 
@@ -159,4 +159,10 @@ class MobileController extends Controller
     {
         return Mobile::find(10)->users()->count();
     }
+
+    function getMobilesByBrand(Brand $brand)
+    {
+        return view('brand.mobiles', compact('brand'));
+    }
+
 }

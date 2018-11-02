@@ -41,7 +41,7 @@
             getUnFocused() {
                 window.setTimeout(() => {
                     this.searching = false;
-                }, 10)
+                }, 200)
             }
         },
         computed: {
@@ -66,6 +66,7 @@
 
     .none {
         display: none !important;
+        opacity: 0;
     }
 
     .block {
