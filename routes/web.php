@@ -13,6 +13,7 @@
 
 
 //Route::get('/', 'MobileController@getMobileWithPrice');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::resource('brand', 'BrandController');
@@ -36,5 +37,4 @@ Route::get('mobiles/{mobile}/{mobile_brand}/{mobile_name}', 'MobileController@sh
 Route::get('mobiles/prices', 'MobileController@getMobileWithPrice')->name('mobile.prices');
 Route::get('brands/{brand}/mobiles','MobileController@getMobilesByBrand')->name('brand.mobiles');
 
-Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();

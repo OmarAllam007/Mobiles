@@ -22,7 +22,19 @@
                     <div class="col-2"></div>
                 </div>
             </div>
-
+            <div class="row">
+                <div class="col-md-12 col-sm-12" style="margin: 10px 0">
+                    <Adsense
+                            data-ad-client="ca-pub-1864972736029501"
+                            data-ad-slot="7077188983"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"
+                            class="adsbygoogle"
+                            style="display:block"
+                    >
+                    </Adsense>
+                </div>
+            </div>
             <div class="row" v-if="filtered_mobiles.length" v-for="row in filtered_mobiles_count">
                 <div class="col-md-3 col-sm-3" style="padding-bottom:10px;" v-for="(mobile,index) in row">
                     <div style="position: absolute;z-index: 99;padding: 5px;transition:opacity 1s ease-in-out;">

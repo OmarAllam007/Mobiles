@@ -37,6 +37,21 @@
         $is_favourite = 0;
         if(\Auth::check()) { if($mobile->users()->where('user_id', \Auth::id())->count()){$is_favourite = 1;} };
     @endphp
+    <h1 class="text-center h1-title" >{{$mobile->name}}</h1>
+    <div class="row">
+        <div class="col-md-12 col-sm-12" style="margin: 10px 0">
+            <Adsense
+                    data-ad-client="ca-pub-1864972736029501"
+                    data-ad-slot="7077188983"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"
+                    class="adsbygoogle"
+                    style="display:block"
+            >
+            </Adsense>
+        </div>
+    </div>
+    <h2 class="h2-title" >{{$mobile->name}} -{{t('Specifications')}}</h2>
 
     <div id="show">
         <div class="row">

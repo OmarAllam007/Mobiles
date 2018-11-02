@@ -360,17 +360,7 @@
 
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-8 col-sm-8" style="margin: 10px 0">
-                <Adsense
-                        data-ad-client="ca-pub-1864972736029501"
-                        data-ad-slot="7077188983"
-                        data-ad-format="auto"
-                        data-full-width-responsive="true"
-                        class="adsbygoogle"
-                        style="display:block"
-                >
-                </Adsense>
-            </div>
+
             <div class="col-md-2"></div>
         </div>
         <div class="row">

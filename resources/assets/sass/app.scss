@@ -5,17 +5,40 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+$main_color: #2d3047;
+$second_color: rgba(27, 153, 139, 0.63);
+
 @font-face {
   font-family: "Main Font";
   src: url(/fonts/Raleway-Medium.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "H1 Font";
+  src: url(/fonts/RighteousRegular.ttf) format("truetype");
+}
+
+
+@font-face {
+  font-family: "H2 Font";
+  src: url(/fonts/ChewyRegular.ttf) format("truetype");
+}
+
+.h1-title{
+  font-family: "H1 Font", Verdana, Tahoma;
+  color:  $main_color ;
+  text-shadow: 1px 2px 20px $second_color;
+}
+
+.h2-title{
+  font-family: "H2 Font", Verdana, Tahoma;
+  color:  $main_color ;
+  text-shadow: 3px 0px 5px $second_color;
+}
+
 body {
   font-family: "Main Font", Verdana, Tahoma;
 }
-
-$main_color: #2d3047;
-$second_color: rgba(27, 153, 139, 0.8);
 
 .navbar-laravel {
   background-color: #fff;
@@ -807,12 +830,12 @@ a.brand-url p {
 }
 
 .compare-add-button {
-  border: $second_color solid 2px;
+  border: $second_color 2px;
   color: $second_color;
   font-weight: bolder;
 }
 .compare-add-button:hover {
-  border: $second_color solid 2px;
+  border-color: $second_color;
   background-color: $second_color;
   color: white;
   font-weight: bolder;

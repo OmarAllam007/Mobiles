@@ -10476,6 +10476,28 @@ a.text-dark:focus {
   src: url(/fonts/Raleway-Medium.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "H1 Font";
+  src: url(/fonts/RighteousRegular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "H2 Font";
+  src: url(/fonts/ChewyRegular.ttf) format("truetype");
+}
+
+.h1-title {
+  font-family: "H1 Font", Verdana, Tahoma;
+  color: #2d3047;
+  text-shadow: 1px 2px 20px rgba(27, 153, 139, 0.63);
+}
+
+.h2-title {
+  font-family: "H2 Font", Verdana, Tahoma;
+  color: #2d3047;
+  text-shadow: 3px 0px 5px rgba(27, 153, 139, 0.63);
+}
+
 body {
   font-family: "Main Font", Verdana, Tahoma;
 }
@@ -10931,7 +10953,7 @@ img.hover-shadow {
 }
 
 .auth-form-control:focus {
-  border-color: rgba(27, 153, 139, 0.8);
+  border-color: rgba(27, 153, 139, 0.63);
   -webkit-box-shadow: 0 1px 7px 5px rgba(0, 0, 0, 0.075), 0 0 13px 4px #2d3047;
           box-shadow: 0 1px 7px 5px rgba(0, 0, 0, 0.075), 0 0 13px 4px #2d3047;
 }
@@ -10946,7 +10968,7 @@ img.hover-shadow {
 }
 
 .auth-form-body {
-  background-color: rgba(27, 153, 139, 0.8);
+  background-color: rgba(27, 153, 139, 0.63);
   color: #fff;
 }
 
@@ -11121,7 +11143,7 @@ li.list-group-item:hover > a {
   left: 0;
   right: 0;
   bottom: 0;
-  border-bottom: rgba(27, 153, 139, 0.8) 1px solid;
+  border-bottom: rgba(27, 153, 139, 0.63) 1px solid;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 0 50%;
@@ -11242,21 +11264,21 @@ a.brand-url p {
 
 .navbar-top-blue {
   background-color: #2d3047;
-  border-bottom: 4px rgba(27, 153, 139, 0.8) solid;
+  border-bottom: 4px rgba(27, 153, 139, 0.63) solid;
   color: #000;
   border-radius: 0 0 30px 30px;
 }
 
 .navbar-bottom-blue {
   background-color: #2d3047;
-  border-top: 4px rgba(27, 153, 139, 0.8) solid;
+  border-top: 4px rgba(27, 153, 139, 0.63) solid;
   color: #000;
   border-radius: 30px 30px 0 0;
 }
 
 .nav-item:hover {
   border-radius: 10px;
-  background-color: rgba(27, 153, 139, 0.8);
+  background-color: rgba(27, 153, 139, 0.63);
   -webkit-transition: .5s;
   transition: .5s;
 }
@@ -11298,14 +11320,14 @@ a.brand-url p {
 }
 
 .compare-add-button {
-  border: rgba(27, 153, 139, 0.8) solid 2px;
-  color: rgba(27, 153, 139, 0.8);
+  border: rgba(27, 153, 139, 0.63) 2px;
+  color: rgba(27, 153, 139, 0.63);
   font-weight: bolder;
 }
 
 .compare-add-button:hover {
-  border: rgba(27, 153, 139, 0.8) solid 2px;
-  background-color: rgba(27, 153, 139, 0.8);
+  border-color: rgba(27, 153, 139, 0.63);
+  background-color: rgba(27, 153, 139, 0.63);
   color: white;
   font-weight: bolder;
 }
