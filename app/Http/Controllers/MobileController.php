@@ -165,4 +165,9 @@ class MobileController extends Controller
         return view('brand.mobiles', compact('brand'));
     }
 
+    function allBrands()
+    {
+        return view('brand.all_brands');
+    }
+
 }

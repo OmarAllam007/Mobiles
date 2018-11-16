@@ -35,38 +35,27 @@
     </div>
 @endsection
 @section('body')
-    <section class="section-side">
-        @if($brand->mobiles->count())
-            <img style="display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-    width: 40%;" src="{{asset('storage'.$brand->image_path)}}">
-            <h5>
-                {{$brand->name}}
-            </h5>
-            <ul class="list-group">
-                @foreach($brand->mobiles as $mobile)
-                    <li class="list-group-item d-flex justify-content-between sweep-to-right align-items-center">
-                        <img src="{{$mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png')}}"
-                             style="width: 50px;height: 50px">
-                        <a href="{{route('mobile.display',[$mobile, strtolower($mobile->brand->name), str_slug($mobile->name)])}}">
-                            {{$mobile->name}}
-                        </a>
-                        <span class="badge  badge-pill">
-                {{$mobile->main_price_description ?? 0}}
-                </span>
-                    </li>
-                @endforeach
+    <div class="row">
+        <div class="col-md-12">
+            <div class="section-side container-brands" style="background-color: white;border-radius: 5px;">
+                <h5 class="text-center">
+                    {{t('BRANDS')}}
+                </h5>
+                <div class="d-flex flex-wrap flex-row bd-highlight justify-content-center">
+                    @foreach(\App\Brand::all() as $brand)
+                        <div class="p-2 bd-highlight">
+                            <a title="Mobile Brand Page" class="brand-url" href="{{route('brand.mobiles',$brand)}}">
+                                <img class="brand-image" src="{{asset('storage'.$brand->image_path)}}">
+                                <p>{{$brand->name}}</p>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
 
-            </ul>
 
-        @else
-            <div class="alert alert-info">
-                <i class="fa fa-meh"></i>
-                {{t('No Mobiles Found !')}}</div>
-        @endif
-    </section>
+        </div>
+    </div>
 @endsection
 
 @section('right')

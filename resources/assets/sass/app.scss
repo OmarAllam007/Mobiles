@@ -18,21 +18,20 @@ $second_color: rgba(27, 153, 139, 0.63);
   src: url(/fonts/RighteousRegular.ttf) format("truetype");
 }
 
-
 @font-face {
   font-family: "H2 Font";
   src: url(/fonts/ChewyRegular.ttf) format("truetype");
 }
 
-.h1-title{
+.h1-title {
   font-family: "H1 Font", Verdana, Tahoma;
-  color:  $main_color ;
+  color: $main_color;
   text-shadow: 1px 2px 20px $second_color;
 }
 
-.h2-title{
+.h2-title {
   font-family: "H2 Font", Verdana, Tahoma;
-  color:  $main_color ;
+  color: $main_color;
   text-shadow: 3px 0px 5px $second_color;
 }
 
@@ -834,6 +833,7 @@ a.brand-url p {
   color: $second_color;
   font-weight: bolder;
 }
+
 .compare-add-button:hover {
   border-color: $second_color;
   background-color: $second_color;
@@ -841,3 +841,6 @@ a.brand-url p {
   font-weight: bolder;
 }
 
+h1 {
+  font-size: 15pt;
+}

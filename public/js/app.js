@@ -49016,7 +49016,7 @@ var render = function() {
                               ]),
                               _vm._v(" "),
                               _c("div", { staticClass: "card-body" }, [
-                                _c("h5", { staticClass: "card-title" }, [
+                                _c("h6", { staticClass: "card-title" }, [
                                   _vm._v(_vm._s(mobile.name))
                                 ])
                               ])

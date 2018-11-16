@@ -55,7 +55,7 @@
                             </button>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">{{mobile.name}}</h5>
+                            <h6 class="card-title">{{mobile.name}}</h6>
                         </div>
 
                     </div>
