@@ -67,7 +67,7 @@
                                      alt="{{$mobile->name .' Image ' ?? ''}}">
                             @endif
                         </div>
-                        <div class="col-md-3 col-sm-3">
+                        <div class="col-md-4 col-sm-3">
                             <div class="card-block ">
                                 <h4 class="card-title">{{$mobile->name}}</h4>
                                 <p class="card-text"><span><i class="fa fa-calendar-alt"></i></span>
@@ -99,7 +99,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-2 col-sm-2">
+                        <div class="col-md-1 col-sm-2">
                             <div class="card-block">
                                 <h4 class="card-title"></h4>
                                 <p class="card-text">
