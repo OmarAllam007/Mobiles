@@ -48916,7 +48916,10 @@ var render = function() {
                         "div",
                         {
                           staticClass: "col-md-3 col-sm-3",
-                          staticStyle: { "padding-bottom": "10px" }
+                          staticStyle: {
+                            "padding-bottom": "10px",
+                            padding: "0"
+                          }
                         },
                         [
                           _c(

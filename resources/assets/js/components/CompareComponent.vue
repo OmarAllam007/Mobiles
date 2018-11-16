@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="row" v-if="filtered_mobiles.length" v-for="row in filtered_mobiles_count">
-                <div class="col-md-3 col-sm-3" style="padding-bottom:10px;" v-for="(mobile,index) in row">
+                <div class="col-md-3 col-sm-3" style="padding-bottom:10px;padding: 0" v-for="(mobile,index) in row">
                     <div style="position: absolute;z-index: 99;padding: 5px;transition:opacity 1s ease-in-out;">
                         <i class="fa fa-2x fa-check-circle" style="color:green;"
                            v-show="selected_mobiles.indexOf(mobile.id) !=-1"></i>
