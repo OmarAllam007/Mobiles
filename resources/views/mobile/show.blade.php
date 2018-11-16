@@ -37,7 +37,7 @@
         $is_favourite = 0;
         if(\Auth::check()) { if($mobile->users()->where('user_id', \Auth::id())->count()){$is_favourite = 1;} };
     @endphp
-    <h1 class="text-center h1-title" >{{$mobile->name}}</h1>
+    <h1 class="text-center h1-title" style="color: white">{{$mobile->name}}</h1>
     <div class="row">
         <div class="col-md-12 col-sm-12" style="margin: 10px 0">
             <Adsense
@@ -58,7 +58,7 @@
             <div class="col-md-12">
                 <div class="card card-layout " id="mobileDetails">
                     <div class="row no-gutters">
-                        <div class="col-auto">
+                        <div class="col-md-5">
                             @if($mobile->image_path)
                                 <img width="200" class="img-fluid" src="{{asset('storage'.$mobile->image_path)}}"
                                      alt="{{$mobile->name ?? ''}}">
@@ -67,8 +67,8 @@
                                      alt="{{$mobile->name .' Image ' ?? ''}}">
                             @endif
                         </div>
-                        <div class="col">
-                            <div class="card-block px-2">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="card-block ">
                                 <h4 class="card-title">{{$mobile->name}}</h4>
                                 <p class="card-text"><span><i class="fa fa-calendar-alt"></i></span>
                                     <span>{{$mobile->released_date}}</span></p>
@@ -88,8 +88,8 @@
                             </div>
 
                         </div>
-                        <div class="col">
-                            <div class="card-block px-0">
+                        <div class="col-md-2">
+                            <div class="card-block">
                                 <h4 class="card-title"></h4>
                                 <p class="card-text">
                                     <i class="fa fa-2x fa-chart-line"></i>
@@ -99,8 +99,8 @@
                             </div>
                         </div>
 
-                        <div class="col">
-                            <div class="card-block px-0">
+                        <div class="col-md-2 col-sm-2">
+                            <div class="card-block">
                                 <h4 class="card-title"></h4>
                                 <p class="card-text">
                                     <like-component :mobile="{{$mobile->id}}"
