@@ -31,13 +31,13 @@
     @if ($mobiles->count())
         <div class="row" style="margin-top: 10px" id="mobiles">
             @foreach($mobiles as $mobile)
-                <div class="col-md-2" style="padding:2px">
+                <div class="col-md-3" style="padding:2px">
                     <div class="card hvr-glow li-item-card text-center" style="align-items: center">
                         <img class="card-img-top img-fluid img-rounded img-responsive"
                              src="{{asset('storage'.$mobile->image_path)}}"
                              style="width: 70px;height: 80px;margin:3px auto;overflow:scroll">
                         <div class="card-body">
-                            <h5 class="card-title">{{$mobile->name}}</h5>
+                            <h5 class="card-title" style="font-size: 12pt">{{$mobile->name}}</h5>
                             <form action="{{route('mobile.destroy', $mobile)}}" method="post">
                                 <a href="{{route('mobile.edit', $mobile)}}" class="btn btn-sm btn-site-primary">
                                     <i class="fa fa-edit"></i>
