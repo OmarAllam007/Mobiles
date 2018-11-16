@@ -11124,6 +11124,7 @@ li.list-group-item:hover > a {
   padding: 5px;
   /* border-left: 5px solid #2d3047; */
   border-right: 5px solid #2d3047;
+  border-left: 5px solid #2d3047;
   border-radius: 0 5px 0 5px;
 }
 
@@ -11334,5 +11335,48 @@ a.brand-url p {
 
 h1 {
   font-size: 15pt;
+}
+
+h1 {
+  background-color: #1a998b;
+  color: #fff;
+  margin: 0;
+  padding: 5px;
+  /* border-left: 5px solid #2d3047; */
+  border-right: 5px solid #2d3047;
+  border-left: 5px solid #2d3047;
+  border-radius: 0 5px 0 5px;
+}
+
+.btn-site-primary {
+  background-color: #1a998b;
+  color: #ffffff;
+}
+
+.btn-site-primary:hover {
+  background-color: #2d3047;
+  color: #ffffff;
+}
+
+.site-title {
+  background-color: #1a998b;
+  color: #fff;
+  margin: 0;
+  padding: 5px;
+  /* border-left: 5px solid #2d3047; */
+  border-right: 5px solid #2d3047;
+  border-left: 5px solid #2d3047;
+  border-radius: 0 5px 0 5px;
+}
+
+.admin-title {
+  background-color: #1a998b;
+  color: #fff;
+  margin: 0;
+  padding: 5px;
+  width: 150px;
+  border-right: 5px solid #2d3047;
+  border-left: 5px solid #2d3047;
+  border-radius: 50%;
 }
 

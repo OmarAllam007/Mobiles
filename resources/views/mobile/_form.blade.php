@@ -162,6 +162,7 @@
 @section('scripts')
     <script>
         $('button.btn-danger').on('click', function () {
+            console.log('asdad')
             let token = $(this).data('token');
             $.ajax({
                 url: '/mobile-image/' + $(this).data('image'),
@@ -174,7 +175,7 @@
         })
 
     </script>
-@endsection
+@append
 
 
 

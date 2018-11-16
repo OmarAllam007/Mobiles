@@ -170,4 +170,10 @@ class MobileController extends Controller
         return view('brand.all_brands');
     }
 
+
+    function search(Request $request)
+    {
+        $mobiles = Mobile::where('name', 'like', '%' . $request->search . '%')->get();
+        return view('mobile.index', compact('mobiles'));
+    }
 }

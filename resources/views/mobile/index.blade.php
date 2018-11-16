@@ -1,28 +1,45 @@
 @extends('layout.app')
 
 @section('header')
-    <div class="col-11">
+    <div class="col-md-11 text-center">
         <h4>{{t('Mobiles')}}</h4>
     </div>
-    <div class="col-1">
+    <div class="col-md-1">
         <a class="btn btn-outline-success" href="{{route('mobile.create')}}" role="button"><i
                     class="fa fa-plus"></i></a>
     </div>
+
+
+
 @stop
 
 @section('body')
-
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-inline" method="get" action="{{route('mobile.search')}}">
+                <div class="form-group col-md-10 mb-2">
+                    <input class="form-control col-md-12" name="search" placeholder="Search by Name">
+                </div>
+                <div class="form-group mx-sm-2 mb-2">
+                    <button class="btn btn-sm btn-outline-info">
+                        {{t('Search')}}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
     @if ($mobiles->count())
         <div class="row" style="margin-top: 10px" id="mobiles">
             @foreach($mobiles as $mobile)
-                <div class="col-2" style="padding:2px">
-                    <div class="card text-center" style="align-items: center">
-                        <img class="card-img-top img-fluid img-rounded img-responsive" src="{{asset('storage'.$mobile->image_path)}}"
+                <div class="col-md-2" style="padding:2px">
+                    <div class="card hvr-glow li-item-card text-center" style="align-items: center">
+                        <img class="card-img-top img-fluid img-rounded img-responsive"
+                             src="{{asset('storage'.$mobile->image_path)}}"
                              style="width: 70px;height: 80px;margin:3px auto;overflow:scroll">
                         <div class="card-body">
                             <h5 class="card-title">{{$mobile->name}}</h5>
                             <form action="{{route('mobile.destroy', $mobile)}}" method="post">
-                                <a href="{{route('mobile.edit', $mobile)}}" class="btn btn-sm btn-primary">
+                                <a href="{{route('mobile.edit', $mobile)}}" class="btn btn-sm btn-site-primary">
                                     <i class="fa fa-edit"></i>
                                 </a>
                                 {{csrf_field()}} {{method_field('delete')}}
@@ -47,11 +64,11 @@
     <script>
         let mobiles = {!! $mobiles !!}
         new Vue({
-            el:'#mobiles',
-            data:{
-                  mobiles:[]
+            el: '#mobiles',
+            data: {
+                mobiles: []
             },
-            created(){
+            created() {
                 this.mobiles = mobiles
             }
         })
