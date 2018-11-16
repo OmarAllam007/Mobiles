@@ -5,7 +5,8 @@
 
         <i class="fa fa-2x fa-heart" :class="{'text-danger':is_favourite,'text-dark':!is_favourite}"
            id="heart"></i>
-        <span style="color:black;font-size: 1.3em;font-weight: 400">{{total_likes}}</span>
+        <span style="color:black;font-size: 1.3em;font-weight: 400">
+            <strong>{{total_likes}}</strong></span>
         <p v-show="is_hover && !auth">{{t['Please Login First']}}</p>
 
     </a>

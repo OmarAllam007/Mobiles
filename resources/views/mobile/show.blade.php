@@ -51,7 +51,7 @@
             </Adsense>
         </div>
     </div>
-    <h2 class="h2-title" >{{$mobile->name}} -{{t('Specifications')}}</h2>
+    <h2 class="h2-title">{{$mobile->name}} -{{t('Specifications')}}</h2>
 
     <div id="show">
         <div class="row">
@@ -93,8 +93,9 @@
                                 <h4 class="card-title"></h4>
                                 <p class="card-text">
                                     <i class="fa fa-2x fa-chart-line"></i>
-                                    <span style="font-size: 1.3em;font-weight: 400">{{$mobile->number_of_hits ?? 0}}
-                                        {{t('HITS')}}</span>
+                                    <span style="font-size: 1.3em;font-weight: 400">
+                                        <strong>{{$mobile->number_of_hits ?? 0}}</strong>
+                                    </span>
                                 </p>
                             </div>
                         </div>
@@ -193,10 +194,10 @@
 
 @section('footer')
 
-        <div class="comments-form">
-            @include('mobile._show._comments')
+    <div class="comments-form">
+        @include('mobile._show._comments')
 
-        </div>
+    </div>
 @endsection
 @section('scripts')
 
