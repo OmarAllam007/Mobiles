@@ -51450,7 +51450,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -51461,6 +51461,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -51644,52 +51645,66 @@ var render = function() {
                       _c("h4", [_vm._v(_vm._s(brand.name))]),
                       _vm._v(" "),
                       _c(
-                        "ul",
-                        { staticClass: "list-unstyled" },
+                        "div",
+                        { staticClass: "row justify-content-md-start" },
                         _vm._l(brand.mobiles, function(mobile) {
                           return _c(
-                            "li",
-                            { staticClass: "li-item hvr-glow li-item-card" },
+                            "div",
+                            {
+                              staticClass:
+                                "col-md-2 hvr-glow li-item-card-2 text-center"
+                            },
                             [
-                              _c("a", { attrs: { href: mobile.show_url } }, [
-                                _c("img", {
+                              _c(
+                                "a",
+                                {
                                   staticStyle: {
-                                    width: "100px",
-                                    height: "147px"
+                                    "text-decoration": "none",
+                                    margin: "auto",
+                                    padding: "auto"
                                   },
-                                  attrs: { src: mobile.image }
-                                }),
-                                _vm._v(" "),
-                                _c("aside", [
-                                  _c("strong", [
-                                    _vm._v(" " + _vm._s(mobile.name))
-                                  ]),
+                                  attrs: { href: mobile.show_url }
+                                },
+                                [
+                                  _c("img", {
+                                    staticStyle: {
+                                      width: "100px",
+                                      height: "147px"
+                                    },
+                                    attrs: { src: mobile.image }
+                                  }),
                                   _vm._v(" "),
-                                  _c("h5", [
-                                    _c(
-                                      "span",
-                                      {
-                                        staticClass: "badge badge-danger",
-                                        staticStyle: {
-                                          "background-color":
-                                            "#0077aa !important"
-                                        }
-                                      },
-                                      [
-                                        _vm._v(
-                                          " " +
-                                            _vm._s(
-                                              mobile.main_price_description
-                                                ? mobile.main_price_description.toLocaleString()
-                                                : ""
-                                            ) +
-                                            " "
-                                        )
-                                      ]
-                                    )
+                                  _c("aside", [
+                                    _c("strong", [
+                                      _vm._v(" " + _vm._s(mobile.name))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _c(
+                                        "span",
+                                        {
+                                          staticClass: "badge badge-danger",
+                                          staticStyle: {
+                                            "background-color":
+                                              "#0077aa !important"
+                                          }
+                                        },
+                                        [
+                                          _vm._v(
+                                            " " +
+                                              _vm._s(
+                                                mobile.main_price_description
+                                                  ? mobile.main_price_description.toLocaleString()
+                                                  : ""
+                                              ) +
+                                              " "
+                                          )
+                                        ]
+                                      )
+                                    ])
                                   ])
-                                ])
-                              ])
+                                ]
+                              )
                             ]
                           )
                         })

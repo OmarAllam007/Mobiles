@@ -28,21 +28,22 @@
         <div class="row" v-for="(brand,key) in filtered_brands" v-if="brand.mobiles.length" style="padding-top: 10px">
             <div v-if="brand.mobiles.length" class="col-md-12">
                 <h4>{{brand.name}}</h4>
-                <ul class="list-unstyled">
-                    <li class="li-item hvr-glow li-item-card" v-for="mobile in brand.mobiles">
-                        <a :href="mobile.show_url">
-                            <img :src="mobile.image" style="width: 100px;height: 147px">
-                            <aside>
-                                <strong> {{mobile.name}}</strong>
-                                <h5 >
+                <div class="row justify-content-md-start">
+                        <div class="col-md-2 hvr-glow li-item-card-2 text-center"  v-for="mobile in brand.mobiles">
+                            <a :href="mobile.show_url" style="text-decoration: none; margin: auto;padding: auto" >
+                                <img :src="mobile.image" style="width: 100px;height: 147px">
+                                <aside>
+                                    <strong> {{mobile.name}}</strong>
+                                    <p>
                                    <span class="badge badge-danger" style="background-color:#0077aa !important"> {{mobile.main_price_description
                                     ?mobile.main_price_description.toLocaleString(): ''}} </span>
-                                </h5>
-                            </aside>
+                                    </p>
+                                </aside>
 
-                        </a>
-                    </li>
-                </ul>
+                            </a>
+                        </div>
+                </div>
+
             </div>
         </div>
 

@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('left')
-    <div class="col-md-12 col-sm-12 flex-fill">
+    <div class="col-md-12 col-sm-12">
         <section class="section-side">
             <h5>
                 {{t('Top 10 By Fans')}}
