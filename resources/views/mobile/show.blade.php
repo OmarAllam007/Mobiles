@@ -88,7 +88,7 @@
                             </div>
 
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <div class="card-block">
                                 <h4 class="card-title"></h4>
                                 <p class="card-text">
@@ -96,21 +96,19 @@
                                     <span style="font-size: 1.3em;font-weight: 400">
                                         <strong>{{$mobile->number_of_hits ?? 0}}</strong>
                                     </span>
-                                </p>
-                            </div>
-                        </div>
 
-                        <div class="col-md-1 col-sm-2">
-                            <div class="card-block">
-                                <h4 class="card-title"></h4>
-                                <p class="card-text">
-                                    <like-component :mobile="{{$mobile->id}}"
-                                                    :auth="{{\Auth::check() ? 1 : 0}}"
-                                                    :likes="{{ $mobile->number_of_fans ?? 0 }}"
-                                                    :favourite="{{ $is_favourite }}"
-                                                    :t="{{json_encode(\App\Translation::getLikeComponent())}}"
-                                    ></like-component>
+                                    <span style="margin-left:10px ">
+                                         <like-component :mobile="{{$mobile->id}}"
+                                                         :auth="{{\Auth::check() ? 1 : 0}}"
+                                                         :likes="{{ $mobile->number_of_fans ?? 0 }}"
+                                                         :favourite="{{ $is_favourite }}"
+                                                         :t="{{json_encode(\App\Translation::getLikeComponent())}}"
+                                         ></like-component>
+                                    </span>
                                 </p>
+                                <div class="card-text">
+
+                                </div>
                             </div>
                         </div>
                     </div>

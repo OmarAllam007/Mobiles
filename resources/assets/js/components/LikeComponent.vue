@@ -1,12 +1,13 @@
 <template>
     <a role="button" href="#"
-       style="text-align: center;text-decoration: none;display: block;height: 100%;"
+       style="text-align: center;text-decoration: none;height: 100%;"
        @click="addLike" @mouseover="is_hover= 1" @mouseout="is_hover=0">
 
         <i class="fa fa-2x fa-heart" :class="{'text-danger':is_favourite,'text-dark':!is_favourite}"
            id="heart"></i>
         <span style="color:black;font-size: 1.3em;font-weight: 400">
-            <strong>{{total_likes}}</strong></span>
+            <strong>{{total_likes}}</strong>
+        </span>
         <p v-show="is_hover && !auth">{{t['Please Login First']}}</p>
 
     </a>
@@ -17,7 +18,7 @@
 
     export default {
         name: "like-component",
-        props: ['mobile', 'likes', 'auth', 'favourite','t'],
+        props: ['mobile', 'likes', 'auth', 'favourite', 't'],
         data() {
             return {
                 is_favourite: 0,
@@ -30,7 +31,7 @@
                 let likesCount = $('#likesCount');
                 let heart = $('#heart');
 
-                if(this.auth){
+                if (this.auth) {
                     var token = document.head.querySelector('meta[name="csrf-token"]');
                     window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 
