@@ -28,6 +28,8 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 Route::group(['middleware' => ['auth']], function () {
     Route::post('make-favourite', 'MobileController@makeFavourite')->name('make.favourite');
 });
+
+Route::get('all/mobiles/prices', 'MobileController@getMobileWithPrice')->name('mobiles.prices');
 Route::get('choose-for-me', 'ChooseForMeController@chooseForMe')->name('choose.me');
 Route::get('change-language/{language}', 'TranslationController@changeLanguage')->name('language.change');
 Route::post('choose-for-me', 'ChooseForMeController@filterApply')->name('choose.me');
@@ -35,7 +37,6 @@ Route::get('/compare', 'CompareController@getCompare')->name('compare.index');
 Route::post('compare-items', 'CompareController@analyzeCompareProcess')->name('compare.analyze');
 Route::post('post-comment', 'MobileCommentController@postComment');
 Route::get('mobiles/{mobile}/{mobile_brand}/{mobile_name}', 'MobileController@show')->name('mobiles.display');
-Route::get('mobiles/prices', 'MobileController@getMobileWithPrice')->name('mobiles.prices');
 Route::get('brands/{brand}/mobiles', 'MobileController@getMobilesByBrand')->name('brand.mobiles');
 Route::get('brands/all-brands', 'MobileController@allBrands')->name('brand.all');
 
