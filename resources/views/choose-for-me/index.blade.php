@@ -37,7 +37,7 @@
         $mobiles = \App\Mobile::all()->each(function ($mobile){
 
         if($mobile->brand){
-                $mobile['show_url'] = route('mobile.display',[$mobile,strtolower($mobile->brand->name),str_slug($mobile->name)]);
+                $mobile['show_url'] = route('mobiles.display',[$mobile,strtolower($mobile->brand->name),str_slug($mobile->name)]);
                 $mobile['image_path'] = asset('storage'.$mobile->image_path);
         }
      });
@@ -45,7 +45,7 @@
     $top_prices = \App\Mobile::byprice()->get()->each(function ($mobile){
 
         if($mobile->brand){
-                $mobile['show_url'] = route('mobile.display',[$mobile,strtolower($mobile->brand->name),str_slug($mobile->name)]);
+                $mobile['show_url'] = route('mobiles.display',[$mobile,strtolower($mobile->brand->name),str_slug($mobile->name)]);
                 $mobile['image_path'] = asset('storage'.$mobile->image_path);
         }
      });
