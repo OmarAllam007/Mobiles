@@ -8,6 +8,8 @@ use App\MobileImages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class MobileController extends Controller
 {
@@ -50,7 +52,7 @@ class MobileController extends Controller
                 ]);
             }
         }
-        return redirect()->route('mobile.index');
+        return redirect()->route('mobiles.index');
     }
 
     function update(Mobile $mobile, Request $request)
@@ -60,6 +62,7 @@ class MobileController extends Controller
         $data = $request->all();
 
         if ($request->hasFile('image')) {
+            Storage::disk('public')->delete($mobile->image_path);
             $attachment = Mobile::uploadImage($request->image);
             $data['image_path'] = $attachment->path;
         }
@@ -76,16 +79,16 @@ class MobileController extends Controller
                 ]);
             }
         }
-        return redirect()->route('mobile.index');
+        return redirect()->route('mobiles.index');
     }
 
     function destroy(Mobile $mobile)
     {
         $mobile->delete();
-        return redirect()->route('mobile.index');
+        return redirect()->route('mobiles.index');
     }
 
-    function show(Mobile $mobile, $mobile_brand, $mobile_name)
+    function show(Mobile $mobile)
     {
 
         $hits = $mobile->number_of_hits ?? 0;

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Brand;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BrandController extends Controller
 {
@@ -43,6 +44,9 @@ class BrandController extends Controller
         $data = [];
 
         if ($request->hasFile('image_path')) {
+
+            Storage::disk('public')->delete($brand->image_path);
+
             $attachment = Brand::uploadImage($request->image_path);
             $data['image_path'] = $attachment->path;
         }

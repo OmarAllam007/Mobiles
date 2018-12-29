@@ -116,7 +116,7 @@
 @php
     $mobiles = \App\Mobile::all()->each(function ($mobile){
     if($mobile->brand){
-    $mobile['show_url'] = route('mobile.display',[$mobile,strtolower($mobile->brand->name),str_slug($mobile->name)]);
+    $mobile['show_url'] = route('mobiles.display',[$mobile,strtolower($mobile->brand->name),str_slug($mobile->name)]);
     $mobile['image_path'] = asset('storage'.$mobile->image_path);
     }
     })
@@ -136,7 +136,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item ">
-                            <a class="nav-link" href="{{route('mobile.prices')}}" title="Prices Page">
+                            <a class="nav-link" href="{{route('mobiles.prices')}}" title="Prices Page">
                                 <i class="fa fa-mobile-alt"></i>
                                 {{t('Prices')}}</a>
                         </li>
@@ -164,7 +164,7 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a href="{{route('brand.index')}}" class="dropdown-item"
                                        title="Brands Page">{{ t('Brands') }}</a>
-                                    <a href="{{route('mobile.index')}}"
+                                    <a href="{{route('mobiles.index')}}"
                                        class="dropdown-item" title="Mobiles Index Page">{{ t('Mobiles') }}</a>
                                     <a href="{{route('review.index')}}"
                                        class="dropdown-item" title="Reviews Page">{{ t('Reviews') }}</a>
@@ -303,7 +303,7 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a href="{{route('brand.index')}}" class="dropdown-item">{{ t('Brands') }}</a>
-                                    <a href="{{route('mobile.index')}}"
+                                    <a href="{{route('mobiles.index')}}"
                                        class="dropdown-item" title="Mobiles Page">{{ t('Mobiles') }}</a>
                                     <a href="{{route('review.index')}}"
                                        class="dropdown-item" title="Reviews Page">{{ t('Reviews') }}</a>
@@ -327,7 +327,7 @@
                         </li>
 
                         <li class="nav-item ">
-                            <a class="nav-link" href="{{route('mobile.prices')}}" title="Prices Page">
+                            <a class="nav-link" href="{{route('mobiles.prices')}}" title="Prices Page">
                                 <i class="fa fa-mobile-alt"></i>
                                 {{t('Prices')}}</a>
                         </li>

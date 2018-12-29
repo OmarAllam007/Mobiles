@@ -5,7 +5,7 @@
         <h4>{{t('Add Mobile')}}</h4>
     </div>
     <div class="col-1">
-        <a href="{{route('mobile.index')}}" class="btn btn-outline-info"><i class="fa fa-chevron-left"></i>
+        <a href="{{route('mobiles.index')}}" class="btn btn-outline-info"><i class="fa fa-chevron-left"></i>
         </a>
     </div>
 
@@ -13,7 +13,7 @@
 
 @section('body')
     <div class="col-12">
-        <form action="{{route('mobile.store')}}" class="row" method="post" enctype="multipart/form-data">
+        <form action="{{route('mobiles.store')}}" class="row" method="post" enctype="multipart/form-data">
             {{csrf_field()}} {{method_field('post')}}
             @include('mobile._form')
         </form>

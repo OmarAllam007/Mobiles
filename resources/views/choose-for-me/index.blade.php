@@ -9,7 +9,7 @@
             <ul class="list-group">
                 @foreach(\App\Mobile::topfans()->get() as $newMob)
                     <li class="list-group-item d-flex justify-content-between align-items-center sweep-to-right">
-                        <a href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
+                        <a href="{{route('mobiles.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
                             <img src="{{$newMob->image_path ? asset('storage' . $newMob->image_path) : asset('storage/no-phone.png')}}" style="width: 50px;height: 50px">
                             {{$newMob->name}}
                         </a>
@@ -68,7 +68,7 @@
                     <li class="list-group-item d-flex  justify-content-between align-items-center sweep-to-right">
                         <img src="{{$newMob->image_path ? asset('storage' . $newMob->image_path) : asset('storage/no-phone.png')}}" style="width: 50px;height: 50px">
 
-                        <a href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
+                        <a href="{{route('mobiles.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
                             {{$newMob->name}}
                         </a>
                         <span class="badge badge-pill">{{$newMob->main_price_description ?? 0}} </span>

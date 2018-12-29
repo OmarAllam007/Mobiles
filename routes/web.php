@@ -18,7 +18,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/mobile/search', 'MobileController@search')->name('mobile.search');
     Route::resource('brand', 'BrandController');
-    Route::resource('mobile', 'MobileController');
+    Route::resource('mobiles', 'MobileController');
     Route::resource('review', 'ReviewController');
     Route::resource('mobile-image', 'MobileImagesController');
     Route::post('upload-review-images', 'ReviewController@uploadImages');
@@ -34,8 +34,8 @@ Route::post('choose-for-me', 'ChooseForMeController@filterApply')->name('choose.
 Route::get('/compare', 'CompareController@getCompare')->name('compare.index');
 Route::post('compare-items', 'CompareController@analyzeCompareProcess')->name('compare.analyze');
 Route::post('post-comment', 'MobileCommentController@postComment');
-Route::get('mobiles/{mobile}/{mobile_brand}/{mobile_name}', 'MobileController@show')->name('mobile.display');
-Route::get('mobiles/prices', 'MobileController@getMobileWithPrice')->name('mobile.prices');
+Route::get('mobiles/{mobile}/{mobile_brand}/{mobile_name}', 'MobileController@show')->name('mobiles.display');
+Route::get('mobiles/prices', 'MobileController@getMobileWithPrice')->name('mobiles.prices');
 Route::get('brands/{brand}/mobiles', 'MobileController@getMobilesByBrand')->name('brand.mobiles');
 Route::get('brands/all-brands', 'MobileController@allBrands')->name('brand.all');
 

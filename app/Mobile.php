@@ -89,7 +89,7 @@ class Mobile extends Model
 
     function getShowUrlAttribute()
     {
-        return route('mobile.display', [$this, strtolower($this->brand->name), str_slug($this->name)]);
+        return route('mobiles.display', [$this, strtolower($this->brand->name), str_slug($this->name)]);
     }
 
     function getOpenDeviceAttribute()
@@ -117,7 +117,7 @@ class Mobile extends Model
 
     function mobileURLAttribute()
     {
-        return route('mobile.display',[$this,strtolower($this->brand->name),str_slug($this->name)]);
+        return route('mobiles.display',[$this,strtolower($this->brand->name),str_slug($this->name)]);
     }
 
     function scopeTopFans($query){

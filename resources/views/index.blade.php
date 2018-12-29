@@ -13,7 +13,7 @@
                              style="width: 50px;height: 50px">
 
                         <a title="Mobile Display Page"
-                           href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
+                           href="{{route('mobiles.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
                             {{$newMob->name}}
                         </a>
                         <span class="badge  badge-pill">{{$newMob->number_of_hits ?? 0}} </span>
@@ -47,7 +47,7 @@
                         <li class="list-group-item d-flex justify-content-between sweep-to-right align-items-center">
 
                             <a title="Mobile Display Page"
-                               href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
+                               href="{{route('mobiles.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
                                 <img src="{{$newMob->image_path ? asset('storage' . $newMob->image_path) : asset('storage/no-phone.png')}}"
                                      style="width: 50px;height: 50px">
                                 {{$newMob->name}}
@@ -102,7 +102,7 @@
                 <div class="d-flex flex-wrap  flex-row bd-highlight mb-3" style="margin-top: 20px">
                     @foreach(\App\Mobile::latestmobiles()->get() as $newMob)
                         <a class="brand-url" title="Mobile Display Page"
-                           href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
+                           href="{{route('mobiles.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
                             <img style="width: 100px;height: 100px" src="{{asset('storage'.$newMob->image_path)}}">
 
                             <p>{{$newMob->name}}</p>
@@ -128,7 +128,7 @@
                              style="width: 50px;height: 50px">
 
                         <a title="Mobile Display Page"
-                           href="{{route('mobile.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
+                           href="{{route('mobiles.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
                             {{$newMob->name}}
                         </a>
                         <span class="badge  badge-pill">{{$newMob->number_of_fans ?? 0}} </span>

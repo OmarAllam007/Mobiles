@@ -5,7 +5,7 @@
         <h4>{{t('Mobiles')}}</h4>
     </div>
     <div class="col-md-1">
-        <a class="btn btn-outline-success" href="{{route('mobile.create')}}" role="button"><i
+        <a class="btn btn-outline-success" href="{{route('mobiles.create')}}" role="button"><i
                     class="fa fa-plus"></i></a>
     </div>
 
@@ -38,8 +38,8 @@
                              style="width: 70px;height: 80px;margin:3px auto;overflow:scroll">
                         <div class="card-body">
                             <h5 class="card-title" style="font-size: 12pt">{{$mobile->name}}</h5>
-                            <form action="{{route('mobile.destroy', $mobile)}}" method="post">
-                                <a href="{{route('mobile.edit', $mobile)}}" class="btn btn-sm btn-site-primary">
+                            <form action="{{route('mobiles.destroy', $mobile)}}" method="post">
+                                <a href="{{route('mobiles.edit', $mobile)}}" class="btn btn-sm btn-site-primary">
                                     <i class="fa fa-edit"></i>
                                 </a>
                                 {{csrf_field()}} {{method_field('delete')}}
