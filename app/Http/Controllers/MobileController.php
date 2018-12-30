@@ -176,7 +176,7 @@ class MobileController extends Controller
 
     function search(Request $request)
     {
-        dd($request->all());
+
         $mobiles = Mobile::where('name', 'like', '%' . $request->get('search') . '%')->get();
         return view('mobile.index', compact('mobiles'));
     }

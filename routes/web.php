@@ -16,7 +16,7 @@
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
-    Route::get('/mobile/search', 'MobileController@search')->name('mobile.search');
+    Route::get('mobile/search', 'MobileController@search')->name('mobile.search');
     Route::resource('brand', 'BrandController');
     Route::resource('mobiles', 'MobileController');
     Route::resource('review', 'ReviewController');
