@@ -131,7 +131,13 @@
                             </li>
 
                             <li class="text-center  p-md-4 p-xl-4 p-sm-4 p-lg-4 flex-fill bd-highlight">
-                                <i class="fa fa-3x fa-battery-full"></i>
+                                @if($mobile->main_battery_description >= 3000 )
+                                    <i class="fa fa-3x fa-battery-full"></i>
+                                @elseif($mobile->main_battery_description >= 2000 && $mobile->main_battery_description <= 3000)
+                                    <i class="fa fa-3x fa-battery-three-quarters"></i>
+                                @else
+                                    <i class="fa fa-3x fa-battery-half"></i>
+                                @endif
                                 <p style="margin: 0;font-size: 1.7em;font-weight: 800">{{$mobile->main_battery_description ?? 0}}</p>
                                 <span>{{t('mAh')}}</span>
                             </li>

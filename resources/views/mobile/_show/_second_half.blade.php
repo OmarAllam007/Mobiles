@@ -41,7 +41,14 @@
             <thead>
             <tr>
                 <td style="background-color: #1b998b;color:white" colspan="2">
-                    <i class="fa fa-battery-full"></i> {{t('Battery')}}
+                    @if($mobile->main_battery_description >= 3000 )
+                        <i class="fa  fa-battery-full"></i>
+                    @elseif($mobile->main_battery_description >= 2000 && $mobile->main_battery_description <= 3000)
+                        <i class="fa  fa-battery-three-quarters"></i>
+                    @else
+                        <i class="fa  fa-battery-half"></i>
+                    @endif
+                        {{t('Battery')}}
                 </td>
             </tr>
             </thead>

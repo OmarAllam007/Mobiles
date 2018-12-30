@@ -48716,6 +48716,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['mobiles', 't'],
@@ -49019,8 +49024,29 @@ var render = function() {
                               ]),
                               _vm._v(" "),
                               _c("div", { staticClass: "card-body" }, [
-                                _c("h6", { staticClass: "card-title" }, [
-                                  _vm._v(_vm._s(mobile.name))
+                                _c(
+                                  "h6",
+                                  { staticClass: "card-title text-center" },
+                                  [_vm._v(_vm._s(mobile.name))]
+                                ),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "text-center" }, [
+                                  _c(
+                                    "span",
+                                    {
+                                      staticClass: "badge badge-info",
+                                      staticStyle: { "font-size": "10pt" }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                " +
+                                          _vm._s(
+                                            mobile.main_price_description.toLocaleString()
+                                          ) +
+                                          " $\n                        "
+                                      )
+                                    ]
+                                  )
                                 ])
                               ])
                             ]
@@ -51685,6 +51711,7 @@ var render = function() {
                                         {
                                           staticClass: "badge badge-danger",
                                           staticStyle: {
+                                            "font-size": "10pt",
                                             "background-color":
                                               "#0077aa !important"
                                           }
@@ -51694,10 +51721,11 @@ var render = function() {
                                             " " +
                                               _vm._s(
                                                 mobile.main_price_description
-                                                  ? mobile.main_price_description.toLocaleString()
+                                                  ? mobile.main_price_description.toLocaleString() +
+                                                    " $"
                                                   : ""
                                               ) +
-                                              " "
+                                              "  "
                                           )
                                         ]
                                       )
@@ -51833,7 +51861,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -51844,6 +51872,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -52376,14 +52407,23 @@ var render = function() {
                         _c("strong", [_vm._v(" " + _vm._s(mobile.name))]),
                         _vm._v(" "),
                         _c("p", { staticStyle: { "padding-top": "10px" } }, [
-                          _vm._v(
-                            " " +
-                              _vm._s(
-                                mobile.main_price_description
-                                  ? mobile.main_price_description.toLocaleString()
-                                  : ""
-                              ) +
-                              " "
+                          _c(
+                            "span",
+                            {
+                              staticClass: "badge badge-info",
+                              staticStyle: { "font-size": "10pt" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(
+                                    mobile.main_price_description
+                                      ? mobile.main_price_description.toLocaleString()
+                                      : ""
+                                  ) +
+                                  "$\n                                "
+                              )
+                            ]
                           )
                         ])
                       ])

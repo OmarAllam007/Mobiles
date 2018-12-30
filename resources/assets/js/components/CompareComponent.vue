@@ -55,7 +55,12 @@
                             </button>
                         </div>
                         <div class="card-body">
-                            <h6 class="card-title">{{mobile.name}}</h6>
+                            <h6 class="card-title text-center">{{mobile.name}}</h6>
+                            <p class="text-center" >
+                            <span class="badge badge-info" style="font-size: 10pt">
+                                    {{mobile.main_price_description.toLocaleString()}} $
+                            </span>
+                            </p>
                         </div>
 
                     </div>

@@ -35,8 +35,8 @@
                                 <aside>
                                     <strong> {{mobile.name}}</strong>
                                     <p>
-                                   <span class="badge badge-danger" style="background-color:#0077aa !important"> {{mobile.main_price_description
-                                    ?mobile.main_price_description.toLocaleString(): ''}} </span>
+                                   <span class="badge badge-danger" style="font-size: 10pt;background-color:#0077aa !important"> {{mobile.main_price_description
+                                    ?mobile.main_price_description.toLocaleString()+' $': ''}}  </span>
                                     </p>
                                 </aside>
 

@@ -74,7 +74,6 @@
         <div class="row justify-content-center">
 
 
-
             <!--<div class="col-2">-->
             <!--<div class="form-group">-->
             <!--<h5>&nbsp;</h5>-->
@@ -90,25 +89,25 @@
 
         <div class="row justify-content-center" v-if="filtered_mobiles.length">
             <!--<div class="col-md-6">-->
-                <!--<div class="section-side">-->
-                    <!--<h5>-->
-                        <!--Top 10 By Fans-->
-                    <!--</h5>-->
-                    <!--<ul class="list-group">-->
-                        <!--<li v-for="top in top_love"-->
-                            <!--class="list-group-item d-flex justify-content-between align-items-center">-->
-                            <!--<a :href="top.show_url">-->
-                                <!--{{top.name}}-->
-                            <!--</a>-->
-                            <!--<span class="badge  badge-pill">{{top.number_of_fans ? top.number_of_fans : 0 }} </span>-->
-                        <!--</li>-->
-                    <!--</ul>-->
-                <!--</div>-->
-                <!--<div class="big-banner">-->
-                    <!--<p class="text-center">-->
-                        <!--Advertisement Place-->
-                    <!--</p>-->
-                <!--</div>-->
+            <!--<div class="section-side">-->
+            <!--<h5>-->
+            <!--Top 10 By Fans-->
+            <!--</h5>-->
+            <!--<ul class="list-group">-->
+            <!--<li v-for="top in top_love"-->
+            <!--class="list-group-item d-flex justify-content-between align-items-center">-->
+            <!--<a :href="top.show_url">-->
+            <!--{{top.name}}-->
+            <!--</a>-->
+            <!--<span class="badge  badge-pill">{{top.number_of_fans ? top.number_of_fans : 0 }} </span>-->
+            <!--</li>-->
+            <!--</ul>-->
+            <!--</div>-->
+            <!--<div class="big-banner">-->
+            <!--<p class="text-center">-->
+            <!--Advertisement Place-->
+            <!--</p>-->
+            <!--</div>-->
             <!--</div>-->
 
             <div class="col-md-12">
@@ -118,8 +117,12 @@
                             <img :src="mobile.image_path" style="width: 100px;height: 147px">
                             <aside>
                                 <strong> {{mobile.name}}</strong>
-                                <p style="padding-top: 10px"> {{mobile.main_price_description
-                                    ?mobile.main_price_description.toLocaleString(): ''}} </p>
+                                <p style="padding-top: 10px">
+                                    <span class="badge badge-info" style="font-size: 10pt">
+                                        {{mobile.main_price_description
+                                    ?mobile.main_price_description.toLocaleString(): ''}}$
+                                    </span>
+                                </p>
                             </aside>
 
                         </a>
@@ -127,25 +130,25 @@
                 </ul>
             </div>
             <!--<div class="col-md-6">-->
-                <!--<div class="section-side">-->
-                    <!--<h5>-->
-                        <!--Top 10 By Price-->
-                    <!--</h5>-->
-                    <!--<ul class="list-group">-->
-                        <!--<li v-for="top in top_prices"-->
-                            <!--class="list-group-item d-flex justify-content-between align-items-center">-->
-                            <!--<a :href="top.show_url">-->
-                                <!--{{top.name}}-->
-                            <!--</a>-->
-                            <!--<span class="badge  badge-pill">{{top.main_price_description ? top.main_price_description : 0 }} </span>-->
-                        <!--</li>-->
-                    <!--</ul>-->
-                <!--</div>-->
-                <!--<div class="big-banner">-->
-                    <!--<p class="text-center">-->
-                        <!--Advertisement Place-->
-                    <!--</p>-->
-                <!--</div>-->
+            <!--<div class="section-side">-->
+            <!--<h5>-->
+            <!--Top 10 By Price-->
+            <!--</h5>-->
+            <!--<ul class="list-group">-->
+            <!--<li v-for="top in top_prices"-->
+            <!--class="list-group-item d-flex justify-content-between align-items-center">-->
+            <!--<a :href="top.show_url">-->
+            <!--{{top.name}}-->
+            <!--</a>-->
+            <!--<span class="badge  badge-pill">{{top.main_price_description ? top.main_price_description : 0 }} </span>-->
+            <!--</li>-->
+            <!--</ul>-->
+            <!--</div>-->
+            <!--<div class="big-banner">-->
+            <!--<p class="text-center">-->
+            <!--Advertisement Place-->
+            <!--</p>-->
+            <!--</div>-->
             <!--</div>-->
         </div>
         <div class="row" v-if="!filtered_mobiles.length">
@@ -162,7 +165,7 @@
 <script>
     export default {
         name: "choose-for-me",
-        props: ['brands', 'mobiles', 'top_prices', 'top_love','t'],
+        props: ['brands', 'mobiles', 'top_prices', 'top_love', 't'],
         data() {
             return {
                 brand_id: 0,
