@@ -18,7 +18,7 @@
         <div class="col-md-12">
             <form class="form-inline" method="get" action="{{route('mobile.search')}}">
                 <div class="form-group col-md-10 mb-2">
-                    <input class="form-control col-md-12" name="search" placeholder="Search by Name">
+                    <input class="form-control col-md-12" name="q" placeholder="Search by Name">
                 </div>
                 <div class="form-group mx-sm-2 mb-2">
                     <button class="btn btn-sm btn-outline-info">
