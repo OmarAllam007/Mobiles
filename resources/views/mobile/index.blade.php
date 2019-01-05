@@ -55,6 +55,7 @@
                 </div>
             @endforeach
         </div>
+        {!! $mobiles->links() !!}
     @else
         <div class="alert alert-info" style="margin-top: 10px">
             <i class="fa fa-exclamation-circle"></i>

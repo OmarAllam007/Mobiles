@@ -16,7 +16,7 @@ class MobileController extends Controller
 {
     function index()
     {
-        $mobiles = Mobile::all();
+        $mobiles = Mobile::paginate(20);
         return view('mobile.index', compact('mobiles'));
     }
 
@@ -177,7 +177,7 @@ class MobileController extends Controller
 
     function search(Request $request)
     {
-        $mobiles = Mobile::where('name', 'like', '%' . $request->get('q') . '%')->get();
+        $mobiles = Mobile::where('name', 'like', '%' . \request('q') . '%')->paginate(20);
         return view('mobile.index', compact('mobiles'));
     }
 
