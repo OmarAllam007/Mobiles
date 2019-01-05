@@ -54,10 +54,14 @@ class UploadMobilesJob extends Job
             }
             if (!$brands->where('name', strtolower($data[0]))->first()) {
                 $brand = Brand::create(['name' => $data[0], 'image_path' => '']);
+                $brand->name = strtolower($data[0]);
                 $brands->push($brand);
             }
 
             $brand = $brands->where('name', strtolower($data[0]))->first();
+            if (!$brand) {
+                dd($brands);
+            }
             $this->createMobile($brand, $data);
 
 
@@ -119,7 +123,7 @@ class UploadMobilesJob extends Job
                 'graphical_processor' => $data[21] ?? '',
                 'internal_storage' => $this->getInternalStorage($data[23]) ?? '',
                 'ram' => $this->getRam($data[24]),
-                'main_ram_description' => trim(implode("",$this->getRam($data[24]))),
+                'main_ram_description' => trim(implode("", $this->getRam($data[24]))),
                 'camera_main_camera' => $this->getMainCamera($data[25])[0] ?? '',
                 'main_camera_pixels_description' => $this->getMainCamera($data[25])[0] ?? '',
                 'camera_flash' => $this->getMainCamera($data[25])[1] ?? '',
@@ -140,8 +144,8 @@ class UploadMobilesJob extends Job
                 'battery_type' => $this->getBattery($data[36])[0] ?? '',
                 'battery_is_removable' => $this->getBattery($data[36])[1],
                 'colors' => str_replace("|", ",", $data[37]),
-                'price' => $data[38] ? number_format($data[38] * 1.14,2) : 0,
-                'main_price_description' => $data[38] ? number_format($data[38] * 1.14,2) : 'Not determined',
+                'price' => $data[38] ? number_format($data[38] * 1.14, 2) : 0,
+                'main_price_description' => $data[38] ? number_format($data[38] * 1.14, 2) : 'Not determined',
                 'image_path' => $this->getImagePath($data[39])
             ]);
         }
@@ -312,9 +316,9 @@ class UploadMobilesJob extends Job
     {
         $info = pathinfo($image);
         $image_file = file_get_contents($image);
-        $file = storage_path('app/public/mobile_images/').$info["basename"];
+        $file = storage_path('app/public/mobile_images/') . $info["basename"];
         file_put_contents($file, $image_file);
-        $uploadedFile = new UploadedFile($file,$info["basename"]);
+        $uploadedFile = new UploadedFile($file, $info["basename"]);
 
         $final_path = '/mobile_images/' . $info["basename"];
 
