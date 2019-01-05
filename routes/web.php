@@ -11,7 +11,6 @@
 |
 */
 
-
 //Route::get('/', 'MobileController@getMobileWithPrice');
 Route::get('/', 'HomeController@index')->name('home');
 
@@ -23,6 +22,8 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::resource('mobile-image', 'MobileImagesController');
     Route::post('upload-review-images', 'ReviewController@uploadImages');
     Route::get('load-review-images/{review_id}', 'ReviewController@loadReviewImages');
+    Route::get('upload-mobiles','MobileController@getuploadData')->name('mobiles.upload');
+    Route::post('upload-mobiles','MobileController@uploadData')->name('mobiles.upload');
 });
 
 Route::group(['middleware' => ['auth']], function () {

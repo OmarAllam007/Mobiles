@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Brand;
+use App\Jobs\UploadMobilesJob;
 use App\Mobile;
 use App\MobileImages;
 use Illuminate\Http\Request;
@@ -178,5 +179,15 @@ class MobileController extends Controller
     {
         $mobiles = Mobile::where('name', 'like', '%' . $request->get('q') . '%')->get();
         return view('mobile.index', compact('mobiles'));
+    }
+
+    function getUploadData(){
+        return view('mobile.upload.upload');
+    }
+    function uploadData(Request $request)
+    {
+        if($request->hasFile('mobiles')){
+            $this->dispatch(new UploadMobilesJob($request));
+        }
     }
 }

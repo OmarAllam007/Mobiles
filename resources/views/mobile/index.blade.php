@@ -7,6 +7,10 @@
     <div class="col-md-1">
         <a class="btn btn-outline-success" href="{{route('mobiles.create')}}" role="button"><i
                     class="fa fa-plus"></i></a>
+
+        <a class="btn btn-outline-info" href="{{route('mobiles.upload')}}" role="button"><i
+                    class="fa fa-upload"></i>
+        </a>
     </div>
 
 
