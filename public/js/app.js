@@ -51666,7 +51666,7 @@ var render = function() {
           ])
         : _vm._l(_vm.data, function(brands, key) {
             return _c("div", { staticClass: " tiles-container" }, [
-              _c("h4", [_vm._v(_vm._s(key))]),
+              brands.length ? _c("h4", [_vm._v(_vm._s(key))]) : _vm._e(),
               _vm._v(" "),
               _c(
                 "div",

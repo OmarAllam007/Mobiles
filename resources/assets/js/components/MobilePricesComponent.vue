@@ -29,7 +29,7 @@
             <i class="fa fa-spinner fa-1x fa-spin"></i>
         </div>
         <div v-else class=" tiles-container" v-for="(brands,key) in data">
-            <h4>{{key}}</h4>
+            <h4 v-if="brands.length">{{key}}</h4>
             <div class="mobiles-container">
                 <div class="text-center tile" v-for="mobile in brands">
                     <a :href="mobile.show_url" class="tile-content">
