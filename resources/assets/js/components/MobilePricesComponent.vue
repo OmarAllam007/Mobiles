@@ -3,9 +3,9 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <div class="form-group">
-                    <input type="text" v-model="search" class="form-control searchByPrice"
+                    <input type="number" v-model="search" class="form-control searchByPrice"
                            style="border:none;border-bottom: 1px solid #1b998b;background: transparent"
-                           :placeholder="t['Search with price']">
+                           :placeholder="t['Search with price']" autofocus>
                 </div>
             </div>
             <div class="col-2"></div>
@@ -25,36 +25,35 @@
             </div>
         </div>
 
-        <div class="row" v-for="(brand,key) in filtered_brands" v-if="brand.mobiles.length" style="padding-top: 10px">
-            <div v-if="brand.mobiles.length" class="col-md-12">
-                <h4>{{brand.name}}</h4>
-                <div class="row justify-content-md-start">
-                        <div class="col-md-2 hvr-glow li-item-card-2 text-center"  v-for="mobile in brand.mobiles">
-                            <a :href="mobile.show_url" style="text-decoration: none; margin: auto;padding: auto" >
-                                <img :src="mobile.image" style="width: 100px;height: 147px">
-                                <aside>
-                                    <strong> {{mobile.name}}</strong>
-                                    <p>
-                                   <span class="badge badge-danger" style="font-size: 10pt;background-color:#0077aa !important"> {{mobile.main_price_description
-                                    ?mobile.main_price_description.toLocaleString()+' $': ''}}  </span>
-                                    </p>
-                                </aside>
-
-                            </a>
-                        </div>
-                </div>
-
-            </div>
+        <div class="loading text-center" v-if="loading">
+            <i class="fa fa-spinner fa-1x fa-spin"></i>
         </div>
-
-
-        <div class="row" v-if="!filtered_brands.length" style="padding-top: 20px">
-            <div class="col-md-12">
-                <div class="alert alert-info"><i class="fa fa-exclamation-circle"></i>
-                    <strong>{{t['No Mobiles found']}} !</strong>
+        <div v-else class=" tiles-container" v-for="(brands,key) in data">
+            <h4>{{key}}</h4>
+            <div class="mobiles-container">
+                <div class="text-center tile" v-for="mobile in brands">
+                    <a :href="mobile.show_url" class="tile-content">
+                        <img :src="mobile.get_image" class="tile-image">
+                        <p class="mobile-name"> {{mobile.name}} </p>
+                        <p>
+                            <span class="badge badge-danger"
+                                  style="font-size: 10pt;background-color:#0077aa !important"> {{mobile.main_price_description
+                                    ? mobile.main_price_description.toLocaleString()+' $': 0+' $'}}
+                            </span>
+                        </p>
+                    </a>
                 </div>
             </div>
         </div>
+
+
+        <!--<div class="row" v-if="JSON.stringify(data) ==''" style="padding-top: 20px">-->
+        <!--<div class="col-md-12">-->
+        <!--<div class="alert alert-info"><i class="fa fa-exclamation-circle"></i>-->
+        <!--<strong>{{t['No Mobiles found']}} !</strong>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
 
     </div>
 </template>
@@ -62,47 +61,91 @@
 <script>
     export default {
         name: "mobile-prices",
-        props: ['brands', 't'],
+        props: ['t'],
         data() {
+
             return {
                 search: '',
                 data: [],
+                loading: false
             }
         },
-        computed: {
-            filtered_brands() {
-                let from = parseFloat(this.search);
-                let to = parseFloat(from + 200);
-                if (this.search) {
-                    let data = [];
-                    this.brands.forEach((bitem, bindex) => {
-                        if (!data[bindex]) {
-                            data[bindex] = [];
-                            data[bindex]['name'] = bitem.name
-                            data[bindex]['mobiles'] = []
+        watch: {
+            search() {
+                this.getData();
+            }
+        },
+        methods: {
+            getData() {
 
-                            bitem.mobiles.forEach((mitem, mindex) => {
-                                if ((parseFloat(mitem.main_price_description) >= from && parseFloat(mitem.main_price_description) <= to)) {
-                                    if (!data[bindex]['mobiles'][mindex]) {
-                                        data[bindex]['mobiles'].push(mitem)
-                                    }
-                                }
-                            });
-                        }
+                this.loading = true;
+                axios.get('/on-demand/mobiles/get-by-price?price=' + this.search).then((response) => {
+                    this.data = response.data
+                    this.loading = false;
+                })
 
-                    });
-                    return data;
-                } else {
-                    return this.brands
-                }
             }
         },
         created() {
-            this.data = this.brands
+            this.loading = true;
+            axios.get('/on-demand/mobiles/get-by-price').then((response) => {
+                this.data = response.data;
+                this.loading = false;
+            })
+
         }
     }
 </script>
 
 <style scoped>
+    a {
+        text-decoration: none;
+    }
 
+    .tiles-container {
+        display: flex;
+        flex-direction: column;
+        /*flex-wrap: wrap;*/
+        padding-top: 10px;
+    }
+
+    .mobiles-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: normal;
+        /*padding-top: 10px;*/
+    }
+
+    .tile {
+        display: flex;
+        flex-direction: row;
+        padding: 8px;
+        align-items: center;
+        border-radius: 5px;
+    }
+
+    .tile:hover {
+        box-shadow: 0px 0px 5px #2d3147;
+        border-radius: 3px;
+    }
+
+    .tile-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 130px;
+    }
+
+    .tile-image {
+        width: 100px;
+        height: 147px;
+    }
+
+    .mobile-name {
+        height: 40px;
+        font-size: 12pt;
+        padding-bottom: 2px;
+        padding-top: 2px;
+    }
 </style>

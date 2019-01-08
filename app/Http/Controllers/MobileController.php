@@ -6,6 +6,7 @@ use App\Brand;
 use App\Jobs\UploadMobilesJob;
 use App\Mobile;
 use App\MobileImages;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -100,22 +101,9 @@ class MobileController extends Controller
         return view('mobile.show', compact('mobile'));
     }
 
-    function getMobileWithPrice()
+    function getMobileWithPrice(Request $request)
     {
-        $brands = Brand::with('mobiles')->get()->each(function ($brand) {
-            return $brand->mobiles->each(function ($mobile) {
-                $mobile['show_url'] = $mobile->show_url;
-                $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
-
-            });
-        });
-//        $mobiles = \App\Mobile::all()->each(function ($mobile) {
-//            $mobile['show_url'] = route('mobile.display', [$mobile, strtolower($mobile->brand->name), str_slug($mobile->name)]);
-//            $mobile['main_price_description'] = $mobile['main_price_description'];
-//            $mobile['brand_name'] = $mobile->brand->name;
-//        })->groupBy('brand_name')->toArray();
-
-        return view('mobile-prices.mobile-prices', compact('brands'));
+        return view('mobile-prices.mobile-prices');
     }
 
     function handleCheckBoxExist($request)

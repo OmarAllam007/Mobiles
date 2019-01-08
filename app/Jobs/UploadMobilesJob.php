@@ -119,6 +119,54 @@ class UploadMobilesJob extends Job
                 'screen_resolution' => $this->getScreenResolution($data[17])[0] ?? '',
                 'screen_density_of_pixels' => $this->getScreenResolution($data[17])[2] ?? '',
                 'operating_system' => $data[18] ?? '',
+                'processor' => $data[19] ?? '',
+                'chipset' => $data[20] ?? '',
+                'graphical_processor' => $data[21] ?? '',
+                'internal_storage' => $this->getInternalStorage($data[23]) ?? '',
+                'ram' => $this->getRam($data[24]),
+                'main_ram_description' => trim(implode("", $this->getRam($data[24]))),
+                'camera_main_camera' => $this->getMainCamera($data[25])[0] ?? '',
+                'main_camera_pixels_description' => $this->getMainCamera($data[25])[0] ?? '',
+                'camera_flash' => $this->getMainCamera($data[25])[1] ?? '',
+                'camera_lens_aperture' => $this->getMainCamera($data[25])[2] ?? '',
+                'camera_focal_length' => $this->getMainCamera($data[25])[3] ?? '',
+                'camera_other_features' => $this->getMainCamera($data[25])[4] ?? '',
+                'camera_video' => $this->getMainCamera($data[25])[5] ?? '',
+                'camera_front_camera' => $data[26] ?? '',
+                'media_speaker' => $data[27],
+                'media_is_35_mm_slot' => strtolower($data[28]) == "Yes" ? 1 : 0,
+                'media_radio_exist' => $data[33] != "" ? 1 : 0,
+                'communication_wifi' => $data[29],
+                'communication_bluetooth' => $data[30],
+                'communication_nfc' => $data[32] != "" ? 1 : 0,
+                'communication_usb' => $data[34] ?? '',
+                'others_gps' => $data[31],
+                'others_sensors' => $data[35],
+                'battery_type' => $this->getBattery($data[36])[0] ?? '',
+                'battery_is_removable' => $this->getBattery($data[36])[1],
+                'colors' => str_replace("|", ",", $data[37]),
+                'price' => $data[38] ? number_format($data[38] * 1.14, 2) : 0,
+                'main_price_description' => $data[38] ? number_format($data[38] * 1.14, 2) : 'Not determined',
+                'image_path' => $this->getImagePath($data[39])
+            ]);
+        }else{
+            $mobile->update([
+                'brand_id' => $brand->id,
+                'name' => $data[1],
+                'released_date' => $this->getReleaseDate($data[10]),
+                'communication_network' => $this->getCommunicationNewtork(array_slice($data, 3, 3)),
+                'device_dimension' => $data[11],
+                'device_weight' => $data[12] . ' g',
+                'device_number_of_sims' => $this->getSizeOfSim($data[14]) ?? 0,
+                'device_size_of_sim' => $data[14] ?? '',
+                'screen_technology' => $this->getScreenTechnology($data[15])[0] ?? '',
+                'screen_colors' => $this->getScreenTechnology($data[15])[1] ?? '',
+                'screen_size' => $this->getScreenSize($data[16])[0] ?? '',
+                'screen_size_percentage' => $this->getScreenSize($data[16])[1] ?? '',
+                'screen_resolution' => $this->getScreenResolution($data[17])[0] ?? '',
+                'screen_density_of_pixels' => $this->getScreenResolution($data[17])[2] ?? '',
+                'operating_system' => $data[18] ?? '',
+                'processor' => $data[19] ?? '',
                 'chipset' => $data[20] ?? '',
                 'graphical_processor' => $data[21] ?? '',
                 'internal_storage' => $this->getInternalStorage($data[23]) ?? '',
@@ -171,7 +219,6 @@ class UploadMobilesJob extends Job
             $year_month = substr($full_string, strpos($full_string, " ") + 1);
             $month = substr($year_month, strpos($year_month, " ") + 2);
             $month_number = date('m', strtotime($month));
-
             $date = Carbon::parse($year . "-" . $month_number . "-01")->format('Y-m-d');
             return $date;
         }
@@ -184,9 +231,10 @@ class UploadMobilesJob extends Job
 
         if (str_contains(strtolower($data), "dual")) {
             $no = 2;
-        } elseif (str_contains(strtolower($data), "single")) {
+        } elseif (str_contains(strtolower($data),[strtolower("single"),strtolower("Mini-SIM"),strtolower('Micro-SIM')])) {
             $no = 1;
-        } elseif (str_contains(strtolower($data), "triple")) {
+        }
+        elseif (str_contains(strtolower($data), "triple")) {
             $no = 3;
         }
         return $no;

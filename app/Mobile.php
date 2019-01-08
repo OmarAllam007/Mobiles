@@ -41,8 +41,10 @@ class Mobile extends Model
         'others_open_device' => 'array',
         'external_storage' => 'array',
         'advertisements' => 'array',
+        'main_price_description'=>'integer'
     ];
 
+    protected $appends = ['show_url','get_image'];
 
     static function uploadImage($attachment)
     {
@@ -90,6 +92,11 @@ class Mobile extends Model
     function getShowUrlAttribute()
     {
         return route('mobiles.display', [$this, strtolower($this->brand->name), str_slug($this->name)]);
+    }
+
+    function getGetImageAttribute()
+    {
+        return $this->image_path ? asset('storage' . $this->image_path) : asset('storage/no-phone.png');
     }
 
     function getOpenDeviceAttribute()

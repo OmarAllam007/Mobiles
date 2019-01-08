@@ -30,6 +30,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('make-favourite', 'MobileController@makeFavourite')->name('make.favourite');
 });
 
+Route::prefix('on-demand')->group(function (){
+    Route::get('/mobiles/get-by-price', 'API\MobileController@filterMobilesByPrice')->name('on_demand.mobiles.by_price');
+});
+
 Route::get('all/mobiles/prices', 'MobileController@getMobileWithPrice')->name('mobiles.prices');
 Route::get('choose-for-me', 'ChooseForMeController@chooseForMe')->name('choose.me');
 Route::get('change-language/{language}', 'TranslationController@changeLanguage')->name('language.change');

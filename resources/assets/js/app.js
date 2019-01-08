@@ -32,6 +32,10 @@ Vue.component('mobile-prices', require('./components/MobilePricesComponent.vue')
 Vue.component('choose-for-me', require('./components/ChooseForMeComponent.vue'));
 Vue.component('like-component', require('./components/LikeComponent.vue'));
 Vue.component('comments', require('./components/CommentsComponent.vue'));
+
+
+
+
 // Vue.component('gallery-component', require('./components/GalleryComponent.vue'));
 // Vue.component('ad-component', require('./components/AdComponent.vue'));
 

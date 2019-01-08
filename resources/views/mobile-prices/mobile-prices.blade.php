@@ -35,7 +35,7 @@
 @endsection
 @section('body')
     <h1 class="text-center">Get the mobile suitable for your pocket</h1>
-    <mobile-prices :brands="{{$brands}}"
+    <mobile-prices
                    :t="{{json_encode(\App\Translation::getPricesComponent())}}">
     </mobile-prices>
 @endsection
@@ -49,7 +49,6 @@
             @foreach(\App\Mobile::byprice()->get() as $like)
                 <li class="list-group-item d-flex justify-content-between sweep-to-right align-items-center">
                     <img src="{{$like->image_path ? asset('storage' . $like->image_path) : asset('storage/no-phone.png')}}" style="width: 50px;height: 50px">
-
                     <a href="{{route('mobiles.display',[$like, strtolower($like->brand->name), str_slug($like->name)])}}">
                         {{$like->name}}
                     </a>
