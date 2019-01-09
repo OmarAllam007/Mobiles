@@ -31,7 +31,7 @@
         <div v-else class="tiles-container" v-for="(brands,key) in data">
             <h4>{{key}}</h4>
             <div class="mobiles-container">
-                <div class="text-center tile" v-for="mobile in brands">
+                <div class="text-center tile" v-for="mobile in brands ">
                     <a :href="mobile.show_url" class="tile-content">
                         <img :src="mobile.get_image" class="tile-image">
                         <p class="mobile-name"> {{mobile.name}} </p>
@@ -78,7 +78,10 @@
             getData() {
                 this.loading = true;
                 axios.get('/on-demand/mobiles/get-by-price?price=' + this.search).then((response) => {
-                    this.data = response.data
+                    for(let i in response.data){
+                        response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc'])
+                    }
+                    this.data = response.data;
                     this.loading = false;
                 })
             }
@@ -86,6 +89,9 @@
         created() {
             this.loading = true;
             axios.get('/on-demand/mobiles/get-by-price').then((response) => {
+                for(let i in response.data){
+                    response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc'])
+                }
                 this.data = response.data;
                 this.loading = false;
             })

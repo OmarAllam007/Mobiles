@@ -51599,6 +51599,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.loading = true;
             axios.get('/on-demand/mobiles/get-by-price?price=' + this.search).then(function (response) {
+                for (var i in response.data) {
+                    response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc']);
+                }
                 _this.data = response.data;
                 _this.loading = false;
             });
@@ -51609,6 +51612,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         this.loading = true;
         axios.get('/on-demand/mobiles/get-by-price').then(function (response) {
+            for (var i in response.data) {
+                response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc']);
+            }
             _this2.data = response.data;
             _this2.loading = false;
         });
