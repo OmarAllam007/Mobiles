@@ -35,45 +35,82 @@
                     </Adsense>
                 </div>
             </div>
-            <div class="row" v-if="filtered_mobiles.length" v-for="row in filtered_mobiles_count">
-                <div class="col-md-3 col-sm-3" style="padding-bottom:10px;padding: 0" v-for="(mobile,index) in row">
-                    <div style="position: absolute;z-index: 99;padding: 5px;transition:opacity 1s ease-in-out;">
-                        <i class="fa fa-2x fa-check-circle" style="color:green;"
-                           v-show="selected_mobiles.indexOf(mobile.id) !=-1"></i>
-                    </div>
-                    <div class="card hvr-glow li-item-card">
-                        <img class="card-img-top image" :src="mobile.image" style="width: 120px;height: 174px;">
-                        <div class="middle">
-                            <button class="btn compare-add-button btn-middle" @click="selectMobile(mobile.id)"
+            <div class="loading text-center" v-if="loading">
+                <i class="fa fa-spinner fa-1x fa-spin"></i>
+            </div>
+
+            <div class="tiles-container" v-else  v-for="row in filtered_mobiles_count">
+                <div class="mobiles-container">
+                    <div class="text-center tile" v-for="(mobile,index) in row">
+                        <div class="add-remove-btn">
+                            <button class="btn btn-xs compare-add-button"
+                                    style="padding: 3px;opacity: 1;margin: 1px;border: 1px solid"
+                                    @click="selectMobile(mobile.id)"
                                     :disabled="selected_mobiles.length > 3 || selected_mobiles.indexOf(mobile.id) !=-1"
                                     v-if="selected_mobiles.length > 3 || selected_mobiles.indexOf(mobile.id) == -1">
-                                {{t['Add']}}
+                                <i class="fa fa-check-circle"></i>
                             </button>
-                            <button class="btn btn-outline-danger" @click="selectMobile(mobile.id)"
+                            <button class="btn btn-xs btn-danger" style="padding: 3px;opacity: 1;margin: 1px;"
+                                    @click="selectMobile(mobile.id)"
                                     v-if="selected_mobiles.length > 3 || selected_mobiles.indexOf(mobile.id) != -1">
-                                {{t['Remove']}}
+                                <i class="fa fa-times"></i>
                             </button>
                         </div>
-                        <div class="card-body">
-                            <h6 class="card-title text-center">{{mobile.name}}</h6>
-                            <p class="text-center" >
-                            <span class="badge badge-info" style="font-size: 10pt">
-                                    {{mobile.main_price_description.toLocaleString()}} $
+                        <div class="tile-content" style="position: relative">
+                            <!--<div class="middle">-->
+                            <!--<button class="btn compare-add-button btn-middle" @click="selectMobile(mobile.id)"-->
+                            <!--:disabled="selected_mobiles.length > 3 || selected_mobiles.indexOf(mobile.id) !=-1"-->
+                            <!--v-if="selected_mobiles.length > 3 || selected_mobiles.indexOf(mobile.id) == -1">-->
+                            <!--{{t['Add']}}-->
+                            <!--</button>-->
+
+                            <!--</div>-->
+                            <img class="tile-image" :src="mobile.image">
+                            <p class="mobile-name"> {{mobile.name}} </p>
+                            <div style="display:flex;flex-direction: row">
+                            <span class="badge badge-danger"
+                                  style="font-size: 10pt;background-color:#0077aa !important"> {{mobile.main_price_description
+                                    ? mobile.main_price_description.toLocaleString()+' $': 0+' $'}}
                             </span>
-                            </p>
+                            </div>
                         </div>
 
+                        <!--<div class="tile-content">-->
+
+                        <!--</div>-->
                     </div>
                 </div>
             </div>
-            <div class="row" v-if="!filtered_mobiles.length">
-                <div class="col-md-12">
-                    <div class="alert alert-info"><i class="fa fa-exclamation-circle"></i>
-                        <strong>{{t['No Mobiles found']}} !</strong>
-                    </div>
-                </div>
-                <div class="col-md-2"></div>
-            </div>
+
+            <!--<div class="row" v-if="filtered_mobiles.length" v-for="row in filtered_mobiles_count">-->
+            <!--<div class="col-md-3 col-sm-3" style="padding-bottom:10px;padding: 0" v-for="(mobile,index) in row">-->
+            <!--<div style="position: absolute;z-index: 99;padding: 5px;transition:opacity 1s ease-in-out;">-->
+            <!--<i class="fa fa-2x fa-check-circle" style="color:green;"-->
+            <!--v-show="selected_mobiles.indexOf(mobile.id) !=-1"></i>-->
+            <!--</div>-->
+            <!--<div class="card hvr-glow li-item-card">-->
+            <!--<img class="card-img-top image" :src="mobile.image" style="width: 120px;height: 174px;">-->
+
+            <!--<div class="card-body">-->
+            <!--<h6 class="card-title text-center">{{mobile.name}}</h6>-->
+            <!--<p class="text-center" >-->
+            <!--<span class="badge badge-info" style="font-size: 10pt">-->
+            <!--{{mobile.main_price_description.toLocaleString()}} $-->
+            <!--</span>-->
+            <!--</p>-->
+            <!--</div>-->
+
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="row" v-if="!filtered_mobiles.length">-->
+                <!--<div class="col-md-12">-->
+                    <!--<div class="alert alert-info"><i class="fa fa-exclamation-circle"></i>-->
+                        <!--<strong>{{t['No Mobiles found']}} !</strong>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-2"></div>-->
+            <!--</div>-->
         </div>
         <div v-if="comparing">
             <!--General-->
@@ -685,14 +722,24 @@
 </template>
 <script>
     export default {
-        props: ['mobiles','t'],
+        props: ['t'],
         data() {
             return {
                 search: '',
                 selected_mobiles: [],
                 comparing: false,
                 selected_mobiles_data: [],
+                mobiles: [],
+                loading: false
             }
+        },
+        created() {
+            this.loading = true;
+            axios.get('/on-demand/mobiles/get-by-name').then((response) => {
+                this.mobiles = response.data;
+                this.loading = false;
+            })
+            this.mobiles = _.orderBy(this.mobiles, 'main_price_description', ['desc'])
         },
         methods: {
             selectMobile(id) {
@@ -728,6 +775,17 @@
                 this.comparing = true;
             }
         },
+
+        watch: {
+            search() {
+                this.loading = true;
+                axios.get('/on-demand/mobiles/get-by-name?name=' + this.search).then((response) => {
+                    this.mobiles = response.data;
+                    this.loading = false;
+
+                })
+            }
+        },
         computed: {
             filtered_mobiles() {
                 if (this.search) {
@@ -747,13 +805,13 @@
                             return this.selected_mobiles.indexOf(mobile.id) != -1
                         })
                     } else {
-                        return this.mobiles
+                        return _.orderBy(this.mobiles, 'main_price_description', ['desc'])
                     }
                 }
             },
             filtered_mobiles_count() {
                 let finalArray = [];
-                let chunk = 4;
+                let chunk = 10;
                 return this.filtered_mobiles.reduce((result, item, index) => {
                     const chunkIndex = Math.floor(index / chunk);
                     if (!result[chunkIndex]) {
@@ -769,52 +827,95 @@
 </script>
 
 <style scoped>
-    .image {
-        opacity: 1;
-        display: block;
-        width: 100%;
-        height: auto;
-        transition: .5s ease;
-        backface-visibility: hidden;
+    a {
+        text-decoration: none;
     }
 
     .middle {
         transition: .5s ease;
-        opacity: 0;
+        opacity: 1;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         text-align: center;
+        z-index: 9999;
+        width: 100%;
     }
 
-    .card:hover .image{
+    .tiles-container {
+        display: flex;
+        flex-direction: column;
+        /*flex-wrap: wrap;*/
+        padding-top: 10px;
+    }
+
+    .mobiles-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: normal;
+        /*padding-top: 10px;*/
+    }
+
+    .tile {
+        display: flex;
+        flex-direction: row;
+        padding: 8px;
+        align-items: center;
+        border-radius: 5px;
+        border: 1px solid #2d3047;
+        margin: 2px;
+        position: relative;
+    }
+
+    .tile:hover {
+        box-shadow: 0px 0px 5px #2d3147;
+        border-radius: 3px;
+    }
+
+    .middle:hover + .tile-image {
         opacity: 0.3;
     }
 
-    .btn-middle:hover + .image {
-        opacity: 0.3;
-    }
-
-    .image:hover + .middle {
-        opacity: 1;
-    }
-
-    .middle:hover + .image {
-        opacity: 0.3;
+    .tile-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 130px;
     }
 
     .middle:hover {
         opacity: 1;
     }
 
-    .image {
-        display: block;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        margin: 0 auto;
+    .image:hover + .middle {
+        opacity: 1;
     }
 
+    .middle:hover + .tile-image {
+        opacity: 0.3;
+    }
+
+    .tile-image {
+        width: 100px;
+        height: 147px;
+    }
+
+    .mobile-name {
+        height: 40px;
+        font-size: 12pt;
+        padding-bottom: 2px;
+        padding-top: 2px;
+    }
+
+    .add-remove-btn {
+        position: absolute;
+        top: 0;
+        z-index: 10;
+        left: 0;
+
+    }
 
 </style>

@@ -42,4 +42,22 @@ class MobileController extends Controller
 
 
     }
+
+
+    function compareMobiles(Request $request)
+    {
+        if ($request->has('name') && $request->name != "") {
+            return Mobile::where('name', 'like', '%' . $request->name . '%')
+//                ->where('main_price_description', '<>', 0)
+                ->get()
+                ->each(function ($mobile) {
+                    $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
+                });
+        }else{
+           return Mobile::where('main_price_description','<>',0)
+                ->get()->each(function ($mobile) {
+                    $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
+                });
+        }
+    }
 }

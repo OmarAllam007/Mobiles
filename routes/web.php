@@ -26,12 +26,10 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::post('upload-mobiles','MobileController@uploadData')->name('mobiles.upload');
 });
 
-Route::group(['middleware' => ['auth']], function () {
-    Route::post('make-favourite', 'MobileController@makeFavourite')->name('make.favourite');
-});
 
 Route::prefix('on-demand')->group(function (){
     Route::get('/mobiles/get-by-price', 'API\MobileController@filterMobilesByPrice')->name('on_demand.mobiles.by_price');
+    Route::get('/mobiles/get-by-name', 'API\MobileController@compareMobiles')->name('on_demand.mobiles.by_name');
 });
 
 Route::get('all/mobiles/prices', 'MobileController@getMobileWithPrice')->name('mobiles.prices');
@@ -44,5 +42,9 @@ Route::post('post-comment', 'MobileCommentController@postComment');
 Route::get('mobiles/{mobile}/{mobile_brand}/{mobile_name}', 'MobileController@show')->name('mobiles.display');
 Route::get('brands/{brand}/mobiles', 'MobileController@getMobilesByBrand')->name('brand.mobiles');
 Route::get('brands/all-brands', 'MobileController@allBrands')->name('brand.all');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::post('make-favourite', 'MobileController@makeFavourite')->name('make.favourite');
+});
 
 Auth::routes();

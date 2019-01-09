@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 
 class CompareController extends Controller
 {
-    function getCompare()
+    function getCompare(Request $request)
     {
-        $mobiles = Mobile::all()->each(function ($mobile) {
+        $mobiles = Mobile::where('main_price_description','<>',0)
+            ->get()->each(function ($mobile) {
             $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
         });
+
         return view('compare.compare', compact('mobiles'));
     }
 

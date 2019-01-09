@@ -28,7 +28,7 @@
         <div class="loading text-center" v-if="loading">
             <i class="fa fa-spinner fa-1x fa-spin"></i>
         </div>
-        <div v-else class=" tiles-container" v-for="(brands,key) in data">
+        <div v-else class="tiles-container" v-for="(brands,key) in data">
             <h4>{{key}}</h4>
             <div class="mobiles-container">
                 <div class="text-center tile" v-for="mobile in brands">

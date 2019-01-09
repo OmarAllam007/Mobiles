@@ -47992,7 +47992,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.image[data-v-73948fcf] {\n    opacity: 1;\n    display: block;\n    width: 100%;\n    height: auto;\n    transition: .5s ease;\n    backface-visibility: hidden;\n}\n.middle[data-v-73948fcf] {\n    transition: .5s ease;\n    opacity: 0;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n    text-align: center;\n}\n.card:hover .image[data-v-73948fcf]{\n    opacity: 0.3;\n}\n.btn-middle:hover + .image[data-v-73948fcf] {\n    opacity: 0.3;\n}\n.image:hover + .middle[data-v-73948fcf] {\n    opacity: 1;\n}\n.middle:hover + .image[data-v-73948fcf] {\n    opacity: 0.3;\n}\n.middle[data-v-73948fcf]:hover {\n    opacity: 1;\n}\n.image[data-v-73948fcf] {\n    display: block;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    margin: 0 auto;\n}\n\n\n", ""]);
+exports.push([module.i, "\na[data-v-73948fcf] {\n    text-decoration: none;\n}\n.middle[data-v-73948fcf] {\n    transition: .5s ease;\n    opacity: 1;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n    text-align: center;\n    z-index: 9999;\n    width: 100%;\n}\n.tiles-container[data-v-73948fcf] {\n    display: flex;\n    flex-direction: column;\n    /*flex-wrap: wrap;*/\n    padding-top: 10px;\n}\n.mobiles-container[data-v-73948fcf] {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    justify-content: normal;\n    /*padding-top: 10px;*/\n}\n.tile[data-v-73948fcf] {\n    display: flex;\n    flex-direction: row;\n    padding: 8px;\n    align-items: center;\n    border-radius: 5px;\n    border: 1px solid #2d3047;\n    margin: 2px;\n    position: relative;\n}\n.tile[data-v-73948fcf]:hover {\n    box-shadow: 0px 0px 5px #2d3147;\n    border-radius: 3px;\n}\n.middle:hover + .tile-image[data-v-73948fcf] {\n    opacity: 0.3;\n}\n.tile-content[data-v-73948fcf] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    width: 130px;\n}\n.middle[data-v-73948fcf]:hover {\n    opacity: 1;\n}\n.image:hover + .middle[data-v-73948fcf] {\n    opacity: 1;\n}\n.middle:hover + .tile-image[data-v-73948fcf] {\n    opacity: 0.3;\n}\n.tile-image[data-v-73948fcf] {\n    width: 100px;\n    height: 147px;\n}\n.mobile-name[data-v-73948fcf] {\n    height: 40px;\n    font-size: 12pt;\n    padding-bottom: 2px;\n    padding-top: 2px;\n}\n.add-remove-btn[data-v-73948fcf] {\n    position: absolute;\n    top: 0;\n    z-index: 10;\n    left: 0;\n}\n\n", ""]);
 
 // exports
 
@@ -48721,16 +48721,65 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['mobiles', 't'],
+    props: ['t'],
     data: function data() {
         return {
             search: '',
             selected_mobiles: [],
             comparing: false,
-            selected_mobiles_data: []
+            selected_mobiles_data: [],
+            mobiles: [],
+            loading: false
         };
+    },
+    created: function created() {
+        var _this = this;
+
+        this.loading = true;
+        axios.get('/on-demand/mobiles/get-by-name').then(function (response) {
+            _this.mobiles = response.data;
+            _this.loading = false;
+        });
+        this.mobiles = _.orderBy(this.mobiles, 'main_price_description', ['desc']);
     },
 
     methods: {
@@ -48751,7 +48800,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.selected_mobile_data = [];
         },
         analayzeCompareProcess: function analayzeCompareProcess() {
-            var _this = this;
+            var _this2 = this;
 
             var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
             $.ajax({
@@ -48763,39 +48812,51 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 },
                 dataType: 'JSON',
                 success: function success(response) {
-                    _this.selected_mobiles_data = response;
+                    _this2.selected_mobiles_data = response;
                 }
             });
             this.comparing = true;
         }
     },
+
+    watch: {
+        search: function search() {
+            var _this3 = this;
+
+            this.loading = true;
+            axios.get('/on-demand/mobiles/get-by-name?name=' + this.search).then(function (response) {
+                _this3.mobiles = response.data;
+                _this3.loading = false;
+            });
+        }
+    },
     computed: {
         filtered_mobiles: function filtered_mobiles() {
-            var _this2 = this;
+            var _this4 = this;
 
             if (this.search) {
                 if (this.selected_mobiles.length > 2) {
                     return this.mobiles.filter(function (mobile) {
-                        return _this2.selected_mobiles.indexOf(mobile.id) != -1;
+                        return _this4.selected_mobiles.indexOf(mobile.id) != -1;
                     });
                 } else {
                     return this.mobiles.filter(function (mobile) {
-                        return mobile.name.toLowerCase().includes(_this2.search.toLowerCase()) || _this2.selected_mobiles.indexOf(mobile.id) != -1;
+                        return mobile.name.toLowerCase().includes(_this4.search.toLowerCase()) || _this4.selected_mobiles.indexOf(mobile.id) != -1;
                     });
                 }
             } else {
                 if (this.selected_mobiles.length > 2) {
                     return this.mobiles.filter(function (mobile) {
-                        return _this2.selected_mobiles.indexOf(mobile.id) != -1;
+                        return _this4.selected_mobiles.indexOf(mobile.id) != -1;
                     });
                 } else {
-                    return this.mobiles;
+                    return _.orderBy(this.mobiles, 'main_price_description', ['desc']);
                 }
             }
         },
         filtered_mobiles_count: function filtered_mobiles_count() {
             var finalArray = [];
-            var chunk = 4;
+            var chunk = 10;
             return this.filtered_mobiles.reduce(function (result, item, index) {
                 var chunkIndex = Math.floor(index / chunk);
                 if (!result[chunkIndex]) {
@@ -48911,168 +48972,130 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._l(_vm.filtered_mobiles_count, function(row) {
-              return _vm.filtered_mobiles.length
-                ? _c(
-                    "div",
-                    { staticClass: "row" },
-                    _vm._l(row, function(mobile, index) {
-                      return _c(
-                        "div",
-                        {
-                          staticClass: "col-md-3 col-sm-3",
-                          staticStyle: {
-                            "padding-bottom": "10px",
-                            padding: "0"
-                          }
-                        },
-                        [
-                          _c(
-                            "div",
-                            {
-                              staticStyle: {
-                                position: "absolute",
-                                "z-index": "99",
-                                padding: "5px",
-                                transition: "opacity 1s ease-in-out"
-                              }
-                            },
-                            [
-                              _c("i", {
-                                directives: [
+            _vm.loading
+              ? _c("div", { staticClass: "loading text-center" }, [
+                  _c("i", { staticClass: "fa fa-spinner fa-1x fa-spin" })
+                ])
+              : _vm._l(_vm.filtered_mobiles_count, function(row) {
+                  return _c("div", { staticClass: "tiles-container" }, [
+                    _c(
+                      "div",
+                      { staticClass: "mobiles-container" },
+                      _vm._l(row, function(mobile, index) {
+                        return _c("div", { staticClass: "text-center tile" }, [
+                          _c("div", { staticClass: "add-remove-btn" }, [
+                            _vm.selected_mobiles.length > 3 ||
+                            _vm.selected_mobiles.indexOf(mobile.id) == -1
+                              ? _c(
+                                  "button",
                                   {
-                                    name: "show",
-                                    rawName: "v-show",
-                                    value:
-                                      _vm.selected_mobiles.indexOf(mobile.id) !=
-                                      -1,
-                                    expression:
-                                      "selected_mobiles.indexOf(mobile.id) !=-1"
-                                  }
-                                ],
-                                staticClass: "fa fa-2x fa-check-circle",
-                                staticStyle: { color: "green" }
-                              })
-                            ]
-                          ),
+                                    staticClass:
+                                      "btn btn-xs compare-add-button",
+                                    staticStyle: {
+                                      padding: "3px",
+                                      opacity: "1",
+                                      margin: "1px",
+                                      border: "1px solid"
+                                    },
+                                    attrs: {
+                                      disabled:
+                                        _vm.selected_mobiles.length > 3 ||
+                                        _vm.selected_mobiles.indexOf(
+                                          mobile.id
+                                        ) != -1
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.selectMobile(mobile.id)
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass: "fa fa-check-circle"
+                                    })
+                                  ]
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _vm.selected_mobiles.length > 3 ||
+                            _vm.selected_mobiles.indexOf(mobile.id) != -1
+                              ? _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-xs btn-danger",
+                                    staticStyle: {
+                                      padding: "3px",
+                                      opacity: "1",
+                                      margin: "1px"
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.selectMobile(mobile.id)
+                                      }
+                                    }
+                                  },
+                                  [_c("i", { staticClass: "fa fa-times" })]
+                                )
+                              : _vm._e()
+                          ]),
                           _vm._v(" "),
                           _c(
                             "div",
-                            { staticClass: "card hvr-glow li-item-card" },
+                            {
+                              staticClass: "tile-content",
+                              staticStyle: { position: "relative" }
+                            },
                             [
                               _c("img", {
-                                staticClass: "card-img-top image",
-                                staticStyle: {
-                                  width: "120px",
-                                  height: "174px"
-                                },
+                                staticClass: "tile-image",
                                 attrs: { src: mobile.image }
                               }),
                               _vm._v(" "),
-                              _c("div", { staticClass: "middle" }, [
-                                _vm.selected_mobiles.length > 3 ||
-                                _vm.selected_mobiles.indexOf(mobile.id) == -1
-                                  ? _c(
-                                      "button",
-                                      {
-                                        staticClass:
-                                          "btn compare-add-button btn-middle",
-                                        attrs: {
-                                          disabled:
-                                            _vm.selected_mobiles.length > 3 ||
-                                            _vm.selected_mobiles.indexOf(
-                                              mobile.id
-                                            ) != -1
-                                        },
-                                        on: {
-                                          click: function($event) {
-                                            _vm.selectMobile(mobile.id)
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _vm._v(
-                                          "\n                            " +
-                                            _vm._s(_vm.t["Add"]) +
-                                            "\n                        "
-                                        )
-                                      ]
-                                    )
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _vm.selected_mobiles.length > 3 ||
-                                _vm.selected_mobiles.indexOf(mobile.id) != -1
-                                  ? _c(
-                                      "button",
-                                      {
-                                        staticClass: "btn btn-outline-danger",
-                                        on: {
-                                          click: function($event) {
-                                            _vm.selectMobile(mobile.id)
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _vm._v(
-                                          "\n                            " +
-                                            _vm._s(_vm.t["Remove"]) +
-                                            "\n                        "
-                                        )
-                                      ]
-                                    )
-                                  : _vm._e()
+                              _c("p", { staticClass: "mobile-name" }, [
+                                _vm._v(" " + _vm._s(mobile.name) + " ")
                               ]),
                               _vm._v(" "),
-                              _c("div", { staticClass: "card-body" }, [
-                                _c(
-                                  "h6",
-                                  { staticClass: "card-title text-center" },
-                                  [_vm._v(_vm._s(mobile.name))]
-                                ),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "text-center" }, [
+                              _c(
+                                "div",
+                                {
+                                  staticStyle: {
+                                    display: "flex",
+                                    "flex-direction": "row"
+                                  }
+                                },
+                                [
                                   _c(
                                     "span",
                                     {
-                                      staticClass: "badge badge-info",
-                                      staticStyle: { "font-size": "10pt" }
+                                      staticClass: "badge badge-danger",
+                                      staticStyle: {
+                                        "font-size": "10pt",
+                                        "background-color": "#0077aa !important"
+                                      }
                                     },
                                     [
                                       _vm._v(
-                                        "\n                                " +
+                                        " " +
                                           _vm._s(
-                                            mobile.main_price_description.toLocaleString()
+                                            mobile.main_price_description
+                                              ? mobile.main_price_description.toLocaleString() +
+                                                " $"
+                                              : 0 + " $"
                                           ) +
-                                          " $\n                        "
+                                          "\n                        "
                                       )
                                     ]
                                   )
-                                ])
-                              ])
+                                ]
+                              )
                             ]
                           )
-                        ]
-                      )
-                    })
-                  )
-                : _vm._e()
-            }),
-            _vm._v(" "),
-            !_vm.filtered_mobiles.length
-              ? _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "alert alert-info" }, [
-                      _c("i", { staticClass: "fa fa-exclamation-circle" }),
-                      _vm._v(" "),
-                      _c("strong", [
-                        _vm._v(_vm._s(_vm.t["No Mobiles found"]) + " !")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-2" })
-                ])
-              : _vm._e()
+                        ])
+                      })
+                    )
+                  ])
+                })
           ],
           2
         )
@@ -51664,7 +51687,7 @@ var render = function() {
             _c("i", { staticClass: "fa fa-spinner fa-1x fa-spin" })
           ])
         : _vm._l(_vm.data, function(brands, key) {
-            return _c("div", { staticClass: " tiles-container" }, [
+            return _c("div", { staticClass: "tiles-container" }, [
               _c("h4", [_vm._v(_vm._s(key))]),
               _vm._v(" "),
               _c(

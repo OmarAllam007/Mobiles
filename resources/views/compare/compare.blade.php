@@ -5,9 +5,5 @@
         Compare, select then enjoy :)
     </h1>
     <br>
-    <compare :mobiles="{{$mobiles}}"
-             :t="{{json_encode(\App\Translation::getCompareComponent())}}"
-    >
-
-    </compare>
+    <compare :t="{{json_encode(\App\Translation::getCompareComponent())}}"></compare>
 @endsection
