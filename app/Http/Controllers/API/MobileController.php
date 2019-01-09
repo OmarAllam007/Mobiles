@@ -49,13 +49,13 @@ class MobileController extends Controller
         if ($request->has('name') && $request->name != "") {
             return Mobile::where('name', 'like', '%' . $request->name . '%')
 //                ->where('main_price_description', '<>', 0)
-                ->get()
+                ->get()->take(100)
                 ->each(function ($mobile) {
                     $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
                 });
         }else{
            return Mobile::where('main_price_description','<>',0)
-                ->get()->each(function ($mobile) {
+                ->get()->take(100)->each(function ($mobile) {
                     $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
                 });
         }
