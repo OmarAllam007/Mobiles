@@ -27,7 +27,7 @@ class MobileController extends Controller
                             ->where('main_price_description', '<=', $price + 200)
                             ->where('main_price_description', '>=', $price)
                             ->sortByDesc('main_price_description')
-                            ->take(30);
+                            ->take(20);
                     })
                     ->toArray();
             }
@@ -37,7 +37,7 @@ class MobileController extends Controller
                 ->where('main_price_description', '>', 0)
                 ->groupBy('brand.name')
                 ->map(function ($items) {
-                    return $items['mobiles'] = $items->sortByDesc('main_price_description')->take(30);
+                    return $items['mobiles'] = $items->sortByDesc('main_price_description')->take(20);
                 })->toArray();
         }
 

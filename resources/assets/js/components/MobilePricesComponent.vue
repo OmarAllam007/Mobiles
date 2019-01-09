@@ -119,6 +119,8 @@
         padding: 8px;
         align-items: center;
         border-radius: 5px;
+        border: 1px solid #2d3047;
+        margin: 2px;
     }
 
     .tile:hover {
