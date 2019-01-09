@@ -29,7 +29,7 @@
             <i class="fa fa-spinner fa-1x fa-spin"></i>
         </div>
         <div v-else class=" tiles-container" v-for="(brands,key) in data">
-            <h4 v-if="brands.length">{{key}}</h4>
+            <h4>{{key}}</h4>
             <div class="mobiles-container">
                 <div class="text-center tile" v-for="mobile in brands">
                     <a :href="mobile.show_url" class="tile-content">
@@ -46,7 +46,7 @@
             </div>
         </div>
 
-
+        <!--{{ getCount }}-->
         <!--<div class="row" v-if="JSON.stringify(data) ==''" style="padding-top: 20px">-->
         <!--<div class="col-md-12">-->
         <!--<div class="alert alert-info"><i class="fa fa-exclamation-circle"></i>-->
@@ -63,7 +63,6 @@
         name: "mobile-prices",
         props: ['t'],
         data() {
-
             return {
                 search: '',
                 data: [],
@@ -77,13 +76,11 @@
         },
         methods: {
             getData() {
-
                 this.loading = true;
                 axios.get('/on-demand/mobiles/get-by-price?price=' + this.search).then((response) => {
                     this.data = response.data
                     this.loading = false;
                 })
-
             }
         },
         created() {
@@ -92,8 +89,7 @@
                 this.data = response.data;
                 this.loading = false;
             })
-
-        }
+        },
     }
 </script>
 
