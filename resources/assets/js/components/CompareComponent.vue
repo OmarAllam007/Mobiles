@@ -790,20 +790,28 @@
             filtered_mobiles() {
                 if (this.search) {
                     if (this.selected_mobiles.length > 2) {
-                        return this.mobiles.filter((mobile) => {
+                        let mobs = this.mobiles.filter((mobile) => {
                             return this.selected_mobiles.indexOf(mobile.id) != -1
                         })
+
+                        return _.orderBy(mobs, 'main_price_description', ['desc'])
                     }
                     else {
-                        return this.mobiles.filter((mobile) => {
+                        let mobs =  this.mobiles.filter((mobile) => {
                             return mobile.name.toLowerCase().includes(this.search.toLowerCase()) || this.selected_mobiles.indexOf(mobile.id) != -1
                         })
+
+                        return _.orderBy(mobs, 'main_price_description', ['desc'])
+
                     }
                 } else {
                     if (this.selected_mobiles.length > 2) {
-                        return this.mobiles.filter((mobile) => {
+                        let mobs =  this.mobiles.filter((mobile) => {
                             return this.selected_mobiles.indexOf(mobile.id) != -1
                         })
+
+                        return _.orderBy(mobs, 'main_price_description', ['desc'])
+
                     } else {
                         return _.orderBy(this.mobiles, 'main_price_description', ['desc'])
                     }

@@ -48836,19 +48836,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             if (this.search) {
                 if (this.selected_mobiles.length > 2) {
-                    return this.mobiles.filter(function (mobile) {
+                    var mobs = this.mobiles.filter(function (mobile) {
                         return _this4.selected_mobiles.indexOf(mobile.id) != -1;
                     });
+
+                    return _.orderBy(mobs, 'main_price_description', ['desc']);
                 } else {
-                    return this.mobiles.filter(function (mobile) {
+                    var _mobs = this.mobiles.filter(function (mobile) {
                         return mobile.name.toLowerCase().includes(_this4.search.toLowerCase()) || _this4.selected_mobiles.indexOf(mobile.id) != -1;
                     });
+
+                    return _.orderBy(_mobs, 'main_price_description', ['desc']);
                 }
             } else {
                 if (this.selected_mobiles.length > 2) {
-                    return this.mobiles.filter(function (mobile) {
+                    var _mobs2 = this.mobiles.filter(function (mobile) {
                         return _this4.selected_mobiles.indexOf(mobile.id) != -1;
                     });
+
+                    return _.orderBy(_mobs2, 'main_price_description', ['desc']);
                 } else {
                     return _.orderBy(this.mobiles, 'main_price_description', ['desc']);
                 }
