@@ -34,6 +34,7 @@ class MobileController extends Controller
 
         } else {
             return Mobile::all()
+                ->where('main_price_description', '>', 0)
                 ->groupBy('brand.name')
                 ->map(function ($items) {
                     return $items['mobiles'] = $items->sortByDesc('main_price_description')->take(30);
