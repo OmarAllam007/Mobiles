@@ -51854,7 +51854,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\na[data-v-26bc2cea] {\n    text-decoration: none;\n}\n.tiles-container[data-v-26bc2cea] {\n    display: flex;\n    flex-direction: column;\n    /*flex-wrap: wrap;*/\n    padding-top: 10px;\n}\n.mobiles-container[data-v-26bc2cea] {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    justify-content: normal;\n    /*padding-top: 10px;*/\n}\n.tile[data-v-26bc2cea] {\n    display: flex;\n    flex-direction: row;\n    padding: 8px;\n    align-items: center;\n    border-radius: 5px;\n    border: 1px solid #2d3047;\n    margin: 2px;\n}\n.tile[data-v-26bc2cea]:hover {\n    box-shadow: 0px 0px 5px #2d3147;\n    border-radius: 3px;\n}\n.tile-content[data-v-26bc2cea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    width: 130px;\n}\n.tile-image[data-v-26bc2cea] {\n    width: 100px;\n    height: 147px;\n}\n.mobile-name[data-v-26bc2cea] {\n    height: 40px;\n    font-size: 12pt;\n    padding-bottom: 2px;\n    padding-top: 2px;\n}\n", ""]);
 
 // exports
 
@@ -51973,66 +51973,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "choose-for-me",
-    props: ['brands', 'mobiles', 'top_prices', 'top_love', 't'],
+    props: ['brands', 'top_prices', 'top_love', 't'],
     data: function data() {
         return {
             brand_id: 0,
@@ -52044,66 +51988,116 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             price_to: '',
             filter_applied: false,
             after_filter: [],
-            mobile_counter: 0
+            mobile_counter: 0,
+            mobiles: [],
+            loading: false
         };
     },
+    created: function created() {
+        var _this = this;
 
+        this.loading = true;
+        axios.get("/on-demand/mobiles/compare").then(function (response) {
+            _this.mobiles = response.data;
+            _this.loading = false;
+        });
+    },
+
+    watch: {
+        brand_id: function brand_id() {
+            this.filterData();
+        },
+        main_battery_description: function main_battery_description() {
+            this.filterData();
+        },
+        main_camera_pixels_description: function main_camera_pixels_description() {
+            this.filterData();
+        },
+        camera_front_camera: function camera_front_camera() {
+            this.filterData();
+        },
+        ram: function ram() {
+            this.filterData();
+        },
+        price_from: function price_from() {
+            this.filterData();
+        },
+        price_to: function price_to() {
+            this.filterData();
+        }
+    },
     methods: {
         applyFilter: function applyFilter() {
             this.filter_applied = !this.filter_applied;
         },
         resetFilter: function resetFilter() {
             this.filter_applied = !this.filter_applied;
+        },
+        filterData: function filterData() {
+            var _this2 = this;
+
+            this.loading = true;
+            axios.get("/on-demand/mobiles/compare", {
+                params: {
+                    'brand_id': this.brand_id,
+                    'main_camera_pixels_description': this.main_camera_pixels_description,
+                    'camera_front_camera': this.camera_front_camera,
+                    'ram': this.ram,
+                    'main_battery_description': this.main_battery_description,
+                    'price_from': this.price_from,
+                    'price_to': this.price_to
+                }
+            }).then(function (response) {
+                _this2.mobiles = _.orderBy(response.data, 'main_battery_description', ['desc']);
+                _this2.loading = false;
+            });
         }
     },
     computed: {
         filtered_mobiles: function filtered_mobiles() {
-            var _this = this;
+            var _this3 = this;
 
-            return this.mobiles.filter(function (mobile) {
-                if (_this.brand_id != 0) {
-                    return mobile.brand_id === _this.brand_id;
+            var mobiles = this.mobiles.filter(function (mobile) {
+                if (_this3.brand_id != 0) {
+                    return mobile.brand_id === _this3.brand_id;
                 }
                 return true;
             }).filter(function (mobile) {
-                if (_this.main_camera_pixels_description) {
-                    return parseInt(mobile.main_camera_pixels_description) >= parseInt(_this.main_camera_pixels_description);
+                if (_this3.main_camera_pixels_description) {
+                    return parseInt(mobile.main_camera_pixels_description) >= parseInt(_this3.main_camera_pixels_description);
                 }
                 return true;
             }).filter(function (mobile) {
-                if (_this.camera_front_camera) {
-                    return parseInt(mobile.camera_front_camera) >= parseInt(_this.camera_front_camera);
+                if (_this3.camera_front_camera) {
+                    return parseInt(mobile.camera_front_camera) >= parseInt(_this3.camera_front_camera);
                 }
                 return true;
             }).filter(function (mobile) {
-                if (_this.ram) {
-                    return parseInt(mobile.main_ram_description) >= parseInt(_this.ram);
+                if (_this3.ram) {
+                    return parseInt(mobile.main_ram_description) >= parseInt(_this3.ram);
                 }
                 return true;
             }).filter(function (mobile) {
-                if (_this.main_battery_description) {
-                    return parseInt(mobile.main_battery_description) >= parseInt(_this.main_battery_description);
+                if (_this3.main_battery_description) {
+                    return parseInt(mobile.main_battery_description) >= parseInt(_this3.main_battery_description);
                 }
                 return true;
             }).filter(function (mobile) {
-                if (_this.price_from && !_this.price_to) {
-                    console.log(_this.price_from);
-                    return parseFloat(mobile.main_price_description) >= parseFloat(_this.price_from);
-                } else if (!_this.price_from && _this.price_to) {
-                    return parseFloat(mobile.main_price_description) <= parseFloat(_this.price_to);
-                } else if (_this.price_from && _this.price_to) {
-                    return parseFloat(mobile.main_price_description) >= parseFloat(_this.price_from) && parseFloat(mobile.main_price_description) <= parseInt(_this.price_to);
+                if (_this3.price_from && !_this3.price_to) {
+                    console.log(_this3.price_from);
+                    return parseFloat(mobile.main_price_description) >= parseFloat(_this3.price_from);
+                } else if (!_this3.price_from && _this3.price_to) {
+                    return parseFloat(mobile.main_price_description) <= parseFloat(_this3.price_to);
+                } else if (_this3.price_from && _this3.price_to) {
+                    return parseFloat(mobile.main_price_description) >= parseFloat(_this3.price_from) && parseFloat(mobile.main_price_description) <= parseInt(_this3.price_to);
                 }
 
                 return true;
             });
+            return _.orderBy(mobiles, 'main_price_description', ['desc']);
         }
     },
-    directives: {
-        hola: function hola(el) {
-            console.log('asdadsd');
-        }
-    }
+    directives: {}
 });
 
 /***/ }),
@@ -52375,61 +52369,70 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row justify-content-center" }),
-    _vm._v(" "),
     _c("div", { staticClass: "row" }),
     _vm._v(" "),
-    _vm.filtered_mobiles.length
-      ? _c("div", { staticClass: "row justify-content-center" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c(
-              "ul",
-              { staticClass: "list-unstyled" },
-              _vm._l(_vm.filtered_mobiles, function(mobile, index) {
-                return _c(
-                  "li",
-                  { staticClass: "li-item hvr-glow li-item-card" },
-                  [
-                    _c("a", { attrs: { href: mobile.show_url } }, [
-                      _c("img", {
-                        staticStyle: { width: "100px", height: "147px" },
-                        attrs: { src: mobile.image_path }
-                      }),
-                      _vm._v(" "),
-                      _c("aside", [
-                        _c("strong", [_vm._v(" " + _vm._s(mobile.name))]),
-                        _vm._v(" "),
-                        _c("p", { staticStyle: { "padding-top": "10px" } }, [
-                          _c(
-                            "span",
-                            {
-                              staticClass: "badge badge-info",
-                              staticStyle: { "font-size": "10pt" }
-                            },
-                            [
-                              _vm._v(
-                                "\n                                    " +
-                                  _vm._s(
-                                    mobile.main_price_description
-                                      ? mobile.main_price_description.toLocaleString()
-                                      : ""
-                                  ) +
-                                  "$\n                                "
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    ])
-                  ]
-                )
-              })
-            )
-          ])
+    _vm.loading
+      ? _c("div", { staticClass: "loading text-center" }, [
+          _c("i", { staticClass: "fa fa-spinner fa-1x fa-spin" })
         ])
       : _vm._e(),
     _vm._v(" "),
-    !_vm.filtered_mobiles.length
+    _vm.filtered_mobiles.length && !_vm.loading
+      ? _c("div", { staticClass: "tiles-container" }, [
+          _c(
+            "div",
+            { staticClass: "mobiles-container" },
+            _vm._l(_vm.filtered_mobiles, function(mobile, index) {
+              return _c("div", { staticClass: "text-center tile" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "tile-content",
+                    attrs: { href: mobile.show_url }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "tile-image",
+                      attrs: { src: mobile.image }
+                    }),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "mobile-name" }, [
+                      _vm._v(" " + _vm._s(mobile.name) + " ")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _c(
+                        "span",
+                        {
+                          staticClass: "badge badge-danger",
+                          staticStyle: {
+                            "font-size": "10pt",
+                            "background-color": "#0077aa !important"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            " " +
+                              _vm._s(
+                                mobile.main_price_description
+                                  ? mobile.main_price_description.toLocaleString() +
+                                    " $"
+                                  : 0 + " $"
+                              ) +
+                              "\n                        "
+                          )
+                        ]
+                      )
+                    ])
+                  ]
+                )
+              ])
+            })
+          )
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    !_vm.filtered_mobiles.length && !_vm.loading
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-12" }, [
             _c("div", { staticClass: "alert alert-info" }, [

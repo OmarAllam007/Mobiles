@@ -71,87 +71,31 @@
                 </Adsense>
             </div>
         </div>
-        <div class="row justify-content-center">
-
-
-            <!--<div class="col-2">-->
-            <!--<div class="form-group">-->
-            <!--<h5>&nbsp;</h5>-->
-            <!--<button class="btn " :class="{'btn-success':!filter_applied,'btn-info':filter_applied}"-->
-            <!--@click="applyFilter">-->
-            <!--<i class="fa" :class="{'fa-filter':!filter_applied,'fa-sync-alt':filter_applied}"></i>-->
-            <!--</button>-->
-            <!--</div>-->
-            <!--</div>-->
-        </div>
 
         <div class="row"></div>
 
-        <div class="row justify-content-center" v-if="filtered_mobiles.length">
-            <!--<div class="col-md-6">-->
-            <!--<div class="section-side">-->
-            <!--<h5>-->
-            <!--Top 10 By Fans-->
-            <!--</h5>-->
-            <!--<ul class="list-group">-->
-            <!--<li v-for="top in top_love"-->
-            <!--class="list-group-item d-flex justify-content-between align-items-center">-->
-            <!--<a :href="top.show_url">-->
-            <!--{{top.name}}-->
-            <!--</a>-->
-            <!--<span class="badge  badge-pill">{{top.number_of_fans ? top.number_of_fans : 0 }} </span>-->
-            <!--</li>-->
-            <!--</ul>-->
-            <!--</div>-->
-            <!--<div class="big-banner">-->
-            <!--<p class="text-center">-->
-            <!--Advertisement Place-->
-            <!--</p>-->
-            <!--</div>-->
-            <!--</div>-->
-
-            <div class="col-md-12">
-                <ul class="list-unstyled">
-                    <li class="li-item hvr-glow li-item-card" v-for="(mobile,index) in filtered_mobiles">
-                        <a :href="mobile.show_url">
-                            <img :src="mobile.image_path" style="width: 100px;height: 147px">
-                            <aside>
-                                <strong> {{mobile.name}}</strong>
-                                <p style="padding-top: 10px">
-                                    <span class="badge badge-info" style="font-size: 10pt">
-                                        {{mobile.main_price_description
-                                    ?mobile.main_price_description.toLocaleString(): ''}}$
-                                    </span>
-                                </p>
-                            </aside>
-
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!--<div class="col-md-6">-->
-            <!--<div class="section-side">-->
-            <!--<h5>-->
-            <!--Top 10 By Price-->
-            <!--</h5>-->
-            <!--<ul class="list-group">-->
-            <!--<li v-for="top in top_prices"-->
-            <!--class="list-group-item d-flex justify-content-between align-items-center">-->
-            <!--<a :href="top.show_url">-->
-            <!--{{top.name}}-->
-            <!--</a>-->
-            <!--<span class="badge  badge-pill">{{top.main_price_description ? top.main_price_description : 0 }} </span>-->
-            <!--</li>-->
-            <!--</ul>-->
-            <!--</div>-->
-            <!--<div class="big-banner">-->
-            <!--<p class="text-center">-->
-            <!--Advertisement Place-->
-            <!--</p>-->
-            <!--</div>-->
-            <!--</div>-->
+        <div class="loading text-center" v-if="loading">
+            <i class="fa fa-spinner fa-1x fa-spin"></i>
         </div>
-        <div class="row" v-if="!filtered_mobiles.length">
+
+        <div class="tiles-container" v-if="filtered_mobiles.length && !loading">
+            <div class="mobiles-container">
+                <div class="text-center tile" v-for="(mobile,index)  in filtered_mobiles ">
+                    <a :href="mobile.show_url" class="tile-content">
+                        <img :src="mobile.image" class="tile-image">
+                        <p class="mobile-name"> {{mobile.name}} </p>
+                        <p>
+                            <span class="badge badge-danger"
+                                  style="font-size: 10pt;background-color:#0077aa !important"> {{mobile.main_price_description
+                                    ? mobile.main_price_description.toLocaleString()+' $': 0+' $'}}
+                            </span>
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" v-if="!filtered_mobiles.length && !loading">
             <div class="col-12">
                 <div class="alert alert-info"><i class="fa fa-frown"></i>
                     <strong>{{t['There are no results matching your search']}}</strong>
@@ -165,7 +109,7 @@
 <script>
     export default {
         name: "choose-for-me",
-        props: ['brands', 'mobiles', 'top_prices', 'top_love', 't'],
+        props: ['brands', 'top_prices', 'top_love', 't'],
         data() {
             return {
                 brand_id: 0,
@@ -178,6 +122,38 @@
                 filter_applied: false,
                 after_filter: [],
                 mobile_counter: 0,
+                mobiles: [],
+                loading: false,
+            }
+        },
+        created() {
+            this.loading = true
+            axios.get("/on-demand/mobiles/compare").then((response) => {
+                this.mobiles = response.data;
+                this.loading = false
+            })
+        },
+        watch: {
+            brand_id() {
+                this.filterData()
+            },
+            main_battery_description(){
+                this.filterData()
+            },
+            main_camera_pixels_description() {
+                this.filterData()
+            },
+            camera_front_camera() {
+                this.filterData()
+            },
+            ram() {
+                this.filterData()
+            },
+            price_from() {
+                this.filterData()
+            },
+            price_to() {
+                this.filterData()
             }
         },
         methods: {
@@ -187,11 +163,27 @@
             resetFilter() {
                 this.filter_applied = !this.filter_applied;
             },
+            filterData() {
+                this.loading = true;
+                axios.get("/on-demand/mobiles/compare", {
+                    params: {
+                        'brand_id': this.brand_id,
+                        'main_camera_pixels_description': this.main_camera_pixels_description,
+                        'camera_front_camera': this.camera_front_camera,
+                        'ram': this.ram,
+                        'main_battery_description': this.main_battery_description,
+                        'price_from': this.price_from,
+                        'price_to': this.price_to
+                    }
+                }).then((response) => {
+                    this.mobiles = _.orderBy(response.data, 'main_battery_description', ['desc']);
+                    this.loading = false
+                })
+            }
         },
         computed: {
             filtered_mobiles() {
-
-                return this.mobiles.filter((mobile) => {
+               let mobiles = this.mobiles.filter((mobile) => {
                     if (this.brand_id != 0) {
                         return mobile.brand_id === this.brand_id
                     }
@@ -229,16 +221,64 @@
 
                     return true
                 })
+                return _.orderBy(mobiles,'main_price_description',['desc'])
             }
         },
-        directives: {
-            hola(el) {
-                console.log('asdadsd')
-            }
-        }
+        directives: {}
     }
 </script>
 
 <style scoped>
+    a {
+        text-decoration: none;
+    }
 
+    .tiles-container {
+        display: flex;
+        flex-direction: column;
+        /*flex-wrap: wrap;*/
+        padding-top: 10px;
+    }
+
+    .mobiles-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: normal;
+        /*padding-top: 10px;*/
+    }
+
+    .tile {
+        display: flex;
+        flex-direction: row;
+        padding: 8px;
+        align-items: center;
+        border-radius: 5px;
+        border: 1px solid #2d3047;
+        margin: 2px;
+    }
+
+    .tile:hover {
+        box-shadow: 0px 0px 5px #2d3147;
+        border-radius: 3px;
+    }
+
+    .tile-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 130px;
+    }
+
+    .tile-image {
+        width: 100px;
+        height: 147px;
+    }
+
+    .mobile-name {
+        height: 40px;
+        font-size: 12pt;
+        padding-bottom: 2px;
+        padding-top: 2px;
+    }
 </style>

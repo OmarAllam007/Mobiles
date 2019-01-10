@@ -14,7 +14,7 @@ class ChooseForMeController extends Controller
 
     function filterApply(Request $request)
     {
-        $q = Mobile::query();
+        $q = Mobile::where('main_price_description', '<>', 0)->query();
 
         if ($request->brand_id) {
             $q->where('brand_id', $request->brand_id);
@@ -50,9 +50,9 @@ class ChooseForMeController extends Controller
         }
 
 
-        return $q->get()->each(function ($mobile) {
+        return $q->get()->take(100)->each(function ($mobile) {
             $mobile['show_url'] = route('mobiles.display', [$mobile, strtolower($mobile->brand->name), str_slug($mobile->name)]);
-            $mobile['image_path'] = asset('storage' . $mobile->image_path ? $mobile->image_path :$mobile->brand->image_path);
+            $mobile['image_path'] = asset('storage' . $mobile->image_path ? $mobile->image_path : $mobile->brand->image_path);
         });
 
     }

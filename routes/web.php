@@ -30,6 +30,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 Route::prefix('on-demand')->group(function (){
     Route::get('/mobiles/get-by-price', 'API\MobileController@filterMobilesByPrice')->name('on_demand.mobiles.by_price');
     Route::get('/mobiles/get-by-name', 'API\MobileController@compareMobiles')->name('on_demand.mobiles.by_name');
+    Route::get('/mobiles/compare', 'API\MobileController@chooseForMe')->name('on_demand.mobiles.choose_for_me');
 });
 
 Route::get('all/mobiles/prices', 'MobileController@getMobileWithPrice')->name('mobiles.prices');
