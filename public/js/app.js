@@ -48862,7 +48862,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         filtered_mobiles_count: function filtered_mobiles_count() {
             var finalArray = [];
-            var chunk = 10;
+            var chunk = 12;
             return this.filtered_mobiles.reduce(function (result, item, index) {
                 var chunkIndex = Math.floor(index / chunk);
                 if (!result[chunkIndex]) {

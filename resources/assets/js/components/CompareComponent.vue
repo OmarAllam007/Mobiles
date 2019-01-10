@@ -819,7 +819,7 @@
             },
             filtered_mobiles_count() {
                 let finalArray = [];
-                let chunk = 10;
+                let chunk = 12;
                 return this.filtered_mobiles.reduce((result, item, index) => {
                     const chunkIndex = Math.floor(index / chunk);
                     if (!result[chunkIndex]) {
