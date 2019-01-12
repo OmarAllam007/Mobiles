@@ -114,12 +114,12 @@
 </head>
 <body>
 @php
-    $mobiles = \App\Mobile::all()->each(function ($mobile){
+    $mobiles = \App\Mobile::topHits()->get()->each(function ($mobile){
     if($mobile->brand){
     $mobile['show_url'] = route('mobiles.display',[$mobile,strtolower($mobile->brand->name),str_slug($mobile->name)]);
     $mobile['image_path'] = asset('storage'.$mobile->image_path);
     }
-    })
+    });
 @endphp
 <div id="header">
     <header>
@@ -384,10 +384,10 @@
 
     </main>
 
-    <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark navbar-bottom-blue"
-        >
-        <p style="color: white">Copyright <a href="{{url('/')}}" class="site-link">@MobArrow</a> 2018-2019</p>
-    </nav>
+    {{--<nav class="navbar fixed-bottom navbar-expand-lg navbar-dark navbar-bottom-blue"--}}
+        {{-->--}}
+        {{--<p style="color: white">Copyright <a href="{{url('/')}}" class="site-link">@MobArrow</a> 2018-2019</p>--}}
+    {{--</nav>--}}
 </div>
 
 <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
