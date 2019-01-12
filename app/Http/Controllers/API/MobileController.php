@@ -20,6 +20,7 @@ class MobileController extends Controller
             if ($mobiles) {
                 return Mobile::whereNotNull('main_price_description')
                     ->where('main_price_description', '>', 0)
+                    ->where('released_date','>','2010-01-01')
                     ->get()
                     ->groupBy('brand.name')
                     ->map(function ($items) use ($request, $price) {
@@ -27,17 +28,21 @@ class MobileController extends Controller
                             ->where('main_price_description', '<=', $price + 200)
                             ->where('main_price_description', '>=', $price)
                             ->sortByDesc('main_price_description')
-                            ->take(20);
+                            ->take(5);
                     })->sortKeys()->toArray();
+
             }
 
         } else {
             return Mobile::all()
                 ->where('main_price_description', '>', 0)
+                ->where('released_date','<>','')
+                ->where('released_date','>','2010-01-01')
                 ->groupBy('brand.name')
                 ->map(function ($items) {
-                    return $items['mobiles'] = $items->sortByDesc('main_price_description')->take(20);
+                    return $items['mobiles'] = $items->sortByDesc('main_price_description')->take(5);
                 })->sortKeys()->toArray();
+
         }
 
 
