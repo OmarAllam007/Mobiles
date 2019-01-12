@@ -34,14 +34,6 @@
     <h1 class="text-center">Search your criteria to get your ambition</h1>
     <br>
     @php
-        $mobiles = \App\Mobile::all()->each(function ($mobile){
-
-        if($mobile->brand){
-                $mobile['show_url'] = route('mobiles.display',[$mobile,strtolower($mobile->brand->name),str_slug($mobile->name)]);
-                $mobile['image_path'] = asset('storage'.$mobile->image_path);
-        }
-     });
-
     $top_prices = \App\Mobile::byprice()->get()->each(function ($mobile){
 
         if($mobile->brand){
@@ -53,7 +45,7 @@
     $top_love = \App\Mobile::topfans()->get();
     @endphp
 
-    <choose-for-me :brands="{{\App\Brand::all()}}" :mobiles="{{$mobiles}}"
+    <choose-for-me :brands="{{\App\Brand::all()}}"
                    :top_prices="{{$top_prices}}" :top_love="{{$top_love}}"
                    :t="{{json_encode(\App\Translation::getChooseComponent())}}"></choose-for-me>
 @endsection

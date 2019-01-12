@@ -14,6 +14,7 @@ class ChooseForMeController extends Controller
 
     function filterApply(Request $request)
     {
+
         $q = Mobile::where('main_price_description', '<>', 0)->query();
 
         if ($request->brand_id) {
