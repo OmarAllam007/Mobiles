@@ -105,7 +105,7 @@ class MobileController extends Controller
         }
 
 
-        return $q->orderBy('main_price_description','DESC')
+        return $q->orderBy(\DB::raw('CAST(main_price_description AS SIGNED)'),'DESC')
             ->where('main_price_description', '<>', 0)->get()->take(100)->each(function ($mobile) {
             $mobile['show_url'] = $mobile->show_url;
             $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
