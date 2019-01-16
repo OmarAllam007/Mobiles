@@ -29,7 +29,7 @@
             <i class="fa fa-spinner fa-1x fa-spin"></i>
         </div>
         <div v-else class="tiles-container" v-for="(brands,key) in data">
-            <h4>{{key}}</h4>
+            <h4 v-if="brands.length">{{key}}</h4>
             <div class="mobiles-container">
                 <div class="text-center tile" v-for="mobile in brands ">
                     <a :href="mobile.show_url" class="tile-content">
@@ -71,29 +71,28 @@
         },
         watch: {
             search() {
-                this.getData()
+                setTimeout(() => {
+                    this.getData()
+                },1500);
             }
         },
         methods: {
             getData() {
                 this.loading = true;
-                setTimeout(()=>{
 
-                    axios.get('/on-demand/mobiles/get-by-price?price=' + this.search).then((response) => {
-                        for (let i in response.data) {
-                            response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc'])
-                        }
-                        this.data = response.data;
-                        this.loading = false;
-                    })
-
-                },1500);
+                axios.get('/on-demand/mobiles/get-by-price?price=' + this.search).then((response) => {
+                    for (let i in response.data) {
+                        response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc'])
+                    }
+                    this.data = response.data;
+                    this.loading = false;
+                })
 
             }
         },
         created() {
             this.loading = true;
-            setTimeout(()=>{
+            setTimeout(() => {
                 axios.get('/on-demand/mobiles/get-by-price').then((response) => {
                     for (let i in response.data) {
                         response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc'])
@@ -102,7 +101,7 @@
                     this.loading = false;
                 })
 
-            },300);
+            }, 300);
 
         },
     }

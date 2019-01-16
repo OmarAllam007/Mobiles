@@ -52646,28 +52646,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     watch: {
         search: function search() {
-            this.getData();
+            var _this = this;
+
+            setTimeout(function () {
+                _this.getData();
+            }, 1500);
         }
     },
     methods: {
         getData: function getData() {
-            var _this = this;
+            var _this2 = this;
 
             this.loading = true;
-            setTimeout(function () {
 
-                axios.get('/on-demand/mobiles/get-by-price?price=' + _this.search).then(function (response) {
-                    for (var i in response.data) {
-                        response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc']);
-                    }
-                    _this.data = response.data;
-                    _this.loading = false;
-                });
-            }, 1500);
+            axios.get('/on-demand/mobiles/get-by-price?price=' + this.search).then(function (response) {
+                for (var i in response.data) {
+                    response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc']);
+                }
+                _this2.data = response.data;
+                _this2.loading = false;
+            });
         }
     },
     created: function created() {
-        var _this2 = this;
+        var _this3 = this;
 
         this.loading = true;
         setTimeout(function () {
@@ -52675,8 +52677,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 for (var i in response.data) {
                     response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc']);
                 }
-                _this2.data = response.data;
-                _this2.loading = false;
+                _this3.data = response.data;
+                _this3.loading = false;
             });
         }, 300);
     }
@@ -52761,7 +52763,7 @@ var render = function() {
           ])
         : _vm._l(_vm.data, function(brands, key) {
             return _c("div", { staticClass: "tiles-container" }, [
-              _c("h4", [_vm._v(_vm._s(key))]),
+              brands.length ? _c("h4", [_vm._v(_vm._s(key))]) : _vm._e(),
               _vm._v(" "),
               _c(
                 "div",
