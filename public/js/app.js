@@ -52640,22 +52640,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             search: '',
             data: [],
-            loading: false
+            loading: false,
+            typingTimer: null,
+            doneTypingInterval: 1500
         };
     },
 
     watch: {
-        search: function search() {
-            var _this = this;
-
-            setTimeout(function () {
-                _this.getData();
-            }, 1500);
-        }
+        // search() {
+        //     setTimeout(() => {
+        //         this.getData()
+        //     }, 1500);
+        // }
     },
     methods: {
+        startWrite: function startWrite() {
+            clearTimeout(this.typingTimer);
+            this.typingTimer = setTimeout(this.getData, this.doneTypingInterval);
+        },
+        stopWrite: function stopWrite() {
+            clearTimeout(this.typingTimer);
+        },
         getData: function getData() {
-            var _this2 = this;
+            var _this = this;
 
             this.loading = true;
 
@@ -52663,13 +52670,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 for (var i in response.data) {
                     response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc']);
                 }
-                _this2.data = response.data;
-                _this2.loading = false;
+                _this.data = response.data;
+                _this.loading = false;
             });
         }
     },
     created: function created() {
-        var _this3 = this;
+        var _this2 = this;
 
         this.loading = true;
         setTimeout(function () {
@@ -52677,8 +52684,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 for (var i in response.data) {
                     response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc']);
                 }
-                _this3.data = response.data;
-                _this3.loading = false;
+                _this2.data = response.data;
+                _this2.loading = false;
             });
         }, 300);
     }
@@ -52720,6 +52727,8 @@ var render = function() {
               },
               domProps: { value: _vm.search },
               on: {
+                keyup: _vm.startWrite,
+                keydown: _vm.stopWrite,
                 input: function($event) {
                   if ($event.target.composing) {
                     return
@@ -52763,7 +52772,7 @@ var render = function() {
           ])
         : _vm._l(_vm.data, function(brands, key) {
             return _c("div", { staticClass: "tiles-container" }, [
-              brands.length ? _c("h4", [_vm._v(_vm._s(key))]) : _vm._e(),
+              brands.length > 0 ? _c("h4", [_vm._v(_vm._s(key))]) : _vm._e(),
               _vm._v(" "),
               _c(
                 "div",

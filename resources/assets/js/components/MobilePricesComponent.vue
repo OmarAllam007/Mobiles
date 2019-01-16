@@ -5,7 +5,7 @@
                 <div class="form-group">
                     <input type="number" v-model="search" class="form-control searchByPrice"
                            style="border:none;border-bottom: 1px solid #1b998b;background: transparent"
-                           :placeholder="t['Search with price']" autofocus>
+                           :placeholder="t['Search with price']" autofocus v-on:keyup="startWrite" v-on:keydown="stopWrite">
                 </div>
             </div>
             <div class="col-2"></div>
@@ -29,7 +29,7 @@
             <i class="fa fa-spinner fa-1x fa-spin"></i>
         </div>
         <div v-else class="tiles-container" v-for="(brands,key) in data">
-            <h4 v-if="brands.length">{{key}}</h4>
+            <h4 v-if="brands.length > 0">{{key}}</h4>
             <div class="mobiles-container">
                 <div class="text-center tile" v-for="mobile in brands ">
                     <a :href="mobile.show_url" class="tile-content">
@@ -66,17 +66,26 @@
             return {
                 search: '',
                 data: [],
-                loading: false
-            }
+                loading: false,
+                typingTimer: null,
+                doneTypingInterval: 1500
+        }
         },
         watch: {
-            search() {
-                setTimeout(() => {
-                    this.getData()
-                },1500);
-            }
+            // search() {
+            //     setTimeout(() => {
+            //         this.getData()
+            //     }, 1500);
+            // }
         },
         methods: {
+            startWrite(){
+                clearTimeout(this.typingTimer);
+                this.typingTimer = setTimeout(this.getData, this.doneTypingInterval);
+            },
+            stopWrite(){
+                clearTimeout(this.typingTimer);
+            },
             getData() {
                 this.loading = true;
 
