@@ -52423,7 +52423,7 @@ var render = function() {
                         [
                           _c("img", {
                             staticClass: "mobile-image",
-                            attrs: { src: mobile.image_path }
+                            attrs: { src: "/storage/" + mobile.image_path }
                           }),
                           _vm._v(" "),
                           _c("div", { staticClass: "mobile-description" }, [
