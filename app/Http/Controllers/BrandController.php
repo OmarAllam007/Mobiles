@@ -44,7 +44,6 @@ class BrandController extends Controller
         $data = [];
 
         if ($request->hasFile('image_path')) {
-
             Storage::disk('public')->delete($brand->image_path);
 
             $attachment = Brand::uploadImage($request->image_path);

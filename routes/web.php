@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 //Route::get('/', 'MobileController@getMobileWithPrice');
 Route::get('/', 'HomeController@index')->name('home');
 
@@ -31,6 +30,8 @@ Route::prefix('on-demand')->group(function (){
     Route::get('/mobiles/get-by-price', 'API\MobileController@filterMobilesByPrice')->name('on_demand.mobiles.by_price');
     Route::get('/mobiles/get-by-name', 'API\MobileController@compareMobiles')->name('on_demand.mobiles.by_name');
     Route::get('/mobiles/compare', 'API\MobileController@chooseForMe')->name('on_demand.mobiles.choose_for_me');
+    Route::get('/mobiles/search', 'API\MobileController@search')->name('on_demand.mobiles.search');
+    Route::get('/mobiles/get-last-visited', 'API\MobileController@visited')->name('on_demand.mobiles.visited');
 });
 
 Route::get('all/mobiles/prices', 'MobileController@getMobileWithPrice')->name('mobiles.prices');

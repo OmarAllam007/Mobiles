@@ -114,6 +114,7 @@
 </head>
 <body>
 @php
+
     $mobiles = \App\Mobile::topHits()->get()->each(function ($mobile){
     if($mobile->brand){
     $mobile['show_url'] = route('mobiles.display',[$mobile,strtolower($mobile->brand->name),str_slug($mobile->name)]);
@@ -124,7 +125,7 @@
 <div id="header">
     <header>
         {{--lang="ar" dir="rtl"--}}
-        <nav class="navbar nav-top  navbar-expand-lg navbar-dark navbar-top-blue" >
+        <nav class="navbar nav-top  navbar-expand-lg navbar-dark navbar-top-blue">
 
             @if(!\Session::get('personalized-language-ar'))
                 <a class="navbar-brand" href="{{url('/')}}" title="Home Page">{{env('APP_NAME')}}</a>
@@ -189,12 +190,15 @@
 
                     </ul>
 
-                    <search-mobile :mobiles="{{$mobiles}}"
-                                   :t="{{json_encode(\App\Translation::getSearchComponent())}}"
-                    ></search-mobile>
+
 
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                        <li>
+                            <search-mobile
+                                    :t="{{json_encode(\App\Translation::getSearchComponent())}}"
+                            ></search-mobile>
+                        </li>
+
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" role="button" href="{{ route('login') }}" data-toggle="tooltip"
@@ -385,8 +389,8 @@
     </main>
 
     {{--<nav class="navbar fixed-bottom navbar-expand-lg navbar-dark navbar-bottom-blue"--}}
-        {{-->--}}
-        {{--<p style="color: white">Copyright <a href="{{url('/')}}" class="site-link">@MobArrow</a> 2018-2019</p>--}}
+    {{-->--}}
+    {{--<p style="color: white">Copyright <a href="{{url('/')}}" class="site-link">@MobArrow</a> 2018-2019</p>--}}
     {{--</nav>--}}
 </div>
 

@@ -51,6 +51,7 @@
             </Adsense>
         </div>
     </div>
+    <input id="mobile_name" type="hidden" value="{{$mobile->id}}">
     <h2 class="h2-title">{{$mobile->name}} -{{t('Specifications')}}</h2>
 
     <div id="show">
@@ -204,5 +205,40 @@
     </div>
 @endsection
 @section('scripts')
+    <script>
+        // import Session from '../../assets/js/components/Session';
+        // window.sessionStorage.clear()
+        let id = $('#mobile_name').val()
 
-@append
+        let visited_mobiles = [];
+        if (window.sessionStorage.getItem('mobarrow_visited')) {
+            visited_mobiles = window.sessionStorage.getItem('mobarrow_visited');
+        }
+        if (visited_mobiles.length > 0) {
+            visited_mobiles = JSON.parse(visited_mobiles);
+
+            if (visited_mobiles.length <= 3) {
+                if (visited_mobiles.indexOf(id) !== -1) {
+                    visited_mobiles.splice(visited_mobiles.indexOf(id), 1);
+                    visited_mobiles.push(id);
+                } else {
+                    visited_mobiles.push(id);
+                }
+            } else {
+                if (visited_mobiles.indexOf(id) !== -1) {
+                    visited_mobiles.splice(visited_mobiles.indexOf(id), 1);
+                    visited_mobiles.push(id);
+                } else {
+                    visited_mobiles.splice(0,1);
+                    visited_mobiles.push(id);
+                }
+            }
+
+        }
+
+
+        window.sessionStorage.setItem('mobarrow_visited', JSON.stringify(visited_mobiles))
+
+
+    </script>
+@stop

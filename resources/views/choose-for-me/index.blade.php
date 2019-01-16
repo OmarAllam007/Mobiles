@@ -35,7 +35,6 @@
     <br>
     @php
     $top_prices = \App\Mobile::byprice()->get()->each(function ($mobile){
-
         if($mobile->brand){
                 $mobile['show_url'] = route('mobiles.display',[$mobile,strtolower($mobile->brand->name),str_slug($mobile->name)]);
                 $mobile['image_path'] = asset('storage'.$mobile->image_path);
@@ -45,7 +44,7 @@
     $top_love = \App\Mobile::topfans()->get();
     @endphp
 
-    <choose-for-me :brands="{{\App\Brand::all()}}"
+    <choose-for-me :brands="{{\App\Brand::orderBy('name')->get()}}"
                    :top_prices="{{$top_prices}}" :top_love="{{$top_love}}"
                    :t="{{json_encode(\App\Translation::getChooseComponent())}}"></choose-for-me>
 @endsection

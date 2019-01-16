@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Mobile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Types\Float_;
 
 class MobileController extends Controller
@@ -20,7 +21,7 @@ class MobileController extends Controller
             if ($mobiles) {
                 return Mobile::whereNotNull('main_price_description')
                     ->where('main_price_description', '>', 0)
-                    ->where('released_date','>','2010-01-01')
+                    ->where('released_date', '>', '2010-01-01')
                     ->get()
                     ->groupBy('brand.name')
                     ->map(function ($items) use ($request, $price) {
@@ -36,8 +37,8 @@ class MobileController extends Controller
         } else {
             return Mobile::all()
                 ->where('main_price_description', '>', 0)
-                ->where('released_date','<>','')
-                ->where('released_date','>','2010-01-01')
+                ->where('released_date', '<>', '')
+                ->where('released_date', '>', '2010-01-01')
                 ->groupBy('brand.name')
                 ->map(function ($items) {
                     return $items['mobiles'] = $items->sortByDesc('main_price_description')->take(5);
@@ -84,7 +85,7 @@ class MobileController extends Controller
         }
 
         if ($request->ram) {
-            $q->where('main_ram_description', '>=', $request->ram)->where('main_ram_description','<',100);
+            $q->where('main_ram_description', '>=', $request->ram)->where('main_ram_description', '<', 100);
         }
 
         if ($request->main_battery_description) {
@@ -105,10 +106,46 @@ class MobileController extends Controller
         }
 
 
-        return $q->orderBy(\DB::raw('CAST(main_price_description AS SIGNED)'),'DESC')
+        return $q->orderBy(\DB::raw('CAST(main_price_description AS SIGNED)'), 'DESC')
             ->where('main_price_description', '<>', 0)->get()->take(100)->each(function ($mobile) {
-            $mobile['show_url'] = $mobile->show_url;
-            $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
-        });
+                $mobile['show_url'] = $mobile->show_url;
+                $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
+            });
+    }
+
+
+    function search(Request $request)
+    {
+        $mobiles = Mobile::query()->where('main_price_description', '<>', 0)
+            ->orderBy('main_price_description', 'DESC');
+
+        if ($request->has('search')) {
+            return $mobiles->where('name', 'like', '%' . $request->search . '%')
+                ->take(4)->get()
+                ->each(function ($mobile) {
+                    $mobile['show_url'] = $mobile->show_url;
+                    $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
+                });
+        } else {
+            return $mobiles->orderByDesc('number_of_hits')
+                ->take(4)->get()
+                ->each(function ($mobile) {
+                    $mobile['show_url'] = $mobile->show_url;
+                    $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
+                });
+
+        }
+
+    }
+
+    function visited(Request $request)
+
+    {
+        $tempStr = implode(',', $request->visited);
+
+        return DB::table('mobiles')
+        ->whereIn('id', $request->visited)
+        ->orderByRaw(DB::raw("FIELD(id, $tempStr)"))
+        ->get();
     }
 }

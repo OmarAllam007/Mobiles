@@ -486,6 +486,33 @@ module.exports = function normalizeComponent (
 /* 2 */
 /***/ (function(module, exports) {
 
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
@@ -565,7 +592,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -790,33 +817,6 @@ function applyToTag (styleElement, obj) {
     styleElement.appendChild(document.createTextNode(css))
   }
 }
-
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
 
 
 /***/ }),
@@ -3462,7 +3462,7 @@ Popper.Defaults = Defaults;
 /* harmony default export */ __webpack_exports__["default"] = (Popper);
 //# sourceMappingURL=popper.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
 
 /***/ }),
 /* 7 */
@@ -14344,10 +14344,10 @@ window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 Vue.component('example-component', __webpack_require__(44));
 Vue.component('compare', __webpack_require__(47));
 Vue.component('search-mobile', __webpack_require__(53));
-Vue.component('mobile-prices', __webpack_require__(58));
-Vue.component('choose-for-me', __webpack_require__(63));
-Vue.component('like-component', __webpack_require__(68));
-Vue.component('comments', __webpack_require__(73));
+Vue.component('mobile-prices', __webpack_require__(60));
+Vue.component('choose-for-me', __webpack_require__(65));
+Vue.component('like-component', __webpack_require__(70));
+Vue.component('comments', __webpack_require__(75));
 
 // Vue.component('gallery-component', require('./components/GalleryComponent.vue'));
 // Vue.component('ad-component', require('./components/AdComponent.vue'));
@@ -31533,7 +31533,7 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(19)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(19)(module)))
 
 /***/ }),
 /* 19 */
@@ -47359,7 +47359,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(40).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(40).setImmediate))
 
 /***/ }),
 /* 40 */
@@ -47429,7 +47429,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 41 */
@@ -47622,7 +47622,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(10)))
 
 /***/ }),
 /* 42 */
@@ -47968,7 +47968,7 @@ var content = __webpack_require__(49);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(3)("086f7c34", content, false, {});
+var update = __webpack_require__(4)("086f7c34", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -47987,7 +47987,7 @@ if(false) {
 /* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(2)(false);
+exports = module.exports = __webpack_require__(3)(false);
 // imports
 
 
@@ -51145,7 +51145,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(56)
 /* template */
-var __vue_template__ = __webpack_require__(57)
+var __vue_template__ = __webpack_require__(59)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -51194,7 +51194,7 @@ var content = __webpack_require__(55);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(3)("3285f71b", content, false, {});
+var update = __webpack_require__(4)("3285f71b", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -51213,12 +51213,12 @@ if(false) {
 /* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(2)(false);
+exports = module.exports = __webpack_require__(3)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\na[data-v-730936e8] {\n    text-decoration: none;\n    color: #2d3047;\n}\n.none[data-v-730936e8] {\n    display: none !important;\n    opacity: 0;\n}\n.block[data-v-730936e8] {\n    display: block !important;\n}\n", ""]);
+exports.push([module.i, "\na[data-v-730936e8] {\n    text-decoration: none;\n    color: #2d3047;\n}\n.none[data-v-730936e8] {\n    display: none !important;\n    opacity: 0;\n}\n.block[data-v-730936e8] {\n    display: block !important;\n}\n.search-input[data-v-730936e8] {\n    width: 300px;\n    /*border-radius: 20px;*/\n}\n.search-container[data-v-730936e8] {\n    display: flex;\n    flex-direction: column;\n    position: absolute;\n    z-index: 999999;\n    width: 100%;\n    top: 37px;\n    background: white;\n    padding: 2px;\n    border-radius: 0 0 10px 10px;\n    box-shadow: 2px 2px 2px grey;\n    background-color: white;\n    padding-bottom: 5px;\n}\n.mobile-image[data-v-730936e8] {\n    width: 70px;\n    height: 100%;\n    padding: 0 5px 0 5px;\n}\n.mobile-container[data-v-730936e8] {\n    display: flex;\n    flex-direction: row;\n    padding-bottom: 5px;\n    padding-top: 5px;\n}\n.mobile-container[data-v-730936e8]:hover {\n    background-color: #008e8033;\n}\n.mobile-description[data-v-730936e8] {\n    display: flex;\n    flex-direction: column;\n    padding: 0 5px 0 5px;\n    width: 100%;\n}\n.tile-container[data-v-730936e8] {\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n}\n", ""]);
 
 // exports
 
@@ -51229,6 +51229,7 @@ exports.push([module.i, "\na[data-v-730936e8] {\n    text-decoration: none;\n   
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Session_js__ = __webpack_require__(57);
 //
 //
 //
@@ -51254,34 +51255,97 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "search-mobile",
-    props: ['mobiles', 't'],
+    props: ['t'],
     data: function data() {
         return {
             searching: false,
-            search: ''
+            search: '',
+            mobiles: [],
+            visited_mobiles: []
         };
     },
-    created: function created() {},
+    ready: function ready() {},
 
+    watch: {
+        search: function search() {
+            this.getSearchData();
+        }
+    },
     methods: {
-        getUnFocused: function getUnFocused() {
+        getPrevData: function getPrevData() {
             var _this = this;
 
+            this.searching = true;
+
+            if (__WEBPACK_IMPORTED_MODULE_0__Session_js__["a" /* default */].get('mobarrow_visited')) {
+                axios.get('/on-demand/mobiles/get-last-visited', {
+                    params: {
+                        'visited': __WEBPACK_IMPORTED_MODULE_0__Session_js__["a" /* default */].get('mobarrow_visited').reverse()
+                    }
+                }).then(function (response) {
+                    _this.visited_mobiles = response.data;
+                });
+            }
+
+            axios.get('/on-demand/mobiles/search').then(function (response) {
+                _this.mobiles = response.data;
+            });
+        },
+        getSearchData: function getSearchData() {
+            var _this2 = this;
+
+            axios.get('/on-demand/mobiles/search?search=' + this.search).then(function (response) {
+                _this2.mobiles = response.data;
+            });
+        },
+        getUnFocused: function getUnFocused() {
+            var _this3 = this;
+
             window.setTimeout(function () {
-                _this.searching = false;
+                _this3.searching = false;
             }, 200);
         }
     },
     computed: {
         filtered_mobiles: function filtered_mobiles() {
-            var _this2 = this;
+            var _this4 = this;
 
             if (this.search) {
                 return this.mobiles.filter(function (mobile) {
-                    return mobile.name.toLowerCase().includes(_this2.search.toLowerCase());
+                    return mobile.name.toLowerCase().includes(_this4.search.toLowerCase());
                 });
             } else {
                 return this.mobiles;
@@ -51292,6 +51356,970 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 /* 57 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_is_js__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_is_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_is_js__);
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    storage: window.sessionStorage,
+
+    flash: function flash(message, type) {
+        this.set('flash', { message: message, type: type });
+    },
+    getFlash: function getFlash() {
+        var flash = this.get('flash');
+
+        if (!flash) {
+            flash = { message: '', type: '' };
+        }
+
+        this.remove('flash');
+        return flash;
+    },
+    set: function set(key, value) {
+        if (__WEBPACK_IMPORTED_MODULE_0_is_js___default.a.string(value) || __WEBPACK_IMPORTED_MODULE_0_is_js___default.a.number(value)) {
+            this.storage.setItem(key, value);
+        } else {
+            this.storage.setItem(key, JSON.stringify(value));
+        }
+    },
+    get: function get(key) {
+        var value = this.storage.getItem(key);
+
+        var objectRegex = /^[\{].*[\}]$/;
+        var arrayRegex = /^[\[].*[\]]/;
+        var isJSON = arrayRegex.test(value) || objectRegex.test(value);
+
+        if (isJSON) {
+            value = JSON.parse(value);
+        }
+
+        return value;
+    },
+    remove: function remove(key) {
+        return this.storage.removeItem(key);
+    }
+});
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_RESULT__;/*!
+ * is.js 0.8.0
+ * Author: Aras Atasaygin
+ */
+
+// AMD with global, Node, or global
+;(function(root, factory) {    // eslint-disable-line no-extra-semi
+    if (true) {
+        // AMD. Register as an anonymous module.
+        !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
+            // Also create a global in case some scripts
+            // that are loaded still are looking for
+            // a global even when an AMD loader is in use.
+            return (root.is = factory());
+        }).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+    } else if (typeof exports === 'object') {
+        // Node. Does not work with strict CommonJS, but
+        // only CommonJS-like enviroments that support module.exports,
+        // like Node.
+        module.exports = factory();
+    } else {
+        // Browser globals (root is self)
+        root.is = factory();
+    }
+}(this, function() {
+
+    // Baseline
+    /* -------------------------------------------------------------------------- */
+
+    // define 'is' object and current version
+    var is = {};
+    is.VERSION = '0.8.0';
+
+    // define interfaces
+    is.not = {};
+    is.all = {};
+    is.any = {};
+
+    // cache some methods to call later on
+    var toString = Object.prototype.toString;
+    var slice = Array.prototype.slice;
+    var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+    // helper function which reverses the sense of predicate result
+    function not(func) {
+        return function() {
+            return !func.apply(null, slice.call(arguments));
+        };
+    }
+
+    // helper function which call predicate function per parameter and return true if all pass
+    function all(func) {
+        return function() {
+            var params = getParams(arguments);
+            var length = params.length;
+            for (var i = 0; i < length; i++) {
+                if (!func.call(null, params[i])) {
+                    return false;
+                }
+            }
+            return true;
+        };
+    }
+
+    // helper function which call predicate function per parameter and return true if any pass
+    function any(func) {
+        return function() {
+            var params = getParams(arguments);
+            var length = params.length;
+            for (var i = 0; i < length; i++) {
+                if (func.call(null, params[i])) {
+                    return true;
+                }
+            }
+            return false;
+        };
+    }
+
+    // build a 'comparator' object for various comparison checks
+    var comparator = {
+        '<': function(a, b) { return a < b; },
+        '<=': function(a, b) { return a <= b; },
+        '>': function(a, b) { return a > b; },
+        '>=': function(a, b) { return a >= b; }
+    }
+
+    // helper function which compares a version to a range
+    function compareVersion(version, range) {
+        var string = (range + '');
+        var n = +(string.match(/\d+/) || NaN);
+        var op = string.match(/^[<>]=?|/)[0];
+        return comparator[op] ? comparator[op](version, n) : (version == n || n !== n);
+    }
+
+    // helper function which extracts params from arguments
+    function getParams(args) {
+        var params = slice.call(args);
+        var length = params.length;
+        if (length === 1 && is.array(params[0])) {    // support array
+            params = params[0];
+        }
+        return params;
+    }
+
+    // Type checks
+    /* -------------------------------------------------------------------------- */
+
+    // is a given value Arguments?
+    is.arguments = function(value) {    // fallback check is for IE
+        return toString.call(value) === '[object Arguments]' ||
+            (value != null && typeof value === 'object' && 'callee' in value);
+    };
+
+    // is a given value Array?
+    is.array = Array.isArray || function(value) {    // check native isArray first
+        return toString.call(value) === '[object Array]';
+    };
+
+    // is a given value Boolean?
+    is.boolean = function(value) {
+        return value === true || value === false || toString.call(value) === '[object Boolean]';
+    };
+
+    // is a given value Char?
+    is.char = function(value) {
+        return is.string(value) && value.length === 1;
+    };
+
+    // is a given value Date Object?
+    is.date = function(value) {
+        return toString.call(value) === '[object Date]';
+    };
+
+    // is a given object a DOM node?
+    is.domNode = function(object) {
+        return is.object(object) && object.nodeType > 0;
+    };
+
+    // is a given value Error object?
+    is.error = function(value) {
+        return toString.call(value) === '[object Error]';
+    };
+
+    // is a given value function?
+    is['function'] = function(value) {    // fallback check is for IE
+        return toString.call(value) === '[object Function]' || typeof value === 'function';
+    };
+
+    // is given value a pure JSON object?
+    is.json = function(value) {
+        return toString.call(value) === '[object Object]';
+    };
+
+    // is a given value NaN?
+    is.nan = function(value) {    // NaN is number :) Also it is the only value which does not equal itself
+        return value !== value;
+    };
+
+    // is a given value null?
+    is['null'] = function(value) {
+        return value === null;
+    };
+
+    // is a given value number?
+    is.number = function(value) {
+        return is.not.nan(value) && toString.call(value) === '[object Number]';
+    };
+
+    // is a given value object?
+    is.object = function(value) {
+        return Object(value) === value;
+    };
+
+    // is a given value RegExp?
+    is.regexp = function(value) {
+        return toString.call(value) === '[object RegExp]';
+    };
+
+    // are given values same type?
+    // prevent NaN, Number same type check
+    is.sameType = function(value, other) {
+        var tag = toString.call(value);
+        if (tag !== toString.call(other)) {
+            return false;
+        }
+        if (tag === '[object Number]') {
+            return !is.any.nan(value, other) || is.all.nan(value, other);
+        }
+        return true;
+    };
+    // sameType method does not support 'all' and 'any' interfaces
+    is.sameType.api = ['not'];
+
+    // is a given value String?
+    is.string = function(value) {
+        return toString.call(value) === '[object String]';
+    };
+
+    // is a given value undefined?
+    is.undefined = function(value) {
+        return value === void 0;
+    };
+
+    // is a given value window?
+    // setInterval method is only available for window object
+    is.windowObject = function(value) {
+        return value != null && typeof value === 'object' && 'setInterval' in value;
+    };
+
+    // Presence checks
+    /* -------------------------------------------------------------------------- */
+
+    //is a given value empty? Objects, arrays, strings
+    is.empty = function(value) {
+        if (is.object(value)) {
+            var length = Object.getOwnPropertyNames(value).length;
+            if (length === 0 || (length === 1 && is.array(value)) ||
+                    (length === 2 && is.arguments(value))) {
+                return true;
+            }
+            return false;
+        }
+        return value === '';
+    };
+
+    // is a given value existy?
+    is.existy = function(value) {
+        return value != null;
+    };
+
+    // is a given value falsy?
+    is.falsy = function(value) {
+        return !value;
+    };
+
+    // is a given value truthy?
+    is.truthy = not(is.falsy);
+
+    // Arithmetic checks
+    /* -------------------------------------------------------------------------- */
+
+    // is a given number above minimum parameter?
+    is.above = function(n, min) {
+        return is.all.number(n, min) && n > min;
+    };
+    // above method does not support 'all' and 'any' interfaces
+    is.above.api = ['not'];
+
+    // is a given number decimal?
+    is.decimal = function(n) {
+        return is.number(n) && n % 1 !== 0;
+    };
+
+    // are given values equal? supports numbers, strings, regexes, booleans
+    // TODO: Add object and array support
+    is.equal = function(value, other) {
+        // check 0 and -0 equity with Infinity and -Infinity
+        if (is.all.number(value, other)) {
+            return value === other && 1 / value === 1 / other;
+        }
+        // check regexes as strings too
+        if (is.all.string(value, other) || is.all.regexp(value, other)) {
+            return '' + value === '' + other;
+        }
+        if (is.all.boolean(value, other)) {
+            return value === other;
+        }
+        return false;
+    };
+    // equal method does not support 'all' and 'any' interfaces
+    is.equal.api = ['not'];
+
+    // is a given number even?
+    is.even = function(n) {
+        return is.number(n) && n % 2 === 0;
+    };
+
+    // is a given number finite?
+    is.finite = isFinite || function(n) {
+        return is.not.infinite(n) && is.not.nan(n);
+    };
+
+    // is a given number infinite?
+    is.infinite = function(n) {
+        return n === Infinity || n === -Infinity;
+    };
+
+    // is a given number integer?
+    is.integer = function(n) {
+        return is.number(n) && n % 1 === 0;
+    };
+
+    // is a given number negative?
+    is.negative = function(n) {
+        return is.number(n) && n < 0;
+    };
+
+    // is a given number odd?
+    is.odd = function(n) {
+        return is.number(n) && n % 2 === 1;
+    };
+
+    // is a given number positive?
+    is.positive = function(n) {
+        return is.number(n) && n > 0;
+    };
+
+    // is a given number above maximum parameter?
+    is.under = function(n, max) {
+        return is.all.number(n, max) && n < max;
+    };
+    // least method does not support 'all' and 'any' interfaces
+    is.under.api = ['not'];
+
+    // is a given number within minimum and maximum parameters?
+    is.within = function(n, min, max) {
+        return is.all.number(n, min, max) && n > min && n < max;
+    };
+    // within method does not support 'all' and 'any' interfaces
+    is.within.api = ['not'];
+
+    // Regexp checks
+    /* -------------------------------------------------------------------------- */
+    // Steven Levithan, Jan Goyvaerts: Regular Expressions Cookbook
+    // Scott Gonzalez: Email address validation
+
+    // dateString match m/d/yy and mm/dd/yyyy, allowing any combination of one or two digits for the day and month, and two or four digits for the year
+    // eppPhone match extensible provisioning protocol format
+    // nanpPhone match north american number plan format
+    // time match hours, minutes, and seconds, 24-hour clock
+    var regexes = {
+        affirmative: /^(?:1|t(?:rue)?|y(?:es)?|ok(?:ay)?)$/,
+        alphaNumeric: /^[A-Za-z0-9]+$/,
+        caPostalCode: /^(?!.*[DFIOQU])[A-VXY][0-9][A-Z]\s?[0-9][A-Z][0-9]$/,
+        creditCard: /^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9]{2})[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35[0-9]{3})[0-9]{11}))$/,
+        dateString: /^(1[0-2]|0?[1-9])([\/-])(3[01]|[12][0-9]|0?[1-9])(?:\2)(?:[0-9]{2})?[0-9]{2}$/,
+        email: /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i, // eslint-disable-line no-control-regex
+        eppPhone: /^\+[0-9]{1,3}\.[0-9]{4,14}(?:x.+)?$/,
+        hexadecimal: /^(?:0x)?[0-9a-fA-F]+$/,
+        hexColor: /^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/,
+        ipv4: /^(?:(?:\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])\.){3}(?:\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])$/,
+        ipv6: /^((?=.*::)(?!.*::.+::)(::)?([\dA-F]{1,4}:(:|\b)|){5}|([\dA-F]{1,4}:){6})((([\dA-F]{1,4}((?!\3)::|:\b|$))|(?!\2\3)){2}|(((2[0-4]|1\d|[1-9])?\d|25[0-5])\.?\b){4})$/i,
+        nanpPhone: /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
+        socialSecurityNumber: /^(?!000|666)[0-8][0-9]{2}-?(?!00)[0-9]{2}-?(?!0000)[0-9]{4}$/,
+        timeString: /^(2[0-3]|[01]?[0-9]):([0-5]?[0-9]):([0-5]?[0-9])$/,
+        ukPostCode: /^[A-Z]{1,2}[0-9RCHNQ][0-9A-Z]?\s?[0-9][ABD-HJLNP-UW-Z]{2}$|^[A-Z]{2}-?[0-9]{4}$/,
+        url: /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/i,
+        usZipCode: /^[0-9]{5}(?:-[0-9]{4})?$/
+    };
+
+    function regexpCheck(regexp, regexes) {
+        is[regexp] = function(value) {
+            return regexes[regexp].test(value);
+        };
+    }
+
+    // create regexp checks methods from 'regexes' object
+    for (var regexp in regexes) {
+        if (regexes.hasOwnProperty(regexp)) {
+            regexpCheck(regexp, regexes);
+        }
+    }
+
+    // simplify IP checks by calling the regex helpers for IPv4 and IPv6
+    is.ip = function(value) {
+        return is.ipv4(value) || is.ipv6(value);
+    };
+
+    // String checks
+    /* -------------------------------------------------------------------------- */
+
+    // is a given string or sentence capitalized?
+    is.capitalized = function(string) {
+        if (is.not.string(string)) {
+            return false;
+        }
+        var words = string.split(' ');
+        for (var i = 0; i < words.length; i++) {
+            var word = words[i];
+            if (word.length) {
+                var chr = word.charAt(0);
+                if (chr !== chr.toUpperCase()) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    };
+
+    // is string end with a given target parameter?
+    is.endWith = function(string, target) {
+        if (is.not.string(string)) {
+            return false;
+        }
+        target += '';
+        var position = string.length - target.length;
+        return position >= 0 && string.indexOf(target, position) === position;
+    };
+    // endWith method does not support 'all' and 'any' interfaces
+    is.endWith.api = ['not'];
+
+    // is a given string include parameter target?
+    is.include = function(string, target) {
+        return string.indexOf(target) > -1;
+    };
+    // include method does not support 'all' and 'any' interfaces
+    is.include.api = ['not'];
+
+    // is a given string all lowercase?
+    is.lowerCase = function(string) {
+        return is.string(string) && string === string.toLowerCase();
+    };
+
+    // is a given string palindrome?
+    is.palindrome = function(string) {
+        if (is.not.string(string)) {
+            return false;
+        }
+        string = string.replace(/[^a-zA-Z0-9]+/g, '').toLowerCase();
+        var length = string.length - 1;
+        for (var i = 0, half = Math.floor(length / 2); i <= half; i++) {
+            if (string.charAt(i) !== string.charAt(length - i)) {
+                return false;
+            }
+        }
+        return true;
+    };
+
+    // is a given value space?
+    // horizantal tab: 9, line feed: 10, vertical tab: 11, form feed: 12, carriage return: 13, space: 32
+    is.space = function(value) {
+        if (is.not.char(value)) {
+            return false;
+        }
+        var charCode = value.charCodeAt(0);
+        return (charCode > 8 && charCode < 14) || charCode === 32;
+    };
+
+    // is string start with a given target parameter?
+    is.startWith = function(string, target) {
+        return is.string(string) && string.indexOf(target) === 0;
+    };
+    // startWith method does not support 'all' and 'any' interfaces
+    is.startWith.api = ['not'];
+
+    // is a given string all uppercase?
+    is.upperCase = function(string) {
+        return is.string(string) && string === string.toUpperCase();
+    };
+
+    // Time checks
+    /* -------------------------------------------------------------------------- */
+
+    var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+    var months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+
+    // is a given dates day equal given day parameter?
+    is.day = function(date, day) {
+        return is.date(date) && day.toLowerCase() === days[date.getDay()];
+    };
+    // day method does not support 'all' and 'any' interfaces
+    is.day.api = ['not'];
+
+    // is a given date in daylight saving time?
+    is.dayLightSavingTime = function(date) {
+        var january = new Date(date.getFullYear(), 0, 1);
+        var july = new Date(date.getFullYear(), 6, 1);
+        var stdTimezoneOffset = Math.max(january.getTimezoneOffset(), july.getTimezoneOffset());
+        return date.getTimezoneOffset() < stdTimezoneOffset;
+    };
+
+    // is a given date future?
+    is.future = function(date) {
+        var now = new Date();
+        return is.date(date) && date.getTime() > now.getTime();
+    };
+
+    // is date within given range?
+    is.inDateRange = function(date, start, end) {
+        if (is.not.date(date) || is.not.date(start) || is.not.date(end)) {
+            return false;
+        }
+        var stamp = date.getTime();
+        return stamp > start.getTime() && stamp < end.getTime();
+    };
+    // inDateRange method does not support 'all' and 'any' interfaces
+    is.inDateRange.api = ['not'];
+
+    // is a given date in last month range?
+    is.inLastMonth = function(date) {
+        return is.inDateRange(date, new Date(new Date().setMonth(new Date().getMonth() - 1)), new Date());
+    };
+
+    // is a given date in last week range?
+    is.inLastWeek = function(date) {
+        return is.inDateRange(date, new Date(new Date().setDate(new Date().getDate() - 7)), new Date());
+    };
+
+    // is a given date in last year range?
+    is.inLastYear = function(date) {
+        return is.inDateRange(date, new Date(new Date().setFullYear(new Date().getFullYear() - 1)), new Date());
+    };
+
+    // is a given date in next month range?
+    is.inNextMonth = function(date) {
+        return is.inDateRange(date, new Date(), new Date(new Date().setMonth(new Date().getMonth() + 1)));
+    };
+
+    // is a given date in next week range?
+    is.inNextWeek = function(date) {
+        return is.inDateRange(date, new Date(), new Date(new Date().setDate(new Date().getDate() + 7)));
+    };
+
+    // is a given date in next year range?
+    is.inNextYear = function(date) {
+        return is.inDateRange(date, new Date(), new Date(new Date().setFullYear(new Date().getFullYear() + 1)));
+    };
+
+    // is the given year a leap year?
+    is.leapYear = function(year) {
+        return is.number(year) && ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0);
+    };
+
+    // is a given dates month equal given month parameter?
+    is.month = function(date, month) {
+        return is.date(date) && month.toLowerCase() === months[date.getMonth()];
+    };
+    // month method does not support 'all' and 'any' interfaces
+    is.month.api = ['not'];
+
+    // is a given date past?
+    is.past = function(date) {
+        var now = new Date();
+        return is.date(date) && date.getTime() < now.getTime();
+    };
+
+    // is a given date in the parameter quarter?
+    is.quarterOfYear = function(date, quarter) {
+        return is.date(date) && is.number(quarter) && quarter === Math.floor((date.getMonth() + 3) / 3);
+    };
+    // quarterOfYear method does not support 'all' and 'any' interfaces
+    is.quarterOfYear.api = ['not'];
+
+    // is a given date indicate today?
+    is.today = function(date) {
+        var now = new Date();
+        var todayString = now.toDateString();
+        return is.date(date) && date.toDateString() === todayString;
+    };
+
+    // is a given date indicate tomorrow?
+    is.tomorrow = function(date) {
+        var now = new Date();
+        var tomorrowString = new Date(now.setDate(now.getDate() + 1)).toDateString();
+        return is.date(date) && date.toDateString() === tomorrowString;
+    };
+
+    // is a given date weekend?
+    // 6: Saturday, 0: Sunday
+    is.weekend = function(date) {
+        return is.date(date) && (date.getDay() === 6 || date.getDay() === 0);
+    };
+
+    // is a given date weekday?
+    is.weekday = not(is.weekend);
+
+    // is a given dates year equal given year parameter?
+    is.year = function(date, year) {
+        return is.date(date) && is.number(year) && year === date.getFullYear();
+    };
+    // year method does not support 'all' and 'any' interfaces
+    is.year.api = ['not'];
+
+    // is a given date indicate yesterday?
+    is.yesterday = function(date) {
+        var now = new Date();
+        var yesterdayString = new Date(now.setDate(now.getDate() - 1)).toDateString();
+        return is.date(date) && date.toDateString() === yesterdayString;
+    };
+
+    // Environment checks
+    /* -------------------------------------------------------------------------- */
+
+    var freeGlobal = is.windowObject(typeof global == 'object' && global) && global;
+    var freeSelf = is.windowObject(typeof self == 'object' && self) && self;
+    var thisGlobal = is.windowObject(typeof this == 'object' && this) && this;
+    var root = freeGlobal || freeSelf || thisGlobal || Function('return this')();
+
+    var document = freeSelf && freeSelf.document;
+    var previousIs = root.is;
+
+    // store navigator properties to use later
+    var navigator = freeSelf && freeSelf.navigator;
+    var appVersion = (navigator && navigator.appVersion || '').toLowerCase();
+    var userAgent = (navigator && navigator.userAgent || '').toLowerCase();
+    var vendor = (navigator && navigator.vendor || '').toLowerCase();
+
+    // is current device android?
+    is.android = function() {
+        return /android/.test(userAgent);
+    };
+    // android method does not support 'all' and 'any' interfaces
+    is.android.api = ['not'];
+
+    // is current device android phone?
+    is.androidPhone = function() {
+        return /android/.test(userAgent) && /mobile/.test(userAgent);
+    };
+    // androidPhone method does not support 'all' and 'any' interfaces
+    is.androidPhone.api = ['not'];
+
+    // is current device android tablet?
+    is.androidTablet = function() {
+        return /android/.test(userAgent) && !/mobile/.test(userAgent);
+    };
+    // androidTablet method does not support 'all' and 'any' interfaces
+    is.androidTablet.api = ['not'];
+
+    // is current device blackberry?
+    is.blackberry = function() {
+        return /blackberry/.test(userAgent) || /bb10/.test(userAgent);
+    };
+    // blackberry method does not support 'all' and 'any' interfaces
+    is.blackberry.api = ['not'];
+
+    // is current browser chrome?
+    // parameter is optional
+    is.chrome = function(range) {
+        var match = /google inc/.test(vendor) ? userAgent.match(/(?:chrome|crios)\/(\d+)/) : null;
+        return match !== null && compareVersion(match[1], range);
+    };
+    // chrome method does not support 'all' and 'any' interfaces
+    is.chrome.api = ['not'];
+
+    // is current device desktop?
+    is.desktop = function() {
+        return is.not.mobile() && is.not.tablet();
+    };
+    // desktop method does not support 'all' and 'any' interfaces
+    is.desktop.api = ['not'];
+
+    // is current browser edge?
+    // parameter is optional
+    is.edge = function(range) {
+        var match = userAgent.match(/edge\/(\d+)/);
+        return match !== null && compareVersion(match[1], range);
+    };
+    // edge method does not support 'all' and 'any' interfaces
+    is.edge.api = ['not'];
+
+    // is current browser firefox?
+    // parameter is optional
+    is.firefox = function(range) {
+        var match = userAgent.match(/(?:firefox|fxios)\/(\d+)/);
+        return match !== null && compareVersion(match[1], range);
+    };
+    // firefox method does not support 'all' and 'any' interfaces
+    is.firefox.api = ['not'];
+
+    // is current browser internet explorer?
+    // parameter is optional
+    is.ie = function(range) {
+        var match = userAgent.match(/(?:msie |trident.+?; rv:)(\d+)/);
+        return match !== null && compareVersion(match[1], range);
+    };
+    // ie method does not support 'all' and 'any' interfaces
+    is.ie.api = ['not'];
+
+    // is current device ios?
+    is.ios = function() {
+        return is.iphone() || is.ipad() || is.ipod();
+    };
+    // ios method does not support 'all' and 'any' interfaces
+    is.ios.api = ['not'];
+
+    // is current device ipad?
+    // parameter is optional
+    is.ipad = function(range) {
+        var match = userAgent.match(/ipad.+?os (\d+)/);
+        return match !== null && compareVersion(match[1], range);
+    };
+    // ipad method does not support 'all' and 'any' interfaces
+    is.ipad.api = ['not'];
+
+    // is current device iphone?
+    // parameter is optional
+    is.iphone = function(range) {
+        // original iPhone doesn't have the os portion of the UA
+        var match = userAgent.match(/iphone(?:.+?os (\d+))?/);
+        return match !== null && compareVersion(match[1] || 1, range);
+    };
+    // iphone method does not support 'all' and 'any' interfaces
+    is.iphone.api = ['not'];
+
+    // is current device ipod?
+    // parameter is optional
+    is.ipod = function(range) {
+        var match = userAgent.match(/ipod.+?os (\d+)/);
+        return match !== null && compareVersion(match[1], range);
+    };
+    // ipod method does not support 'all' and 'any' interfaces
+    is.ipod.api = ['not'];
+
+    // is current operating system linux?
+    is.linux = function() {
+        return /linux/.test(appVersion);
+    };
+    // linux method does not support 'all' and 'any' interfaces
+    is.linux.api = ['not'];
+
+    // is current operating system mac?
+    is.mac = function() {
+        return /mac/.test(appVersion);
+    };
+    // mac method does not support 'all' and 'any' interfaces
+    is.mac.api = ['not'];
+
+    // is current device mobile?
+    is.mobile = function() {
+        return is.iphone() || is.ipod() || is.androidPhone() || is.blackberry() || is.windowsPhone();
+    };
+    // mobile method does not support 'all' and 'any' interfaces
+    is.mobile.api = ['not'];
+
+    // is current state offline?
+    is.offline = not(is.online);
+    // offline method does not support 'all' and 'any' interfaces
+    is.offline.api = ['not'];
+
+    // is current state online?
+    is.online = function() {
+        return !navigator || navigator.onLine === true;
+    };
+    // online method does not support 'all' and 'any' interfaces
+    is.online.api = ['not'];
+
+    // is current browser opera?
+    // parameter is optional
+    is.opera = function(range) {
+        var match = userAgent.match(/(?:^opera.+?version|opr)\/(\d+)/);
+        return match !== null && compareVersion(match[1], range);
+    };
+    // opera method does not support 'all' and 'any' interfaces
+    is.opera.api = ['not'];
+
+    // is current browser phantomjs?
+    // parameter is optional
+    is.phantom = function(range) {
+        var match = userAgent.match(/phantomjs\/(\d+)/);
+        return match !== null && compareVersion(match[1], range);
+    };
+    // phantom method does not support 'all' and 'any' interfaces
+    is.phantom.api = ['not'];
+
+    // is current browser safari?
+    // parameter is optional
+    is.safari = function(range) {
+        var match = userAgent.match(/version\/(\d+).+?safari/);
+        return match !== null && compareVersion(match[1], range);
+    };
+    // safari method does not support 'all' and 'any' interfaces
+    is.safari.api = ['not'];
+
+    // is current device tablet?
+    is.tablet = function() {
+        return is.ipad() || is.androidTablet() || is.windowsTablet();
+    };
+    // tablet method does not support 'all' and 'any' interfaces
+    is.tablet.api = ['not'];
+
+    // is current device supports touch?
+    is.touchDevice = function() {
+        return !!document && ('ontouchstart' in freeSelf ||
+            ('DocumentTouch' in freeSelf && document instanceof DocumentTouch));
+    };
+    // touchDevice method does not support 'all' and 'any' interfaces
+    is.touchDevice.api = ['not'];
+
+    // is current operating system windows?
+    is.windows = function() {
+        return /win/.test(appVersion);
+    };
+    // windows method does not support 'all' and 'any' interfaces
+    is.windows.api = ['not'];
+
+    // is current device windows phone?
+    is.windowsPhone = function() {
+        return is.windows() && /phone/.test(userAgent);
+    };
+    // windowsPhone method does not support 'all' and 'any' interfaces
+    is.windowsPhone.api = ['not'];
+
+    // is current device windows tablet?
+    is.windowsTablet = function() {
+        return is.windows() && is.not.windowsPhone() && /touch/.test(userAgent);
+    };
+    // windowsTablet method does not support 'all' and 'any' interfaces
+    is.windowsTablet.api = ['not'];
+
+    // Object checks
+    /* -------------------------------------------------------------------------- */
+
+    // has a given object got parameterized count property?
+    is.propertyCount = function(object, count) {
+        if (is.not.object(object) || is.not.number(count)) {
+            return false;
+        }
+        var n = 0;
+        for (var property in object) {
+            if (hasOwnProperty.call(object, property) && ++n > count) {
+                return false;
+            }
+        }
+        return n === count;
+    };
+    // propertyCount method does not support 'all' and 'any' interfaces
+    is.propertyCount.api = ['not'];
+
+    // is given object has parameterized property?
+    is.propertyDefined = function(object, property) {
+        return is.object(object) && is.string(property) && property in object;
+    };
+    // propertyDefined method does not support 'all' and 'any' interfaces
+    is.propertyDefined.api = ['not'];
+
+    // Array checks
+    /* -------------------------------------------------------------------------- */
+
+    // is a given item in an array?
+    is.inArray = function(value, array) {
+        if (is.not.array(array)) {
+            return false;
+        }
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] === value) {
+                return true;
+            }
+        }
+        return false;
+    };
+    // inArray method does not support 'all' and 'any' interfaces
+    is.inArray.api = ['not'];
+
+    // is a given array sorted?
+    is.sorted = function(array, sign) {
+        if (is.not.array(array)) {
+            return false;
+        }
+        var predicate = comparator[sign] || comparator['>='];
+        for (var i = 1; i < array.length; i++) {
+            if (!predicate(array[i], array[i - 1])) {
+                return false;
+            }
+        }
+        return true;
+    };
+
+    // API
+    // Set 'not', 'all' and 'any' interfaces to methods based on their api property
+    /* -------------------------------------------------------------------------- */
+
+    function setInterfaces() {
+        var options = is;
+        for (var option in options) {
+            if (hasOwnProperty.call(options, option) && is['function'](options[option])) {
+                var interfaces = options[option].api || ['not', 'all', 'any'];
+                for (var i = 0; i < interfaces.length; i++) {
+                    if (interfaces[i] === 'not') {
+                        is.not[option] = not(is[option]);
+                    }
+                    if (interfaces[i] === 'all') {
+                        is.all[option] = all(is[option]);
+                    }
+                    if (interfaces[i] === 'any') {
+                        is.any[option] = any(is[option]);
+                    }
+                }
+            }
+        }
+    }
+    setInterfaces();
+
+    // Configuration methods
+    // Intentionally added after setInterfaces function
+    /* -------------------------------------------------------------------------- */
+
+    // change namespace of library to prevent name collisions
+    // var preferredName = is.setNamespace();
+    // preferredName.odd(3);
+    // => true
+    is.setNamespace = function() {
+        root.is = previousIs;
+        return this;
+    };
+
+    // set optional regexes to methods
+    is.setRegexp = function(regexp, name) {
+        for (var r in regexes) {
+            if (hasOwnProperty.call(regexes, r) && (name === r)) {
+                regexes[r] = regexp;
+            }
+        }
+    };
+
+    return is;
+}));
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -51300,10 +52328,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      staticClass: "float-right col-5",
-      staticStyle: { "margin-right": "50px" }
-    },
+    { staticClass: "float-right", staticStyle: { position: "relative" } },
     [
       _c("input", {
         directives: [
@@ -51314,7 +52339,7 @@ var render = function() {
             expression: "search"
           }
         ],
-        staticClass: "form-control",
+        staticClass: "form-control search-input",
         attrs: {
           type: "search",
           id: "search-input",
@@ -51322,9 +52347,7 @@ var render = function() {
         },
         domProps: { value: _vm.search },
         on: {
-          focus: function($event) {
-            _vm.searching = true
-          },
+          focus: _vm.getPrevData,
           blur: _vm.getUnFocused,
           input: function($event) {
             if ($event.target.composing) {
@@ -51338,72 +52361,84 @@ var render = function() {
       _c(
         "div",
         {
-          staticClass: "search-box",
+          staticClass: "search-container",
           class: { none: !_vm.searching, block: _vm.searching },
           attrs: { id: "search-box" }
         },
         [
-          _vm.filtered_mobiles.length
-            ? _c("span", [_vm._v(_vm._s(_vm.t["Devices"]))])
-            : _vm._e(),
-          _vm._v(" "),
-          !_vm.filtered_mobiles.length
-            ? _c("p", { staticClass: "text-center" }, [
-                _vm._v(_vm._s(_vm.t["No Mobiles found"]))
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c(
-            "ul",
-            { staticClass: "list-unstyled list-group" },
-            _vm._l(_vm.filtered_mobiles.slice(0, 3), function(mobile) {
-              return _c(
-                "li",
-                { staticClass: "list-group-item mobile-search-class" },
+          _vm.search.length > 0
+            ? _c(
+                "div",
                 [
-                  _c(
-                    "a",
-                    {
-                      staticStyle: {
-                        width: "100%",
-                        height: "100%",
-                        display: "inline-block"
-                      },
-                      attrs: { role: "button", href: mobile.show_url }
-                    },
-                    [
-                      _c("img", {
-                        staticClass: "img-fluid img-rounded img-responsive",
-                        staticStyle: {
-                          width: "50px",
-                          height: "70px",
-                          margin: "10px",
-                          overflow: "scroll"
-                        },
-                        attrs: { src: mobile.image_path }
-                      }),
-                      _vm._v(" "),
-                      _c("p", [_vm._v(_vm._s(mobile.name))]),
-                      _vm._v(" "),
-                      _c("p", { staticStyle: { margin: "0" } }, [
-                        _vm._v(
-                          _vm._s(_vm.t["Release Date"]) +
-                            " : " +
-                            _vm._s(mobile.released_date)
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticStyle: { margin: "0" } }, [
-                        _vm._v(
-                          _vm._s(_vm.t["Price"]) + " : " + _vm._s(mobile.price)
-                        )
+                  _c("span", [_vm._v(_vm._s(_vm.t["Devices"]))]),
+                  _vm._v(" "),
+                  !_vm.filtered_mobiles.length
+                    ? _c("p", { staticClass: "text-center" }, [
+                        _vm._v(_vm._s(_vm.t["No Mobiles found"]))
                       ])
-                    ]
-                  )
-                ]
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm._l(_vm.filtered_mobiles, function(mobile) {
+                    return _c("div", { staticClass: "mobile-container" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "tile-container",
+                          attrs: { href: mobile.show_url }
+                        },
+                        [
+                          _c("img", {
+                            staticClass: "mobile-image",
+                            attrs: { src: mobile.image_path }
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "mobile-description" }, [
+                            _c("p", [_vm._v(_vm._s(mobile.name))]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v(_vm._s(mobile.price) + " $")])
+                          ])
+                        ]
+                      )
+                    ])
+                  })
+                ],
+                2
               )
-            })
-          )
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.search.length
+            ? _c(
+                "div",
+                [
+                  _c("span", [_vm._v(_vm._s(_vm.t["Latest Visited"]))]),
+                  _vm._v(" "),
+                  _vm._l(_vm.visited_mobiles, function(mobile) {
+                    return _c("div", { staticClass: "mobile-container" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "tile-container",
+                          attrs: { href: mobile.show_url }
+                        },
+                        [
+                          _c("img", {
+                            staticClass: "mobile-image",
+                            attrs: { src: mobile.image_path }
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "mobile-description" }, [
+                            _c("p", [_vm._v(_vm._s(mobile.name))]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v(_vm._s(mobile.price) + " $")])
+                          ])
+                        ]
+                      )
+                    ])
+                  })
+                ],
+                2
+              )
+            : _vm._e()
         ]
       )
     ]
@@ -51420,19 +52455,19 @@ if (false) {
 }
 
 /***/ }),
-/* 58 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(59)
+  __webpack_require__(61)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(61)
+var __vue_script__ = __webpack_require__(63)
 /* template */
-var __vue_template__ = __webpack_require__(62)
+var __vue_template__ = __webpack_require__(64)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -51471,17 +52506,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 59 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(60);
+var content = __webpack_require__(62);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(3)("92bed170", content, false, {});
+var update = __webpack_require__(4)("92bed170", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -51497,10 +52532,10 @@ if(false) {
 }
 
 /***/ }),
-/* 60 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(2)(false);
+exports = module.exports = __webpack_require__(3)(false);
 // imports
 
 
@@ -51511,7 +52546,7 @@ exports.push([module.i, "\na[data-v-56721caa] {\n    text-decoration: none;\n}\n
 
 
 /***/ }),
-/* 61 */
+/* 63 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51622,7 +52657,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 62 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -51769,19 +52804,19 @@ if (false) {
 }
 
 /***/ }),
-/* 63 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(64)
+  __webpack_require__(66)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(66)
+var __vue_script__ = __webpack_require__(68)
 /* template */
-var __vue_template__ = __webpack_require__(67)
+var __vue_template__ = __webpack_require__(69)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -51820,17 +52855,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 64 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(65);
+var content = __webpack_require__(67);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(3)("30b137a0", content, false, {});
+var update = __webpack_require__(4)("30b137a0", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -51846,10 +52881,10 @@ if(false) {
 }
 
 /***/ }),
-/* 65 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(2)(false);
+exports = module.exports = __webpack_require__(3)(false);
 // imports
 
 
@@ -51860,7 +52895,7 @@ exports.push([module.i, "\na[data-v-26bc2cea] {\n    text-decoration: none;\n}\n
 
 
 /***/ }),
-/* 66 */
+/* 68 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52101,7 +53136,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 67 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -52460,19 +53495,19 @@ if (false) {
 }
 
 /***/ }),
-/* 68 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(69)
+  __webpack_require__(71)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(71)
+var __vue_script__ = __webpack_require__(73)
 /* template */
-var __vue_template__ = __webpack_require__(72)
+var __vue_template__ = __webpack_require__(74)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52511,17 +53546,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 69 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(70);
+var content = __webpack_require__(72);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(3)("772a9751", content, false, {});
+var update = __webpack_require__(4)("772a9751", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -52537,10 +53572,10 @@ if(false) {
 }
 
 /***/ }),
-/* 70 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(2)(false);
+exports = module.exports = __webpack_require__(3)(false);
 // imports
 
 
@@ -52551,7 +53586,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 71 */
+/* 73 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52620,7 +53655,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 72 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -52696,19 +53731,19 @@ if (false) {
 }
 
 /***/ }),
-/* 73 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(74)
+  __webpack_require__(76)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(76)
+var __vue_script__ = __webpack_require__(78)
 /* template */
-var __vue_template__ = __webpack_require__(77)
+var __vue_template__ = __webpack_require__(79)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52747,17 +53782,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 74 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(75);
+var content = __webpack_require__(77);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(3)("36cca9dc", content, false, {});
+var update = __webpack_require__(4)("36cca9dc", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -52773,10 +53808,10 @@ if(false) {
 }
 
 /***/ }),
-/* 75 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(2)(false);
+exports = module.exports = __webpack_require__(3)(false);
 // imports
 
 
@@ -52787,7 +53822,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 76 */
+/* 78 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52918,7 +53953,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 77 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

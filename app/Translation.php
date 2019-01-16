@@ -14,6 +14,7 @@ class Translation extends Model
     {
         return [
             'Devices' => t('Devices'),
+            'Latest Visited' => t('Latest Visited'),
             'Release Date' => t('Release Date'),
             'Price' => t('Price'),
             'Search' => t('Search'),

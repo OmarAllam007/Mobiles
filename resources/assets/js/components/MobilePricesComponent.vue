@@ -71,14 +71,14 @@
         },
         watch: {
             search() {
-                this.getData();
+                this.getData()
             }
         },
         methods: {
             getData() {
                 this.loading = true;
-                axios.get('/on-demand/mobiles/get-by-price?price=' + this.search).then((response) => {
-                    for(let i in response.data){
+                 axios.get('/on-demand/mobiles/get-by-price?price=' + this.search).then((response) => {
+                    for (let i in response.data) {
                         response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc'])
                     }
                     this.data = response.data;
@@ -89,7 +89,7 @@
         created() {
             this.loading = true;
             axios.get('/on-demand/mobiles/get-by-price').then((response) => {
-                for(let i in response.data){
+                for (let i in response.data) {
                     response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc'])
                 }
                 this.data = response.data;
