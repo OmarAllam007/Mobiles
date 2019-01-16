@@ -11390,3 +11390,92 @@ h1 {
   border-radius: 50%;
 }
 
+.mobile-banner-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mobile-banner-container-title {
+  background-color: #1a998b;
+  color: #fff;
+  margin: 0;
+  padding: 5px;
+  /* border-left: 5px solid #2d3047; */
+  border-right: 5px solid #2d3047;
+  border-left: 5px solid #2d3047;
+  border-radius: 0 5px 0 5px;
+}
+
+.mobile-banner-container-item {
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-decoration: none;
+  background-color: white;
+}
+
+.mobile-banner-container-item:hover {
+  background-color: rgba(25, 133, 119, 0.2);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.mobile-banner-container-item:hover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-decoration: none;
+}
+
+.mobile-banner-container-item-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 10px;
+}
+
+.mobile-banner-container-item-name {
+  display: inline-block;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.mobile-banner-container-item-image {
+  width: 60px;
+  height: 80px;
+}
+
+.mobile-banner-container-item-badge {
+  display: inline-block;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
