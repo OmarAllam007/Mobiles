@@ -5,7 +5,8 @@
                 <div class="form-group">
                     <input type="number" v-model="search" class="form-control searchByPrice"
                            style="border:none;border-bottom: 1px solid #1b998b;background: transparent"
-                           :placeholder="t['Search with price']" autofocus v-on:keyup="startWrite" v-on:keydown="stopWrite">
+                           :placeholder="t['Search with price']" autofocus v-on:keyup="startWrite"
+                           v-on:keydown="stopWrite">
                 </div>
             </div>
             <div class="col-2"></div>
@@ -69,7 +70,7 @@
                 loading: false,
                 typingTimer: null,
                 doneTypingInterval: 1500
-        }
+            }
         },
         watch: {
             // search() {
@@ -79,11 +80,11 @@
             // }
         },
         methods: {
-            startWrite(){
+            startWrite() {
                 clearTimeout(this.typingTimer);
                 this.typingTimer = setTimeout(this.getData, this.doneTypingInterval);
             },
-            stopWrite(){
+            stopWrite() {
                 clearTimeout(this.typingTimer);
             },
             getData() {

@@ -51314,12 +51314,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             this.searching = true;
-            if (__WEBPACK_IMPORTED_MODULE_0__Session_js__["a" /* default */].get('mobarrow_visited')) {
+            if (window.localStorage.getItem('mobarrow_visited')) {
                 this.loading = true;
 
                 axios.get('/on-demand/mobiles/get-last-visited', {
                     params: {
-                        'visited': __WEBPACK_IMPORTED_MODULE_0__Session_js__["a" /* default */].get('mobarrow_visited').reverse()
+                        'visited': JSON.parse(localStorage.getItem('mobarrow_visited')).reverse()
                     }
                 }).then(function (response) {
                     _this.visited_mobiles = response.data;
@@ -51374,7 +51374,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_is_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_is_js__);
 
 
-/* harmony default export */ __webpack_exports__["a"] = ({
+/* unused harmony default export */ var _unused_webpack_default_export = ({
     storage: window.sessionStorage,
 
     flash: function flash(message, type) {
@@ -52572,6 +52572,7 @@ exports.push([module.i, "\na[data-v-56721caa] {\n    text-decoration: none;\n}\n
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //

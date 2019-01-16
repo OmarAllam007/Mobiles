@@ -80,12 +80,12 @@
         methods: {
             getPrevData(){
                 this.searching=true
-                if (Session.get('mobarrow_visited')) {
+                if (window.localStorage.getItem('mobarrow_visited')) {
                     this.loading = true;
 
                     axios.get('/on-demand/mobiles/get-last-visited', {
                         params: {
-                            'visited': Session.get('mobarrow_visited').reverse()
+                            'visited': JSON.parse(localStorage.getItem('mobarrow_visited')).reverse()
                         }
                     }).then((response) => {
                         this.visited_mobiles = response.data;

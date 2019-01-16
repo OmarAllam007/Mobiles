@@ -211,8 +211,8 @@
         let id = $('#mobile_name').val()
 
         let visited_mobiles = [];
-        if (window.sessionStorage.getItem('mobarrow_visited')) {
-            visited_mobiles = window.sessionStorage.getItem('mobarrow_visited');
+        if (window.localStorage.getItem('mobarrow_visited')) {
+            visited_mobiles = localStorage.getItem('mobarrow_visited');
         }
         if (visited_mobiles.length > 0) {
             visited_mobiles = JSON.parse(visited_mobiles);
@@ -237,7 +237,7 @@
         }
 
 
-        window.sessionStorage.setItem('mobarrow_visited', JSON.stringify(visited_mobiles))
+        localStorage.setItem('mobarrow_visited', JSON.stringify(visited_mobiles))
 
 
     </script>
