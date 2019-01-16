@@ -37,7 +37,7 @@
         $is_favourite = 0;
         if(\Auth::check()) { if($mobile->users()->where('user_id', \Auth::id())->count()){$is_favourite = 1;} };
     @endphp
-    <h1 class="text-center h1-title" style="color: white">{{$mobile->name}}</h1>
+    <h1 class="text-center h2-title" style="color: white">{{$mobile->name}}</h1>
     <div class="row">
         <div class="col-md-12 col-sm-12" style="margin: 10px 0">
             <Adsense
@@ -52,7 +52,7 @@
         </div>
     </div>
     <input id="mobile_name" type="hidden" value="{{$mobile->id}}">
-    <h2 class="h2-title">{{$mobile->name}} -{{t('Specifications')}}</h2>
+{{--    <h2 class="h2-title">{{$mobile->name}} -{{t('Specifications')}}</h2>--}}
 
     <div id="show">
         <div class="row">

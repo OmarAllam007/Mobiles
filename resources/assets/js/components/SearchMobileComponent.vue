@@ -23,7 +23,7 @@
                 <span>{{t['Latest Visited']}}</span>
                 <div class="mobile-container" v-for="mobile in visited_mobiles">
                     <a  class="tile-container" :href="mobile.show_url">
-                        <img :src="'/storage/'+mobile.image_path" class="mobile-image">
+                        <img :src="mobile.image" class="mobile-image">
                         <div class="mobile-description">
                             <p>{{mobile.name}}</p>
                             <p>{{mobile.price}} $</p>
@@ -63,6 +63,7 @@
                 search: '',
                 mobiles: [],
                 visited_mobiles: [],
+                loading:false,
             }
         },
         ready() {

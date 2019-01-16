@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Mobile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Types\Float_;
 
@@ -141,11 +142,24 @@ class MobileController extends Controller
     function visited(Request $request)
 
     {
+
         $tempStr = implode(',', $request->visited);
 
-        return DB::table('mobiles')
-        ->whereIn('id', $request->visited)
-        ->orderByRaw(DB::raw("FIELD(id, $tempStr)"))
-        ->get();
+
+        /** @var Collection $mobs */
+        $mobs = Mobile::whereIn('id', $request->visited)->get()->each(function ($mobile) {
+            $mobile['show_url'] = $mobile->show_url;
+            $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
+        });
+
+
+        $mobiles = DB::table('mobiles')
+            ->whereIn('id', $request->visited)
+            ->orderByRaw(DB::raw("FIELD(id, $tempStr)"))
+            ->get()->each(function ($mobile) use ($mobs) {
+                $mobile->show_url = $mobs->where('id',$mobile->id)->first()->show_url;
+                $mobile->image = $mobs->where('id',$mobile->id)->first()->image;
+            });
+        return $mobiles;
     }
 }

@@ -51294,7 +51294,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             searching: false,
             search: '',
             mobiles: [],
-            visited_mobiles: []
+            visited_mobiles: [],
+            loading: false
         };
     },
     ready: function ready() {},
@@ -52423,7 +52424,7 @@ var render = function() {
                         [
                           _c("img", {
                             staticClass: "mobile-image",
-                            attrs: { src: "/storage/" + mobile.image_path }
+                            attrs: { src: mobile.image }
                           }),
                           _vm._v(" "),
                           _c("div", { staticClass: "mobile-description" }, [
