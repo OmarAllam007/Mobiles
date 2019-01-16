@@ -51283,6 +51283,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -51310,26 +51314,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             this.searching = true;
-
             if (__WEBPACK_IMPORTED_MODULE_0__Session_js__["a" /* default */].get('mobarrow_visited')) {
+                this.loading = true;
+
                 axios.get('/on-demand/mobiles/get-last-visited', {
                     params: {
                         'visited': __WEBPACK_IMPORTED_MODULE_0__Session_js__["a" /* default */].get('mobarrow_visited').reverse()
                     }
                 }).then(function (response) {
                     _this.visited_mobiles = response.data;
+                    _this.loading = false;
                 });
             }
-
+            this.loading = true;
             axios.get('/on-demand/mobiles/search').then(function (response) {
                 _this.mobiles = response.data;
+                _this.loading = false;
             });
         },
         getSearchData: function getSearchData() {
             var _this2 = this;
 
+            this.loading = true;
+
             axios.get('/on-demand/mobiles/search?search=' + this.search).then(function (response) {
                 _this2.mobiles = response.data;
+                _this2.loading = false;
             });
         },
         getUnFocused: function getUnFocused() {
@@ -52367,11 +52377,19 @@ var render = function() {
           attrs: { id: "search-box" }
         },
         [
-          _vm.search.length > 0
+          _vm.loading
+            ? _c("div", { staticClass: "loading text-center" }, [
+                _c("i", { staticClass: "fa fa-spinner fa-1x fa-spin" })
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.search.length > 0 && !_vm.loading
             ? _c(
                 "div",
                 [
-                  _c("span", [_vm._v(_vm._s(_vm.t["Devices"]))]),
+                  _vm.filtered_mobiles.length
+                    ? _c("span", [_vm._v(_vm._s(_vm.t["Devices"]))])
+                    : _vm._e(),
                   _vm._v(" "),
                   !_vm.filtered_mobiles.length
                     ? _c("p", { staticClass: "text-center" }, [
@@ -52407,11 +52425,13 @@ var render = function() {
               )
             : _vm._e(),
           _vm._v(" "),
-          !_vm.search.length
+          !_vm.search.length && !_vm.loading
             ? _c(
                 "div",
                 [
-                  _c("span", [_vm._v(_vm._s(_vm.t["Latest Visited"]))]),
+                  _vm.visited_mobiles.length
+                    ? _c("span", [_vm._v(_vm._s(_vm.t["Latest Visited"]))])
+                    : _vm._e(),
                   _vm._v(" "),
                   _vm._l(_vm.visited_mobiles, function(mobile) {
                     return _c("div", { staticClass: "mobile-container" }, [

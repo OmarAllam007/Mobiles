@@ -5,8 +5,12 @@
                @blur="getUnFocused"
                :placeholder="t['Search']">
         <div class="search-container" id="search-box" :class="{'none':!searching,'block':searching}">
-            <div v-if="search.length > 0">
-                <span >{{t['Devices']}}</span>
+            <div class="loading text-center" v-if="loading">
+                <i class="fa fa-spinner fa-1x fa-spin"></i>
+            </div>
+
+            <div v-if="search.length > 0 && !loading">
+                <span v-if="filtered_mobiles.length">{{t['Devices']}}</span>
                 <p class="text-center" v-if="!filtered_mobiles.length">{{t['No Mobiles found']}}</p>
                 <div class="mobile-container" v-for="mobile in filtered_mobiles ">
                     <a class="tile-container" :href="mobile.show_url">
@@ -19,8 +23,8 @@
                 </div>
             </div>
 
-            <div v-if="!search.length">
-                <span>{{t['Latest Visited']}}</span>
+            <div v-if="!search.length && !loading">
+                <span v-if="visited_mobiles.length">{{t['Latest Visited']}}</span>
                 <div class="mobile-container" v-for="mobile in visited_mobiles">
                     <a  class="tile-container" :href="mobile.show_url">
                         <img :src="mobile.image" class="mobile-image">
@@ -76,24 +80,30 @@
         methods: {
             getPrevData(){
                 this.searching=true
-
                 if (Session.get('mobarrow_visited')) {
+                    this.loading = true;
+
                     axios.get('/on-demand/mobiles/get-last-visited', {
                         params: {
                             'visited': Session.get('mobarrow_visited').reverse()
                         }
                     }).then((response) => {
                         this.visited_mobiles = response.data;
+                        this.loading = false;
                     })
                 }
-
+                this.loading = true;
                 axios.get('/on-demand/mobiles/search').then((response) => {
                     this.mobiles = response.data;
+                    this.loading = false;
                 })
             },
             getSearchData() {
+                this.loading = true;
+
                 axios.get('/on-demand/mobiles/search?search=' + this.search).then((response) => {
                     this.mobiles = response.data;
+                    this.loading = false;
                 })
             },
             getUnFocused() {
