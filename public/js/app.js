@@ -52654,29 +52654,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             this.loading = true;
-            setTimeout(function () {}, 1000);
+            setTimeout(function () {
 
-            axios.get('/on-demand/mobiles/get-by-price?price=' + this.search).then(function (response) {
-                for (var i in response.data) {
-                    response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc']);
-                }
-                _this.data = response.data;
-                _this.loading = false;
-            });
+                axios.get('/on-demand/mobiles/get-by-price?price=' + _this.search).then(function (response) {
+                    for (var i in response.data) {
+                        response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc']);
+                    }
+                    _this.data = response.data;
+                    _this.loading = false;
+                });
+            }, 1500);
         }
     },
     created: function created() {
         var _this2 = this;
 
         this.loading = true;
-        setTimeout(function () {}, 1000);
-        axios.get('/on-demand/mobiles/get-by-price').then(function (response) {
-            for (var i in response.data) {
-                response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc']);
-            }
-            _this2.data = response.data;
-            _this2.loading = false;
-        });
+        setTimeout(function () {
+            axios.get('/on-demand/mobiles/get-by-price').then(function (response) {
+                for (var i in response.data) {
+                    response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc']);
+                }
+                _this2.data = response.data;
+                _this2.loading = false;
+            });
+        }, 300);
     }
 });
 
