@@ -52654,6 +52654,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             this.loading = true;
+            setTimeout(function () {}, 1000);
+
             axios.get('/on-demand/mobiles/get-by-price?price=' + this.search).then(function (response) {
                 for (var i in response.data) {
                     response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc']);
@@ -52667,6 +52669,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var _this2 = this;
 
         this.loading = true;
+        setTimeout(function () {}, 1000);
         axios.get('/on-demand/mobiles/get-by-price').then(function (response) {
             for (var i in response.data) {
                 response.data[i] = _.orderBy(response.data[i], 'main_price_description', ['asc']);
