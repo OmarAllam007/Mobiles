@@ -12,7 +12,7 @@
     <title>{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... </title>
 
 
-    <link rel="stylesheet" href="{{asset('css/app.css?asdadsad')}}">
+    <link rel="stylesheet" href="{{asset('css/app.css?123')}}">
     <link rel="stylesheet" href="{{asset('css/fontawesome-all.css')}}">
     {{--<link rel="stylesheet" href="{{asset('css/select2.css')}}">--}}
     @yield('styles')
