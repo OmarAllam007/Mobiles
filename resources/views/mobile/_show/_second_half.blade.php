@@ -110,7 +110,6 @@
                 </tr>
             @endif
 
-            @if($mobile->battery_is_removable)
                 <tr>
                     <td style="width: 180px">{{t('Removable')}}</td>
                     <td>
@@ -120,7 +119,7 @@
                             <i class="fa fa-times text-danger"></i>
                         @endif
                     </td>
-                </tr>
+
             @endif
             </tbody>
         </table>
@@ -141,7 +140,6 @@
             </tr>
             </thead>
             <tbody>
-            @if($mobile->media_radio_exist)
                 <tr>
                     <td style="width: 180px">{{t('Radio')}}</td>
                     <td>
@@ -152,7 +150,6 @@
                         @endif
                     </td>
                 </tr>
-            @endif
 
             @if($mobile->media_speaker)
                 <tr>
@@ -163,7 +160,6 @@
                 </tr>
             @endif
 
-            @if($mobile->media_is_35_mm_slot)
                 <tr>
                     <td style="width: 180px">{{t('3.5mm Slot')}}</td>
                     <td>
@@ -174,7 +170,6 @@
                         @endif
                     </td>
                 </tr>
-            @endif
             </tbody>
         </table>
 
@@ -230,7 +225,6 @@
                 </tr>
             @endif
 
-            @if($mobile->communication_hotspot)
                 <tr>
                     <td style="width: 180px">{{t('Hotspot')}}</td>
                     <td>
@@ -241,9 +235,8 @@
                         @endif
                     </td>
                 </tr>
-            @endif
 
-            @if($mobile->communication_nfc)
+
                 <tr>
                     <td style="width: 180px">{{t('NFC')}}</td>
                     <td>
@@ -254,9 +247,7 @@
                         @endif
                     </td>
                 </tr>
-            @endif
 
-            @if($mobile->communication_otg)
                 <tr>
                     <td style="width: 180px">{{t('OTG')}}</td>
                     <td>
@@ -267,9 +258,7 @@
                         @endif
                     </td>
                 </tr>
-            @endif
 
-            @if($mobile->communication_ir)
                 <tr>
                     <td style="width: 180px">{{t('IR')}}</td>
                     <td>
@@ -280,7 +269,6 @@
                         @endif
                     </td>
                 </tr>
-            @endif
             </tbody>
         </table>
 
@@ -329,7 +317,6 @@
                 </tr>
             @endif
 
-            @if($mobile->vr)
                 <tr>
                     <td style="width: 180px">{{t('VR')}}</td>
                     <td>
@@ -340,9 +327,7 @@
                         @endif
                     </td>
                 </tr>
-            @endif
 
-            @if($mobile->others_notification_led_support)
                 <tr>
                     <td style="width: 180px">{{t('Notifications LED')}}</td>
                     <td>
@@ -353,9 +338,7 @@
                         @endif
                     </td>
                 </tr>
-            @endif
 
-            @if($mobile->others_additional_microphone_exist)
                 <tr>
                     <td style="width: 180px">{{t('Additional Microphone')}}</td>
                     <td>
@@ -366,7 +349,6 @@
                         @endif
                     </td>
                 </tr>
-            @endif
 
             </tbody>
         </table>
