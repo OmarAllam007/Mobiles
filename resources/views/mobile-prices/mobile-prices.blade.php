@@ -1,25 +1,33 @@
 @extends('layout.app')
 @section('left')
     <div class="col-md-12 col-sm-12">
-        <section class="section-side">
-            <h5>
-                {{t('Top 10 By Fans')}}
-            </h5>
-            <ul class="list-group">
-                @foreach(\App\Mobile::topfans()->get() as $newMob)
-                    <li class="list-group-item d-flex justify-content-between sweep-to-right align-items-center">
-                        <img src="{{$newMob->image_path ? asset('storage' . $newMob->image_path) : asset('storage/no-phone.png')}}" style="width: 50px;height: 50px">
+        <div class="mobile-banner-container">
+            <div class="mobile-banner-container-title">
+                <h5>
+                    {{t('Top 10 By Fans')}}
+                </h5>
+            </div>
 
-                        <a href="{{route('mobiles.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
-                            {{$newMob->name}}
-                        </a>
-                        <span class="badge  badge-pill">{{$newMob->number_of_fans ?? 0}} </span>
-                    </li>
-                @endforeach
+            @foreach(\App\Mobile::topfans()->get() as $newMob)
+                <div>
+                    <a title="{{$newMob->name}}" class="mobile-banner-container-item"
+                       href="{{route('mobiles.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
+                        <div class="image-container">
+                            <img class="mobile-banner-container-item-image"
+                                 src="{{$newMob->image_path ? asset('storage' . $newMob->image_path) : asset('storage/no-phone.png')}}">
+                        </div>
+                        <div class="mobile-banner-container-item-text">
+                            <p class="mobile-banner-container-item-name">
+                                {{$newMob->name}}
+                            </p>
 
-            </ul>
-        </section>
+                            <p class="badge badge-pill mobile-banner-container-item-badge">{{$newMob->number_of_fans ?? 0}} </p>
+                        </div>
 
+                    </a>
+                </div>
+            @endforeach
+        </div>
         <br>
 
         <Adsense
@@ -41,25 +49,34 @@
 @endsection
 
 @section('right')
-    <section class="section-side">
-        <h5>
-            {{t('Top 10 By Price')}}
-        </h5>
-        <ul class="list-group">
-            @foreach(\App\Mobile::byprice()->get() as $like)
-                <li class="list-group-item d-flex justify-content-between sweep-to-right align-items-center">
-                    <img src="{{$like->image_path ? asset('storage' . $like->image_path) : asset('storage/no-phone.png')}}" style="width: 50px;height: 50px">
-                    <a href="{{route('mobiles.display',[$like, strtolower($like->brand->name), str_slug($like->name)])}}">
-                        {{$like->name}}
-                    </a>
-                    <span class="badge  badge-pill">
-                {{$like->main_price_description ?? 0}} $
-                </span>
-                </li>
-            @endforeach
 
-        </ul>
-    </section>
+    <div class="mobile-banner-container">
+        <div class="mobile-banner-container-title">
+            <h5>{{t('Top 10 By Price')}}</h5>
+        </div>
+
+        @foreach(\App\Mobile::byprice()->get() as $newMob)
+            <div>
+                <a title="{{$newMob->name}}" class="mobile-banner-container-item"
+                   href="{{route('mobiles.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
+                    <div class="image-container">
+                        <img class="mobile-banner-container-item-image"
+                             src="{{$newMob->image_path ? asset('storage' . $newMob->image_path) : asset('storage/no-phone.png')}}">
+                    </div>
+                    <div class="mobile-banner-container-item-text">
+                        <p class="mobile-banner-container-item-name">
+                            {{$newMob->name}}
+                        </p>
+
+                        <p class="badge badge-pill mobile-banner-container-item-badge"> {{$newMob->main_price_description ?? 0}} $
+                        </p>
+                    </div>
+
+                </a>
+            </div>
+        @endforeach
+    </div>
+
     <br>
     <Adsense
             data-ad-client="ca-pub-1864972736029501"

@@ -5,7 +5,7 @@
     <div class="col-md-12 col-sm-12">
         <div class="mobile-banner-container">
             <div class="mobile-banner-container-title">
-                {{t('Top 10 By Hits')}}
+                <h5> {{t('Top 10 By Hits')}}</h5>
             </div>
 
             @foreach(\App\Mobile::tophits()->get() as $newMob)
@@ -28,30 +28,6 @@
                 </div>
             @endforeach
         </div>
-        {{--<div class="section-side">--}}
-        {{--<h5 class="text-center">--}}
-        {{--{{t('Top 10 By Hits')}}--}}
-        {{--</h5>--}}
-        {{--<ul class="list-group">--}}
-        {{--@foreach(\App\Mobile::tophits()->get() as $newMob)--}}
-        {{--<li class="list-group-item d-flex justify-content-between sweep-to-right align-items-center">--}}
-
-
-        {{--<a title="Mobile Display Page"--}}
-        {{--href="{{route('mobiles.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">--}}
-        {{--<img src="{{$newMob->image_path ? asset('storage' . $newMob->image_path) : asset('storage/no-phone.png')}}"--}}
-        {{--style="width: 50px;min-width: 60px">--}}
-        {{--<span>--}}
-        {{--{{$newMob->name}}--}}
-        {{--</span>--}}
-
-        {{--</a>--}}
-        {{--<span class="badge  badge-pill">{{$newMob->number_of_hits ?? 0}} </span>--}}
-        {{--</li>--}}
-        {{--@endforeach--}}
-
-        {{--</ul>--}}
-        {{--</div>--}}
     </div>
     <br>
     <Adsense
@@ -69,7 +45,9 @@
         <div class="col-md-12 col-sm-12">
             <div class="mobile-banner-container">
                 <div class="mobile-banner-container-title">
-                    {{t('Top 10 Latest Mobiles')}}
+                    <h5>
+                        {{t('Top 10 Latest Mobiles')}}
+                    </h5>
                 </div>
 
                 @foreach(\App\Mobile::latestmobiles()->get() as $newMob)
@@ -123,27 +101,6 @@
             </div>
         </div>
     </div>
-
-
-    {{--<div class="row">--}}
-    {{--<div class="col-md-12">--}}
-    {{--<div class="section-side container-brands" style="background-color: white;border-radius: 5px;">--}}
-    {{--<h5 class="text-center">--}}
-    {{--{{t('LATEST DEVICES')}}--}}
-    {{--</h5>--}}
-    {{--<div class="d-flex flex-wrap  flex-row bd-highlight mb-3" style="margin-top: 20px">--}}
-    {{--@foreach(\App\Mobile::latestmobiles()->get() as $newMob)--}}
-    {{--<a class="brand-url" title="Mobile Display Page"--}}
-    {{--href="{{route('mobiles.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">--}}
-    {{--<img style="width: 100px;height: 100px" src="{{asset('storage'.$newMob->image_path)}}">--}}
-
-    {{--<p>{{$newMob->name}}</p>--}}
-    {{--</a>--}}
-    {{--@endforeach--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
 @endsection
 
 
@@ -155,7 +112,7 @@
             </div>
 
             @foreach(\App\Mobile::topfans()->get() as $newMob)
-            <div>
+                <div>
                     <a title="{{$newMob->name}}" class="mobile-banner-container-item"
                        href="{{route('mobiles.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
                         <div class="image-container">

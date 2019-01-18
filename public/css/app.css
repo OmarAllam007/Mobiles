@@ -11460,6 +11460,7 @@ h1 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-left: 10px;
+  color: #a94442 !important;
 }
 
 .mobile-banner-container-item-name {

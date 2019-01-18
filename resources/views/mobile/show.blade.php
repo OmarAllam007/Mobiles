@@ -2,22 +2,32 @@
 
 @section('left')
     <div class="col-md-12 col-sm-12 flex-fill">
-        <section class="section-side">
-            <h5>
-                {{t('Top 10 By Fans')}}
-            </h5>
-            <ul class="list-group">
-                @foreach(\App\Mobile::topfans()->get() as $newMob)
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <a href="{{route('mobiles.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
-                            {{$newMob->name}}
-                        </a>
-                        <span class="badge  badge-pill">{{$newMob->number_of_fans ?? 0}} </span>
-                    </li>
-                @endforeach
+        <div class="mobile-banner-container">
+            <div class="mobile-banner-container-title">
+                <h5> {{t('Top 10 By Fans In '.$mobile->brand->name)}}</h5>
+            </div>
+            @foreach(\App\Mobile::where('brand_id',$mobile->brand->id)->topfans()->get() as $newMob)
+                <div>
+                    <a title="{{$newMob->name}}" class="mobile-banner-container-item"
+                       href="{{route('mobiles.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
+                        <div class="image-container">
+                            <img class="mobile-banner-container-item-image"
+                                 src="{{$newMob->image_path ? asset('storage' . $newMob->image_path) : asset('storage/no-phone.png')}}">
+                        </div>
+                        <div class="mobile-banner-container-item-text">
+                            <p class="mobile-banner-container-item-name">
+                                {{$newMob->name}}
+                            </p>
 
-            </ul>
-        </section>
+                            <p class="badge badge-pill mobile-banner-container-item-badge"> {{$newMob->number_of_fans ?? 0}}
+                            </p>
+                        </div>
+
+                    </a>
+                </div>
+            @endforeach
+        </div>
+
 
         <br>
 
@@ -167,24 +177,32 @@
 @endsection
 
 @section('right')
-    <section class="section-side">
-        <h5>
-            {{t('Top 10 By Interest')}}
-        </h5>
-        <ul class="list-group">
-            @foreach(\App\Mobile::tophits()->get() as $like)
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <a href="{{route('mobiles.display',[$like, strtolower($like->brand->name), str_slug($like->name)])}}">
-                        {{$like->name}}
-                    </a>
-                    <span class="badge  badge-pill">
-                {{$like->number_of_hits ?? 0}}
-                </span>
-                </li>
-            @endforeach
 
-        </ul>
-    </section>
+    <div class="mobile-banner-container">
+        <div class="mobile-banner-container-title">
+            <h5> {{t('Top 10 By Price In '.$mobile->brand->name)}}</h5>
+        </div>
+        @foreach(\App\Mobile::where('brand_id',$mobile->brand->id)->byprice()->get() as $newMob)
+            <div>
+                <a title="{{$newMob->name}}" class="mobile-banner-container-item"
+                   href="{{route('mobiles.display',[$newMob, strtolower($newMob->brand->name), str_slug($newMob->name)])}}">
+                    <div class="image-container">
+                        <img class="mobile-banner-container-item-image"
+                             src="{{$newMob->image_path ? asset('storage' . $newMob->image_path) : asset('storage/no-phone.png')}}">
+                    </div>
+                    <div class="mobile-banner-container-item-text">
+                        <p class="mobile-banner-container-item-name">
+                            {{$newMob->name}}
+                        </p>
+
+                        <p class="badge badge-pill mobile-banner-container-item-badge"> {{$newMob->main_price_description ?? 0}}
+                        </p>
+                    </div>
+
+                </a>
+            </div>
+        @endforeach
+    </div>
     <br>
     <Adsense
             data-ad-client="ca-pub-1864972736029501"
