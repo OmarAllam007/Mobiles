@@ -30,7 +30,7 @@ class MobileController extends Controller
                             ->where('main_price_description', '<=', $price + 200)
                             ->where('main_price_description', '>=', $price)
                             ->sortByDesc('main_price_description')
-                            ->take(5);
+                            ->take(8);
                     })->sortKeys()->toArray();
 
             }
@@ -42,7 +42,7 @@ class MobileController extends Controller
                 ->where('released_date', '>', '2010-01-01')
                 ->groupBy('brand.name')
                 ->map(function ($items) {
-                    return $items['mobiles'] = $items->sortByDesc('main_price_description')->take(5);
+                    return $items['mobiles'] = $items->sortByDesc('main_price_description')->take(8);
                 })->sortKeys()->toArray();
 
         }
@@ -54,14 +54,14 @@ class MobileController extends Controller
     function compareMobiles(Request $request)
     {
         if ($request->has('name') && $request->name != "") {
-            return Mobile::where('name', 'like', '%' . $request->name . '%')
+            return Mobile::orderBy(\DB::raw('CAST(main_price_description AS SIGNED)'), 'DESC')->where('name', 'like', '%' . $request->name . '%')
 //                ->where('main_price_description', '<>', 0)
                 ->get()->take(100)
                 ->each(function ($mobile) {
                     $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
                 });
         } else {
-            return Mobile::where('main_price_description', '<>', 0)
+            return Mobile::orderBy(\DB::raw('CAST(main_price_description AS SIGNED)'), 'DESC')->where('main_price_description', '<>', 0)
                 ->get()->take(100)->each(function ($mobile) {
                     $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
                 });
