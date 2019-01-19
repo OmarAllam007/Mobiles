@@ -246,6 +246,7 @@
         flex-wrap: wrap;
         justify-content: normal;
         /*padding-top: 10px;*/
+        justify-content: center;
     }
 
     .tile {
