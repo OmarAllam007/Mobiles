@@ -26,15 +26,14 @@ class MobileCrawler
 
         $data = [];
 
-//        dd($crawler->filter('h1[data-spec="modelname"]')->text());
         $name = $crawler->filter('h1[data-spec="modelname"]')->text();
-
         $mob = Mobile::where('name', $name)->first();
+
         if (!$mob) {
             $data = [
-                'name' => $crawler->filter('h1.specs-phone-name-title')->text(),
+                'name' => $crawler->filter('h1[data-spec="modelname"]')->text(),
                 'brand_id' => $brand_id,
-                'release_date' => $this->getReleaseDate($crawler->filter('td[data-spec="status"]')->text()),
+                'release_date' => $crawler->filter('td[data-spec="status"]')->count() ? $this->getReleaseDate($crawler->filter('td[data-spec="status"]')->text()) : '',
                 'operating_system' => $crawler->filter('td[data-spec="os"]')->count() ? $crawler->filter('td[data-spec="os"]')->text() : '',
                 'device_dimension' => $crawler->filter('td[data-spec="dimensions"]')->count() ? $this->getDimensions($crawler->filter('td[data-spec="dimensions"]')->text()) : '',
                 'device_weight' => $crawler->filter('td[data-spec="weight"]')->count() ? $this->getWeight($crawler->filter('td[data-spec="weight"]')->text()) : '',
@@ -44,6 +43,7 @@ class MobileCrawler
                 'processor' => $crawler->filter('td[data-spec="cpu"]')->count() ? $crawler->filter('td[data-spec="cpu"]')->text() : '',
                 'chipset' => $crawler->filter('td[data-spec="chipset"]')->count() ? $crawler->filter('td[data-spec="chipset"]')->text() : '',
                 'graphical_processor' => $crawler->filter('td[data-spec="gpu"]')->count() ? $crawler->filter('td[data-spec="gpu"]')->text() : '',
+
 //            'internal_storage'=> $this->getInternalMemory($crawler->filter('td[data-spec="internalmemory"]')->text()),
 //            'ram' => $crawler->filter('td[data-spec="internalmemory"]')->text(),
                 'external_storage' => $crawler->filter('td[data-spec="memoryslot"]')->count() ? $this->getExternalStorage($crawler->filter('td[data-spec="memoryslot"]')->text()) : '',
@@ -65,7 +65,7 @@ class MobileCrawler
                 'camera_other_features' => $crawler->filter('td[data-spec="cam1features"]')->count() ? $this->getCameraFlashAndOtherFeatures($crawler->filter('td[data-spec="cam1features"]')->text())['camera_other_features'] : '',
                 'camera_video' => $crawler->filter('td[data-spec="cam1features"]')->count() ? $crawler->filter('td[data-spec="cam1video"]')->text() : '',
                 'camera_front_camera' => $crawler->filter('td[data-spec="cam2modules"]')->count() ? $crawler->filter('td[data-spec="cam2modules"]')->text() : '',
-                'camera_front_camera_features' => $crawler->filter('td[data-spec="cam2video"]')->count() ? $crawler->filter('td[data-spec="cam2video"]')->text() . ', ' . $crawler->filter('td[data-spec="cam2features"]')->text() : '',
+                'camera_front_camera_features' => $crawler->filter('td[data-spec="cam2video"]')->count() ? $crawler->filter('td[data-spec="cam2video"]')->text()  . ', '  : ''. $crawler->filter('td[data-spec="cam2features"]')->count() ? $crawler->filter('td[data-spec="cam2features"]')->text() : '',
                 'battery_type' => $crawler->filter('td[data-spec="batdescription1"]')->count() ? $this->getBatteryDetails($crawler->filter('td[data-spec="batdescription1"]')->text())['battery_type'] : '',
                 'battery_is_removable' => $crawler->filter('td[data-spec="batdescription1"]')->count() ? $this->getBatteryDetails($crawler->filter('td[data-spec="batdescription1"]')->text())['battery_is_removable'] : '',
                 'main_battery_description' => $crawler->filter('td[data-spec="batdescription1"]')->count() ? $this->getBatteryDetails($crawler->filter('td[data-spec="batdescription1"]')->text())['main_battery_description'] : '',
