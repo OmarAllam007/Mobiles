@@ -29,6 +29,16 @@ class MobileCrawler
         $name = $crawler->filter('h1[data-spec="modelname"]')->text();
         $mob = Mobile::where('name', $name)->first();
 
+        $front_features = '';
+
+        if ($crawler->filter('td[data-spec="cam2video"]')->count()) {
+            $front_features .= ' ' . $crawler->filter('td[data-spec="cam2video"]')->text();
+
+            if ($crawler->filter('td[data-spec="cam2features"]')->count()) {
+                $front_features .= ', ' . $crawler->filter('td[data-spec="cam2features"]')->text();
+            }
+        }
+
         if (!$mob) {
             $data = [
                 'name' => $crawler->filter('h1[data-spec="modelname"]')->text(),
@@ -62,7 +72,7 @@ class MobileCrawler
                 'camera_other_features' => $crawler->filter('td[data-spec="cam1features"]')->count() ? $this->getCameraFlashAndOtherFeatures($crawler->filter('td[data-spec="cam1features"]')->text())['camera_other_features'] : '',
                 'camera_video' => $crawler->filter('td[data-spec="cam1features"]')->count() ? $crawler->filter('td[data-spec="cam1video"]')->text() : '',
                 'camera_front_camera' => $crawler->filter('td[data-spec="cam2modules"]')->count() ? $crawler->filter('td[data-spec="cam2modules"]')->text() : '',
-                'camera_front_camera_features' => $crawler->filter('td[data-spec="cam2video"]')->count() ? $crawler->filter('td[data-spec="cam2video"]')->text() . ', ' : '' . $crawler->filter('td[data-spec="cam2features"]')->count() ? $crawler->filter('td[data-spec="cam2features"]')->text() : '',
+                'camera_front_camera_features' => $front_features,
                 'battery_type' => $crawler->filter('td[data-spec="batdescription1"]')->count() ? $this->getBatteryDetails($crawler->filter('td[data-spec="batdescription1"]')->text())['battery_type'] : '',
                 'battery_is_removable' => $crawler->filter('td[data-spec="batdescription1"]')->count() ? $this->getBatteryDetails($crawler->filter('td[data-spec="batdescription1"]')->text())['battery_is_removable'] : '',
                 'main_battery_description' => $crawler->filter('td[data-spec="batdescription1"]')->count() ? $this->getBatteryDetails($crawler->filter('td[data-spec="batdescription1"]')->text())['main_battery_description'] : '',
