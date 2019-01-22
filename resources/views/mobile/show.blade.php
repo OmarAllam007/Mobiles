@@ -82,7 +82,10 @@
                             <div class="card-block ">
                                 <h4 class="card-title">{{$mobile->name}}</h4>
                                 <p class="card-text"><span><i class="fa fa-calendar-alt"></i></span>
-                                    <span>{{$mobile->released_date}}</span></p>
+                                    <span>
+                                                            {{$mobile->released_date ? \Carbon\Carbon::parse($mobile->released_date)->format('Y/M/d') : ''}}
+
+                                    </span></p>
                                 <p class="card-text">
                                     <span><i class="fa fa-mobile-alt"></i></span>
                                     <span>{{$mobile->device_dimension}}</span>

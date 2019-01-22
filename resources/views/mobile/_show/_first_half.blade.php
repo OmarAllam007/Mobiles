@@ -17,7 +17,7 @@
             <tr>
                 <td style="width: 180px">{{t('Release Date')}}</td>
                 <td>
-                    {{$mobile->released_date}}
+                    {{$mobile->released_date ? \Carbon\Carbon::parse($mobile->released_date)->format('Y/M/d') : ''}}
                 </td>
             </tr>
 
