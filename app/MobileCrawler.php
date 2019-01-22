@@ -26,7 +26,9 @@ class MobileCrawler
 
         $data = [];
 
-        $name = $crawler->filter('h1.specs-phone-name-title')->text();
+//        dd($crawler->filter('h1[data-spec="modelname"]')->text());
+        $name = $crawler->filter('h1[data-spec="modelname"]')->text();
+
         $mob = Mobile::where('name', $name)->first();
         if (!$mob) {
             $data = [
@@ -60,7 +62,7 @@ class MobileCrawler
                 'camera_focal_length' => $crawler->filter('td[data-spec="cam1modules"]')->count() ? $this->getCameraDetails($crawler->filter('td[data-spec="cam1modules"]')->text())['camera_focal_length'] : '',
                 'camera_sensor_size' => $crawler->filter('td[data-spec="cam1modules"]')->count() ? $this->getCameraDetails($crawler->filter('td[data-spec="cam1modules"]')->text())['camera_sensor_size'] : '',
                 'camera_flash' => $crawler->filter('td[data-spec="cam1features"]')->count() ? $this->getCameraFlashAndOtherFeatures($crawler->filter('td[data-spec="cam1features"]')->text())['camera_flash'] : '',
-                'camera_other_features' => $this->getCameraFlashAndOtherFeatures($crawler->filter('td[data-spec="cam1features"]')->text())['camera_other_features'],
+                'camera_other_features' => $crawler->filter('td[data-spec="cam1features"]')->count() ? $this->getCameraFlashAndOtherFeatures($crawler->filter('td[data-spec="cam1features"]')->text())['camera_other_features'] : '',
                 'camera_video' => $crawler->filter('td[data-spec="cam1features"]')->count() ? $crawler->filter('td[data-spec="cam1video"]')->text() : '',
                 'camera_front_camera' => $crawler->filter('td[data-spec="cam2modules"]')->count() ? $crawler->filter('td[data-spec="cam2modules"]')->text() : '',
                 'camera_front_camera_features' => $crawler->filter('td[data-spec="cam2video"]')->count() ? $crawler->filter('td[data-spec="cam2video"]')->text() . ', ' . $crawler->filter('td[data-spec="cam2features"]')->text() : '',
@@ -79,7 +81,7 @@ class MobileCrawler
                 'others_sensors' => $crawler->filter('td[data-spec="sensors"]')->count() ? $crawler->filter('td[data-spec="sensors"]')->text() : '',
                 'colors' => $crawler->filter('td[data-spec="colors"]')->count() ? $crawler->filter('td[data-spec="colors"]')->text() : '',
                 'price' => $crawler->filter('td[data-spec="price"]')->count() ? $this->getPrice($crawler->filter('td[data-spec="price"]')->text()) : '',
-                'main_price_description' => $crawler->filter('td[data-spec="price"]') ? $this->getPrice($crawler->filter('td[data-spec="price"]')->text()) : '',
+                'main_price_description' => $crawler->filter('td[data-spec="price"]')->count() ? $this->getPrice($crawler->filter('td[data-spec="price"]')->text()) : '',
                 'main_camera_pixels_description' => $crawler->filter('td[data-spec="cam1modules"]')->count() ? $this->getCameraDetails($crawler->filter('td[data-spec="cam1modules"]')->text())['camera_main_camera'] : '',
                 'image_path' => $this->getImagePath($crawler->filter('div.specs-photo-main')->filter('img')->attr('src'))
             ];
