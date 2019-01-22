@@ -43,7 +43,7 @@ class MobileCrawler
             $data = [
                 'name' => $crawler->filter('h1[data-spec="modelname"]')->text(),
                 'brand_id' => $brand_id,
-                'release_date' => $crawler->filter('td[data-spec="status"]')->count() ? $this->getReleaseDate($crawler->filter('td[data-spec="status"]')->text()) : '',
+                'released_date' => $crawler->filter('td[data-spec="status"]')->count() ? $this->getReleaseDate($crawler->filter('td[data-spec="status"]')->text()) : '',
                 'operating_system' => $crawler->filter('td[data-spec="os"]')->count() ? $crawler->filter('td[data-spec="os"]')->text() : '',
                 'device_dimension' => $crawler->filter('td[data-spec="dimensions"]')->count() ? $this->getDimensions($crawler->filter('td[data-spec="dimensions"]')->text()) : '',
                 'device_weight' => $crawler->filter('td[data-spec="weight"]')->count() ? $this->getWeight($crawler->filter('td[data-spec="weight"]')->text()) : '',
