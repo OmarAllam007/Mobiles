@@ -11,6 +11,10 @@
 |
 */
 //Route::get('/', 'MobileController@getMobileWithPrice');
+//Route::get('/get-crawler', function () {
+//    $crawler = new \App\MobileCrawler();
+//    $crawler->getMobData();
+//});
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
@@ -21,12 +25,15 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::resource('mobile-image', 'MobileImagesController');
     Route::post('upload-review-images', 'ReviewController@uploadImages');
     Route::get('load-review-images/{review_id}', 'ReviewController@loadReviewImages');
-    Route::get('upload-mobiles','MobileController@getuploadData')->name('mobiles.upload');
-    Route::post('upload-mobiles','MobileController@uploadData')->name('mobiles.upload');
+    Route::get('upload-mobiles', 'MobileController@getuploadData')->name('mobiles.upload');
+    Route::post('upload-mobiles', 'MobileController@uploadData')->name('mobiles.upload');
+    Route::get('upload-mobiles-crawler', 'MobileController@getUploadCrawler')->name('mobiles.bycrawler');
+    Route::post('upload-mobiles-crawler', 'MobileController@postUploadCrawler')->name('mobiles.post.bycrawler');
+
 });
 
 
-Route::prefix('on-demand')->group(function (){
+Route::prefix('on-demand')->group(function () {
     Route::get('/mobiles/get-by-price', 'API\MobileController@filterMobilesByPrice')->name('on_demand.mobiles.by_price');
     Route::get('/mobiles/get-by-name', 'API\MobileController@compareMobiles')->name('on_demand.mobiles.by_name');
     Route::get('/mobiles/compare', 'API\MobileController@chooseForMe')->name('on_demand.mobiles.choose_for_me');

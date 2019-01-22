@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Brand;
 use App\Jobs\UploadMobilesJob;
 use App\Mobile;
+use App\MobileCrawler;
 use App\MobileImages;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
@@ -124,6 +125,21 @@ class MobileController extends Controller
         return $request;
     }
 
+    public function getUploadCrawler()
+    {
+        return view('mobile-crawler.index');
+    }
+
+    public function postUploadCrawler(Request $request)
+    {
+        $this->validate($request, ['brand_id' => 'required', 'url' => 'required']);
+
+        $crawler = new MobileCrawler();
+        $crawler->getMobData($request->url, $request->brand_id);
+
+        return redirect()->back();
+    }
+
     public function makeFavourite(Request $request)
     {
         if (Auth::check()) {
@@ -169,12 +185,14 @@ class MobileController extends Controller
         return view('mobile.index', compact('mobiles'));
     }
 
-    function getUploadData(){
+    function getUploadData()
+    {
         return view('mobile.upload.upload');
     }
+
     function uploadData(Request $request)
     {
-        if($request->hasFile('mobiles')){
+        if ($request->hasFile('mobiles')) {
             $this->dispatch(new UploadMobilesJob($request));
         }
     }

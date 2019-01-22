@@ -11,6 +11,10 @@
         <a class="btn btn-outline-info" href="{{route('mobiles.upload')}}" role="button"><i
                     class="fa fa-upload"></i>
         </a>
+
+        <a class="btn btn-outline-info" href="{{route('mobiles.bycrawler')}}" role="button"><i
+                    class="fa fa-sitemap"></i>
+        </a>
     </div>
 
 
