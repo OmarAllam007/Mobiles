@@ -165,7 +165,6 @@ class MobileCrawler
 
             }
         }
-        dd('string');
     }
 
     private function getExternalStorage($string)
@@ -305,7 +304,6 @@ class MobileCrawler
 
     private function hasRadio($string)
     {
-        dd($string);
         if (str_contains(strtolower($string), 'no')) {
             return 0;
         }
