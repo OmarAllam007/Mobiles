@@ -39,6 +39,7 @@ class MobileCrawler
             }
         }
 
+
         if (!$mob) {
             $data = [
                 'name' => $crawler->filter('h1[data-spec="modelname"]')->text(),
@@ -84,7 +85,7 @@ class MobileCrawler
                 'communication_hotspot' => $crawler->filter('td[data-spec="wlan"]')->count() ? $this->hasHotspot($crawler->filter('td[data-spec="wlan"]')->text()) : '',
                 'communication_nfc' => $crawler->filter('td[data-spec="nfc"]')->count() ? $this->hasNFC($crawler->filter('td[data-spec="nfc"]')->text()) : '',
                 'communication_usb' => $crawler->filter('td[data-spec="usb"]')->count() ? $crawler->filter('td[data-spec="usb"]')->text() : '',
-                'media_radio_exist' => $crawler->filter('td[data-spec="radio"]')->count() ? $this->hasRadio($crawler->filter('td[data-spec="radio"]')->text()) : '',
+                'media_radio_exist' => $crawler->filter('td[data-spec="radio"]')->count() ? $this->hasRadio($crawler->filter('td[data-spec="radio"]')->text()) : 0,
                 'others_sensors' => $crawler->filter('td[data-spec="sensors"]')->count() ? $crawler->filter('td[data-spec="sensors"]')->text() : '',
                 'colors' => $crawler->filter('td[data-spec="colors"]')->count() ? $crawler->filter('td[data-spec="colors"]')->text() : '',
                 'price' => $crawler->filter('td[data-spec="price"]')->count() ? $this->getPrice($crawler->filter('td[data-spec="price"]')->text()) : '',
@@ -304,6 +305,7 @@ class MobileCrawler
 
     private function hasRadio($string)
     {
+        dd($string);
         if (str_contains(strtolower($string), 'no')) {
             return 0;
         }
