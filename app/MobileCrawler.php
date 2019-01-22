@@ -28,7 +28,7 @@ class MobileCrawler
 
         $name = $crawler->filter('h1[data-spec="modelname"]')->text();
         $mob = Mobile::where('name', $name)->first();
-        dump('asd');
+
         if (!$mob) {
             $data = [
                 'name' => $crawler->filter('h1[data-spec="modelname"]')->text(),
@@ -43,9 +43,6 @@ class MobileCrawler
                 'processor' => $crawler->filter('td[data-spec="cpu"]')->count() ? $crawler->filter('td[data-spec="cpu"]')->text() : '',
                 'chipset' => $crawler->filter('td[data-spec="chipset"]')->count() ? $crawler->filter('td[data-spec="chipset"]')->text() : '',
                 'graphical_processor' => $crawler->filter('td[data-spec="gpu"]')->count() ? $crawler->filter('td[data-spec="gpu"]')->text() : '',
-
-//            'internal_storage'=> $this->getInternalMemory($crawler->filter('td[data-spec="internalmemory"]')->text()),
-//            'ram' => $crawler->filter('td[data-spec="internalmemory"]')->text(),
                 'external_storage' => $crawler->filter('td[data-spec="memoryslot"]')->count() ? $this->getExternalStorage($crawler->filter('td[data-spec="memoryslot"]')->text()) : '',
                 'screen_size' => $crawler->filter('td[data-spec="displaysize"]')->count() ? $this->getScreenSize($crawler->filter('td[data-spec="displaysize"]')->text())['size'] : '',
                 'screen_size_percentage' => $crawler->filter('td[data-spec="displaysize"]')->count() ? $this->getScreenSize($crawler->filter('td[data-spec="displaysize"]')->text())['percentage'] : '',
@@ -83,7 +80,7 @@ class MobileCrawler
                 'price' => $crawler->filter('td[data-spec="price"]')->count() ? $this->getPrice($crawler->filter('td[data-spec="price"]')->text()) : '',
                 'main_price_description' => $crawler->filter('td[data-spec="price"]')->count() ? $this->getPrice($crawler->filter('td[data-spec="price"]')->text()) : '',
                 'main_camera_pixels_description' => $crawler->filter('td[data-spec="cam1modules"]')->count() ? $this->getCameraDetails($crawler->filter('td[data-spec="cam1modules"]')->text())['camera_main_camera'] : '',
-                'image_path' => $this->getImagePath($crawler->filter('div.specs-photo-main')->filter('img')->attr('src'))
+                'image_path' => $crawler->filter('div.specs-photo-main')->filter('img')->attr('src') ? $this->getImagePath($crawler->filter('div.specs-photo-main')->filter('img')->attr('src')) : ''
             ];
             Mobile::create($data);
         }
