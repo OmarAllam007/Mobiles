@@ -26,8 +26,8 @@ class MobileCrawler
 
         $data = [];
 
-        $name = substr($crawler->filter('h1[data-spec="modelname"]')->text(),strpos($crawler->filter('h1[data-spec="modelname"]')->text(),' '));
-        $mob = Mobile::where('name', trim($name))->first();
+        $name = substr($crawler->filter('h1[data-spec="modelname"]')->text(), strpos($crawler->filter('h1[data-spec="modelname"]')->text(), ' '));
+        $mob = Mobile::where('name', trim($name))->where('brand_id', $brand_id)->first();
 
         $front_features = '';
 
