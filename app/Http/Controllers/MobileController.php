@@ -133,8 +133,8 @@ class MobileController extends Controller
     public function postUploadCrawler(Request $request)
     {
         $this->validate($request, ['brand_id' => 'required', 'url' => 'required']);
-
-        foreach (explode(',',$request->url) as $item){
+        $urls = explode(',',trim(preg_replace('/\s\s+/', '', $request->url)));
+        foreach ($urls as $item){
             $crawler = new MobileCrawler();
             $crawler->getMobData($item, $request->brand_id);
         }

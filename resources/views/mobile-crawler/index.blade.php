@@ -20,7 +20,7 @@
             </div>
             <div class="form-group">
                 <label for="url">{{t('Mobile URL')}}</label>
-                <input class="form-control" type="text" name="url">
+                <textarea class="form-control"  name="url" cols="10" rows="10"></textarea>
             </div>
             @if ($errors->has('main_battery_description'))
                 <div class="error-message">{{$errors->first('main_battery_description')}}</div>
