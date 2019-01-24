@@ -26,8 +26,8 @@ class MobileCrawler
 
         $data = [];
 
-        $name = $crawler->filter('h1[data-spec="modelname"]')->text();
-        $mob = Mobile::where('name', $name)->first();
+        $name = substr($crawler->filter('h1[data-spec="modelname"]')->text(),strpos($crawler->filter('h1[data-spec="modelname"]')->text(),' '));
+        $mob = Mobile::where('name', trim($name))->first();
 
         $front_features = '';
 
@@ -42,7 +42,7 @@ class MobileCrawler
 
         if (!$mob) {
             $data = [
-                'name' => $crawler->filter('h1[data-spec="modelname"]')->text(),
+                'name' => trim($name),
                 'brand_id' => $brand_id,
                 'released_date' => $crawler->filter('td[data-spec="status"]')->count() ? $this->getReleaseDate($crawler->filter('td[data-spec="status"]')->text()) : '',
                 'operating_system' => $crawler->filter('td[data-spec="os"]')->count() ? $crawler->filter('td[data-spec="os"]')->text() : '',

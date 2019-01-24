@@ -134,8 +134,10 @@ class MobileController extends Controller
     {
         $this->validate($request, ['brand_id' => 'required', 'url' => 'required']);
 
-        $crawler = new MobileCrawler();
-        $crawler->getMobData($request->url, $request->brand_id);
+        foreach (explode(',',$request->url) as $item){
+            $crawler = new MobileCrawler();
+            $crawler->getMobData($item, $request->brand_id);
+        }
 
         return redirect()->back();
     }
