@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Builder;
 
 class Brand extends Model
 {
@@ -28,7 +29,12 @@ class Brand extends Model
         return $attachment;
     }
 
+
     function mobiles(){
         return $this->hasMany(Mobile::class,'brand_id');
+    }
+
+    function scopeTopMobiles($q){
+         return $this->mobiles()->tophits();
     }
 }

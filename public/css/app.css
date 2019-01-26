@@ -11480,3 +11480,46 @@ h1 {
       align-self: center;
 }
 
+.brands-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.brands-tile-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.brands-tile-container:hover {
+  background-color: rgba(25, 133, 119, 0.2);
+  -webkit-transition: .5s;
+  transition: .5s;
+  border-radius: 5px 5px 0 0;
+  text-decoration: none;
+}
+
+.brands-tile-image {
+  width: 90px;
+  height: 110px;
+}
+

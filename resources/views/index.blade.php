@@ -80,23 +80,25 @@
                 <h5 class="text-center">
                     {{t('BRANDS')}}
                 </h5>
-                <div class="d-flex flex-wrap flex-row bd-highlight justify-content-center">
-                    @foreach(\App\Brand::all()->take(9) as $brand)
-                        <div class="p-2 bd-highlight">
-                            <a title="Mobile Brand Page" class="brand-url" href="{{route('brand.mobiles',$brand)}}">
-                                <img class="brand-image" src="{{asset('storage'.$brand->image_path)}}">
+
+                @php
+                    $topMobiles = \App\Mobile::tophits()->get()->pluck('brand_id');
+                    $brands = \App\Brand::whereIn('id',$topMobiles)->get()->take(9)->sortBy('name');
+                @endphp
+
+                <div class="brands-container">
+                    @foreach($brands as $key=>$brand)
+                            <a title="{{$brand->name}}" class="brands-tile-container"   href="{{route('brand.mobiles',$brand)}}">
+                                <img class="brands-tile-image" src="{{asset('storage'.$brand->image_path)}}">
                                 <p>{{$brand->name}}</p>
                             </a>
-                        </div>
                     @endforeach
 
-                    <div class="p-2 bd-highlight">
-                        <a title="Mobile Brand Page" class="brand-url" href="{{route('brand.all')}}">
-                            <div style=" height: 50px;margin: auto;width: 40%;"></div>
+
+                        <a title="All Brands" class="brands-tile-container" style="justify-content: center;align-items: flex-start"  href="{{route('brand.all')}}">
                             <p>{{t('All Brands')}}</p>
-                            {{--<div style=" height: 50px;margin: auto;width: 40%;"> </div>--}}
                         </a>
-                    </div>
+
                 </div>
             </div>
         </div>
