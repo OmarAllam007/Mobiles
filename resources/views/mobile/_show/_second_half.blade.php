@@ -320,7 +320,7 @@
                 <tr>
                     <td style="width: 180px">{{t('VR')}}</td>
                     <td>
-                        @if($mobile->vr)
+                        @if($mobile->others_vr_support)
                             <i class="fa fa-check text-success"></i>
                         @else
                             <i class="fa fa-times text-danger"></i>
