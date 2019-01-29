@@ -125,7 +125,9 @@ class MobileController extends Controller
             ->pluck('id');
 
         $mobiles = Mobile::query()->where('main_price_description', '<>', 0)
-            ->orderBy('main_price_description', 'DESC')->whereIn('id', $mobs);
+            ->orderBy('main_price_description', 'DESC')
+            ->orderBy('released_date','DESC')
+            ->whereIn('id', $mobs);
 
         if ($request->has('search')) {
             return $mobiles->where('name', 'like', '%' . $request->search . '%')
