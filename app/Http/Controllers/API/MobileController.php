@@ -127,7 +127,7 @@ class MobileController extends Controller
             ->whereIn('id', $mobs);
 
         if ($request->has('search')) {
-            return $mobiles
+            return $mobiles->orderBy('main_price_description','DESC')
                 ->take(4)->get()
                 ->each(function ($mobile) {
                     $mobile['show_url'] = $mobile->show_url;
