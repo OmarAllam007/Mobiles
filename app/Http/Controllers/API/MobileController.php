@@ -123,7 +123,8 @@ class MobileController extends Controller
             ->selectRaw("CONCAT(b.name,' ',mobile.name) AS name , mobile.id as id")
             ->whereRaw("CONCAT(LOWER(b.name),' ',LOWER(mobile.name)) like   LOWER('%$request->search%') ")
             ->pluck('id');
-        $mobiles = Mobile::query()
+
+        $mobiles = Mobile::query()->orderBy('main_price_description','DESC')
             ->whereIn('id', $mobs);
 
         if ($request->has('search')) {
