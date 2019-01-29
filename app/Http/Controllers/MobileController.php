@@ -70,7 +70,6 @@ class MobileController extends Controller
             $data['image_path'] = $attachment->path;
         }
 
-
         $mobile->update($data);
 
         if ($request->has('images')) {
@@ -109,6 +108,7 @@ class MobileController extends Controller
 
     function handleCheckBoxExist($request)
     {
+
         $request['others_vr_support'] = $request->others_vr_support ? 1 : 0;
         $request['others_additional_microphone_exist'] = $request->others_additional_microphone_exist ? 1 : 0;
         $request['media_radio_exist'] = $request->media_radio_exist ? 1 : 0;

@@ -16,7 +16,7 @@
                     <a class="tile-container" :href="mobile.show_url">
                         <img :src="mobile.image" class="mobile-image">
                         <div class="mobile-description">
-                            <p>{{mobile.name}}</p>
+                            <p>{{mobile.fullname}}</p>
                             <p>{{mobile.price}} $</p>
                         </div>
                     </a>

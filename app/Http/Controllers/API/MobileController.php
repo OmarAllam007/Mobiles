@@ -117,8 +117,15 @@ class MobileController extends Controller
 
     function search(Request $request)
     {
+
+        $mobs = DB::table('mobiles as mobile')
+            ->join('brands as b', 'b.id', '=', 'mobile.brand_id')
+            ->selectRaw("CONCAT(b.name,' ',mobile.name) AS name , mobile.id as id")
+            ->whereRaw("CONCAT(b.name,' ',mobile.name) like   '%$request->search%' ")
+            ->pluck('id');
+
         $mobiles = Mobile::query()->where('main_price_description', '<>', 0)
-            ->orderBy('main_price_description', 'DESC');
+            ->orderBy('main_price_description', 'DESC')->whereIn('id', $mobs);
 
         if ($request->has('search')) {
             return $mobiles->where('name', 'like', '%' . $request->search . '%')
@@ -126,12 +133,14 @@ class MobileController extends Controller
                 ->each(function ($mobile) {
                     $mobile['show_url'] = $mobile->show_url;
                     $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
+                    $mobile['fullname'] = $mobile->brand->name . ' ' . $mobile->name;
                 });
         } else {
             return $mobiles->orderByDesc('number_of_hits')
                 ->take(4)->get()
                 ->each(function ($mobile) {
                     $mobile['show_url'] = $mobile->show_url;
+                    $mobile['fullname'] = $mobile->brand->name . ' ' . $mobile->name;
                     $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
                 });
 
@@ -157,8 +166,8 @@ class MobileController extends Controller
             ->whereIn('id', $request->visited)
             ->orderByRaw(DB::raw("FIELD(id, $tempStr)"))
             ->get()->each(function ($mobile) use ($mobs) {
-                $mobile->show_url = $mobs->where('id',$mobile->id)->first()->show_url;
-                $mobile->image = $mobs->where('id',$mobile->id)->first()->image;
+                $mobile->show_url = $mobs->where('id', $mobile->id)->first()->show_url;
+                $mobile->image = $mobs->where('id', $mobile->id)->first()->image;
             });
         return $mobiles;
     }

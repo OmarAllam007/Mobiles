@@ -52413,7 +52413,7 @@ var render = function() {
                           }),
                           _vm._v(" "),
                           _c("div", { staticClass: "mobile-description" }, [
-                            _c("p", [_vm._v(_vm._s(mobile.name))]),
+                            _c("p", [_vm._v(_vm._s(mobile.fullname))]),
                             _vm._v(" "),
                             _c("p", [_vm._v(_vm._s(mobile.price) + " $")])
                           ])
