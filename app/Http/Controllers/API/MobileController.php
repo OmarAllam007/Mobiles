@@ -118,14 +118,14 @@ class MobileController extends Controller
     function search(Request $request)
     {
 
-        $mobs = DB::table('mobiles as mobile')
-            ->join('brands as b', 'b.id', '=', 'mobile.brand_id')
-            ->selectRaw("CONCAT(b.name,' ',mobile.name) AS name , mobile.id as id")
-            ->whereRaw("CONCAT(b.name,' ',mobile.name) like   LOWER('% $request->search%') ")
-            ->pluck('id');
+//        $mobs = DB::table('mobiles as mobile')
+//            ->join('brands as b', 'b.id', '=', 'mobile.brand_id')
+//            ->selectRaw("CONCAT(b.name,' ',mobile.name) AS name , mobile.id as id")
+//            ->whereRaw("CONCAT(b.name,' ',mobile.name) like   LOWER('% $request->search%') ")
+//            ->pluck('id');
 
         $mobiles = Mobile::query()
-            ->whereIn('id', $mobs);
+            ->whereRaw("LOWER(full_name) like LOWER('%$request->search%') ");
 
         if ($request->has('search')) {
             return $mobiles
