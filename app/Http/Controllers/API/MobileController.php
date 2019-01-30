@@ -121,12 +121,11 @@ class MobileController extends Controller
         $mobs = DB::table('mobiles as mobile')
             ->join('brands as b', 'b.id', '=', 'mobile.brand_id')
             ->selectRaw("CONCAT(b.name,' ',mobile.name) AS name , mobile.id as id")
-            ->whereRaw("CONCAT(LOWER(b.name),' ',LOWER(mobile.name)) like   LOWER('% $request->search%') ")
+            ->whereRaw("CONCAT(b.name,' ',mobile.name) like   LOWER('% $request->search%') ")
             ->pluck('id');
 
         $mobiles = Mobile::query()
             ->whereIn('id', $mobs);
-//            ->orderByRaw(\DB::raw("FIELD('main_price_description',{$ids}) DESC"));
 
         if ($request->has('search')) {
             return $mobiles
