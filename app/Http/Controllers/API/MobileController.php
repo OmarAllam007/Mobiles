@@ -124,11 +124,13 @@ class MobileController extends Controller
             ->whereRaw("CONCAT(LOWER(b.name),' ',LOWER(mobile.name)) like   LOWER('%$request->search%') ")
             ->pluck('id');
 
-        $mobiles = Mobile::query()->orderBy('main_price_description','DESC')
+        $mobiles = Mobile::query()
             ->whereIn('id', $mobs);
+//            ->orderByRaw(\DB::raw("FIELD('main_price_description',{$ids}) DESC"));
 
         if ($request->has('search')) {
-            return $mobiles->orderBy('main_price_description','DESC')
+            return $mobiles
+                ->orderByRaw('main_price_description * 1 DESC')
                 ->take(4)->get()
                 ->each(function ($mobile) {
                     $mobile['show_url'] = $mobile->show_url;
