@@ -63,8 +63,17 @@
                 @endif
         > 512
     </label>
-</div>
 
+    <label class="checkbox-inline custom-checkbox">
+        <input type="checkbox" value="1024" name="internal_storage[]"
+               @if(isset($mobile['internal_storage']) && in_array(1024,$mobile['internal_storage'])) checked
+                @endif
+        > 1024
+    </label>
+</div>
+<div class="form-group">
+    <p>{{t('RAM DESCRIPTION')}}</p>
+</div>
 <div class="form-group">
     <p>{{t('RAM')}}</p>
     <label class="checkbox-inline custom-checkbox">
@@ -118,6 +127,13 @@
                @if(isset($mobile['ram']) && in_array(8,$mobile['ram'])) checked
                 @endif
         > 8
+    </label>
+
+    <label class="checkbox-inline custom-checkbox">
+        <input type="checkbox" value="10" name="ram[]"
+               @if(isset($mobile['ram']) && in_array(10,$mobile['ram'])) checked
+                @endif
+        > 10
     </label>
 
     <label class="checkbox-inline custom-checkbox">
