@@ -183,7 +183,7 @@ class MobileController extends Controller
 
     function search(Request $request)
     {
-        $mobiles = Mobile::where('name', 'like', '%' . \request('q') . '%')->paginate(20);
+        $mobiles = Mobile::where('full_name', 'like', '%' . \request('q') . '%')->paginate(20);
         return view('mobile.index', compact('mobiles'));
     }
 
