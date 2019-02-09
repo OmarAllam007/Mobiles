@@ -35,11 +35,11 @@
           content="mobarrow ,سهم الجوالات , اسعار الموبايلات في مصر,السعر العالمي للجوالات , موبيلات, جوالات , سعر, تليفونات, سامسونج, سوق الموبايلات, نوكيا, موبايل">
     <meta content='شفرة تحقق جوجل' name='google-site-verification'/>
     <meta content='article' property='og:type'/>
-    <meta content='عنوان قصير لموقعك' name='title'/>
-    <meta content='mobiles specifications, reviews and articles' name='description'/>
-    <meta content='mobile,iphone,galaxy,huwawi,honor' name='keywords'/>
+    {{--<meta content='عنوان قصير لموقعك' name='title'/>--}}
+    {{--<meta content='mobiles specifications, reviews and articles' name='description'/>--}}
+    {{--<meta content='mobile,iphone,galaxy,huwawi,honor' name='keywords'/>--}}
     <meta content='أسمك' name='Author'/>
-    <meta content='بريدك الالكترونى' name='Email'/>
+    {{--<meta content='بريدك الالكترونى' name='Email'/>--}}
     <meta content='global' name='distribution'/>
     <meta content='5 days' name='revisit'/>
     <meta content='5 days' name='revisit-after'/>
@@ -48,12 +48,12 @@
     <meta content='general' name='rating'/>
     <meta content='all' name='robots'/>
     <meta content='index, follow' name='robots'/>
-    <meta content='اللغة المسستخدمه ar او en' name='language'/>
-    <meta content='بلدك' name='country'/>
-    <meta content='blogger' name='generator'/>
+    {{--<meta content='اللغة المسستخدمه ar او en' name='language'/>--}}
+    {{--<meta content='بلدك' name='country'/>--}}
+    {{--<meta content='blogger' name='generator'/>--}}
 
 
-    <meta content='(c) 2013' name='copyright'/>
+    <meta content='(c) 2019' name='copyright'/>
     <meta expr:content='data:blog.title' property='og:site_name'/>
     <meta expr:content='data:blog.pageName' property='og:title'/>
     <b:if cond='data:blog.pageType == &quot;item&quot;'>
