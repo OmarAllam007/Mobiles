@@ -13,7 +13,7 @@
         <title>{{$mobile->name}} - Full specifications </title>
         <meta property="og:title" content="{{$mobile->name}}">
         <meta property="og:description" content="{{$mobile->name}} - Full specifications">
-        <meta property="og:image" content="{{asset('storage' . $mobile->image_path)}}">
+        <meta property="og:image" content="{{asset('/images/page_logo.jpg')}}">
         <meta property="og:image:width" content="500" />
         <meta property="og:image:height" content="500" />
     @else
