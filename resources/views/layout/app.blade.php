@@ -15,7 +15,9 @@
         <meta property="og:description" content="{{$mobile->name}} - Full specifications">
         <meta property="og:image:width" content="200" />
         <meta property="og:image:height" content="200" />
-        <meta property="og:image" content="{{asset('storage' . $mobile->image_path)}}">
+{{--        <meta property="og:image" content="{{asset('storage' . $mobile->image_path)}}">--}}
+        <meta property="og:image" content="{{asset('/images/page_logo.jpg')}}">
+
     @else
         <title>{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... </title>
         <meta property="og:title" content="MobArrow">
