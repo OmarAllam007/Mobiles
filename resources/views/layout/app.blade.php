@@ -11,9 +11,12 @@
 
     @if(isset($mobile))
         <title>{{$mobile->name}} - Full specifications </title>
-
+        <meta name="title" content="{{$mobile->name}}">
+        <meta name="description" content="{{$mobile->name}} - Full specifications">
     @else
         <title>{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... </title>
+        <meta name="title" content="MobArrow">
+        <meta name="description" content="{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... ">
     @endif
 
 
@@ -48,6 +51,7 @@
     <meta content='اللغة المسستخدمه ar او en' name='language'/>
     <meta content='بلدك' name='country'/>
     <meta content='blogger' name='generator'/>
+
 
     <meta content='(c) 2013' name='copyright'/>
     <meta expr:content='data:blog.title' property='og:site_name'/>
