@@ -13,18 +13,17 @@
         <title>{{$mobile->name}} - Full specifications </title>
         <meta property="og:title" content="{{$mobile->name}}">
         <meta property="og:description" content="{{$mobile->name}} - Full specifications">
-        <meta property="og:image" content="{{asset('/images/page_logo.jpg')}}">
-        <meta property="og:image:width" content="500" />
-        <meta property="og:image:height" content="500" />
+        <meta property="og:image:width" content="200" />
+        <meta property="og:image:height" content="200" />
+        <meta property="og:image" content="{{asset('storage' . $mobile->image_path)}}">
     @else
         <title>{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... </title>
         <meta property="og:title" content="MobArrow">
         <meta property="og:description" content="{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... ">
         <meta property="og:image" content="{{asset('/images/page_logo.jpg')}}">
-        <meta property="og:image:width" content="500" />
-        <meta property="og:image:height" content="500" />
     @endif
-
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
     <link rel="stylesheet" href="{{asset('css/app.css?123')}}">
     <link rel="stylesheet" href="{{asset('css/fontawesome-all.css')}}">
     {{--<link rel="stylesheet" href="{{asset('css/select2.css')}}">--}}
