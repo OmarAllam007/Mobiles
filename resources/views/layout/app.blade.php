@@ -22,8 +22,7 @@
         <meta property="og:description" content="{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... ">
         <meta property="og:image" content="{{asset('/images/page_logo.jpg')}}">
     @endif
-    <meta property="og:image:width" content="200" />
-    <meta property="og:image:height" content="200" />
+
     <link rel="stylesheet" href="{{asset('css/app.css?123')}}">
     <link rel="stylesheet" href="{{asset('css/fontawesome-all.css')}}">
     {{--<link rel="stylesheet" href="{{asset('css/select2.css')}}">--}}
@@ -38,7 +37,9 @@
     <meta name="keywords"
           content="mobarrow ,سهم الجوالات , اسعار الموبايلات في مصر,السعر العالمي للجوالات , موبيلات, جوالات , سعر, تليفونات, سامسونج, سوق الموبايلات, نوكيا, موبايل">
     <meta content='شفرة تحقق جوجل' name='google-site-verification'/>
-    <meta content='article' property='og:type'/>
+    <meta property="og:type" content="website" />
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
     {{--<meta content='عنوان قصير لموقعك' name='title'/>--}}
     {{--<meta content='mobiles specifications, reviews and articles' name='description'/>--}}
     {{--<meta content='mobile,iphone,galaxy,huwawi,honor' name='keywords'/>--}}
