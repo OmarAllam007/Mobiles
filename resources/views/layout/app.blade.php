@@ -21,7 +21,8 @@
         <meta property="og:image" content="MobArrow">
     @endif
 
-
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="855" />
     <link rel="stylesheet" href="{{asset('css/app.css?123')}}">
     <link rel="stylesheet" href="{{asset('css/fontawesome-all.css')}}">
     {{--<link rel="stylesheet" href="{{asset('css/select2.css')}}">--}}
