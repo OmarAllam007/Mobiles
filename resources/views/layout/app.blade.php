@@ -20,6 +20,9 @@
         <meta property="og:description" content="{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... ">
         <meta property="og:image" content="{{asset('/images/page_logo.jpg')}}">
     @endif
+
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="855" />
     <link rel="stylesheet" href="{{asset('css/app.css?123')}}">
     <link rel="stylesheet" href="{{asset('css/fontawesome-all.css')}}">
     {{--<link rel="stylesheet" href="{{asset('css/select2.css')}}">--}}
