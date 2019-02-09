@@ -9,7 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... </title>
+    @if(isset($mobile))
+        <title>{{$mobile->name}} - Full specifications </title>
+
+    @else
+        <title>{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... </title>
+    @endif
 
 
     <link rel="stylesheet" href="{{asset('css/app.css?123')}}">
@@ -28,8 +33,8 @@
     <meta content='شفرة تحقق جوجل' name='google-site-verification'/>
     <meta content='article' property='og:type'/>
     <meta content='عنوان قصير لموقعك' name='title'/>
-    <meta content='وصف لموقعك' name='description'/>
-    <meta content='الكلمات المفتاحية' name='keywords'/>
+    <meta content='mobiles specifications, reviews and articles' name='description'/>
+    <meta content='mobile,iphone,galaxy,huwawi,honor' name='keywords'/>
     <meta content='أسمك' name='Author'/>
     <meta content='بريدك الالكترونى' name='Email'/>
     <meta content='global' name='distribution'/>
@@ -128,7 +133,9 @@
         <nav class="navbar nav-top  navbar-expand-lg navbar-dark navbar-top-blue">
 
             @if(!\Session::get('personalized-language-ar'))
-                <a class="navbar-brand" href="{{url('/')}}" title="Home Page">{{env('APP_NAME')}}</a>
+                <a class="navbar-brand" href="{{url('/')}}" title="Home Page">
+                    <img src="{{asset('images/123123.png')}}">
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -189,7 +196,6 @@
                         </li>
 
                     </ul>
-
 
 
                     <ul class="navbar-nav ml-auto">
