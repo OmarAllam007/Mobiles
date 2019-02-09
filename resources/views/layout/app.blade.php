@@ -11,14 +11,14 @@
 
     @if(isset($mobile))
         <title>{{$mobile->name}} - Full specifications </title>
-        <meta name="og:title" content="{{$mobile->name}}">
-        <meta name="og:description" content="{{$mobile->name}} - Full specifications">
-        <meta name="og:image" content="{{asset('storage' . $mobile->image_path)}}">
+        <meta property="og:title" content="{{$mobile->name}}">
+        <meta property="og:description" content="{{$mobile->name}} - Full specifications">
+        <meta property="og:image" content="{{asset('storage' . $mobile->image_path)}}">
     @else
         <title>{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... </title>
-        <meta name="og:title" content="MobArrow">
-        <meta name="og:description" content="{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... ">
-        <meta name="og:image" content="MobArrow">
+        <meta property="og:title" content="MobArrow">
+        <meta property="og:description" content="{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... ">
+        <meta property="og:image" content="MobArrow">
     @endif
 
 
