@@ -138,7 +138,7 @@
 
             @if(!\Session::get('personalized-language-ar'))
                 <a class="navbar-brand" href="{{url('/')}}" title="Home Page">
-                    <img src="{{asset('images/123123.png')}}">
+                    {{env('APP_NAME')}}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent"
