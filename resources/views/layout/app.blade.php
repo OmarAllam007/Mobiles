@@ -18,7 +18,7 @@
         <title>{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... </title>
         <meta property="og:title" content="MobArrow">
         <meta property="og:description" content="{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... ">
-        <meta property="og:image" content="MobArrow">
+        <meta property="og:image" content="{{asset('storage' .'/page_logo.png')}}">
     @endif
 
     <meta property="og:image:width" content="1280" />
