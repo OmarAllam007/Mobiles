@@ -10,13 +10,15 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @if(isset($mobile))
-        <title property="og:title">{{$mobile->name}} - Full specifications </title>
+        <title>{{$mobile->name}} - Full specifications </title>
         <meta name="og:title" content="{{$mobile->name}}">
         <meta name="og:description" content="{{$mobile->name}} - Full specifications">
+        <meta name="og:image" content="{{asset('storage' . $mobile->image_path)}}">
     @else
-        <title property="">{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... </title>
+        <title>{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... </title>
         <meta name="og:title" content="MobArrow">
         <meta name="og:description" content="{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... ">
+        <meta name="og:image" content="MobArrow">
     @endif
 
 
