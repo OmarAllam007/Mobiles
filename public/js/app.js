@@ -51314,10 +51314,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getPrevData: function getPrevData() {
             var _this = this;
 
-            this.searching = true;
             if (window.localStorage.getItem('mobarrow_visited')) {
                 this.loading = true;
-
                 axios.get('/on-demand/mobiles/get-last-visited', {
                     params: {
                         'visited': JSON.parse(localStorage.getItem('mobarrow_visited')).reverse()
@@ -52413,7 +52411,7 @@ var render = function() {
                           }),
                           _vm._v(" "),
                           _c("div", { staticClass: "mobile-description" }, [
-                            _c("p", [_vm._v(_vm._s(mobile.fullname))]),
+                            _c("p", [_vm._v(_vm._s(mobile.full_name))]),
                             _vm._v(" "),
                             _c("p", [_vm._v(_vm._s(mobile.price) + " $")])
                           ])

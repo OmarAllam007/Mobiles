@@ -21,7 +21,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('mobile/search', 'MobileController@search')->name('mobile.search');
     Route::resource('brand', 'BrandController');
     Route::resource('mobiles', 'MobileController');
-    Route::resource('review', 'ReviewController');
+    Route::resource('article', 'ArticleController');
     Route::resource('mobile-image', 'MobileImagesController');
     Route::post('upload-review-images', 'ReviewController@uploadImages');
     Route::get('load-review-images/{review_id}', 'ReviewController@loadReviewImages');

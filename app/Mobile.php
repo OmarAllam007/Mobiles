@@ -28,7 +28,7 @@ class Mobile extends Model
         'url_souq', 'url_jumia', 'url_amazon', 'available_in_egypt', 'brand_id', 'is_online', 'keywords',
         'main_camera_pixels_description', 'main_ram_description'
         , 'main_battery_description', 'main_price_description', 'cons', 'pros', 'number_of_hits',
-        'advertisements', 'number_of_fans'
+        'advertisements', 'number_of_fans','ram_description'
     ];
 
     static $openBy = [1 => 'Face ID', 2 => 'Finger Print'];

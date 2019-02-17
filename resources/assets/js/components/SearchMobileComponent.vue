@@ -16,7 +16,7 @@
                     <a class="tile-container" :href="mobile.show_url">
                         <img :src="mobile.image" class="mobile-image">
                         <div class="mobile-description">
-                            <p>{{mobile.fullname}}</p>
+                            <p>{{mobile.full_name}}</p>
                             <p>{{mobile.price}} $</p>
                         </div>
                     </a>
@@ -79,10 +79,8 @@
         },
         methods: {
             getPrevData(){
-                this.searching=true
                 if (window.localStorage.getItem('mobarrow_visited')) {
                     this.loading = true;
-
                     axios.get('/on-demand/mobiles/get-last-visited', {
                         params: {
                             'visited': JSON.parse(localStorage.getItem('mobarrow_visited')).reverse()

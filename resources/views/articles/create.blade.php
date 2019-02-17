@@ -15,7 +15,7 @@
 
     <form action="{{route('review.store')}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}} {{method_field('post')}}
-        @include('reviews._form')
+        @include('articles._form')
     </form>
 
 @stop

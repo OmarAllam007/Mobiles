@@ -20,7 +20,7 @@
     <div class="col-12">
         <form action="{{route('review.update',$review)}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}} {{method_field('patch')}}
-            @include('reviews._form')
+            @include('articles._form')
         </form>
     </div>
 @stop

@@ -167,8 +167,8 @@
                                        title="Brands Page">{{ t('Brands') }}</a>
                                     <a href="{{route('mobiles.index')}}"
                                        class="dropdown-item" title="Mobiles Index Page">{{ t('Mobiles') }}</a>
-                                    <a href="{{route('review.index')}}"
-                                       class="dropdown-item" title="Reviews Page">{{ t('Reviews') }}</a>
+                                    <a href="{{route('article.index')}}"
+                                       class="dropdown-item" title="Reviews Page">{{ t('Articles') }}</a>
                                 </div>
                             </li>
                         @endif

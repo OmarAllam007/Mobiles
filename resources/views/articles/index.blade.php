@@ -3,10 +3,10 @@
 @section('header')
     <div class="d-flex">
         <div class="mr-auto p-2">
-            <h4>{{t('Reviews')}}</h4>
+            <h4>{{t('Articles')}}</h4>
 
         </div>
-        <div class="p-2"><a class="btn btn-outline-success" href="{{route('review.create')}}"
+        <div class="p-2"><a class="btn btn-outline-success" href="{{route('article.create')}}"
                                          role="button"><i
                         class="fa fa-plus"></i></a></div>
     </div>
@@ -19,17 +19,17 @@
 @stop
 
 @section('body')
-    @if ($reviews->count())
+    @if ($articles->count())
         <div class="row" style="margin-top: 10px">
-            @foreach($reviews as $review)
+            @foreach($articles as $article)
                 <div class="col-2" style="margin-top: 10px">
                     <div class="card">
-                        <img class="card-img-top" src="{{asset('storage'.$review->cover_image)}}"
+                        <img class="card-img-top" src="{{asset('storage'.$article->cover_image)}}"
                              style="height:170px;width: 120px;margin: 0 auto; object-fit: inherit;">
                         <div class="card-body">
-                            <h5 class="card-title">{{$review->subject}}</h5>
-                            <form action="{{route('review.destroy', $review)}}" method="post">
-                                <a href="{{route('review.edit', $review)}}" class="btn btn-sm btn-primary">
+                            <h5 class="card-title">{{$article->subject}}</h5>
+                            <form action="{{route('article.destroy', $article)}}" method="post">
+                                <a href="{{route('article.edit', $article)}}" class="btn btn-sm btn-primary">
                                     <i class="fa fa-edit"></i>
                                 </a>
                                 {{csrf_field()}} {{method_field('delete')}}
@@ -43,7 +43,7 @@
         </div>
     @else
         <div class="alert alert-info" style="margin-top: 10px"><i class="fa fa-exclamation-circle"></i>
-            <strong>{{t('No Reviews found')}}</strong>
+            <strong>{{t('No Articles found')}}</strong>
         </div>
     @endif
 @stop

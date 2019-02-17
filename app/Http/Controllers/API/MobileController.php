@@ -125,7 +125,7 @@ class MobileController extends Controller
 //            ->pluck('id');
 
         $mobiles = Mobile::query()
-            ->whereRaw("LOWER(full_name) like LOWER('%$request->search%') ");
+            ->whereRaw("LOWER(full_name) like LOWER('%$request->search%')");
 
         if ($request->has('search')) {
             return $mobiles
@@ -134,14 +134,12 @@ class MobileController extends Controller
                 ->each(function ($mobile) {
                     $mobile['show_url'] = $mobile->show_url;
                     $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
-                    $mobile['fullname'] = $mobile->brand->name . ' ' . $mobile->name;
                 });
         } else {
             return $mobiles->orderByDesc('number_of_hits')
                 ->take(4)->get()
                 ->each(function ($mobile) {
                     $mobile['show_url'] = $mobile->show_url;
-                    $mobile['fullname'] = $mobile->brand->name . ' ' . $mobile->name;
                     $mobile['image'] = $mobile->image_path ? asset('storage' . $mobile->image_path) : asset('storage/no-phone.png');
                 });
 
