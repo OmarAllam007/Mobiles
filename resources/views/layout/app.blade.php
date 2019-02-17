@@ -9,8 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... </title>
+    @if(isset($mobile))
+        <title>{{$mobile->name}} - Full specifications </title>
+        <meta property="og:title" content="{{$mobile->name}}">
+        <meta property="og:description" content="{{$mobile->name}} - Full specifications">
+        <meta property="og:image:width" content="200" />
+        <meta property="og:image:height" content="200" />
+{{--        <meta property="og:image" content="{{asset('storage' . $mobile->image_path)}}">--}}
+        <meta property="og:image" content="{{asset('/images/page_logo.jpg')}}">
 
+    @else
+        <title>{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... </title>
+        <meta property="og:title" content="MobArrow">
+        <meta property="og:description" content="{{env('APP_NAME')}} - Mobile Phones Reviews, news, comparisons and more... ">
+        <meta property="og:image" content="{{asset('/images/page_logo.jpg')}}">
+    @endif
 
     <link rel="stylesheet" href="{{asset('css/app.css?123')}}">
     <link rel="stylesheet" href="{{asset('css/fontawesome-all.css')}}">
@@ -26,12 +39,14 @@
     <meta name="keywords"
           content="mobarrow ,سهم الجوالات , اسعار الموبايلات في مصر,السعر العالمي للجوالات , موبيلات, جوالات , سعر, تليفونات, سامسونج, سوق الموبايلات, نوكيا, موبايل">
     <meta content='شفرة تحقق جوجل' name='google-site-verification'/>
-    <meta content='article' property='og:type'/>
-    <meta content='عنوان قصير لموقعك' name='title'/>
-    <meta content='وصف لموقعك' name='description'/>
-    <meta content='الكلمات المفتاحية' name='keywords'/>
+    <meta property="og:type" content="website" />
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    {{--<meta content='عنوان قصير لموقعك' name='title'/>--}}
+    {{--<meta content='mobiles specifications, reviews and articles' name='description'/>--}}
+    {{--<meta content='mobile,iphone,galaxy,huwawi,honor' name='keywords'/>--}}
     <meta content='أسمك' name='Author'/>
-    <meta content='بريدك الالكترونى' name='Email'/>
+    {{--<meta content='بريدك الالكترونى' name='Email'/>--}}
     <meta content='global' name='distribution'/>
     <meta content='5 days' name='revisit'/>
     <meta content='5 days' name='revisit-after'/>
@@ -40,11 +55,12 @@
     <meta content='general' name='rating'/>
     <meta content='all' name='robots'/>
     <meta content='index, follow' name='robots'/>
-    <meta content='اللغة المسستخدمه ar او en' name='language'/>
-    <meta content='بلدك' name='country'/>
-    <meta content='blogger' name='generator'/>
+    {{--<meta content='اللغة المسستخدمه ar او en' name='language'/>--}}
+    {{--<meta content='بلدك' name='country'/>--}}
+    {{--<meta content='blogger' name='generator'/>--}}
 
-    <meta content='(c) 2013' name='copyright'/>
+
+    <meta content='(c) 2019' name='copyright'/>
     <meta expr:content='data:blog.title' property='og:site_name'/>
     <meta expr:content='data:blog.pageName' property='og:title'/>
     <b:if cond='data:blog.pageType == &quot;item&quot;'>
@@ -128,7 +144,9 @@
         <nav class="navbar nav-top  navbar-expand-lg navbar-dark navbar-top-blue">
 
             @if(!\Session::get('personalized-language-ar'))
-                <a class="navbar-brand" href="{{url('/')}}" title="Home Page">{{env('APP_NAME')}}</a>
+                <a class="navbar-brand" href="{{url('/')}}" title="Home Page">
+                    {{env('APP_NAME')}}
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -189,7 +207,6 @@
                         </li>
 
                     </ul>
-
 
 
                     <ul class="navbar-nav ml-auto">
