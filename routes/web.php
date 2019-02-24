@@ -29,7 +29,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::post('upload-mobiles', 'MobileController@uploadData')->name('mobiles.upload');
     Route::get('upload-mobiles-crawler', 'MobileController@getUploadCrawler')->name('mobiles.bycrawler');
     Route::post('upload-mobiles-crawler', 'MobileController@postUploadCrawler')->name('mobiles.post.bycrawler');
-
+    Route::post('/upload_to_gallery','GalleryController@upload')->name('gallery.upload');
 });
 
 

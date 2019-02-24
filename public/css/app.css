@@ -11298,6 +11298,10 @@ a.brand-url p {
   color: #fff !important;
 }
 
+.gallery a {
+  color: #2d3047 !important;
+}
+
 .dropdown-menu a {
   color: #000 !important;
 }

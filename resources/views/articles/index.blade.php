@@ -1,11 +1,12 @@
-@extends('layout.admin')
+@extends('layout.app')
 
 @section('header')
-    <div class="d-flex">
-        <div class="mr-auto p-2">
-            <h4>{{t('Articles')}}</h4>
+    <div class="col-md-11 text-center">
+
+    <h4>{{t('Articles')}}</h4>
 
         </div>
+    <div class="col-md-1">
         <div class="p-2"><a class="btn btn-outline-success" href="{{route('article.create')}}"
                                          role="button"><i
                         class="fa fa-plus"></i></a></div>

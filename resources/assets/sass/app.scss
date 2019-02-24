@@ -815,7 +815,9 @@ a.brand-url p {
 .nav-item a {
   color: #fff !important;
 }
-
+.gallery a {
+    color: $main_color !important;
+}
 .dropdown-menu a {
   color: #000 !important;
 }

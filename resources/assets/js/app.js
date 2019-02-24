@@ -6,7 +6,6 @@
  */
 
 require('./bootstrap');
-
 window.Vue = require('vue');
 
 /**
@@ -32,6 +31,7 @@ Vue.component('mobile-prices', require('./components/MobilePricesComponent.vue')
 Vue.component('choose-for-me', require('./components/ChooseForMeComponent.vue'));
 Vue.component('like-component', require('./components/LikeComponent.vue'));
 Vue.component('comments', require('./components/CommentsComponent.vue'));
+Vue.component('gallery', require('./components/Gallery.vue'));
 
 
 

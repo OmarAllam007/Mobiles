@@ -126,6 +126,7 @@
 {{--<meta name="google-site-verification" content="RDXegnp82JQCC1Sm-vIGwaDKry4bm10oiNpIjp8g1HA"/>--}}
 <!-- Styles -->
 
+{{--    <script type="text/javascript" src="{{asset('js/tinymce.js?apiKey=jincdfoemgs546mdp0u4sn8vqhbdwpgyr4vxkn0r774pe8i3')}}"></script>--}}
 
 </head>
 <body>
@@ -412,6 +413,8 @@
 </div>
 
 <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+<script src="{{asset('/js/tinymce/tinymce.min.js')}}"></script>
+
 <script>
 
 
